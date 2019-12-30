@@ -1,0 +1,10 @@
+#ignore Dirs
+.vs/
+.vscode/
+build
+*.user
+*.o
+*.a
+*.swp
+*.vcxproj.user
+*.ilk

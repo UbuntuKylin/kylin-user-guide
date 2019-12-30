@@ -1,7 +1,7 @@
 project(kylin-user-guide C CXX)
 
 #add_subdirectory(ipc)
-add_subdirectory(resources)
+#add_subdirectory(resources)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 11)
@@ -29,18 +29,8 @@ find_package(Qt5Sql REQUIRED)
 find_package(Qt5WebChannel REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5LinguistTools REQUIRED)
-pkg_search_module(QCef REQUIRED libqcef)
-include_directories(${QCef_INCLUDE_DIRS})
-
-set(LINK_LIBS
-    Qt5::Core
-    Qt5::DBus
-    Qt5::Sql
-    Qt5::Widgets
-    Qt5::WebChannel
-    ${QCef_LDFLAGS}
-    )
-
+#pkg_search_module(QCef REQUIRED libqcef)
+#include_directories(${QCef_INCLUDE_DIRS})
 
 #https://blog.csdn.net/qq_38410730/article/details/102797448
 #add_custom_command(OUTPUT _update-search-db
@@ -51,9 +41,41 @@ set(LINK_LIBS
 #add_custom_target(update-search-db DEPENDS _update-search-db)
 #add_dependencies(update-search-db generate-search-db)
 
-add_executable(kylin-user-guide
-               main.cpp
-               )
+EXECUTE_PROCESS(COMMAND arch OUTPUT_VARIABLE
+    DEB_BUILD_GNU_CPU OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+#头文件目录
+set(HRADERS_QT
+${Qt5DBus_INCLUDE_DIRS}
+${Qt5Gui_INCLUDE_DIRS}
+${Qt5Quick_INCLUDE_DIRS}
+${Qt5QuickWidgets_INCLUDE_DIRS}
+${Qt5Widgets_INCLUDE_DIRS})
+
+
+#message(${HRADERS_QT})
+include_directories(${HRADERS_QT} ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
+#库目录
+#link_directories("../../lib/Linux/${DEB_BUILD_GNU_CPU}" )
+
+file(GLOB CC_FILES *.cpp common-tool/*.cpp ipc/*.cpp)
+
+add_executable(kylin-user-guide ${CC_FILES})
+
+SET(LIBS_PRIVATE "-lrt -ldl -lpthread")
+SET(QT_LIBS
+    Qt5::Core
+    Qt5::DBus
+    Qt5::Sql
+    Qt5::Widgets
+    Qt5::WebChannel)
+message(${QT_LIBS})
+target_link_libraries(kylin-user-guide ${QT_LIBS} ${LIBS_PRIVATE})
+
+set(pkgLibdir 	/usr/lib/${DEB_BUILD_GNU_CPU})
+set(pkgbindir 	/usr/bin/)
+set(pkgdatadir 	/usr/share/kylin-user-guide)
+
 ## Installation
-install(TARGETS dman DESTINATION ${CMAKE_INSTALL_PREFIX}/share/kylin-user-guide)
+install(TARGETS kylin-user-guide DESTINATION ${CMAKE_INSTALL_PREFIX}/share/kylin-user-guide)
 

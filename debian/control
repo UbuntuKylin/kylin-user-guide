@@ -1,0 +1,24 @@
+Source: kylin-user-guide
+Section: utils
+Priority: optional
+Maintainer: Ubuntu Kylin Team <ubuntukylin-members@lists.launchpad.net>
+Uploaders: xiaoyiwu <xiaoyiwu@ubuntukylin.com>
+Build-Depends: cmake,
+               debhelper (>= 9.0.0),
+               libqt5gui5,
+               qttools5-dev-tools,
+               qttools5-dev,
+               libqt5webchannel5-dev
+Standards-Version: 3.9.6
+Homepage: https://github.com/lmq3342xja/kylin-user-guide
+
+Package: kylin-user-guide
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends:fonts-droid|fonts-droid-fallback
+Description: kylin user guide
+
+Package: kylin-user-guide-dbg
+Architecture: any
+Depends: kylin-user-guide
+Description: kylin user guide
