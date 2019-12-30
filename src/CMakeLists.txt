@@ -10,15 +10,16 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-if (CMAKE_BUILD_TYPE MATCHES Debug)
+#cmake -D CMAKE_BUILD_TYPE=Debug
+#if (CMAKE_BUILD_TYPE MATCHES Debug)
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -Wall -Werror -Wextra")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -Werror -Wextra -fno-exceptions")
   # Enable Qt builtin debug mode
   add_definitions("-DQT_MESSAGELOGCONTEXT")
-else()
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O2 -Wl,-O1 -Wl,--gc-sections")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O2 -Wl,-O1 -Wl,--gc-sections")
-endif()
+#else()
+#  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -O2 -Wl,-O1 -Wl,--gc-sections")
+#  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O2 -Wl,-O1 -Wl,--gc-sections")
+#endif()
 
 find_package(PkgConfig REQUIRED)
 find_package(Qt5Core REQUIRED)
@@ -26,9 +27,10 @@ find_package(Qt5DBus REQUIRED)
 find_package(Qt5Gui REQUIRED)
 find_package(Qt5LinguistTools)
 find_package(Qt5Sql REQUIRED)
-find_package(Qt5WebChannel REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5LinguistTools REQUIRED)
+find_package(Qt5WebChannel REQUIRED)
+find_package(Qt5WebEngineWidgets REQUIRED)
 #pkg_search_module(QCef REQUIRED libqcef)
 #include_directories(${QCef_INCLUDE_DIRS})
 
@@ -50,8 +52,10 @@ ${Qt5DBus_INCLUDE_DIRS}
 ${Qt5Gui_INCLUDE_DIRS}
 ${Qt5Quick_INCLUDE_DIRS}
 ${Qt5QuickWidgets_INCLUDE_DIRS}
-${Qt5Widgets_INCLUDE_DIRS})
-
+${Qt5Widgets_INCLUDE_DIRS}
+${Qt5WebChannel_INCLUDE_DIRS}
+${Qt5WebEngineWidgets_INCLUDE_DIRS}
+)
 
 #message(${HRADERS_QT})
 include_directories(${HRADERS_QT} ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
@@ -68,7 +72,8 @@ SET(QT_LIBS
     Qt5::DBus
     Qt5::Sql
     Qt5::Widgets
-    Qt5::WebChannel)
+    Qt5::WebChannel
+    Qt5::WebEngineWidgets)
 message(${QT_LIBS})
 target_link_libraries(kylin-user-guide ${QT_LIBS} ${LIBS_PRIVATE})
 

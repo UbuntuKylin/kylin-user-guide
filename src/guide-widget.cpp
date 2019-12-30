@@ -35,6 +35,7 @@
 #include <QDesktopWidget>
 #include <QApplication>
 #include <QToolTip>
+#include <QWebEngineView>
 
 #include "guide-widget.h"
 #include "main_controller.h"
@@ -65,10 +66,10 @@ GuideWidget::~GuideWidget()
 
 void GuideWidget::initUI()
 {
-    QWidget *tmpWidget = new QWidget();
+    QWebEngineView *m_webView = new QWebEngineView;
     QVBoxLayout *main_layout = new QVBoxLayout();
-    main_layout->addWidget(tmpWidget);
-
+    main_layout->addWidget(m_webView);
+    m_webView->load(QUrl("www.baidu.com"));
     main_layout->setSpacing(0);
     main_layout->setMargin(0);
     main_layout->setContentsMargins(1, 1, 1, 1);
