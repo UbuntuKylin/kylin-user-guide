@@ -70,7 +70,8 @@ void GuideWidget::initUI()
     QVBoxLayout *main_layout = new QVBoxLayout();
     main_layout->addWidget(m_webView);
     m_webView->setContextMenuPolicy(Qt::NoContextMenu);
-    m_webView->load(QUrl("file:///home/kylin/git-kylin-user-guide/kylin-user-guide/resource/test/index.html"));
+    m_webView->load(QUrl("file:///home/kylin/git-kylin-user-guide/kylin-user-guide/src/web/index.html"));
+//    m_webView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
     main_layout->setSpacing(0);
     main_layout->setMargin(0);
     main_layout->setContentsMargins(1, 1, 1, 1);
