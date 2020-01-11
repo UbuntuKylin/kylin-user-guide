@@ -30,7 +30,8 @@ find_package(Qt5Sql REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5LinguistTools REQUIRED)
 find_package(Qt5WebChannel REQUIRED)
-find_package(Qt5WebEngineWidgets REQUIRED)
+find_package(Qt5WebKitWidgets REQUIRED)
+#find_package(Qt5WebEngineWidgets REQUIRED)
 #pkg_search_module(QCef REQUIRED libqcef)
 #include_directories(${QCef_INCLUDE_DIRS})
 
@@ -54,7 +55,8 @@ ${Qt5Quick_INCLUDE_DIRS}
 ${Qt5QuickWidgets_INCLUDE_DIRS}
 ${Qt5Widgets_INCLUDE_DIRS}
 ${Qt5WebChannel_INCLUDE_DIRS}
-${Qt5WebEngineWidgets_INCLUDE_DIRS}
+#${Qt5WebEngineWidgets_INCLUDE_DIRS}//crash
+${Qt5WebKitWidgets_INCLUDE_DIRS}
 )
 
 #message(${HRADERS_QT})
@@ -73,7 +75,9 @@ SET(QT_LIBS
     Qt5::Sql
     Qt5::Widgets
     Qt5::WebChannel
-    Qt5::WebEngineWidgets)
+    Qt5::WebKitWidgets
+    )
+#    Qt5::WebEngineWidgets
 message(${QT_LIBS})
 target_link_libraries(kylin-user-guide ${QT_LIBS} ${LIBS_PRIVATE})
 

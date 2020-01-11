@@ -35,7 +35,7 @@
 #include <QDesktopWidget>
 #include <QApplication>
 #include <QToolTip>
-#include <QWebEngineView>
+#include <QtWebKitWidgets/QWebView>
 
 #include "guide-widget.h"
 #include "main_controller.h"
@@ -44,7 +44,7 @@
 GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 {
     this->isTopLevel();
-    this->setFixedSize(700,540);
+    this->resize(700,540);
     this->setWindowIcon(QIcon(":/picture/sogou130x130.png"));
     this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
@@ -66,10 +66,12 @@ GuideWidget::~GuideWidget()
 
 void GuideWidget::initUI()
 {
-    QWebEngineView *m_webView = new QWebEngineView;
+    QWebView *m_webView = new QWebView;
     QVBoxLayout *main_layout = new QVBoxLayout();
     main_layout->addWidget(m_webView);
-    m_webView->load(QUrl("www.baidu.com"));
+    m_webView->setContextMenuPolicy(Qt::NoContextMenu);
+    m_webView->load(QUrl("file:///home/kylin/git-kylin-user-guide/kylin-user-guide/src/web/index.html"));
+//    m_webView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
     main_layout->setSpacing(0);
     main_layout->setMargin(0);
     main_layout->setContentsMargins(1, 1, 1, 1);

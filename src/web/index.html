@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<meta charset="utf-8">
+
+<head>
+<link rel="stylesheet" type="text/css" href="css/guide.css" >
+</head>
+
+<p style="font-family:verdana">系统</p>
+<hr />
+<div style="text-align:center;">
+  <button style="font-family:verdana" onclick="onclickButton('ukui')">桌面环境</button>
+  <button onclick="onclickButton('kydroid')">安卓兼容</button>
+  <button onclick="onclickButton('kycc')">控制面板</button>
+  <br />
+</div>
+<p>应用</p>
+<hr />
+<div style="text-align:center;">
+  <button onclick="onclickButton('backup')">备份还原</button>
+  <button onclick="onclickButton('kylinvideo')">麒麟影音</button>
+  <button onclick="onclickButton('softcent')">软件商店</button>
+  <br />
+</div>
+
+<p style="font-family:Droid Sans Fallback">软硬件适配</p>
+<hr />
+<p style="font-family:Droid Sans Fallback">技术支持</p>
+<hr />
+
+<script type="text/javascript">
+function onclickButton(str)
+{
+    alert(str)
+    console.log(str);
+}
+
+</script>
+
+</body>
+</html>
