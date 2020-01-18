@@ -44,7 +44,10 @@
 #include <QModelIndex>
 #include <QStringListModel>
 #include <QFileSystemWatcher>
-
+#include <QtWebKitWidgets/QWebView>
+#include <QtWebKitWidgets/QWebFrame>
+#include <QtWebKit/QWebSettings>
+#include <QtWebChannel>
 class GuideWidget : public QWidget
 {
     Q_OBJECT
@@ -64,12 +67,17 @@ protected:
     bool isClose = false;
     bool mCanDrag = false;
 private:
-private:
+    QWebView *m_pWebView;
 private slots:
+    void slot_backOffButton();
+    void slot_javaScriptFromWinObject();
+    void slot_loadFinished(bool);
 public slots:
-
+    Q_INVOKABLE QString js_getIndexMdFilePath(QString);
+    Q_INVOKABLE QString js_getIndexMdFileContent(QString);
 public:
 
 signals:
+    Q_INVOKABLE void sig_backOff2js();
 };
 

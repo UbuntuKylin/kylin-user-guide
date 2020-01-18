@@ -35,7 +35,6 @@
 #include <QDesktopWidget>
 #include <QApplication>
 #include <QToolTip>
-#include <QtWebKitWidgets/QWebView>
 
 #include "guide-widget.h"
 #include "main_controller.h"
@@ -44,7 +43,7 @@
 GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 {
     this->isTopLevel();
-    this->resize(700,540);
+    this->resize(820,640);
     this->setWindowIcon(QIcon(":/picture/sogou130x130.png"));
     this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
@@ -66,17 +65,75 @@ GuideWidget::~GuideWidget()
 
 void GuideWidget::initUI()
 {
-    QWebView *m_webView = new QWebView;
+    m_pWebView = new QWebView;
+    QPushButton * backOffButton = new QPushButton("后退");
+    connect(backOffButton,SIGNAL(released()),this,SLOT(slot_backOffButton()));
+
     QVBoxLayout *main_layout = new QVBoxLayout();
-    main_layout->addWidget(m_webView);
-    m_webView->setContextMenuPolicy(Qt::NoContextMenu);
-    m_webView->load(QUrl("file:///home/kylin/git-kylin-user-guide/kylin-user-guide/src/web/index.html"));
-//    m_webView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
+
+    main_layout->addWidget(backOffButton);
+    main_layout->addWidget(m_pWebView);
+//    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
+    m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
+    m_pWebView->settings()->setObjectCacheCapacities(0,0,0);
+    m_pWebView->settings()->setAttribute(QWebSettings::WebSecurityEnabled, false);//关闭浏览器安全
+    m_pWebView->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);//开发模式
+    m_pWebView->settings()->setAttribute(QWebSettings::JavascriptEnabled,true);
+    m_pWebView->settings()->setAttribute(QWebSettings::JavaEnabled,true);
+    m_pWebView->settings()->setAttribute(QWebSettings::JavascriptCanOpenWindows, true);
+    m_pWebView->settings()->setAttribute(QWebSettings::JavascriptCanAccessClipboard,true);
+    m_pWebView->settings()->setAttribute(QWebSettings::LocalContentCanAccessRemoteUrls, true);
+    m_pWebView->settings()->setAttribute(QWebSettings::LocalContentCanAccessFileUrls, true);//设置能访问本地文件
+    m_pWebView->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
+    m_pWebView->settings()->setAttribute(QWebSettings::AutoLoadImages,true);
+    m_pWebView->settings()->setAttribute(QWebSettings::PluginsEnabled, true);
+
+    connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
+    connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
+//    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
     main_layout->setSpacing(0);
     main_layout->setMargin(0);
     main_layout->setContentsMargins(1, 1, 1, 1);
     this->setLayout(main_layout);
 }
+
+void GuideWidget::slot_javaScriptFromWinObject()
+{
+    qDebug() << Q_FUNC_INFO;
+    m_pWebView->page()->mainFrame()->addToJavaScriptWindowObject("guideWebkit",this);
+//    m_pWebView->page()->mainFrame()->evaluateJavaScript("mywebkit.sig_backOff2js.connect(goBackMainUI());");
+}
+
+void GuideWidget::slot_backOffButton()
+{
+    qDebug() << Q_FUNC_INFO;
+//    emit sig_backOff2js();
+    m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
+}
+
+void GuideWidget::slot_loadFinished(bool f)
+{
+    qDebug() << Q_FUNC_INFO << f;
+}
+
+QString GuideWidget::js_getIndexMdFilePath(QString appName)
+{
+    qDebug() << Q_FUNC_INFO << appName;
+    QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  lang + "/index.md";
+    return IndexMdFilePath;
+}
+
+QString GuideWidget::js_getIndexMdFileContent(QString IndexMdFilePath)
+{
+    qDebug() << Q_FUNC_INFO << IndexMdFilePath;
+    QFile file (IndexMdFilePath);
+    if(!file.exists())
+        return "";
+    if(!file.open(QIODevice::ReadOnly))
+        return "";
+    return file.readAll();
+}
+
 
 void GuideWidget::initSettings()
 {

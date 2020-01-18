@@ -5,38 +5,55 @@
 
 <head>
 <link rel="stylesheet" type="text/css" href="css/guide.css" >
+
+<script src="js/lib/node_modules/marked/marked.min.js"></script>
+<script type="text/javascript" data-main="js/guide" src="js/lib/node_modules/requirejs/require.js"></script>
 </head>
-
-<p style="font-family:verdana">系统</p>
-<hr />
-<div style="text-align:center;">
-  <button style="font-family:verdana" onclick="onclickButton('ukui')">桌面环境</button>
-  <button onclick="onclickButton('kydroid')">安卓兼容</button>
-  <button onclick="onclickButton('kycc')">控制面板</button>
+<!-- 主界面div，显示每个应用入口 -->
+<div id="mainUI">
+<h2 style="font-family:verdana">系统</h2>
+<div id="system" class="system-div">
+    <div id="system" onclick="onclickButton('ukui')" class="system-app">
+        <img src="file:////home/kylin/sogouimebs/Src/SogouImeService/picture/icons/48/sogouInputMethod.png"  alt="ukui" />
+        <br>
+        <span>桌面环境</span>
+    </div>
+    <div id="system" onclick="onclickButton('kydroid')" class="system-app">
+        <img src="file:////home/kylin/sogouimebs/Src/SogouImeService/picture/icons/48/sogouInputMethod.png"  alt="ukui" />
+        <br>
+        <span>安卓兼容</span>
+    </div>
+    <div id="system" onclick="onclickButton('kycc')" class="system-app">
+        <img src="file:////home/kylin/sogouimebs/Src/SogouImeService/picture/icons/48/sogouInputMethod.png"  alt="ukui" />
+        <br>
+        <span>控制面板</span>
+    </div>
+    <br />
+</div>
+<h2 style="font-family:verdana">应用</h2>
+<div id="app" class="app-div">
+    <button onclick="onclickButton('backup')">备份还原</button>
+    <button onclick="onclickButton('kylinvideo')">麒麟影音</button>
+    <button onclick="onclickButton('softcent')">软件商店</button>
+    <br />
+</div>
+<h2 style="font-family:verdana">兼容适配</h2>
+<div id="=adaptation" class="adaptation-div">
+  <button onclick="onclickButton('soft-adaptation')">软件兼容适配</button>
+  <button onclick="onclickButton('hardware-adaptation')">硬件兼容适配</button>
   <br />
 </div>
-<p>应用</p>
-<hr />
-<div style="text-align:center;">
-  <button onclick="onclickButton('backup')">备份还原</button>
-  <button onclick="onclickButton('kylinvideo')">麒麟影音</button>
-  <button onclick="onclickButton('softcent')">软件商店</button>
-  <br />
+<h2 style="font-family:verdana">技术支持</h2>
+<div id="=support" class="support-div">
+
 </div>
 
-<p style="font-family:Droid Sans Fallback">软硬件适配</p>
-<hr />
-<p style="font-family:Droid Sans Fallback">技术支持</p>
-<hr />
-
-<script type="text/javascript">
-function onclickButton(str)
-{
-    alert(str)
-    console.log(str);
-}
-
-</script>
+</div>
+<!-- 占位div，显示每个应用内容 -->
+<article id="pageContent" style="display:none">
+    <div id="hlist" class="hlist-div"></div>
+    <div id="content" class="content-div"></div>
+</article>
 
 </body>
 </html>

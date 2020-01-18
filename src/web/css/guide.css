@@ -1,0 +1,95 @@
+*,body,div{margin:0;padding:0}
+
+div.hlist-div
+{
+    float:left;/*目录框的位置*/
+    overflow-y:scroll;/*目录框添加滚动条*/
+    position: fixed;/*目录框相对浏览器进行定位*/
+    width:17%;/*目录框的宽度*/
+    height: 100%; /*目录框的高度*/
+    top: 0;
+    left: 0;
+    margin: 0%;
+    padding-left: 1%;
+}
+
+div.system-app {
+    margin-top: 20px;
+    width: 120px;
+    height: 120px;
+    padding: 0 10px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: bottom;
+    background:rgba(244,244,244,1);
+    cursor: pointer;
+    border-radius:4px;
+
+}
+
+div.system-app img {
+    width: 58px;
+    height: 58px;
+    margin-top: 14px;
+    margin-bottom: 10px;
+}
+
+div.system-app span {
+    font-size: 16px;
+    font-weight: normal;
+    color: black;
+}
+
+div.system-app:hover
+{
+    border-radius: 4px;
+    background: rgba(61, 107, 229, 1);
+}
+
+div.hlist-div h1
+{
+    font-size:30px;
+}
+
+div.hlist-div h2
+{
+    font-size:20px;
+    padding-left: 1%;
+}
+
+div.hlist-div h3
+{
+    font-size:15px;
+    padding-left: 5%;
+}
+
+div.content-div
+{
+    width:80%;
+    float:right;
+    padding-left: 2%;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+div.content-div li
+{
+    list-style:inside;
+}
+
+div.content-div img
+{
+    margin:3px;
+    border:1px solid #bebebe;
+    height:100%;
+    width:100%;
+}
+
+/*
+[img~=svg]
+{
+    width:100px;
+    height: 100px;
+}
+
+*/
