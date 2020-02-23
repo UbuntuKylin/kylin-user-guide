@@ -1,8 +1,9 @@
 /*
- * Copyright (C) 2013 ~ 2020 National University of Defense Technology(NUDT) & Kylin Ltd.
+ * Copyright (C) 2019 National University of Defense Technology(NUDT) & Kylin Ltd.
  *
  * Authors:
- *  Xiaoyi Wu    xiaoyiwu@ubuntukylin.com
+ *  xiaoyi wu    wuxiaoyi@kylinos.cn
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; version 3.

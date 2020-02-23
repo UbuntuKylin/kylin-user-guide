@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 National University of Defense Technology(NUDT) & Kylin Ltd.
+ * Copyright (C) 2019 National University of Defense Technology(NUDT) & Kylin Ltd.
  *
  * Authors:
  *  xiaoyi wu    wuxiaoyi@kylinos.cn
@@ -58,3 +58,14 @@ void IpcDbus::creatDBusService()
     // "QDBusConnection::ExportAllSlots"表示把类Hotel的所有Slot都导出为这个Object的method
     bus.registerObject("/", this ,QDBusConnection::ExportAllSlots);
 }
+
+void IpcDbus::showGuide(QString appName)
+{
+    qDebug()<<"showGuide:"<<appName;
+}
+
+void IpcDbus::showGuide(int i)
+{
+    qDebug()<<"showGuide:"<<i;
+}
+

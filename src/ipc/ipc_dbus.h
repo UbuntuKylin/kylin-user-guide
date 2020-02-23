@@ -35,6 +35,8 @@ private:
     void creatDBusService();
 
 public slots:
+    void showGuide(QString appName);
+    void showGuide(int i);
 };
 
 #endif // __IPC_DBUS_H__

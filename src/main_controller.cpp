@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 National University of Defense Technology(NUDT) & Kylin Ltd.
+ * Copyright (C) 2019 National University of Defense Technology(NUDT) & Kylin Ltd.
  *
  * Authors:
  *  xiaoyi wu    wuxiaoyi@kylinos.cn
