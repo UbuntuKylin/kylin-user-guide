@@ -8,7 +8,6 @@ arch ?= $(shell arch)
 override_dh_clean:
 	dh_clean
 	sed "s#@SG_VER@#$$(head -1 debian/changelog | awk '{print $$2}' | sed 's#(##;s#)##')#" debian/version.in > debian/version
-override_dh_install:
 override_dh_compress:
 	dh_compress -Xlicense
 override_dh_makeshlibs:

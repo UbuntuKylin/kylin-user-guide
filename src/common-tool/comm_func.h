@@ -8,7 +8,7 @@
 #define KYLIN_USER_GUIDE_SERVICE "com.kylinUserGuide.hotel_"
 #define KYLIN_USER_GUIDE_INTERFACE "com.guide.hotel"
 
-#define LOCAL_FILE_PATH "/home/kylin/git-kylin-user-guide/kylin-user-guide/data/guide/"
-#define LOCAL_URL_PATH "file:////home/kylin/git-kylin-user-guide/kylin-user-guide/src/web/"
+#define LOCAL_FILE_PATH "/usr/share/kylin-user-guide/data/guide/"
+#define LOCAL_URL_PATH "file://///usr/share/kylin-user-guide/web/"
 
 extern QString lang;
