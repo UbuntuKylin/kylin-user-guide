@@ -86,5 +86,5 @@ set(pkgbindir 	/usr/bin/)
 set(pkgdatadir 	/usr/share/kylin-user-guide)
 
 ## Installation
-install(TARGETS kylin-user-guide DESTINATION ${CMAKE_INSTALL_PREFIX}/share/kylin-user-guide)
-install(TARGETS kylin-user-guide DESTINATION ${pkgbindir}/kylin-user-guide)
+#install(TARGETS kylin-user-guide DESTINATION ${CMAKE_INSTALL_PREFIX}/share/kylin-user-guide)
+install(TARGETS kylin-user-guide DESTINATION ${pkgbindir})
