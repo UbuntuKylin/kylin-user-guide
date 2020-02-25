@@ -1,2 +1,1 @@
-# kylin-user-guide
-kylin-user-guide
+ubuntukylin user guide
