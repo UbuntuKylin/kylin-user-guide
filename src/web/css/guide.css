@@ -1,9 +1,27 @@
 *,body,div{margin:0;padding:0}
 
+::-webkit-scrollbar
+{
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 2);
+    background: rgb(199, 208, 202);
+}
+
+::-webkit-scrollbar-track
+{
+    border-radius: 5px;
+    background:white;
+}
+
 div.hlist-div
 {
     float:left;/*目录框的位置*/
-    overflow-y:scroll;/*目录框添加滚动条*/
+    overflow-y:auto;/*目录框添加滚动条*/
     position: fixed;/*目录框相对浏览器进行定位*/
     width:17%;/*目录框的宽度*/
     height: 100%; /*目录框的高度*/
@@ -11,10 +29,18 @@ div.hlist-div
     left: 0;
     margin: 0%;
     padding-left: 1%;
+    background-color:rgb(231,231,231);
+    color: #333;
+}
+
+div.title h2
+{
+    font-family:verdana;
+    margin-top: 15px;
 }
 
 div.system-app {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 120px;
     height: 120px;
     padding: 0 10px;
@@ -63,13 +89,52 @@ div.hlist-div h3
     padding-left: 5%;
 }
 
+div.hlist-div a
+{
+    font-family: sans-serif;
+    /*color: black;
+    text-decoration: none;*/
+}
+
+div.hlist-div a:link
+{
+    display: block;
+    width: 100%;
+    background-color: rgb(231,231,231);
+    color: black;
+    text-decoration: none;
+}
+
+div.hlist-div h2>a:visited
+{
+    background-color: rgb(100, 153, 229);
+    color: white;
+}
+
+div.hlist-div a:hover
+{
+    background: rgb(61, 153, 229);
+    color: white;
+    text-decoration: underline;
+}
+
 div.content-div
 {
+    font-size: 16px;
+    color: #333;
     width:80%;
     float:right;
     padding-left: 2%;
     overflow-x:hidden;
     overflow-y:hidden;
+    line-height: 1.75;
+}
+
+div.content-div h1
+{
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 30px;
 }
 
 div.content-div li
@@ -81,8 +146,17 @@ div.content-div img
 {
     margin:3px;
     border:1px solid #bebebe;
-    height:100%;
-    width:100%;
+    /*height:85%;
+    width:85%;*/
+    border-radius: 8px;
+    text-indent: 0px;
+    object-fit: cover;
+}
+
+div.content-div p
+{
+    font-family: sans-serif;
+    text-indent: 40px;
 }
 
 /*

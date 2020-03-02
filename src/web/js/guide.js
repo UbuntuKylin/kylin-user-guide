@@ -62,9 +62,15 @@ function onclickButton(str)
             hlist_str +=  "<h3>\n" + "<a id=" + "list_"+hlist[i].id + " href=#" +hlist[i].id + ">" + hlist[i].text + "</a> \n</h3>" ;
      }
     console.log(hlist_str);
+    html_new = `<h1><a name="paga_top">`+info.title+`</a></h1>`
+                                +`<p  style="text-align: right;">更新时间：****年**月**日</p>`
+                                +`<HR style="margin-bottom: 20px;">`
+                                +html
+                                +`<HR style="margin-top: 20px">`
+                                +`<a style="text-align: right;margin-top: 20px;margin-bottom: 50px;"  href="#paga_top">返回顶部</a>`
 
     document.getElementById("hlist").innerHTML = hlist_str
-    document.getElementById("content").innerHTML = html
+    document.getElementById("content").innerHTML = html_new
 
 }
 
@@ -116,8 +122,28 @@ function getDocTop(mdFile, mdData) {
             let ext = path.pop();
             hrefX2 = `${path.join('.')}x2.${ext}`;
         }
-        return `<img src="${hrefX2}" data-src="${href}" alt="${text}" />`;
+        if (text == "")
+            return `<img src="${hrefX2}" data-src="${href}" alt="${text}" />`;
+        else{
+            if(text.lastIndexOf("-big") < 0 ){
+                return `<h5  style="text-align: center;"><img src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text}</h5>`;
+            }
+            else{
+                text1=text.slice(0,text.lastIndexOf("-big"))
+                return `<h5 style="text-align: center;"><img  style="height:95%;width:95%;" src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text1}</h5>`;
+            }
+        }
     };
+    renderer.table = (header,body) =>{
+        console.log(header,body)
+        if (body) body = '<tbody>' + body + '</tbody>';
+        return '<div align="center"><table border=black cellspacing="0">\n'
+        + '<thead>\n'
+        + header
+        + '</thead>\n'
+        + body
+        + '</table>\n</div>';
+    }
     html = marked(mdData, { renderer }).replace(/src="/g, `$&${path}`);
     return { html, hlist, info };
 }
