@@ -18,6 +18,19 @@
     background:white;
 }
 
+#mainUI
+{
+    margin-left: 22px;
+    margin-right: 22px;
+    margin-bottom: 50px;
+}
+
+#mainUI h2
+{
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
 div.hlist-div
 {
     float:left;/*目录框的位置*/
@@ -50,7 +63,7 @@ div.system-app {
     background:rgba(244,244,244,1);
     cursor: pointer;
     border-radius:4px;
-
+    margin-right: 10px;
 }
 
 div.system-app img {
@@ -70,6 +83,41 @@ div.system-app:hover
 {
     border-radius: 4px;
     background: rgba(61, 107, 229, 1);
+    color: white;
+}
+
+div.user-app {
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+    padding: 0 10px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: bottom;
+    background:rgba(244,244,244,1);
+    cursor: pointer;
+    border-radius:4px;
+    margin-right: 10px;
+}
+
+div.user-app img {
+    width: 58px;
+    height: 58px;
+    margin-top: 14px;
+    margin-bottom: 10px;
+}
+
+div.user-app span {
+    font-size: 16px;
+    font-weight: normal;
+    color: black;
+}
+
+div.user-app:hover
+{
+    border-radius: 4px;
+    background: rgba(61, 107, 229, 1);
+    color: white;
 }
 
 div.hlist-div h1
@@ -159,6 +207,10 @@ div.content-div p
     text-indent: 40px;
 }
 
+div.content-div h5
+{
+    text-align: center;
+}
 /*
 [img~=svg]
 {
