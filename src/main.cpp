@@ -70,8 +70,33 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
-    QApplication *app = new QApplication(argc, argv);
-    QStringList args = app->arguments();
+
+    QCoreApplication app(argc, argv);
+    QCoreApplication::setApplicationName(tr("ubuntukylin user guide"));
+    QCoreApplication::setApplicationVersion("0.0.0.0001");
+    QStringList args = app.arguments();
+
+    QCommandLineOption jumpAppOption(QStringList()<< "a" << "appName",tr("指定打开应用程序版本手册"));
+    QCommandLineOption asDaemonOption(QStringList()<< "D" << "daemon",tr("作为后台demon，显示图形"));
+    QCommandLineParser cmdinParser;
+
+    cmdinParser.setApplicationDescription(tr("ubuntukylin user guide"));
+    cmdinParser.addHelpOption();
+    cmdinParser.addOption(jumpAppOption);
+    cmdinParser.addOption(asDaemonOption);
+
+    cmdinParser.addPositionalArgument("--help-all","显示全部帮助选项");
+    cmdinParser.addPositionalArgument("--version","显示安装的程序的版本并退出");
+    cmdinParser.addPositionalArgument("--display","要使用的X显示");
+
+//    cmdinParser.addOption(display);
+
+    cmdinParser.process(app);
+    QString jumpApp = cmdinParser.value(asDaemonOption);
+    bool isDaemon = cmdinParser.isSet(asDaemonOption);
+
+    qDebug() << "jumpApp=" << jumpApp <<"       isDaemon="<<isDaemon;
+
     if(signal(SIGCHLD,SIG_IGN)==SIG_ERR)//忽略子进程已经停止或退出
     {
         //注册SIGSEGV信号失败
@@ -124,7 +149,7 @@ int main(int argc, char *argv[])
     globalfont.setPixelSize(14);
 //    globalfont.setFamily("Droid Sans Fallback");
     qDebug()<<"----------------------"<<QFont().family();
-    app->setFont(globalfont);
+    app.setFont(globalfont);
 
     QLocale locale;
     if(locale.language()==QLocale::Chinese)
@@ -135,8 +160,8 @@ int main(int argc, char *argv[])
     {
         lang = "en_US";
     }
-    app->setApplicationName(APPLICATION_NAME);
-    app->setQuitOnLastWindowClosed(true);
+    app.setApplicationName(APPLICATION_NAME);
+    app.setQuitOnLastWindowClosed(true);
 
 #ifdef CONFIGTOOL_USE_QSS
     //加载qss样式表
@@ -148,10 +173,9 @@ int main(int argc, char *argv[])
 
     MainController *ctrl = MainController::self();
 
-    app->exec();
+    app.exec();
 
     delete ctrl;
-    delete app;
     return 0;
 
 }
