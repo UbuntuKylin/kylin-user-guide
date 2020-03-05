@@ -71,25 +71,23 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
 
-    QCoreApplication app(argc, argv);
-    QCoreApplication::setApplicationName(tr("ubuntukylin user guide"));
+    QApplication app(argc, argv);
+    QCoreApplication::setApplicationName("ubuntukylin user guide");
     QCoreApplication::setApplicationVersion("0.0.0.0001");
     QStringList args = app.arguments();
 
-    QCommandLineOption jumpAppOption(QStringList()<< "a" << "appName",tr("指定打开应用程序版本手册"));
-    QCommandLineOption asDaemonOption(QStringList()<< "D" << "daemon",tr("作为后台demon，显示图形"));
+    QCommandLineOption jumpAppOption(QStringList()<< "a" << "appName","指定打开应用程序版本手册");
+    QCommandLineOption asDaemonOption(QStringList()<< "D" << "daemon","作为后台demon，显示图形");
     QCommandLineParser cmdinParser;
 
-    cmdinParser.setApplicationDescription(tr("ubuntukylin user guide"));
+    cmdinParser.setApplicationDescription("ubuntukylin user guide");
     cmdinParser.addHelpOption();
     cmdinParser.addOption(jumpAppOption);
     cmdinParser.addOption(asDaemonOption);
 
-    cmdinParser.addPositionalArgument("--help-all","显示全部帮助选项");
+    cmdinParser.addPositionalArgument("--help","显示全部帮助选项");
     cmdinParser.addPositionalArgument("--version","显示安装的程序的版本并退出");
     cmdinParser.addPositionalArgument("--display","要使用的X显示");
-
-//    cmdinParser.addOption(display);
 
     cmdinParser.process(app);
     QString jumpApp = cmdinParser.value(asDaemonOption);
@@ -128,29 +126,6 @@ int main(int argc, char *argv[])
         perror("signal error");
     }
 
-    QFont globalfont = QFont();
-    /*
-     globalfont.setFamily("")
-     文泉驿微米黑
-     文泉驿等宽微米黑
-     方正书宋_GBK
-     方正仿宋_GBK
-     方正姚体_GBK
-     方正宋体S-超大字符集
-     方正宋体S-超大字符集(SIP)
-     方正小标宋_GBK
-     方正楷体_GBK
-     方正细黑一_GBK
-     方正行楷_GBK
-     方正超粗黑_GBK
-     方正隶书_GBK
-     方正魏碑_GBK
-     方正黑体_GBK*/
-    globalfont.setPixelSize(14);
-//    globalfont.setFamily("Droid Sans Fallback");
-    qDebug()<<"----------------------"<<QFont().family();
-    app.setFont(globalfont);
-
     QLocale locale;
     if(locale.language()==QLocale::Chinese)
     {
@@ -163,7 +138,7 @@ int main(int argc, char *argv[])
     app.setApplicationName(APPLICATION_NAME);
     app.setQuitOnLastWindowClosed(true);
 
-#ifdef CONFIGTOOL_USE_QSS
+#ifdef APP_USE_QSS
     //加载qss样式表
     QFile qss(":kylin-user-guide.qss");
     qss.open(QFile::ReadOnly);
@@ -172,7 +147,8 @@ int main(int argc, char *argv[])
 #endif
 
     MainController *ctrl = MainController::self();
-
+    if(!isDaemon)
+        ctrl->showGuide("");
     app.exec();
 
     delete ctrl;

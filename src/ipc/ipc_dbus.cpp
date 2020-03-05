@@ -62,6 +62,7 @@ void IpcDbus::creatDBusService()
 void IpcDbus::showGuide(QString appName)
 {
     qDebug()<<"showGuide:"<<appName;
+    MainController::self()->showGuide(appName);
 }
 
 void IpcDbus::showGuide(int i)

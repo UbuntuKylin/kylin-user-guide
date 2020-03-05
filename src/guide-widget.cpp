@@ -98,6 +98,13 @@ void GuideWidget::initUI()
     this->setLayout(main_layout);
 }
 
+void GuideWidget::jump_app(QString appName)
+{
+    qDebug() << Q_FUNC_INFO << appName;
+    QString cmd = QString("qt_jumpApp(\"%1\");").arg(appName);
+    m_pWebView->page()->mainFrame()->evaluateJavaScript(cmd);
+}
+
 void GuideWidget::slot_javaScriptFromWinObject()
 {
     qDebug() << Q_FUNC_INFO;

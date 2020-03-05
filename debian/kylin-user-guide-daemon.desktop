@@ -1,15 +1,15 @@
 [Desktop Entry]
 Name=KYLIN USER GUIDE
-Name[zh_CN]=用户手册
+Name[zh_CN]=kylin-user-guide.desktop
 GenericName=kylin user guide
 GenericName[zh_CN]=用户手册
 Comment=kylin user guide
 Comment[zh_CN]=银河麒麟用户手册
 Keywords=guide;
-Exec=/usr/bin/kylin-user-guide
+Exec=/usr/bin/kylin-user-guide -D
 Icon=kylin-user-guide
 Terminal=false
 Type=Application
-NoDisplay=false
+NoDisplay=true
 Categories=System;Utility;
 StartupNotify=false

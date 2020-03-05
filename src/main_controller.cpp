@@ -44,8 +44,13 @@ MainController::MainController()
 {
     ipcDbus = new IpcDbus;
     ipcDbus->init();
-
     guideWidget = new GuideWidget;
+}
+
+void MainController::showGuide(QString appName)
+{
+    if(appName!="")
+        guideWidget->jump_app(appName);
     guideWidget->activateWindow();
     guideWidget->show();
 }

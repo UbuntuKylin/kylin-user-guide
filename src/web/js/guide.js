@@ -32,6 +32,11 @@ require(['marked'], function (markedSetCustom){
 //  xhr.send();
 //};
 
+function qt_jumpApp(appName)
+{
+    onclickButton(appName)
+}
+
 function onclickButton(str)
 {
 //    alert(str)

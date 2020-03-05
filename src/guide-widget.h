@@ -57,6 +57,7 @@ public:
     void initUI();
     void initSettings();
     void showPosition();
+    void jump_app(QString);
 protected:
     void closeEvent(QCloseEvent *);
     void mousePressEvent(QMouseEvent * );
@@ -68,6 +69,7 @@ protected:
     bool mCanDrag = false;
 private:
     QWebView *m_pWebView;
+    QString mJumpAppName;
 private slots:
     void slot_backOffButton();
     void slot_javaScriptFromWinObject();
