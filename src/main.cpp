@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
         lang = "en_US";
     }
     app.setApplicationName(APPLICATION_NAME);
-    app.setQuitOnLastWindowClosed(true);
+//    app.setQuitOnLastWindowClosed(true);
 
 #ifdef APP_USE_QSS
     //加载qss样式表

@@ -52,7 +52,7 @@ void IpcDbus::creatDBusService()
     snprintf(service_name, SERVICE_NAME_SIZE, "%s_%d",KYLIN_USER_GUIDE_SERVICE,getuid());
 
     if (!bus.registerService(service_name)) {  //注意命名规则-和_
-//            qDebug() << bus.lastError().message();
+            qDebug() << bus.lastError().message();
             exit(1);
     }
     // "QDBusConnection::ExportAllSlots"表示把类Hotel的所有Slot都导出为这个Object的method
