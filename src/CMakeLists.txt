@@ -66,7 +66,9 @@ include_directories(${HRADERS_QT} ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SO
 
 file(GLOB CC_FILES *.cpp common-tool/*.cpp ipc/*.cpp)
 
-add_executable(kylin-user-guide ${CC_FILES})
+QT5_ADD_RESOURCES(kylin-user-guide_QRC kylin-user-guide.qrc)
+
+add_executable(kylin-user-guide ${CC_FILES} ${kylin-user-guide_QRC})
 
 SET(LIBS_PRIVATE "-lrt -ldl -lpthread")
 SET(QT_LIBS

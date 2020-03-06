@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/kylin-user-guide_16_24.png</file>
+        <file>image/kylin-user-guide_44_56.png</file>
+    </qresource>
+</RCC>
