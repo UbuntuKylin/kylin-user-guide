@@ -22,6 +22,7 @@
 #include <QSplitter>
 #include <QPushButton>
 #include <QLabel>
+#include <QLineEdit>
 #include <QProgressBar>
 #include <QPen>
 #include <QHBoxLayout>
@@ -47,7 +48,7 @@
 #include <QtWebKitWidgets/QWebView>
 #include <QtWebKitWidgets/QWebFrame>
 #include <QtWebKit/QWebSettings>
-#include <QtWebChannel>
+#include <QtWebChannel/QtWebChannel>
 class GuideWidget : public QWidget
 {
     Q_OBJECT
@@ -70,10 +71,14 @@ protected:
 private:
     QWebView *m_pWebView;
     QString mJumpAppName;
+    QWidget *m_yWidget;
 private slots:
     void slot_backOffButton();
     void slot_javaScriptFromWinObject();
     void slot_loadFinished(bool);
+    void slot_onClicked_minOffButton();
+    void slot_onClicked_maxOffButton();
+    void slot_onClicked_closeOffButton();
 public slots:
     Q_INVOKABLE QString js_getIndexMdFilePath(QString);
     Q_INVOKABLE QString js_getIndexMdFileContent(QString);
