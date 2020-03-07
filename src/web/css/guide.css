@@ -41,9 +41,10 @@ div.hlist-div
     top: 0;
     left: 0;
     margin: 0%;
-    padding-left: 1%;
+    /*padding-left: 1%;*/
     background-color:rgb(231,231,231);
     color: #333;
+    margin-right: 16px;
 }
 
 div.title h2
@@ -82,41 +83,7 @@ div.system-app span {
 div.system-app:hover
 {
     border-radius: 4px;
-    background: rgba(61, 107, 229, 1);
-    color: white;
-}
-
-div.user-app {
-    margin-top: 10px;
-    width: 120px;
-    height: 120px;
-    padding: 0 10px;
-    display: inline-block;
-    text-align: center;
-    vertical-align: bottom;
-    background:rgba(244,244,244,1);
-    cursor: pointer;
-    border-radius:4px;
-    margin-right: 10px;
-}
-
-div.user-app img {
-    width: 58px;
-    height: 58px;
-    margin-top: 14px;
-    margin-bottom: 10px;
-}
-
-div.user-app span {
-    font-size: 16px;
-    font-weight: normal;
-    color: black;
-}
-
-div.user-app:hover
-{
-    border-radius: 4px;
-    background: rgba(61, 107, 229, 1);
+    background: #3D6BE5;
     color: white;
 }
 
@@ -128,13 +95,19 @@ div.hlist-div h1
 div.hlist-div h2
 {
     font-size:20px;
-    padding-left: 1%;
+    margin-left: 2px;
+    margin-right: 4px;
+    margin-top: 2px;
+    text-indent: 5px;
 }
 
 div.hlist-div h3
 {
     font-size:15px;
-    padding-left: 5%;
+    margin-left: 2px;
+    margin-right: 4px;
+    margin-top: 2px;
+    text-indent: 10px;
 }
 
 div.hlist-div a
@@ -148,9 +121,11 @@ div.hlist-div a:link
 {
     display: block;
     width: 100%;
+    height: 100%;
     background-color: rgb(231,231,231);
     color: black;
     text-decoration: none;
+    border-radius: 4px;
 }
 
 div.hlist-div h2>a:visited
@@ -163,19 +138,20 @@ div.hlist-div a:hover
 {
     background: rgb(61, 153, 229);
     color: white;
-    text-decoration: underline;
 }
 
 div.content-div
 {
     font-size: 16px;
     color: #333;
-    width:80%;
+    width:83%;
+    height: 100%;
     float:right;
-    padding-left: 2%;
+    /*padding-left: 2%;*/
     overflow-x:hidden;
     overflow-y:hidden;
     line-height: 1.75;
+    margin-left: 16px;
 }
 
 div.content-div h1
