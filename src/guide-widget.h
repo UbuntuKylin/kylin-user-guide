@@ -48,7 +48,7 @@
 #include <QtWebKitWidgets/QWebView>
 #include <QtWebKitWidgets/QWebFrame>
 #include <QtWebKit/QWebSettings>
-#include <QtWebChannel/QtWebChannel>
+//#include <QtWebChannel/QtWebChannel>
 class GuideWidget : public QWidget
 {
     Q_OBJECT

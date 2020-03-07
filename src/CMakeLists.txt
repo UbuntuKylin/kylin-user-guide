@@ -29,7 +29,7 @@ find_package(Qt5LinguistTools)
 find_package(Qt5Sql REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5LinguistTools REQUIRED)
-find_package(Qt5WebChannel REQUIRED)
+#find_package(Qt5WebChannel REQUIRED)
 find_package(Qt5WebKitWidgets REQUIRED)
 #find_package(Qt5WebEngineWidgets REQUIRED)
 #pkg_search_module(QCef REQUIRED libqcef)
@@ -76,7 +76,7 @@ SET(QT_LIBS
     Qt5::DBus
     Qt5::Sql
     Qt5::Widgets
-    Qt5::WebChannel
+#    Qt5::WebChannel
     Qt5::WebKitWidgets
     )
 #    Qt5::WebEngineWidgets

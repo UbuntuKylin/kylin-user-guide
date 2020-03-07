@@ -18,6 +18,8 @@
  */
 
 #include <QApplication>
+#include <QCommandLineOption>
+#include <QCommandLineParser>
 #include <QDebug>
 #include <QFont>
 #include <signal.h>

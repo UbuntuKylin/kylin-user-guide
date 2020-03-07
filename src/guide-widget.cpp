@@ -152,7 +152,7 @@ void GuideWidget::initUI()
 //    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
     m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
     m_pWebView->settings()->setObjectCacheCapacities(0,0,0);
-    m_pWebView->settings()->setAttribute(QWebSettings::WebSecurityEnabled, false);//关闭浏览器安全
+//    m_pWebView->settings()->setAttribute(QWebSettings::WebSecurityEnabled, false);//关闭浏览器安全
     m_pWebView->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);//开发模式
     m_pWebView->settings()->setAttribute(QWebSettings::JavascriptEnabled,true);
     m_pWebView->settings()->setAttribute(QWebSettings::JavaEnabled,true);
