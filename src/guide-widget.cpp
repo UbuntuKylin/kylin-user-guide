@@ -45,7 +45,7 @@
 GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 {
     this->isTopLevel();
-    this->resize(822,640);
+    this->resize(820,640);
     this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
     this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
