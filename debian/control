@@ -5,11 +5,12 @@ Maintainer: Ubuntu Kylin Team <ubuntukylin-members@lists.launchpad.net>
 Uploaders: xiaoyiwu <xiaoyiwu@ubuntukylin.com>
 Build-Depends: cmake,
                libqt5gui5,
-               debhelper-compat (= 12),
+#               debhelper-compat (= 12),
+               debhelper,
                qttools5-dev-tools,
                qttools5-dev,
-               libqt5webchannel5-dev,
-               qtwebengine5-dev,
+#               libqt5webchannel5-dev,
+#               qtwebengine5-dev,
                libqt5webkit5-dev
 Standards-Version: 4.4.0
 Homepage: https://github.com/ukui/kylin-user-guide

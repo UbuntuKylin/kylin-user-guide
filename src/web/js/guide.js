@@ -67,12 +67,12 @@ function onclickButton(str)
             hlist_str +=  "<h3>\n" + "<a id=" + "list_"+hlist[i].id + " href=#" +hlist[i].id + ">" + hlist[i].text + "</a> \n</h3>" ;
      }
     console.log(hlist_str);
-    html_new = `<h1><a name="paga_top">`+info.title+`</a></h1>`
-                                +`<p  style="text-align: right;">更新时间：****年**月**日</p>`
-                                +`<HR style="margin-bottom: 20px;">`
+    html_new = "<h1><a name='paga_top'>"+info.title+"</a></h1>"
+                                +"<p  style='text-align: right;'>更新时间：****年**月**日</p>"
+                                +"<HR style='margin-bottom: 20px;'>"
                                 +html
-                                +`<HR style="margin-top: 20px">`
-                                +`<a style="text-align: right;margin-top: 20px;margin-bottom: 50px;"  href="#paga_top">返回顶部</a>`
+                                +"<HR style='margin-top: 20px'>"
+                                +"<a style='text-align: right;margin-top: 20px;margin-bottom: 50px;'  href='#paga_top'>返回顶部</a>"
 
     document.getElementById("hlist").innerHTML = hlist_str
     document.getElementById("content").innerHTML = html_new
@@ -89,22 +89,22 @@ function goBackMainUI()
 }
 
 function getDocTop(mdFile, mdData) {
-    let hlist = [];
-    let info = {};
-    let html = '';
+    var hlist = [];
+    var info = {};
+    var html = '';
 
-    let path = mdFile.slice(0, mdFile.lastIndexOf('/') + 1);
-    let count = 0;
-    let renderer = new marked.Renderer();
+    var path = mdFile.slice(0, mdFile.lastIndexOf('/') + 1);
+    var count = 0;
+    var renderer = new marked.Renderer();
     renderer.heading = (text, level) => {
-        let id = 'h' + count;
+        var id = 'h' + count;
         count++;
         if (level == 1) {
-            let [title, logo] = text.split('|');
+            var [title, logo] = text.split('|');
             logo = path + logo;
             console.log(logo);
             info = { title, logo };
-            return '';
+            return "";
         }
         if (level == 2) {
             text = text.split('|')[0];
@@ -117,25 +117,25 @@ function getDocTop(mdFile, mdData) {
             console.log(text);
             console.log(type);
         }
-            return `<${type} id="${id}" text="${text}">${text}</${type}>\n`;
+            return "<${type} id='${id}' text='${text}'>${text}</${type}>\n";
     };
     console.log(path);
     renderer.image = (href, title, text) => {
-        let hrefX2 = href;
+        var hrefX2 = href;
         if (devicePixelRatio >= 1.5 && href.indexOf('.svg') == -1) {
-            let path = href.split('.');
-            let ext = path.pop();
-            hrefX2 = `${path.join('.')}x2.${ext}`;
+            var path = href.split('.');
+            var ext = path.pop();
+            hrefX2 = "${path.join('.')}x2.${ext}";
         }
         if (text == "")
-            return `<img src="${hrefX2}" data-src="${href}" alt="${text}" />`;
+            return "<img src='${hrefX2}' data-src='${href}' alt='${text}' />";
         else{
             if(text.lastIndexOf("-big") < 0 ){
-                return `<h5  style="text-align: center;"><img src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text}</h5>`;
+                return "<h5  style='text-align: center;'><img src='${hrefX2}' data-src='${href}' alt='${text}' /><br>${text}</h5>";
             }
             else{
                 text1=text.slice(0,text.lastIndexOf("-big"))
-                return `<h5 style="text-align: center;"><img  style="height:95%;width:95%;" src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text1}</h5>`;
+                return "<h5 style='text-align: center;'><img  style='height:95%;width:95%;' src='${hrefX2}' data-src='${href}' alt='${text}' /><br>${text1}</h5>";
             }
         }
     };
