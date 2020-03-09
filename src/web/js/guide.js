@@ -68,8 +68,8 @@ function onclickButton(str)
      }
     console.log(hlist_str);
     html_new = `<h1><a name="paga_top">`+info.title+`</a></h1>`
-                                +`<p  style="text-align: right;">更新时间：****年**月**日</p>`
-                                +`<HR style="margin-bottom: 20px;">`
+                                +`<p  style="text-align: left;font-size: 10px;text-indent: 0px;">更新时间：****年**月**日</p>`
+                                +`<HR style="margin-bottom: 34px;margin-top: 10px">`
                                 +html
                                 +`<HR style="margin-top: 20px">`
                                 +`<a style="text-align: right;margin-top: 20px;margin-bottom: 50px;"  href="#paga_top">返回顶部</a>`
@@ -96,7 +96,7 @@ function getDocTop(mdFile, mdData) {
     let path = mdFile.slice(0, mdFile.lastIndexOf('/') + 1);
     let count = 0;
     let renderer = new marked.Renderer();
-    renderer.heading = (text, level) => {
+    renderer.heading = function (text, level){
         let id = 'h' + count;
         count++;
         if (level == 1) {
@@ -120,7 +120,7 @@ function getDocTop(mdFile, mdData) {
             return `<${type} id="${id}" text="${text}">${text}</${type}>\n`;
     };
     console.log(path);
-    renderer.image = (href, title, text) => {
+    renderer.image = function(href, title, text){
         let hrefX2 = href;
         if (devicePixelRatio >= 1.5 && href.indexOf('.svg') == -1) {
             let path = href.split('.');
@@ -135,11 +135,21 @@ function getDocTop(mdFile, mdData) {
             }
             else{
                 text1=text.slice(0,text.lastIndexOf("-big"))
-                return `<h5 style="text-align: center;"><img  style="height:95%;width:95%;" src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text1}</h5>`;
+                return `<h5 style="text-align: center;"><img  style="height:98%;width:98%;" src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text1}</h5>`;
             }
         }
     };
-    renderer.table = (header,body) =>{
+    /*renderer.table = (header,body) =>{
+        console.log(header,body)
+        if (body) body = '<tbody>' + body + '</tbody>';
+        return '<div align="center"><table border=black cellspacing="0">\n'
+        + '<thead>\n'
+        + header
+        + '</thead>\n'
+        + body
+        + '</table>\n</div>';
+    }*/
+    renderer.table = function(header,body){
         console.log(header,body)
         if (body) body = '<tbody>' + body + '</tbody>';
         return '<div align="center"><table border=black cellspacing="0">\n'
