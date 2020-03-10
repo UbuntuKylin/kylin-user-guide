@@ -122,7 +122,7 @@ function getDocTop(mdFile, mdData) {
             console.log(text);
             console.log(type);
         }
-            return "<"+ type + " id="+   id + " text=" +text + ">" + text + "</ "+ type + ">\n";
+            return "<"+ type + " id="+   id + " text=" +text + ">" + text + "</"+ type + ">\n";
     };
 
     renderer.image = function(href, title, text){
