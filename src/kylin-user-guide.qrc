@@ -2,10 +2,12 @@
     <qresource prefix="/">
         <file>image/kylin-user-guide_16_24.png</file>
         <file>image/kylin-user-guide_44_56.png</file>
-        <file>image/20190531return.png</file>
         <file>image/icon-search.png</file>
-        <file>image/fdoi-fullscreen.png</file>
-        <file>image/fdoi-fullscreen-exit.png</file>
-        <file>image/fdoi-close.png</file>
+        <file>image/close.png</file>
+        <file>image/fullscreen.png</file>
+        <file>image/minimize.png</file>
+        <file>image/open-menu-symbolic.png</file>
+        <file>image/restore.png</file>
+        <file>image/return.png</file>
     </qresource>
 </RCC>

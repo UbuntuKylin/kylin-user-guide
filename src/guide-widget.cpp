@@ -100,29 +100,32 @@ void GuideWidget::initUI()
 
     m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
 
-    QIcon icon;//新建QIcon对象
-    icon.addFile(tr(":/image/20190531return.png")); //让QIcon对象指向想要的图标
-    backOffButton->setIcon(icon); //给按钮添加图标
+    QIcon iconReturn(":/image/return.png"); //让QIcon对象指向想要的图标
+    backOffButton->setIcon(iconReturn); //给按钮添加图标
     backOffButton->setIconSize(QSize(30,25));//重置图标大小
     backOffButton->setFlat(true);
+    backOffButton->setFocusPolicy(Qt::NoFocus);
     //backOffButton->setVisible(false);
     backOffButton->hide();
     qDebug() << backOffButton->objectName()<< "=========="<<backOffButton->parent()->objectName();
 
-    icon.addFile(tr(":/image/fdoi-fullscreen-exit.png"));
-    minOffButton->setIcon(icon);
+    QIcon iconMin(tr(":/image/minimize.png"));
+    minOffButton->setIcon(iconMin);
     minOffButton->setIconSize(QSize(30,25));
     minOffButton->setFlat(true);
+    minOffButton->setFocusPolicy(Qt::NoFocus);
 
-    icon.addFile(tr(":/image/fdoi-fullscreen.png"));
-    maxOffButton->setIcon(icon);
+    QIcon iconMax(tr(":/image/fullscreen.png"));
+    maxOffButton->setIcon(iconMax);
     maxOffButton->setIconSize(QSize(30,25));
     maxOffButton->setFlat(true);
+    maxOffButton->setFocusPolicy(Qt::NoFocus);
 
-    icon.addFile(tr(":/image/fdoi-close.png"));
-    closeOffButton->setIcon(icon);
+    QIcon iconClose(tr(":/image/close.png"));
+    closeOffButton->setIcon(iconClose);
     closeOffButton->setIconSize(QSize(30,25));
     closeOffButton->setFlat(true);
+    closeOffButton->setFocusPolicy(Qt::NoFocus);
     closeOffButton->setStyleSheet("QPushButton:pressed{background-color:rgb(234,234,234)}");
 
 
@@ -239,7 +242,11 @@ void GuideWidget::slot_onClicked_maxOffButton()
     QWidget *m_pWindow = this->window();
     if(m_pWindow->isTopLevel())
     {
+        QPushButton *button = this->m_yWidget->findChild<QPushButton *>("maxOffButton");
+        QIcon iconFull(":/image/fullscreen.png");
+        QIcon iconRestore(":/image/restore.png");
         m_pWindow->isMaximized() ? m_pWindow->showNormal() : m_pWindow->showMaximized();
+        m_pWindow->isMaximized() ? button->setIcon(iconFull) :button->setIcon(iconRestore);
     }
 }
 
