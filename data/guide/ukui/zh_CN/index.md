@@ -114,7 +114,7 @@
 ![图 9 搜索应用](image/9-2.png)
 
 
-> **软件商店对应的包名为kylin-software-center。**
+软件商店对应的包名为kylin-software-center。
 
 ### 4.2  高级设置
 
