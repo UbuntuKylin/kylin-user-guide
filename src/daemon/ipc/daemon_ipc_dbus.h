@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 National University of Defense Technology(NUDT) & Kylin Ltd.
+ * Copyright (C) 2018 National University of Defense Technology(NUDT) & Kylin Ltd.
  *
  * Authors:
  *  xiaoyi wu    wuxiaoyi@kylinos.cn
@@ -16,31 +16,30 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#pragma once
+
+#ifndef __DAEMON_IPC_DBUS_H__
+#define __DAEMON_IPC_DBUS_H__
 
 #include <QObject>
-#include <QTimer>
-#include <QSettings>
-#include "guide-widget.h"
-#include "ipc/ipc_dbus.h"
+#include "common-tool/comm_func.h"
 
-class MainController : public QObject
+class DaemonIpcDbus : public QObject
 {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", KYLIN_USER_GUIDE_INTERFACE)
 public:
-    static MainController* self();
-    void startShowApp(QString);
-    virtual ~MainController();
+    DaemonIpcDbus();
+    void init();
+    virtual ~DaemonIpcDbus();
 private:
-    explicit MainController();
-private:
-    static MainController *mSelf;
-    GuideWidget *guideWidget;
-    IpcDbus *ipcDbus;
-public:
-    QString mStartShowApp = "";
+    void creatDBusService();
+    int daemonIsNotRunning();
+    int guiIsNotRunning();
+    void startGUI(QString );
+
 public slots:
     void showGuide(QString appName);
-    void showGuide();
+    void showGuide(int i);
 };
 
+#endif

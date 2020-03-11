@@ -23,37 +23,37 @@
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusReply>
 #include <QtDBus/QDBusConnectionInterface>
+#include <QProcess>
 #include <unistd.h>
-#include "ipc_dbus.h"
+#include "daemon_ipc_dbus.h"
 #include "main_controller.h"
 
-IpcDbus::IpcDbus()
+DaemonIpcDbus::DaemonIpcDbus()
 {
 
 }
 
-void IpcDbus::init()
+void DaemonIpcDbus::init()
 {
-    if(IsNotRunning())
+    if(daemonIsNotRunning())
     {
         creatDBusService();
         qDebug()<<"--------------creatDBusService";
     }
     else
     {
-        notifyGuideWidgetActive();
+        qDebug()<<"Daemon is Running";
         exit(0);
-        qDebug()<<"--------------notifySettingsWidgetActive";
     }
 
 }
 
-IpcDbus::~IpcDbus()
+DaemonIpcDbus::~DaemonIpcDbus()
 {
 
 }
 
-void IpcDbus::creatDBusService()
+void DaemonIpcDbus::creatDBusService()
 {
     // 用于建立到session bus的连接
     QDBusConnection bus = QDBusConnection::sessionBus();
@@ -61,7 +61,7 @@ void IpcDbus::creatDBusService()
 
     char service_name[SERVICE_NAME_SIZE];
     memset(service_name, 0, SERVICE_NAME_SIZE);
-    snprintf(service_name, SERVICE_NAME_SIZE, "%s_%d",KYLIN_USER_GUIDE_GUI_SERVICE,getuid());
+    snprintf(service_name, SERVICE_NAME_SIZE, "%s_%d",KYLIN_USER_GUIDE_SERVICE,getuid());
 
     if (!bus.registerService(service_name)) {  //注意命名规则-和_
             qDebug() << bus.lastError().message();
@@ -71,7 +71,20 @@ void IpcDbus::creatDBusService()
     bus.registerObject("/", this ,QDBusConnection::ExportAllSlots);
 }
 
-int IpcDbus::IsNotRunning()
+int DaemonIpcDbus::daemonIsNotRunning()
+{
+    char service_name[SERVICE_NAME_SIZE];
+    memset(service_name, 0, SERVICE_NAME_SIZE);
+    snprintf(service_name, SERVICE_NAME_SIZE, "%s_%d",KYLIN_USER_GUIDE_SERVICE,getuid());
+    QDBusConnection conn = QDBusConnection::sessionBus();
+    if (!conn.isConnected())
+        return 0;
+
+    QDBusReply<QString> reply = conn.interface()->call("GetNameOwner", service_name);
+    return reply.value() == "";
+}
+
+int DaemonIpcDbus::guiIsNotRunning()
 {
     char service_name[SERVICE_NAME_SIZE];
     memset(service_name, 0, SERVICE_NAME_SIZE);
@@ -84,36 +97,49 @@ int IpcDbus::IsNotRunning()
     return reply.value() == "";
 }
 
-void IpcDbus::notifyGuideWidgetActive()
+void DaemonIpcDbus::startGUI(QString appName)
 {
+    QString cmd = "/usr/bin/kylin-user-guide";
+    QStringList list;
+    list<<"-a"<<appName;
+    QProcess::startDetached(cmd,list);
+}
+
+void DaemonIpcDbus::showGuide(QString appName)
+{
+    qDebug() << Q_FUNC_INFO << appName;
+    bool bRet  = false;
+    if(guiIsNotRunning())
+    {
+        startGUI(appName);
+        return;
+    }
     char service_name[SERVICE_NAME_SIZE];
     memset(service_name, 0, SERVICE_NAME_SIZE);
     snprintf(service_name, SERVICE_NAME_SIZE, "%s_%d",KYLIN_USER_GUIDE_GUI_SERVICE,getuid());
+    // 用来构造一个在D-Bus上传递的Message
+    QDBusMessage m = QDBusMessage::createMethodCall(QString(service_name),KYLIN_USER_GUIDE_GUI_PATH,KYLIN_USER_GUIDE_GUI_INTERFACE,"ShowGuideGUI");
+    // 给QDBusMessage增加一个参数;
+    // 这是一种比较友好的写法，也可以用setArguments来实现
+    m << appName;
 
-    QDBusInterface iface(service_name, KYLIN_USER_GUIDE_GUI_PATH, KYLIN_USER_GUIDE_GUI_INTERFACE, QDBusConnection::sessionBus());
-    if(!iface.isValid()){
-        qDebug() << qPrintable(QDBusConnection::sessionBus().lastError().message());
+    // 发送Message
+    QDBusMessage response = QDBusConnection::sessionBus().call(m);
+    // 判断Method是否被正确返回
+    if (response.type()== QDBusMessage::ReplyMessage)
+    {
+        // QDBusMessage的arguments不仅可以用来存储发送的参数，也用来存储返回值;
+        bRet = response.arguments().at(0).toBool();
     }
-    iface.call("ActiveGuideWidget");
+    else {
+        qDebug()<<"showGuide In fail!\n";
+    }
+
+    qDebug()<<"bRet:"<<bRet;
 }
 
-bool IpcDbus::ActiveGuideWidget()
-{
-    qDebug() << Q_FUNC_INFO;
-    MainController::self()->showGuide();
-    return true;
-}
-
-bool IpcDbus::ShowGuideGUI(QString appName)
-{
-    qDebug() << Q_FUNC_INFO << appName;
-    MainController::self()->showGuide(appName);
-    return true;
-}
-
-bool IpcDbus::ShowGuideGUI(int i)
+void DaemonIpcDbus::showGuide(int i)
 {
     qDebug()<<"showGuide:"<<i;
-    return false;
 }
 

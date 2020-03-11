@@ -87,6 +87,7 @@ set(pkgLibdir 	/usr/lib/${DEB_BUILD_GNU_CPU})
 set(pkgbindir 	/usr/bin/)
 set(pkgdatadir 	/usr/share/kylin-user-guide)
 
+add_subdirectory(daemon)
 ## Installation
 #install(TARGETS kylin-user-guide DESTINATION ${CMAKE_INSTALL_PREFIX}/share/kylin-user-guide)
 install(TARGETS kylin-user-guide DESTINATION ${pkgbindir})

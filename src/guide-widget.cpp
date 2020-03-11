@@ -196,7 +196,7 @@ void GuideWidget::initUI()
     main_layout->setMargin(1);
 
     this->setLayout(widget_layout);
-    this->setLayout(main_layout);	    this->setLayout(main_layout);
+    this->setLayout(main_layout);
     qDebug() << this->frameGeometry().width() << this->frameGeometry().height();
 }
 
@@ -225,7 +225,7 @@ void GuideWidget::slot_backOffButton()
 
 void GuideWidget::slot_loadFinished(bool f)
 {
-    qDebug() << Q_FUNC_INFO << f;
+    qDebug() << Q_FUNC_INFO << f ;
 }
 
 void GuideWidget::slot_onClicked_minOffButton()

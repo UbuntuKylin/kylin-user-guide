@@ -16,31 +16,36 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#pragma once
+#include <QDebug>
+#include <QApplication>
+#include <QtDBus/QDBusConnection>
+#include <QtDBus/QDBusAbstractAdaptor>
+#include <QtDBus/QDBusInterface>
+#include <QtDBus/QDBusReply>
+#include <QtDBus/QDBusConnectionInterface>
+#include <QFile>
+#include <QtCore>
+#include "daemon_main_controller.h"
+#include "ipc/daemon_ipc_dbus.h"
 
-#include <QObject>
-#include <QTimer>
-#include <QSettings>
-#include "guide-widget.h"
-#include "ipc/ipc_dbus.h"
-
-class MainController : public QObject
+MainController* MainController::mSelf = 0;
+MainController* MainController::self()
 {
-    Q_OBJECT
-public:
-    static MainController* self();
-    void startShowApp(QString);
-    virtual ~MainController();
-private:
-    explicit MainController();
-private:
-    static MainController *mSelf;
-    GuideWidget *guideWidget;
-    IpcDbus *ipcDbus;
-public:
-    QString mStartShowApp = "";
-public slots:
-    void showGuide(QString appName);
-    void showGuide();
-};
+    if (!mSelf) {
+        mSelf = new MainController;
+    }
+    return mSelf;
+}
+
+MainController::MainController()
+{
+    daemonIpcDbus = new DaemonIpcDbus;
+    daemonIpcDbus->init();
+}
+
+
+MainController::~MainController()
+{
+
+}
 

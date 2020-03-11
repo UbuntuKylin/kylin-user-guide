@@ -21,26 +21,19 @@
 #include <QObject>
 #include <QTimer>
 #include <QSettings>
-#include "guide-widget.h"
-#include "ipc/ipc_dbus.h"
+#include "ipc/daemon_ipc_dbus.h"
 
 class MainController : public QObject
 {
     Q_OBJECT
 public:
     static MainController* self();
-    void startShowApp(QString);
     virtual ~MainController();
 private:
     explicit MainController();
 private:
     static MainController *mSelf;
-    GuideWidget *guideWidget;
-    IpcDbus *ipcDbus;
+    DaemonIpcDbus *daemonIpcDbus;
 public:
-    QString mStartShowApp = "";
-public slots:
-    void showGuide(QString appName);
-    void showGuide();
 };
 

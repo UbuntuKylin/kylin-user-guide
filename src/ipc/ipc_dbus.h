@@ -33,10 +33,13 @@ public:
     virtual ~IpcDbus();
 private:
     void creatDBusService();
+    int IsNotRunning();
+    void notifyGuideWidgetActive();
 
 public slots:
-    void showGuide(QString appName);
-    void showGuide(int i);
+    bool ShowGuideGUI(QString appName);
+    bool ShowGuideGUI(int i);
+    bool ActiveGuideWidget();
 };
 
 #endif // __IPC_DBUS_H__

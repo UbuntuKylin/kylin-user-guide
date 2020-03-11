@@ -28,7 +28,7 @@
 #include <sys/types.h>
 #include <signal.h>
 #include <execinfo.h>
-#include "main_controller.h"
+#include "daemon_main_controller.h"
 #include "common-tool/comm_func.h"
 
 QString lang = "zh_CN";
@@ -43,7 +43,7 @@ static void crashHandler(int sig)
     char path[BUFF_SIZE] = {0};
     static char *homePath = getenv("HOME");
     snprintf(path, BUFF_SIZE, "%s/.config/kylin-user-guide", homePath);
-    strcat(path,"/config-crash.log");
+    strcat(path,"/daemon-crash.log");
     FILE *fp = fopen(path,"a+");
 
     void *array[20];
@@ -76,31 +76,9 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
 
-    QCoreApplication::setApplicationName("ubuntukylin user guide");
+    QCoreApplication::setApplicationName("ubuntukylin user guide daemon");
     QCoreApplication::setApplicationVersion("0.0.0.0001");
     QStringList args = app.arguments();
-
-    QCommandLineOption jumpAppOption(QStringList()<< "A" << "appName","指定打开应用程序版本手册","");
-//    QCommandLineOption asDaemonOption(QStringList()<< "D" << "daemon","作为后台demon，显示图形");
-    QCommandLineParser cmdinParser;
-
-    cmdinParser.setApplicationDescription("ubuntukylin user guide");
-    cmdinParser.addHelpOption();
-    cmdinParser.addVersionOption();
-    cmdinParser.addOption(jumpAppOption);
-//    cmdinParser.addOption(asDaemonOption);
-
-    cmdinParser.addPositionalArgument("--help","显示全部帮助选项");
-    cmdinParser.addPositionalArgument("--version","显示安装的程序的版本并退出");
-    cmdinParser.addPositionalArgument("--display","要使用的X显示");
-
-    cmdinParser.process(args);
-    bool bJumpApp = cmdinParser.isSet(jumpAppOption);
-//    QString jumpApp = cmdinParser.value("-A");//拿不到值
-    QString jumpApp = "";
-    if(bJumpApp)
-        jumpApp = args.at(2);
-    qDebug()<<"args"<<args<< "  jumpApp =" << jumpApp <<"       bJumpApp=" << bJumpApp;
 
     if(signal(SIGCHLD,SIG_IGN)==SIG_ERR)//忽略子进程已经停止或退出
     {
@@ -128,28 +106,10 @@ int main(int argc, char *argv[])
         perror("signal error");
     }
 
-    QLocale locale;
-    if(locale.language()==QLocale::Chinese)
-    {
-        lang = "zh_CN";
-    }
-    else
-    {
-        lang = "en_US";
-    }
     app.setApplicationName(APPLICATION_NAME);
 //    app.setQuitOnLastWindowClosed(true);
 
-#ifdef APP_USE_QSS
-    //加载qss样式表
-    QFile qss(":kylin-user-guide.qss");
-    qss.open(QFile::ReadOnly);
-    qApp->setStyleSheet(qss.readAll());
-    qss.close();
-#endif
-
     MainController *ctrl = MainController::self();
-    ctrl->startShowApp(jumpApp);
     app.exec();
 
     delete ctrl;
