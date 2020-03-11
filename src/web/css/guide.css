@@ -3,6 +3,7 @@
 ::-webkit-scrollbar
 {
     width: 7px;
+    display: none;
 }
 
 ::-webkit-scrollbar-thumb
@@ -20,15 +21,17 @@
 
 #mainUI
 {
-    margin-left: 22px;
-    margin-right: 22px;
+    margin-left: 47px;
+    margin-right: 47px;
     margin-bottom: 50px;
+    margin-top: 40px;
 }
 
 #mainUI h2
 {
-    margin-top: 30px;
+    margin-top: 12px;
     margin-bottom: 15px;
+    font-family: Verdana;
 }
 
 div.hlist-div
@@ -44,38 +47,31 @@ div.hlist-div
     /*padding-left: 1%;*/
     background-color:rgb(231,231,231);
     color: #333;
-    margin-right: 16px;
-}
-
-div.title h2
-{
-    font-family:verdana;
-    margin-top: 15px;
 }
 
 div.system-app {
-    margin-top: 10px;
     width: 120px;
     height: 120px;
-    padding: 0 10px;
+    /*padding: 0 10px;*/
     display: inline-block;
     text-align: center;
     vertical-align: bottom;
     background:rgba(244,244,244,1);
     cursor: pointer;
     border-radius:4px;
-    margin-right: 32px;
+    margin-right: 27px;
+    margin-bottom: 24px;
 }
 
 div.system-app img {
-    width: 58px;
-    height: 58px;
-    margin-top: 14px;
-    margin-bottom: 10px;
+    width: 56px;
+    height: 56px;
+    margin-top: 21px;
+    /*margin-bottom: 10px;*/
 }
 
 div.system-app span {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     color: black;
 }
@@ -87,58 +83,65 @@ div.system-app:hover
     color: white;
 }
 
-div.hlist-div h1
+div[id="app"].system-div   div:nth-child(5n)
 {
-    font-size:30px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
-div.hlist-div h2
+div[id="system"].system-div   div:nth-child(5n)
 {
-    font-size:20px;
-    margin-left: 2px;
-    margin-right: 4px;
-    margin-top: 2px;
-    text-indent: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
-div.hlist-div h3
+div.hlist-div a[class="name2"]
 {
-    font-size:15px;
+    font-size: 16px;
+}
+
+div.hlist-div a[class="name3"]
+{
+    font-size: 12px;
+}
+
+div.hlist-div dl
+{
+    margin-top: 4px;
+    font-weight:400;
+    color: #000000;
+    line-height:32px;
+}
+
+div.hlist-div dt
+{
     margin-left: 2px;
     margin-right: 4px;
-    margin-top: 2px;
-    text-indent: 10px;
 }
 
 div.hlist-div a
 {
     font-family: sans-serif;
-    /*color: black;
-    text-decoration: none;*/
+    /*text-indent: 20px;*/
 }
 
 div.hlist-div a:link
 {
     display: block;
-    width: 100%;
+    width: 86%;
     height: 100%;
     background-color: rgb(231,231,231);
     color: black;
     text-decoration: none;
     border-radius: 4px;
+    padding-left: 20px;
 }
 
-div.hlist-div h2>a:visited
-{
-    background-color: rgb(100, 153, 229);
-    color: white;
-}
-
-div.hlist-div a:hover
+/*div.hlist-div a:hover
 {
     background: rgb(61, 153, 229);
     color: white;
-}
+}*/
 
 div.content-div
 {
@@ -150,7 +153,6 @@ div.content-div
     /*padding-left: 2%;*/
     overflow-x:hidden;
     overflow-y:hidden;
-    line-height: 1.75;
     margin-left: 16px;
     margin-left: 1%;
     margin-right: 1%;
@@ -163,6 +165,22 @@ div.content-div h1
     font-size: 24px;
     margin-top: 62px;
     margin-bottom: 9px;
+    line-height: 36px;
+}
+
+div.content-div h2
+{
+    line-height: 34px;
+}
+
+div.content-div h3
+{
+    line-height: 30px;
+}
+
+div.content-div h4
+{
+    line-height: 28px;
 }
 
 div.content-div li
@@ -182,11 +200,50 @@ div.content-div p
 {
     font-family: sans-serif;
     text-indent: 20px;
+    line-height: 20px;
+}
+
+div.supportContent
+{
+    width: 320px;
+    height: 60px;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 12px;
+    margin-bottom: 25px;
+    line-height: 20px;
+    color: rgb(138, 138, 138);
+}
+
+div.supportEmail
+{
+    width: 250px;
+    height: 60px;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 12px;
+    margin-bottom: 25px;
+    line-height: 20px;
+    color: rgb(138, 138, 138);
+}
+
+a[target="_blank"]
+{
+    color: rgb(138, 138, 138);
+    /*text-decoration: none;*/
 }
 
 div.content-div h5
 {
     text-align: center;
+}
+
+div.paga_top
+{
+    text-align: right;
+    margin-top: 24px;
+    margin-right: 10px;
+    margin-bottom: 50px;
 }
 /*
 [img~=svg]

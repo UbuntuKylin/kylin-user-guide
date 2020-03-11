@@ -58,17 +58,38 @@ function onclickButton(str)
     console.log(info);
     var hlist_str = "";
     for (i = 0; i < hlist.length; i++) {
-        console.log(hlist[i].type);
+        /*name_text=hlist[i].text.slice(hlist[i].text.indexOf(" "),hlist[i].text.length);
+        console.log(hlist[i].type+"======"+name_text);
         if(hlist[i].type == "h1")
-            hlist_str +=  "<h1>\n" + "<a id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + hlist[i].text + "</a> \n</h1>" ;
+            hlist_str +=  "<h1>\n" + "<a id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</h1>" ;
         else if(hlist[i].type == "h2")
-            hlist_str +=  "<h2>\n" + "<a id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + hlist[i].text + "</a> \n</h2>" ;
+            hlist_str +=  "<h2>\n" + "<a id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</h2>" ;
         else if(hlist[i].type == "h3")
         {
-            hlist_str +=  "<h3>\n" + "<a id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + hlist[i].text + "</a> \n</h3>" ;
+            hlist_str +=  "<h3>\n" + "<a id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</h3>" ;
             console.log(hlist_str);
-        }
+        }*/
+        name_text=hlist[i].text.slice(hlist[i].text.indexOf(" "),hlist[i].text.length);
+        console.log(hlist[i].type+"======"+name_text);
+        if(hlist[i].type == "h1")
+            hlist_str +=  "<dt>\n" + "<a class='name1' id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+        else if(hlist[i].type == "h2")
+            hlist_str +=  "<dt>\n" + "<a class='name2'  onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+        else if(hlist[i].type == "h3")
+        {
+            console.log(name_text.length);
+            if(name_text.length > 12)
+            {
+                hlist_str +=  "<dt>\n" + "<a class='name3' style='line-height:15px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+            }
+            else
+            {
+                hlist_str +=  "<dt>\n" + "<a class='name3' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+            }
+            console.log(hlist_str);
+        }   
      }
+     hlist_str = "<dl>" + hlist_str + "</dl>";
  //   console.log(hlist_str);
 
     html_new = "<h1><a name='paga_top'>"+info.title+"</a></h1>"
@@ -76,7 +97,9 @@ function onclickButton(str)
                                 +"<HR style='margin-bottom: 34px;margin-top: 10px'>"
                                 +html
                                 +"<HR style='margin-top: 20px'>"
-                                +"<a style='text-align: right;margin-top: 20px;margin-bottom: 50px;'  href='#paga_top'>返回顶部</a>"
+                                +"<div class='paga_top' >"
+                                +"<a style='text-decoration: none;' onclick=onclickA('') href='#paga_top'>返回顶部</a>"
+                                +"</div>"
 
     document.getElementById("hlist").innerHTML = hlist_str
     document.getElementById("content").innerHTML = html_new
@@ -90,6 +113,23 @@ function goBackMainUI()
     //document.getElementById("mainUI").style.display="inline";
     //document.getElementById("pageContent").style.display="none";
     window.location.href="index.html"
+}
+
+var old_str="";
+function onclickA(str)
+{
+     console.log(old_str,str) 
+     if(old_str != "")
+     {
+        document.getElementById(old_str).style.backgroundColor="rgb(231,231,231)" 
+        document.getElementById(old_str).style.color="black"
+     }
+     if(str != "")
+     {
+        document.getElementById(str).style.backgroundColor="#3D6BE5"
+        document.getElementById(str).style.color="white"
+        old_str = str
+    }
 }
 
 function getDocTop(mdFile, mdData) {
@@ -150,16 +190,6 @@ function getDocTop(mdFile, mdData) {
             }
         }
     };
-    /*renderer.table = (header,body) =>{
-        console.log(header,body)
-        if (body) body = '<tbody>' + body + '</tbody>';
-        return '<div align="center"><table border=black cellspacing="0">\n'
-        + '<thead>\n'
-        + header
-        + '</thead>\n'
-        + body
-        + '</table>\n</div>';
-    }*/
     renderer.table = function(header,body){
         console.log(header,body)
         if (body) body = '<tbody>' + body + '</tbody>';

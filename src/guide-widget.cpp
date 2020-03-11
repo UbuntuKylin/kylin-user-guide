@@ -45,7 +45,7 @@
 GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 {
     this->isTopLevel();
-    this->resize(820,640);
+    this->resize(822,640);
     this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
     this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
@@ -170,7 +170,7 @@ void GuideWidget::initUI()
     connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
     connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
 //    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
-    widget_layout->setContentsMargins(1, 6, 1, 1);
+    widget_layout->setContentsMargins(0, 6, 0, 1);
     widget_layout->setVerticalSpacing(5);
 
     main_layout->addWidget(m_yWidget);
@@ -243,8 +243,8 @@ void GuideWidget::slot_onClicked_maxOffButton()
     if(m_pWindow->isTopLevel())
     {
         QPushButton *button = this->m_yWidget->findChild<QPushButton *>("maxOffButton");
-        QIcon iconFull(":/image/fullscreen.png");
-        QIcon iconRestore(":/image/restore.png");
+        QIcon iconFull(":/image/restore.png");
+        QIcon iconRestore(":/image/fullscreen.png");
         m_pWindow->isMaximized() ? m_pWindow->showNormal() : m_pWindow->showMaximized();
         m_pWindow->isMaximized() ? button->setIcon(iconFull) :button->setIcon(iconRestore);
     }
