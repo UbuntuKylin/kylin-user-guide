@@ -78,7 +78,7 @@ function onclickButton(str)
         else if(hlist[i].type == "h3")
         {
             console.log(name_text.length);
-            if(name_text.length > 12)
+            if(name_text.length >=12)
             {
                 hlist_str +=  "<dt>\n" + "<a class='name3' style='line-height:15px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
             }
