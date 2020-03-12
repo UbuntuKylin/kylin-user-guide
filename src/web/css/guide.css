@@ -59,7 +59,7 @@ div.system-app {
     background:rgba(244,244,244,1);
     cursor: pointer;
     border-radius:4px;
-    margin-right: 27px;
+    margin-left: 21px;
     margin-bottom: 24px;
 }
 
@@ -81,18 +81,6 @@ div.system-app:hover
     border-radius: 4px;
     background: #3D6BE5;
     color: white;
-}
-
-div[id="app"].system-div   div:nth-child(5n)
-{
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-div[id="system"].system-div   div:nth-child(5n)
-{
-    margin-left: 0px;
-    margin-right: 0px;
 }
 
 div.hlist-div a[class="name2"]
