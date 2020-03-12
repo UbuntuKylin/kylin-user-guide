@@ -17,4 +17,5 @@
 #define LOCAL_FILE_PATH "/usr/share/kylin-user-guide/data/guide/"
 #define LOCAL_URL_PATH "file://///usr/share/kylin-user-guide/web/"
 
-extern QString lang;
+extern QString gLang;
+extern QString gStartShowApp;

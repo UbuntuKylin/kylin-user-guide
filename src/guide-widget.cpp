@@ -271,7 +271,7 @@ void GuideWidget::slot_onClicked_closeOffButton()
 QString GuideWidget::js_getIndexMdFilePath(QString appName)
 {
     qDebug() << Q_FUNC_INFO << appName;
-    QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  lang + "/index.md";
+    QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
     QPushButton *button = this->m_yWidget->findChild<QPushButton *>("backOffButton");
     qDebug() << button;
     button->show();

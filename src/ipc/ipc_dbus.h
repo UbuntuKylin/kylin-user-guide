@@ -35,7 +35,7 @@ private:
     void creatDBusService();
     int IsNotRunning();
     void notifyGuideWidgetActive();
-
+    void notifyGuideWidgetActive(QString);
 public slots:
     bool ShowGuideGUI(QString appName);
     bool ShowGuideGUI(int i);

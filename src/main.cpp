@@ -31,7 +31,8 @@
 #include "main_controller.h"
 #include "common-tool/comm_func.h"
 
-QString lang = "zh_CN";
+QString gLang = "zh_CN";
+QString gStartShowApp = "";
 #define BUFF_SIZE 128
 static void crashHandler(int sig)
 {
@@ -131,11 +132,11 @@ int main(int argc, char *argv[])
     QLocale locale;
     if(locale.language()==QLocale::Chinese)
     {
-        lang = "zh_CN";
+        gLang = "zh_CN";
     }
     else
     {
-        lang = "en_US";
+        gLang = "en_US";
     }
     app.setApplicationName(APPLICATION_NAME);
 //    app.setQuitOnLastWindowClosed(true);
@@ -148,8 +149,8 @@ int main(int argc, char *argv[])
     qss.close();
 #endif
 
+    gStartShowApp = jumpApp;
     MainController *ctrl = MainController::self();
-    ctrl->startShowApp(jumpApp);
     app.exec();
 
     delete ctrl;
