@@ -116,13 +116,13 @@ div.hlist-div a
 div.hlist-div a:link
 {
     display: block;
-    width: 86%;
+    width: 95%;
     height: 100%;
     background-color: rgb(231,231,231);
     color: black;
     text-decoration: none;
     border-radius: 4px;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 /*div.hlist-div a:hover
@@ -135,15 +135,16 @@ div.content-div
 {
     font-size: 16px;
     color: #333;
-    width:80%;
+    width:76%;
     height: 100%;
     float:right;
     /*padding-left: 2%;*/
     overflow-x:hidden;
     overflow-y:hidden;
     margin-left: 16px;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
+    line-height: 1.75;
 }
 
 div.content-div h1
@@ -186,9 +187,9 @@ div.content-div img
 
 div.content-div p
 {
-    font-family: sans-serif;
+    font-family: Noto Sans CJK SC;
     text-indent: 20px;
-    line-height: 20px;
+    /*line-height: 20px;*/
 }
 
 div.supportContent
@@ -221,10 +222,10 @@ a[target="_blank"]
     /*text-decoration: none;*/
 }
 
-div.content-div h5
+/*div.content-div h6
 {
     text-align: center;
-}
+}*/
 
 div.paga_top
 {
