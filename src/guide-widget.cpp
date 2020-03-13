@@ -89,7 +89,7 @@ void GuideWidget::initUI()
     search_Line->setAlignment(Qt::AlignVCenter);
     qDebug() << search_Line->alignment();
     search_Line->setStyleSheet("background-color:rgb(234,234,234)");
-
+    search_Line->hide();//第一个版本不支持搜索
     backOffButton->setObjectName("backOffButton");
     minOffButton->setObjectName("minOffButton");
     maxOffButton->setObjectName("maxOffButton");
@@ -163,6 +163,7 @@ void GuideWidget::initUI()
     widget_layout->addWidget(m_pWebView,1,0,1,106);
 //    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
     m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
+    m_pWebView->page()->setLinkDelegationPolicy(QWebPage::DelegateExternalLinks);//外链
     m_pWebView->settings()->setObjectCacheCapacities(0,0,0);
 //    m_pWebView->settings()->setAttribute(QWebSettings::WebSecurityEnabled, false);//关闭浏览器安全
     m_pWebView->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);//开发模式
@@ -177,9 +178,10 @@ void GuideWidget::initUI()
     m_pWebView->settings()->setAttribute(QWebSettings::PluginsEnabled, true);
     m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
 
-    connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
-    connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
-//    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
+    QObject::connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
+    QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
+    QObject::connect(m_pWebView->page(),SIGNAL(linkClicked(QUrl)),this,SLOT(slot_webGoto(QUrl)));
+    //    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
     widget_layout->setContentsMargins(0, 6, 0, 1);
     widget_layout->setVerticalSpacing(5);
 
@@ -206,8 +208,15 @@ void GuideWidget::initUI()
     main_layout->setMargin(1);
 
     this->setLayout(widget_layout);
-    this->setLayout(main_layout);	    this->setLayout(main_layout);
+    this->setLayout(main_layout);
     qDebug() << this->frameGeometry().width() << this->frameGeometry().height();
+}
+
+void GuideWidget::slot_webGoto(QUrl url)
+{
+    qDebug() << Q_FUNC_INFO << url;
+    if(url.toString().contains("http"))
+        QDesktopServices::openUrl(url);
 }
 
 void GuideWidget::jump_app(QString appName)
@@ -235,7 +244,7 @@ void GuideWidget::slot_backOffButton()
 
 void GuideWidget::slot_loadFinished(bool f)
 {
-    qDebug() << Q_FUNC_INFO << f;
+    qDebug() << Q_FUNC_INFO << f ;
 }
 
 void GuideWidget::slot_onClicked_minOffButton()
@@ -272,7 +281,7 @@ void GuideWidget::slot_onClicked_closeOffButton()
 QString GuideWidget::js_getIndexMdFilePath(QString appName)
 {
     qDebug() << Q_FUNC_INFO << appName;
-    QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  lang + "/index.md";
+    QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
     QPushButton *button = this->m_yWidget->findChild<QPushButton *>("backOffButton");
     qDebug() << button;
     button->show();

@@ -45,12 +45,32 @@ MainController::MainController()
     ipcDbus = new IpcDbus;
     ipcDbus->init();
     guideWidget = new GuideWidget;
+    guideWidget->activateWindow();
+    startShowApp();
+    guideWidget->show();
+}
+
+void MainController::startShowApp()
+{
+    QTimer::singleShot(500, this, SLOT(showGuide()));//消息循环起来后打通js和qt通信在执行跳转
 }
 
 void MainController::showGuide(QString appName)
 {
     if(appName!="")
         guideWidget->jump_app(appName);
+    guideWidget->activateWindow();
+    guideWidget->show();
+}
+
+void MainController::showGuide()
+{
+    if(gStartShowApp!="")
+    {
+        qDebug() << Q_FUNC_INFO;
+        guideWidget->jump_app(gStartShowApp);
+        gStartShowApp = "";
+    }
     guideWidget->activateWindow();
     guideWidget->show();
 }

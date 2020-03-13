@@ -79,6 +79,7 @@ private slots:
     void slot_onClicked_minOffButton();
     void slot_onClicked_maxOffButton();
     void slot_onClicked_closeOffButton();
+    void slot_webGoto(QUrl);
 public slots:
     Q_INVOKABLE QString js_getIndexMdFilePath(QString);
     Q_INVOKABLE QString js_getIndexMdFileContent(QString);
