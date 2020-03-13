@@ -29,7 +29,7 @@ find_package(Qt5LinguistTools)
 find_package(Qt5Sql REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5LinguistTools REQUIRED)
-find_package(Qt5WebChannel REQUIRED)
+#find_package(Qt5WebChannel REQUIRED)
 find_package(Qt5WebKitWidgets REQUIRED)
 #find_package(Qt5WebEngineWidgets REQUIRED)
 #pkg_search_module(QCef REQUIRED libqcef)
@@ -66,7 +66,9 @@ include_directories(${HRADERS_QT} ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SO
 
 file(GLOB CC_FILES *.cpp common-tool/*.cpp ipc/*.cpp)
 
-add_executable(kylin-user-guide ${CC_FILES})
+QT5_ADD_RESOURCES(kylin-user-guide_QRC kylin-user-guide.qrc)
+
+add_executable(kylin-user-guide ${CC_FILES} ${kylin-user-guide_QRC})
 
 SET(LIBS_PRIVATE "-lrt -ldl -lpthread")
 SET(QT_LIBS
@@ -74,7 +76,7 @@ SET(QT_LIBS
     Qt5::DBus
     Qt5::Sql
     Qt5::Widgets
-    Qt5::WebChannel
+#    Qt5::WebChannel
     Qt5::WebKitWidgets
     )
 #    Qt5::WebEngineWidgets
@@ -85,6 +87,7 @@ set(pkgLibdir 	/usr/lib/${DEB_BUILD_GNU_CPU})
 set(pkgbindir 	/usr/bin/)
 set(pkgdatadir 	/usr/share/kylin-user-guide)
 
+add_subdirectory(daemon)
 ## Installation
-install(TARGETS kylin-user-guide DESTINATION ${CMAKE_INSTALL_PREFIX}/share/kylin-user-guide)
-install(TARGETS kylin-user-guide DESTINATION ${pkgbindir}/kylin-user-guide)
+#install(TARGETS kylin-user-guide DESTINATION ${CMAKE_INSTALL_PREFIX}/share/kylin-user-guide)
+install(TARGETS kylin-user-guide DESTINATION ${pkgbindir})

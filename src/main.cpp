@@ -18,6 +18,9 @@
  */
 
 #include <QApplication>
+#include <QTextCodec>
+#include <QCommandLineOption>
+#include <QCommandLineParser>
 #include <QDebug>
 #include <QFont>
 #include <signal.h>
@@ -28,7 +31,8 @@
 #include "main_controller.h"
 #include "common-tool/comm_func.h"
 
-QString lang = "zh_CN";
+QString gLang = "zh_CN";
+QString gStartShowApp = "";
 #define BUFF_SIZE 128
 static void crashHandler(int sig)
 {
@@ -70,8 +74,35 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
-    QApplication *app = new QApplication(argc, argv);
-    QStringList args = app->arguments();
+
+    QApplication app(argc, argv);
+
+    QCoreApplication::setApplicationName("ubuntukylin user guide");
+    QCoreApplication::setApplicationVersion("0.0.0.0001");
+    QStringList args = app.arguments();
+
+    QCommandLineOption jumpAppOption(QStringList()<< "A" << "appName","指定打开应用程序版本手册","");
+//    QCommandLineOption asDaemonOption(QStringList()<< "D" << "daemon","作为后台demon，显示图形");
+    QCommandLineParser cmdinParser;
+
+    cmdinParser.setApplicationDescription("ubuntukylin user guide");
+    cmdinParser.addHelpOption();
+    cmdinParser.addVersionOption();
+    cmdinParser.addOption(jumpAppOption);
+//    cmdinParser.addOption(asDaemonOption);
+
+    cmdinParser.addPositionalArgument("--help","显示全部帮助选项");
+    cmdinParser.addPositionalArgument("--version","显示安装的程序的版本并退出");
+    cmdinParser.addPositionalArgument("--display","要使用的X显示");
+
+    cmdinParser.process(args);
+    bool bJumpApp = cmdinParser.isSet(jumpAppOption);
+//    QString jumpApp = cmdinParser.value("-A");//拿不到值
+    QString jumpApp = "";
+    if(bJumpApp)
+        jumpApp = args.at(2);
+    qDebug()<<"args"<<args<< "  jumpApp =" << jumpApp <<"       bJumpApp=" << bJumpApp;
+
     if(signal(SIGCHLD,SIG_IGN)==SIG_ERR)//忽略子进程已经停止或退出
     {
         //注册SIGSEGV信号失败
@@ -87,11 +118,6 @@ int main(int argc, char *argv[])
         //注册SIGILL信号失败
         perror("signal error");
     }
-    if(signal(SIGTERM,crashHandler)==SIG_ERR)//终止
-    {
-        //注册SIGTERM信号失败
-        perror("signal error");
-    }
     if(signal(SIGHUP,crashHandler)==SIG_ERR)//系统挂断
     {
         //注册SIGHUP信号失败
@@ -103,42 +129,19 @@ int main(int argc, char *argv[])
         perror("signal error");
     }
 
-    QFont globalfont = QFont();
-    /*
-     globalfont.setFamily("")
-     文泉驿微米黑
-     文泉驿等宽微米黑
-     方正书宋_GBK
-     方正仿宋_GBK
-     方正姚体_GBK
-     方正宋体S-超大字符集
-     方正宋体S-超大字符集(SIP)
-     方正小标宋_GBK
-     方正楷体_GBK
-     方正细黑一_GBK
-     方正行楷_GBK
-     方正超粗黑_GBK
-     方正隶书_GBK
-     方正魏碑_GBK
-     方正黑体_GBK*/
-    globalfont.setPixelSize(14);
-//    globalfont.setFamily("Droid Sans Fallback");
-    qDebug()<<"----------------------"<<QFont().family();
-    app->setFont(globalfont);
-
     QLocale locale;
     if(locale.language()==QLocale::Chinese)
     {
-        lang = "zh_CN";
+        gLang = "zh_CN";
     }
     else
     {
-        lang = "en_US";
+        gLang = "en_US";
     }
-    app->setApplicationName(APPLICATION_NAME);
-    app->setQuitOnLastWindowClosed(true);
+    app.setApplicationName(APPLICATION_NAME);
+//    app.setQuitOnLastWindowClosed(true);
 
-#ifdef CONFIGTOOL_USE_QSS
+#ifdef APP_USE_QSS
     //加载qss样式表
     QFile qss(":kylin-user-guide.qss");
     qss.open(QFile::ReadOnly);
@@ -146,12 +149,11 @@ int main(int argc, char *argv[])
     qss.close();
 #endif
 
+    gStartShowApp = jumpApp;
     MainController *ctrl = MainController::self();
-
-    app->exec();
+    app.exec();
 
     delete ctrl;
-    delete app;
     return 0;
 
 }

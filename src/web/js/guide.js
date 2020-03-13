@@ -32,6 +32,11 @@ require(['marked'], function (markedSetCustom){
 //  xhr.send();
 //};
 
+function qt_jumpApp(appName)
+{
+    onclickButton(appName)
+}
+
 function onclickButton(str)
 {
 //    alert(str)
@@ -53,18 +58,61 @@ function onclickButton(str)
     console.log(info);
     var hlist_str = "";
     for (i = 0; i < hlist.length; i++) {
-        console.log(hlist[i].type);
+        /*name_text=hlist[i].text.slice(hlist[i].text.indexOf(" "),hlist[i].text.length);
+        console.log(hlist[i].type+"======"+name_text);
         if(hlist[i].type == "h1")
-            hlist_str +=  "<h1>\n" + "<a id=" + "list_"+hlist[i].id + " href=#" +hlist[i].id + ">" + hlist[i].text + "</a> \n</h1>" ;
+            hlist_str +=  "<h1>\n" + "<a id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</h1>" ;
         else if(hlist[i].type == "h2")
-            hlist_str +=  "<h2>\n" + "<a id=" + "list_"+hlist[i].id + " href=#" +hlist[i].id + ">" + hlist[i].text + "</a> \n</h2>" ;
+            hlist_str +=  "<h2>\n" + "<a id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</h2>" ;
         else if(hlist[i].type == "h3")
-            hlist_str +=  "<h3>\n" + "<a id=" + "list_"+hlist[i].id + " href=#" +hlist[i].id + ">" + hlist[i].text + "</a> \n</h3>" ;
+        {
+            hlist_str +=  "<h3>\n" + "<a id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</h3>" ;
+            console.log(hlist_str);
+        }*/
+        /*var pattren=/^[\\u4E00-\\u9FA5]+$/;
+        var name_text= "";
+        for( j=0;j<hlist[i].text.length;j++)
+        {
+            console.log(hlist[i].text[j]+"=========="+pattren.test(hlist[i].text[j]));
+            if(pattren.test(hlist[i].text[j])||hlist[i].text[j] == '?')
+            {
+                name_text+=hlist[i].text[j];
+            }
+        }*/
+        name_text=hlist[i].text.slice(hlist[i].text.indexOf(" "),hlist[i].text.length);
+        console.log(hlist[i].type+"======"+name_text);
+        if(hlist[i].type == "h1")
+            hlist_str +=  "<dt>\n" + "<a class='name1' id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+        else if(hlist[i].type == "h2")
+            hlist_str +=  "<dt>\n" + "<a class='name2'  onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+        else if(hlist[i].type == "h3")
+        {
+            console.log(name_text.length);
+            if(name_text.length >12)
+            {
+                hlist_str +=  "<dt>\n" + "<a class='name3' style='line-height:15px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+            }
+            else
+            {
+                hlist_str +=  "<dt>\n" + "<a class='name3' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+            }
+            console.log(hlist_str);
+        }   
      }
-    console.log(hlist_str);
+     hlist_str = "<dl>" + hlist_str + "</dl>";
+ //   console.log(hlist_str);
+
+    html_new = "<h1><a name='paga_top'>"+info.title+"</a></h1>"
+                                +"<p  style='text-align: left;font-size: 10px;text-indent: 0px;'>更新时间：****年**月**日</p>"
+                                +"<HR style='margin-bottom: 34px;margin-top: 10px'>"
+                                +html
+                                +"<HR style='margin-top: 20px'>"
+                                +"<div class='paga_top' >"
+                                +"<a style='text-decoration: none;' onclick=onclickA('') href='#paga_top'>返回顶部</a>"
+                                +"</div>"
 
     document.getElementById("hlist").innerHTML = hlist_str
-    document.getElementById("content").innerHTML = html
+    document.getElementById("content").innerHTML = html_new
 
 }
 
@@ -77,47 +125,91 @@ function goBackMainUI()
     window.location.href="index.html"
 }
 
-function getDocTop(mdFile, mdData) {
-    let hlist = [];
-    let info = {};
-    let html = '';
+var old_str="";
+function onclickA(str)
+{
+     console.log(old_str,str) 
+     if(old_str != "")
+     {
+        document.getElementById(old_str).style.backgroundColor="rgb(231,231,231)" 
+        document.getElementById(old_str).style.color="black"
+     }
+     if(str != "")
+     {
+        document.getElementById(str).style.backgroundColor="#3D6BE5"
+        document.getElementById(str).style.color="white"
+        old_str = str
+    }
+}
 
-    let path = mdFile.slice(0, mdFile.lastIndexOf('/') + 1);
-    let count = 0;
-    let renderer = new marked.Renderer();
-    renderer.heading = (text, level) => {
-        let id = 'h' + count;
+function getDocTop(mdFile, mdData) {
+    var hlist = [];
+    var info = {};
+    var html = '';
+
+    var path = mdFile.slice(0, mdFile.lastIndexOf('/') + 1);
+    var count = 0;
+    var renderer = new marked.Renderer();
+    renderer.heading = function (text, level){
+        var id = 'h' + count;
         count++;
         if (level == 1) {
-            let [title, logo] = text.split('|');
+            var title = text.split('|')[0];
+            var logo = text.split('|')[1];
             logo = path + logo;
             console.log(logo);
-            info = { title, logo };
-            return '';
+            info = { "title":title, "logo":logo };
+            return "";
         }
         if (level == 2) {
             text = text.split('|')[0];
             console.log(text);
         }
-        let type = 'h' + level;
+        var type = 'h' + level;
         if (level == 2 || level == 3) {
-            hlist.push({ id, text, type });
+            hlist.push({ "id":id, "text":text, "type":type });
             console.log(id);
             console.log(text);
             console.log(type);
         }
-            return `<${type} id="${id}" text="${text}">${text}</${type}>\n`;
+            return "<"+ type + " id="+   id + " text=" +text + ">" + text + "</"+ type + ">\n";
     };
-    console.log(path);
-    renderer.image = (href, title, text) => {
-        let hrefX2 = href;
+
+    renderer.image = function(href, title, text){
+        var hrefX2 = href;
+    console.log(hrefX2);
         if (devicePixelRatio >= 1.5 && href.indexOf('.svg') == -1) {
-            let path = href.split('.');
-            let ext = path.pop();
-            hrefX2 = `${path.join('.')}x2.${ext}`;
+            var path = href.split('.');
+            var ext = path.pop();
+//            hrefX2 = `${path.join('.')}x2.${ext}`;
+            hrefX2 =  path.join('.')+ "x2." + ext;
         }
-        return `<img src="${hrefX2}" data-src="${href}" alt="${text}" />`;
+        if (text == "")
+//            return `<img src="${hrefX2}" data-src="${href}" alt="${text}" />`;
+            return '<img src=\"' + hrefX2 + '\" data-src=\"'+ href + '\" alt=' + text +  '/>';
+        else{
+            if(text.lastIndexOf("-big") < 0 ){
+//                return `<h5  style="text-align: center;"><img src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text}</h5>`;
+                return '<h5  style="text-align: center;"><img src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt=' + text + '/><br> ' + text + '</h5>';
+            }
+            else{
+                text1=text.slice(0,text.lastIndexOf("-big"))
+//路径需要用双引号，单引号无法解析相对路径
+//                return `<h5 style="text-align: center;"><img  style="height:98%;width:98%;" src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text1}</h5>`;
+                return '<h5 style="text-align: center;"><img  style="height:98%;width:98%;" src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt='+ text +'/><br>' + text1 + '</h5>';
+            }
+        }
     };
-    html = marked(mdData, { renderer }).replace(/src="/g, `$&${path}`);
-    return { html, hlist, info };
+    renderer.table = function(header,body){
+        console.log(header,body)
+        if (body) body = '<tbody>' + body + '</tbody>';
+        return '<div align="center"><table border=black cellspacing="0">\n'
+        + '<thead>\n'
+        + header
+        + '</thead>\n'
+        + body
+        + '</table>\n</div>';
+    }
+    html = marked(mdData, { "renderer":renderer }).replace(/src="/g, '$&'+path);
+    return { "html":html, "hlist":hlist, "info":info };
 }

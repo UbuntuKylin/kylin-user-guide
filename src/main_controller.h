@@ -29,6 +29,7 @@ class MainController : public QObject
     Q_OBJECT
 public:
     static MainController* self();
+    void startShowApp();
     virtual ~MainController();
 private:
     explicit MainController();
@@ -36,5 +37,8 @@ private:
     static MainController *mSelf;
     GuideWidget *guideWidget;
     IpcDbus *ipcDbus;
+public slots:
+    void showGuide(QString appName);
+    void showGuide();
 };
 
