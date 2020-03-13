@@ -74,6 +74,7 @@ void GuideWidget::initUI()
     QPushButton *minOffButton = new QPushButton(m_yWidget);
     QPushButton *maxOffButton = new QPushButton(m_yWidget);
     QPushButton *closeOffButton = new QPushButton(m_yWidget);
+    QPushButton *menuOffButton = new QPushButton(m_yWidget);
     QLabel *m_pIconLabel = new QLabel(m_yWidget);
     QLabel *m_pTitleLabel = new QLabel(m_yWidget);
     QLineEdit *search_Line = new QLineEdit(m_yWidget);
@@ -82,7 +83,7 @@ void GuideWidget::initUI()
     icon1.addFile(tr(":/image/icon-search.png"));
     search_Line->addAction(icon1,QLineEdit::LeadingPosition);
     //search_Line->setFixedSize(320,30);
-    search_Line->setMinimumSize(320,30);
+    search_Line->setMinimumSize(280,30);
     search_Line->setMaximumSize(800,30);
     search_Line->setPlaceholderText(QString::fromLocal8Bit("搜索"));
     search_Line->setAlignment(Qt::AlignVCenter);
@@ -128,6 +129,13 @@ void GuideWidget::initUI()
     closeOffButton->setFocusPolicy(Qt::NoFocus);
     closeOffButton->setStyleSheet("QPushButton:pressed{background-color:rgb(234,234,234)}");
 
+    QIcon iconMenu(tr(":/image/open-menu-symbolic.png"));
+    menuOffButton->setIcon(iconMenu);
+    menuOffButton->setIconSize(QSize(30,25));
+    menuOffButton->setFlat(true);
+    menuOffButton->setFocusPolicy(Qt::NoFocus);
+    menuOffButton->setVisible(false);
+
 
     connect(backOffButton,SIGNAL(released()),this,SLOT(slot_backOffButton()));
     connect(closeOffButton,SIGNAL(released()),this,SLOT(slot_onClicked_closeOffButton()));
@@ -142,14 +150,15 @@ void GuideWidget::initUI()
     widget_layout->addWidget(m_pIconLabel,0,2,1,3);
     widget_layout->addWidget(m_pTitleLabel,0,6,1,10);
     widget_layout->addWidget(backOffButton,0,22,1,4);
-    widget_layout->addWidget(search_Line,0,36,1,40);
+    widget_layout->addWidget(search_Line,0,40,1,40);
+    widget_layout->addWidget(menuOffButton,0,90,1,4);
     widget_layout->addWidget(minOffButton,0,94,1,4);
     widget_layout->addWidget(maxOffButton,0,98,1,4);
     widget_layout->addWidget(closeOffButton,0,102,1,4);
-    widget_layout->setColumnStretch(36,6);
+    widget_layout->setColumnStretch(40,6);
     widget_layout->setColumnStretch(6,2);
-    widget_layout->setColumnStretch(35,1);
-    widget_layout->setColumnStretch(93,2);
+    widget_layout->setColumnStretch(39,1);
+    widget_layout->setColumnStretch(89,2);
 
     widget_layout->addWidget(m_pWebView,1,0,1,106);
 //    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
