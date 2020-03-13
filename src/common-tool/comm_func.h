@@ -7,11 +7,11 @@
 #define SERVICE_NAME_SIZE 64
 //daemon监听app的调用传给GUI
 #define KYLIN_USER_GUIDE_PATH "/"
-#define KYLIN_USER_GUIDE_SERVICE "com.kylinUserGuide.hotel_"
+#define KYLIN_USER_GUIDE_SERVICE "com.kylinUserGuide.hotel"
 #define KYLIN_USER_GUIDE_INTERFACE "com.guide.hotel"
 
 #define KYLIN_USER_GUIDE_GUI_PATH "/"
-#define KYLIN_USER_GUIDE_GUI_SERVICE "com.kylinUserGuideGUI.hotel_"
+#define KYLIN_USER_GUIDE_GUI_SERVICE "com.kylinUserGuideGUI.hotel"
 #define KYLIN_USER_GUIDE_GUI_INTERFACE "com.guide.hotel"
 
 #define LOCAL_FILE_PATH "/usr/share/kylin-user-guide/data/guide/"

@@ -5,8 +5,8 @@ Maintainer: Ubuntu Kylin Team <ubuntukylin-members@lists.launchpad.net>
 Uploaders: xiaoyiwu <xiaoyiwu@ubuntukylin.com>
 Build-Depends: cmake,
                libqt5gui5,
-               debhelper-compat (= 12),
-#               debhelper,
+#               debhelper-compat (= 12),
+               debhelper,
                qttools5-dev-tools,
                qttools5-dev,
 #               libqt5webchannel5-dev,
