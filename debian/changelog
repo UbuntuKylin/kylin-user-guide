@@ -1,3 +1,9 @@
+kylin-user-guide (1:1.0.0.0002) eoan; urgency=medium
+
+  * release v1
+
+ -- xiaoyiwu <xiaoyiwu@ubuntukylin.com>  Fri, 13 Mar 2020 19:50:19 +0800
+
 kylin-user-guide (0.0.0.0001) eoan; urgency=medium
 
   * init

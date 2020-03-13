@@ -2,7 +2,8 @@
 debian/version /usr/share/kylin-user-guide/
 data /usr/share/kylin-user-guide/
 src/web /usr/share/kylin-user-guide/
-debian/icon/24x24/kylin-user-guide.png /usr/share/icons/hicolor/24x24/apps/
-debian/icon/60x60/kylin-user-guide.png /usr/share/icons/hicolor/60x60/apps/
+debian/icon/22x22/kylin-user-guide.png /usr/share/icons/hicolor/22x22/apps/
+debian/icon/32x32/kylin-user-guide.png /usr/share/icons/hicolor/32x32/apps/
+debian/icon/56x56/kylin-user-guide.png /usr/share/icons/hicolor/56x56/apps/
 debian/kylin-user-guide.desktop /usr/share/applications/
 debian/kylin-user-guide-daemon.desktop /etc/xdg/autostart/
