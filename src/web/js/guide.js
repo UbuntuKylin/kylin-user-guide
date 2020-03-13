@@ -69,6 +69,16 @@ function onclickButton(str)
             hlist_str +=  "<h3>\n" + "<a id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</h3>" ;
             console.log(hlist_str);
         }*/
+        /*var pattren=/^[\\u4E00-\\u9FA5]+$/;
+        var name_text= "";
+        for( j=0;j<hlist[i].text.length;j++)
+        {
+            console.log(hlist[i].text[j]+"=========="+pattren.test(hlist[i].text[j]));
+            if(pattren.test(hlist[i].text[j])||hlist[i].text[j] == '?')
+            {
+                name_text+=hlist[i].text[j];
+            }
+        }*/
         name_text=hlist[i].text.slice(hlist[i].text.indexOf(" "),hlist[i].text.length);
         console.log(hlist[i].type+"======"+name_text);
         if(hlist[i].type == "h1")
@@ -78,7 +88,7 @@ function onclickButton(str)
         else if(hlist[i].type == "h3")
         {
             console.log(name_text.length);
-            if(name_text.length >=12)
+            if(name_text.length >12)
             {
                 hlist_str +=  "<dt>\n" + "<a class='name3' style='line-height:15px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
             }
