@@ -40,7 +40,7 @@ function qt_jumpApp(appName)
 function onclickButton(str)
 {
 //    alert(str)
-    console.log(str)
+    console.log(str+"======"+window.pageYOffset);
     document.getElementById("mainUI").style.display="none";
     document.getElementById("pageContent").style.display="inline";
 
@@ -113,6 +113,7 @@ function onclickButton(str)
                                 +html
                                 +"<HR style='margin-top: 20px'>"
                                 +"<div class='paga_top' >"
+                                +"<img src='file:////usr/share/kylin-user-guide/data/icon返回顶部.png' "+"/>"
                                 +"<a style='text-decoration: none;' onclick=onclickA('') href='#paga_top'>返回顶部</a>"
                                 +"</div>"
 
@@ -123,7 +124,7 @@ function onclickButton(str)
 
 }
 
-function goBackMainUI()
+function goBackMainUI(scroll)
 {
     //alert(str)
     //console.log(str)
@@ -146,6 +147,10 @@ function onclickA(str)
         document.getElementById(str).style.backgroundColor="#3D6BE5"
         document.getElementById(str).style.color="white"
         old_str = str
+    }
+    if(str == "")
+    {
+        document.getElementById("hlist").scrollTop = 0;
     }
 }
 

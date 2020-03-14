@@ -6,6 +6,11 @@
 /*    display: none;*/
 }
 
+div.hlist-div::-webkit-scrollbar-track
+{
+    background:rgb(231,231,231);
+}
+
 ::-webkit-scrollbar-thumb
 {
     border-radius: 5px;
@@ -39,7 +44,7 @@ div.hlist-div
     float:left;/*目录框的位置*/
     overflow-y:auto;/*目录框添加滚动条*/
     position: fixed;/*目录框相对浏览器进行定位*/
-    width:18%;/*目录框的宽度*/
+    width:19%;/*目录框的宽度*/
     height: 100%; /*目录框的高度*/
     top: 0;
     left: 0;
@@ -74,6 +79,7 @@ div.system-app span {
     font-size: 14px;
     font-weight: normal;
     color: black;
+    font-family: Noto Sans CJK SC;
 }
 
 div.system-app:hover
@@ -135,7 +141,7 @@ div.content-div
 {
     font-size: 16px;
     color: #333;
-    width:76%;
+    width:75%;
     height: 100%;
     float:right;
     /*padding-left: 2%;*/
@@ -202,6 +208,7 @@ div.supportContent
     margin-bottom: 25px;
     line-height: 20px;
     color: rgb(138, 138, 138);
+    margin-left: 20px;
 }
 
 div.supportEmail
@@ -233,6 +240,17 @@ div.paga_top
     margin-top: 24px;
     margin-right: 10px;
     margin-bottom: 50px;
+    vertical-align: middle;
+    float: right;
+}
+
+div.paga_top img
+{
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 0px;
+    border: 0px;
 }
 /*
 [img~=svg]

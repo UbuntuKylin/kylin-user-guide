@@ -95,15 +95,18 @@ void GuideWidget::initUI()
     maxOffButton->setObjectName("maxOffButton");
     closeOffButton->setObjectName("closeOffButton");
 
-    m_pIconLabel->setFixedSize(28,30);
+    m_pIconLabel->setFixedSize(24,24);
     m_pIconLabel->setScaledContents(true);
     m_pIconLabel->setPixmap((QPixmap(QString::fromLocal8Bit(":/image/kylin-user-guide_16_24.png"))));
 
     m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
 
-    QIcon iconReturn(":/image/return.png"); //让QIcon对象指向想要的图标
-    backOffButton->setIcon(iconReturn); //给按钮添加图标
-    backOffButton->setIconSize(QSize(30,25));//重置图标大小
+    //QIcon iconReturn(":/image/return.png"); //让QIcon对象指向想要的图标
+    //backOffButton->setIcon(iconReturn); //给按钮添加图标
+    //backOffButton->setIconSize(QSize(30,25));//重置图标大小
+    backOffButton->setFixedSize(25,25);
+    backOffButton->setStyleSheet("QPushButton{border-image: url(:/image/return.png)}"\
+                                 "QPushButton:pressed{background-color:rgb(231,231,231)}");
     backOffButton->setFlat(true);
     backOffButton->setFocusPolicy(Qt::NoFocus);
     //backOffButton->setVisible(false);
@@ -147,8 +150,8 @@ void GuideWidget::initUI()
     QVBoxLayout *main_layout = new QVBoxLayout(this);
     QGridLayout *widget_layout = new QGridLayout(m_yWidget);
 
-    widget_layout->addWidget(m_pIconLabel,0,2,1,3);
-    widget_layout->addWidget(m_pTitleLabel,0,6,1,10);
+    widget_layout->addWidget(m_pIconLabel,0,1,1,3);
+    widget_layout->addWidget(m_pTitleLabel,0,4,1,10);
     widget_layout->addWidget(backOffButton,0,22,1,4);
     widget_layout->addWidget(search_Line,0,40,1,40);
     widget_layout->addWidget(menuOffButton,0,90,1,4);
@@ -176,14 +179,14 @@ void GuideWidget::initUI()
     m_pWebView->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
     m_pWebView->settings()->setAttribute(QWebSettings::AutoLoadImages,true);
     m_pWebView->settings()->setAttribute(QWebSettings::PluginsEnabled, true);
-    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
+    //m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
 
     QObject::connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
     QObject::connect(m_pWebView->page(),SIGNAL(linkClicked(QUrl)),this,SLOT(slot_webGoto(QUrl)));
     //    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
-    widget_layout->setContentsMargins(0, 6, 0, 1);
-    widget_layout->setVerticalSpacing(5);
+    widget_layout->setContentsMargins(0, 0, 0, 1);
+    widget_layout->setVerticalSpacing(0);
 
     main_layout->addWidget(m_yWidget);
 
@@ -306,11 +309,12 @@ void GuideWidget::initSettings()
 }
 void GuideWidget::mousePressEvent(QMouseEvent *event)
 {
-     mouseinwidget = false; //避免在其他控件上按下鼠标移动出现位置不正确问题
-     if(event->pos().y()>=0&&event->pos().y()<=30)
-         mCanDrag = true;
-     else
-         mCanDrag = false;
+    qDebug()<<event->localPos()<<event->screenPos()<<event->windowPos()<<event->globalPos();
+    mouseinwidget = false; //避免在其他控件上按下鼠标移动出现位置不正确问题
+    if(event->pos().y()>=0&&event->pos().y()<=30)
+        mCanDrag = true;
+    else
+        mCanDrag = false;
     if (event->button() == Qt::LeftButton) {
         mouseinwidget = true;
         dragPos = event->globalPos() - frameGeometry().topLeft();
