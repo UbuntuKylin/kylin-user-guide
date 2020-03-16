@@ -198,6 +198,13 @@ div.content-div p
     /*line-height: 20px;*/
 }
 
+p.date
+{
+    text-align: left;
+    font-size: 10px;
+    color: #737373;
+}
+
 div.supportContent
 {
     width: 320px;

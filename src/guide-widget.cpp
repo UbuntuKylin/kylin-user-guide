@@ -179,7 +179,7 @@ void GuideWidget::initUI()
     m_pWebView->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
     m_pWebView->settings()->setAttribute(QWebSettings::AutoLoadImages,true);
     m_pWebView->settings()->setAttribute(QWebSettings::PluginsEnabled, true);
-    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
+    //m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
 
     QObject::connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
@@ -208,10 +208,13 @@ void GuideWidget::initUI()
     //this->m_yWidget->setStyleSheet("background-color:lightgray");
     this->m_yWidget->setStyleSheet("background-color:white");
 
-    main_layout->setMargin(1);
+    main_layout->setMargin(2);
 
     this->setLayout(widget_layout);
     this->setLayout(main_layout);
+
+    this->setMouseTracking(true);
+    this->m_yWidget->setMouseTracking(true);
     qDebug() << this->frameGeometry().width() << this->frameGeometry().height();
 }
 
@@ -307,11 +310,59 @@ void GuideWidget::initSettings()
 {
 
 }
+
+void GuideWidget::set_Cursor(QPoint &currentPoint)
+{
+    QRect rect = this->rect();
+    QPoint tl = mapToGlobal(rect.topLeft());
+    QPoint rb = mapToGlobal(rect.bottomRight());
+
+    int x = currentPoint.x();
+    int y = currentPoint.y();
+
+    if (tl.x()+Padding >= x && tl.x() <= x && tl.y()+Padding >= y && tl.y() <= y) {
+        site_flag = left_top;
+        this->setCursor(QCursor(Qt::SizeFDiagCursor));
+    }
+    else if (rb.x()-Padding<= x && rb.x() >= x && tl.y()+Padding >= y && tl.y() <= y) {
+        site_flag = right_top;
+        this->setCursor(QCursor(Qt::SizeBDiagCursor));
+    }
+    else if (tl.x()+Padding >= x && tl.x() <= x && rb.y()-Padding <= y && rb.y() >= y) {
+        site_flag = left_bottm;
+        this->setCursor(QCursor(Qt::SizeBDiagCursor));
+    }
+    else if (rb.x()-Padding <= x && rb.x() >= x && rb.y()-Padding <= y && rb.y() >= y) {
+        site_flag = right_botm;
+        this->setCursor(QCursor(Qt::SizeFDiagCursor));
+    }
+    else if (tl.x()+Padding >= x && tl.x() <= x && tl.y()+Padding <= y && rb.y()-Padding >= y) {
+        site_flag = left;
+        this->setCursor(QCursor(Qt::SizeHorCursor));
+    }
+    else if (rb.x()-Padding <= x && rb.x() >= x && rb.y()-Padding >= y && tl.y()+Padding <= y) {
+        site_flag = right;
+        this->setCursor(QCursor(Qt::SizeHorCursor));
+    }
+    else if (tl.x()+Padding <= x && rb.x()-Padding >= x && tl.y()+Padding >= y && tl.y() <= y) {
+        site_flag = top;
+        this->setCursor(QCursor(Qt::SizeVerCursor));
+    }
+    else if (tl.x()+Padding <= x && rb.x()-Padding >= x && rb.y()-Padding <= y && rb.y() >= y) {
+        site_flag = bottom;
+        this->setCursor(QCursor(Qt::SizeVerCursor));
+    }
+    else {
+        site_flag = middle;
+        this->setCursor(QCursor(Qt::ArrowCursor));
+    }
+}
+
 void GuideWidget::mousePressEvent(QMouseEvent *event)
 {
-    qDebug()<<event->localPos()<<event->screenPos()<<event->windowPos()<<event->globalPos();
+    //qDebug()<<event->localPos()<<event->screenPos()<<event->windowPos()<<event->globalPos();
     mouseinwidget = false; //避免在其他控件上按下鼠标移动出现位置不正确问题
-    if(event->pos().y()>=0&&event->pos().y()<=30)
+    if(event->pos().y()>=3&&event->pos().y()<=30)
         mCanDrag = true;
     else
         mCanDrag = false;
@@ -324,10 +375,96 @@ void GuideWidget::mousePressEvent(QMouseEvent *event)
 
 void GuideWidget::mouseMoveEvent(QMouseEvent *event)
 {
+    QPoint gloPoint = event->globalPos();
+    QRect rect = this->rect();
+    QPoint tl = mapToGlobal(rect.topLeft());
+    QPoint rb = mapToGlobal(rect.bottomRight());
+    qDebug() << event->globalPos() << tl << rb;
+    if (!mouseinwidget)
+    {
+        set_Cursor(gloPoint);
+    }
+    else
+    {
+        if (site_flag != middle )
+        {
+            QRect rMove(tl, rb);
+            switch (site_flag)
+            {
+                case left_top:
+                    if(rb.x()-gloPoint.x() >= this->minimumWidth())
+                        rMove.setLeft(gloPoint.x());
+
+                    if(rb.y()-gloPoint.y() >= this->minimumHeight())
+                        rMove.setTop(gloPoint.y());
+                    break;
+                case right_top:
+                    if(gloPoint.x()-tl.x() >= this->minimumWidth())
+                        rMove.setRight(gloPoint.x());
+
+                    if(rb.y()-gloPoint.y() >= this->minimumHeight())
+                        rMove.setTop(gloPoint.y());
+                    break;
+                case left_bottm:
+                    if(rb.x()-gloPoint.x() >= this->minimumWidth())
+                        rMove.setLeft(gloPoint.x());
+
+                    if(gloPoint.y()-tl.y() >= this->minimumHeight())
+                        rMove.setBottom(gloPoint.y());
+                    break;
+                case right_botm:
+                    if(gloPoint.x()-tl.x() >= this->minimumWidth())
+                        rMove.setRight(gloPoint.x());
+
+                    if(gloPoint.y()-tl.y() >= this->minimumHeight())
+                        rMove.setBottom(gloPoint.y());
+                    break;
+                case top:
+                    if(rb.y()-gloPoint.y() >= this->minimumHeight())
+                        rMove.setTop(gloPoint.y());
+                    break;
+                case right:
+                    if(gloPoint.x()-tl.y() >= this->minimumWidth())
+                        rMove.setRight(gloPoint.x());
+                    break;
+                case bottom:
+                    if(gloPoint.y()-tl.y() >= this->minimumHeight())
+                        rMove.setBottom(gloPoint.y());
+                    break;
+                case left:
+                    if(rb.x()-gloPoint.x() >= this->minimumWidth())
+                        rMove.setLeft(gloPoint.x());
+                    break;
+                default:
+                    break;
+            }
+            this->setGeometry(rMove);
+        }
+    }
+
+
     if (event->buttons() & Qt::LeftButton )
     {
         if(mouseinwidget&&mCanDrag)
             move(event->globalPos() - dragPos);
+    }
+    event->accept();
+}
+
+void GuideWidget::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    if(event->buttons()&Qt::LeftButton)
+    {
+        QWidget *m_yWindow = this->window();
+        if(m_yWindow->isTopLevel())
+        {
+            QPushButton *button1 = this->m_yWidget->findChild<QPushButton *>("maxOffButton");
+            QIcon iconFull(":/image/restore.png");
+            QIcon iconRestore(":/image/fullscreen.png");
+            m_yWindow->isMaximized() ? m_yWindow->showNormal() : m_yWindow->showMaximized();
+            m_yWindow->isMaximized() ? button1->setIcon(iconFull) :button1->setIcon(iconRestore);
+        }
+        qDebug() << this->rect();
     }
     event->accept();
 }
