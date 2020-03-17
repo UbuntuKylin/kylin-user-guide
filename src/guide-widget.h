@@ -59,15 +59,20 @@ public:
     void initSettings();
     void showPosition();
     void jump_app(QString);
+    void set_Cursor(QPoint &event);
 protected:
     void closeEvent(QCloseEvent *);
     void mousePressEvent(QMouseEvent * );
     void mouseMoveEvent(QMouseEvent *);
     void mouseReleaseEvent(QMouseEvent *);
+    void mouseDoubleClickEvent(QMouseEvent *);
     QPoint dragPos;
     bool mouseinwidget =false;
     bool isClose = false;
     bool mCanDrag = false;
+    enum LocaTion{top,bottom,left,right,left_top,left_bottm,right_top,right_botm,middle};
+    LocaTion site_flag;
+    int Padding = 2;
 private:
     QWebView *m_pWebView;
     QString mJumpAppName;
