@@ -14,8 +14,8 @@ div.hlist-div::-webkit-scrollbar-track
 ::-webkit-scrollbar-thumb
 {
     border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 2);
-    background: rgb(199, 208, 202);
+    box-shadow: inset 0 0 5px rgb(128,128,128);
+    background: rgb(211, 211, 211);
 }
 
 ::-webkit-scrollbar-track
