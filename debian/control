@@ -1,29 +1,23 @@
 Source: kylin-user-guide
 Section: utils
 Priority: optional
-Maintainer: Ubuntu Kylin Team <ubuntukylin-members@lists.launchpad.net>
-Uploaders: xiaoyiwu <xiaoyiwu@ubuntukylin.com>
+Maintainer: Kylin Team <team+kylin@tracker.debian.org>
+Uploaders: handsome_feng <jianfengli@ubuntukylin.com>
 Build-Depends: cmake,
                libqt5gui5,
                debhelper-compat (= 12),
-#               debhelper,
+               pkg-config,
                qttools5-dev-tools,
                qttools5-dev,
-#               libqt5webchannel5-dev,
-#               qtwebengine5-dev,
                libqt5webkit5-dev
-Standards-Version: 4.4.0
-Homepage: https://github.com/ukui/kylin-user-guide
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Homepage: https://github.com/ubuntukylin/kylin-user-guide
+Vcs-Git: https://github.com/ubuntukylin/kylin-user-guide
+Vcs-Browser: https://github.com/ubuntukylin/kylin-user-guide
 
 Package: kylin-user-guide
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: manual for UKUI desktop environment
- A simple and lightweight guide written by Qt5/js/md
-
-Package: kylin-user-guide-dbg
-Architecture: any
-Section: debug
-Depends: kylin-user-guide , ${misc:Depends}
-Description: Smanual for UKUI desktop environment
- A simple and lightweight guide written by Qt5/js/md
+ A simple and lightweight guide written by Qt5/js/md.
