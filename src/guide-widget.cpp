@@ -45,7 +45,8 @@
 GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 {
     this->isTopLevel();
-    this->resize(850,640);
+    //this->resize(850,640);
+    this->resize(1000,750);
     this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
     this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
@@ -379,7 +380,7 @@ void GuideWidget::mouseMoveEvent(QMouseEvent *event)
     QRect rect = this->rect();
     QPoint tl = mapToGlobal(rect.topLeft());
     QPoint rb = mapToGlobal(rect.bottomRight());
-    qDebug() << event->globalPos() << tl << rb;
+    //qDebug() << event->globalPos() << tl << rb;
     if (!mouseinwidget)
     {
         set_Cursor(gloPoint);
