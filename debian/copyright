@@ -17,8 +17,7 @@ Copyright: /usr/share/kylin-user-guide/web/js/lib/node_modules/marked/LICENSE.md
 License: MIT
 
 Files: src/web/js/lib/node_modules/marked/require/*
-Copyright: https://github.com/requirejs/requirejs/blob/maste
-r/LICENSE
+Copyright: 2015-2018, jQuery Foundation and other contributors
 License: MIT
 
 

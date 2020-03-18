@@ -27,4 +27,5 @@ Architecture: any
 Section: debug
 Depends: kylin-user-guide , ${misc:Depends}
 Description: Smanual for UKUI desktop environment
- A simple and lightweight guide written by Qt5/js/md
+   Kylin User Guide is a simple and lightweight guide written by Qt5/js/md,
+	It has the characteristics of easy maintenance and simple interface
