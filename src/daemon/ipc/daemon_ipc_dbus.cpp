@@ -101,7 +101,7 @@ void DaemonIpcDbus::startGUI(QString appName)
 {
     QString cmd = "/usr/bin/kylin-user-guide";
     QStringList list;
-    list<<"-a"<<appName;
+    list<<"-A"<<appName;
     QProcess::startDetached(cmd,list);
 }
 
