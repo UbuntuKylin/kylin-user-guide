@@ -45,7 +45,8 @@
 GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 {
     this->isTopLevel();
-    this->resize(850,640);
+    //this->resize(850,640);
+    this->resize(1000,750);
     this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
     this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
@@ -95,15 +96,18 @@ void GuideWidget::initUI()
     maxOffButton->setObjectName("maxOffButton");
     closeOffButton->setObjectName("closeOffButton");
 
-    m_pIconLabel->setFixedSize(28,30);
+    m_pIconLabel->setFixedSize(24,24);
     m_pIconLabel->setScaledContents(true);
     m_pIconLabel->setPixmap((QPixmap(QString::fromLocal8Bit(":/image/kylin-user-guide_16_24.png"))));
 
     m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
 
-    QIcon iconReturn(":/image/return.png"); //让QIcon对象指向想要的图标
-    backOffButton->setIcon(iconReturn); //给按钮添加图标
-    backOffButton->setIconSize(QSize(30,25));//重置图标大小
+    //QIcon iconReturn(":/image/return.png"); //让QIcon对象指向想要的图标
+    //backOffButton->setIcon(iconReturn); //给按钮添加图标
+    //backOffButton->setIconSize(QSize(30,25));//重置图标大小
+    backOffButton->setFixedSize(25,25);
+    backOffButton->setStyleSheet("QPushButton{border-image: url(:/image/return.png)}"\
+                                 "QPushButton:pressed{background-color:rgb(231,231,231)}");
     backOffButton->setFlat(true);
     backOffButton->setFocusPolicy(Qt::NoFocus);
     //backOffButton->setVisible(false);
@@ -147,8 +151,8 @@ void GuideWidget::initUI()
     QVBoxLayout *main_layout = new QVBoxLayout(this);
     QGridLayout *widget_layout = new QGridLayout(m_yWidget);
 
-    widget_layout->addWidget(m_pIconLabel,0,2,1,3);
-    widget_layout->addWidget(m_pTitleLabel,0,6,1,10);
+    widget_layout->addWidget(m_pIconLabel,0,1,1,3);
+    widget_layout->addWidget(m_pTitleLabel,0,4,1,10);
     widget_layout->addWidget(backOffButton,0,22,1,4);
     widget_layout->addWidget(search_Line,0,40,1,40);
     widget_layout->addWidget(menuOffButton,0,90,1,4);
@@ -176,14 +180,14 @@ void GuideWidget::initUI()
     m_pWebView->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
     m_pWebView->settings()->setAttribute(QWebSettings::AutoLoadImages,true);
     m_pWebView->settings()->setAttribute(QWebSettings::PluginsEnabled, true);
-    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
+    //m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
 
     QObject::connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
     QObject::connect(m_pWebView->page(),SIGNAL(linkClicked(QUrl)),this,SLOT(slot_webGoto(QUrl)));
     //    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
-    widget_layout->setContentsMargins(0, 6, 0, 1);
-    widget_layout->setVerticalSpacing(5);
+    widget_layout->setContentsMargins(0, 0, 0, 1);
+    widget_layout->setVerticalSpacing(0);
 
     main_layout->addWidget(m_yWidget);
 
@@ -205,10 +209,13 @@ void GuideWidget::initUI()
     //this->m_yWidget->setStyleSheet("background-color:lightgray");
     this->m_yWidget->setStyleSheet("background-color:white");
 
-    main_layout->setMargin(1);
+    main_layout->setMargin(2);
 
     this->setLayout(widget_layout);
     this->setLayout(main_layout);
+
+    this->setMouseTracking(true);
+    this->m_yWidget->setMouseTracking(true);
     qDebug() << this->frameGeometry().width() << this->frameGeometry().height();
 }
 
@@ -304,13 +311,62 @@ void GuideWidget::initSettings()
 {
 
 }
+
+void GuideWidget::set_Cursor(QPoint &currentPoint)
+{
+    QRect rect = this->rect();
+    QPoint tl = mapToGlobal(rect.topLeft());
+    QPoint rb = mapToGlobal(rect.bottomRight());
+
+    int x = currentPoint.x();
+    int y = currentPoint.y();
+
+    if (tl.x()+Padding >= x && tl.x() <= x && tl.y()+Padding >= y && tl.y() <= y) {
+        site_flag = left_top;
+        this->setCursor(QCursor(Qt::SizeFDiagCursor));
+    }
+    else if (rb.x()-Padding<= x && rb.x() >= x && tl.y()+Padding >= y && tl.y() <= y) {
+        site_flag = right_top;
+        this->setCursor(QCursor(Qt::SizeBDiagCursor));
+    }
+    else if (tl.x()+Padding >= x && tl.x() <= x && rb.y()-Padding <= y && rb.y() >= y) {
+        site_flag = left_bottm;
+        this->setCursor(QCursor(Qt::SizeBDiagCursor));
+    }
+    else if (rb.x()-Padding <= x && rb.x() >= x && rb.y()-Padding <= y && rb.y() >= y) {
+        site_flag = right_botm;
+        this->setCursor(QCursor(Qt::SizeFDiagCursor));
+    }
+    else if (tl.x()+Padding >= x && tl.x() <= x && tl.y()+Padding <= y && rb.y()-Padding >= y) {
+        site_flag = left;
+        this->setCursor(QCursor(Qt::SizeHorCursor));
+    }
+    else if (rb.x()-Padding <= x && rb.x() >= x && rb.y()-Padding >= y && tl.y()+Padding <= y) {
+        site_flag = right;
+        this->setCursor(QCursor(Qt::SizeHorCursor));
+    }
+    else if (tl.x()+Padding <= x && rb.x()-Padding >= x && tl.y()+Padding >= y && tl.y() <= y) {
+        site_flag = top;
+        this->setCursor(QCursor(Qt::SizeVerCursor));
+    }
+    else if (tl.x()+Padding <= x && rb.x()-Padding >= x && rb.y()-Padding <= y && rb.y() >= y) {
+        site_flag = bottom;
+        this->setCursor(QCursor(Qt::SizeVerCursor));
+    }
+    else {
+        site_flag = middle;
+        this->setCursor(QCursor(Qt::ArrowCursor));
+    }
+}
+
 void GuideWidget::mousePressEvent(QMouseEvent *event)
 {
-     mouseinwidget = false; //避免在其他控件上按下鼠标移动出现位置不正确问题
-     if(event->pos().y()>=0&&event->pos().y()<=30)
-         mCanDrag = true;
-     else
-         mCanDrag = false;
+    //qDebug()<<event->localPos()<<event->screenPos()<<event->windowPos()<<event->globalPos();
+    mouseinwidget = false; //避免在其他控件上按下鼠标移动出现位置不正确问题
+    if(event->pos().y()>=3&&event->pos().y()<=30)
+        mCanDrag = true;
+    else
+        mCanDrag = false;
     if (event->button() == Qt::LeftButton) {
         mouseinwidget = true;
         dragPos = event->globalPos() - frameGeometry().topLeft();
@@ -320,10 +376,96 @@ void GuideWidget::mousePressEvent(QMouseEvent *event)
 
 void GuideWidget::mouseMoveEvent(QMouseEvent *event)
 {
+    QPoint gloPoint = event->globalPos();
+    QRect rect = this->rect();
+    QPoint tl = mapToGlobal(rect.topLeft());
+    QPoint rb = mapToGlobal(rect.bottomRight());
+    //qDebug() << event->globalPos() << tl << rb;
+    if (!mouseinwidget)
+    {
+        set_Cursor(gloPoint);
+    }
+    else
+    {
+        if (site_flag != middle )
+        {
+            QRect rMove(tl, rb);
+            switch (site_flag)
+            {
+                case left_top:
+                    if(rb.x()-gloPoint.x() >= this->minimumWidth())
+                        rMove.setLeft(gloPoint.x());
+
+                    if(rb.y()-gloPoint.y() >= this->minimumHeight())
+                        rMove.setTop(gloPoint.y());
+                    break;
+                case right_top:
+                    if(gloPoint.x()-tl.x() >= this->minimumWidth())
+                        rMove.setRight(gloPoint.x());
+
+                    if(rb.y()-gloPoint.y() >= this->minimumHeight())
+                        rMove.setTop(gloPoint.y());
+                    break;
+                case left_bottm:
+                    if(rb.x()-gloPoint.x() >= this->minimumWidth())
+                        rMove.setLeft(gloPoint.x());
+
+                    if(gloPoint.y()-tl.y() >= this->minimumHeight())
+                        rMove.setBottom(gloPoint.y());
+                    break;
+                case right_botm:
+                    if(gloPoint.x()-tl.x() >= this->minimumWidth())
+                        rMove.setRight(gloPoint.x());
+
+                    if(gloPoint.y()-tl.y() >= this->minimumHeight())
+                        rMove.setBottom(gloPoint.y());
+                    break;
+                case top:
+                    if(rb.y()-gloPoint.y() >= this->minimumHeight())
+                        rMove.setTop(gloPoint.y());
+                    break;
+                case right:
+                    if(gloPoint.x()-tl.y() >= this->minimumWidth())
+                        rMove.setRight(gloPoint.x());
+                    break;
+                case bottom:
+                    if(gloPoint.y()-tl.y() >= this->minimumHeight())
+                        rMove.setBottom(gloPoint.y());
+                    break;
+                case left:
+                    if(rb.x()-gloPoint.x() >= this->minimumWidth())
+                        rMove.setLeft(gloPoint.x());
+                    break;
+                default:
+                    break;
+            }
+            this->setGeometry(rMove);
+        }
+    }
+
+
     if (event->buttons() & Qt::LeftButton )
     {
         if(mouseinwidget&&mCanDrag)
             move(event->globalPos() - dragPos);
+    }
+    event->accept();
+}
+
+void GuideWidget::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    if(event->buttons()&Qt::LeftButton)
+    {
+        QWidget *m_yWindow = this->window();
+        if(m_yWindow->isTopLevel())
+        {
+            QPushButton *button1 = this->m_yWidget->findChild<QPushButton *>("maxOffButton");
+            QIcon iconFull(":/image/restore.png");
+            QIcon iconRestore(":/image/fullscreen.png");
+            m_yWindow->isMaximized() ? m_yWindow->showNormal() : m_yWindow->showMaximized();
+            m_yWindow->isMaximized() ? button1->setIcon(iconFull) :button1->setIcon(iconRestore);
+        }
+        qDebug() << this->rect();
     }
     event->accept();
 }

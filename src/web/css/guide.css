@@ -3,14 +3,19 @@
 ::-webkit-scrollbar
 {
     width: 7px;
-    display: none;
+/*    display: none;*/
+}
+
+div.hlist-div::-webkit-scrollbar-track
+{
+    background:rgb(231,231,231);
 }
 
 ::-webkit-scrollbar-thumb
 {
     border-radius: 5px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 2);
-    background: rgb(199, 208, 202);
+    box-shadow: inset 0 0 5px rgb(128,128,128);
+    background: rgb(211, 211, 211);
 }
 
 ::-webkit-scrollbar-track
@@ -39,7 +44,7 @@ div.hlist-div
     float:left;/*目录框的位置*/
     overflow-y:auto;/*目录框添加滚动条*/
     position: fixed;/*目录框相对浏览器进行定位*/
-    width:18%;/*目录框的宽度*/
+    width:19%;/*目录框的宽度*/
     height: 100%; /*目录框的高度*/
     top: 0;
     left: 0;
@@ -74,6 +79,7 @@ div.system-app span {
     font-size: 14px;
     font-weight: normal;
     color: black;
+    font-family: Noto Sans CJK SC;
 }
 
 div.system-app:hover
@@ -116,13 +122,13 @@ div.hlist-div a
 div.hlist-div a:link
 {
     display: block;
-    width: 86%;
+    width: 95%;
     height: 100%;
     background-color: rgb(231,231,231);
     color: black;
     text-decoration: none;
     border-radius: 4px;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 /*div.hlist-div a:hover
@@ -135,15 +141,16 @@ div.content-div
 {
     font-size: 16px;
     color: #333;
-    width:80%;
+    width:75%;
     height: 100%;
     float:right;
     /*padding-left: 2%;*/
     overflow-x:hidden;
     overflow-y:hidden;
     margin-left: 16px;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
+    line-height: 1.75;
 }
 
 div.content-div h1
@@ -186,9 +193,16 @@ div.content-div img
 
 div.content-div p
 {
-    font-family: sans-serif;
+    font-family: Noto Sans CJK SC;
     text-indent: 20px;
-    line-height: 20px;
+    /*line-height: 20px;*/
+}
+
+p.date
+{
+    text-align: left;
+    font-size: 10px;
+    color: #737373;
 }
 
 div.supportContent
@@ -201,6 +215,7 @@ div.supportContent
     margin-bottom: 25px;
     line-height: 20px;
     color: rgb(138, 138, 138);
+    margin-left: 20px;
 }
 
 div.supportEmail
@@ -221,10 +236,10 @@ a[target="_blank"]
     /*text-decoration: none;*/
 }
 
-div.content-div h5
+/*div.content-div h6
 {
     text-align: center;
-}
+}*/
 
 div.paga_top
 {
@@ -232,6 +247,17 @@ div.paga_top
     margin-top: 24px;
     margin-right: 10px;
     margin-bottom: 50px;
+    vertical-align: middle;
+    float: right;
+}
+
+div.paga_top img
+{
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+    border-radius: 0px;
+    border: 0px;
 }
 /*
 [img~=svg]

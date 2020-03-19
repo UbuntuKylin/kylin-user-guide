@@ -37,10 +37,42 @@ function qt_jumpApp(appName)
     onclickButton(appName)
 }
 
+var date ={
+    kylinOS:"2019年12月18日",
+    ukui:"2019年11月13日",
+    kydroid2:"2019年11月13日",
+    kylin_control_center : "2019年11月13日",
+    biometric_manager : "2020年3月13日",
+    hot_key:"2019年11月13日",
+    caja:"2019年11月13日",
+    ubuntu_kylin_software_center:"2019年11月13日", 
+    kylin_video:"2019年11月13日",
+    brasero:"2019年11月13日",
+    youker_assistant:"2019年11月13日",
+    kylin_ipmsg:"2019年11月13日",
+    kysec_ui_pkexec:"2019年11月13日",
+    kybackup:"2019年11月13日",
+    audacious:"2019年11月13日",
+    eom :"2019年11月13日",
+    kylin_update_manager:"2019年11月13日",
+    remmina:"2019年11月13日",
+    vino_preferences:"2019年11月13日",
+    claws_mail:"2019年11月13日",
+    system_config_printer:"2019年11月13日",
+    simple_scan:"2019年11月13日",
+    mate_system_monitor:"2019年11月13日",
+    gparted:"2019年11月13日",
+    engrampa:"2019年11月13日",
+    audio_recorder:"2019年11月13日",
+    mate_terminal:"2019年11月13日",
+    tools:"2020年3月13日",
+    technical_assistance:"2019年3月12日",
+};
+
 function onclickButton(str)
 {
 //    alert(str)
-    console.log(str)
+    //console.log(str+"======"+window.pageYOffset);
     document.getElementById("mainUI").style.display="none";
     document.getElementById("pageContent").style.display="inline";
 
@@ -69,28 +101,33 @@ function onclickButton(str)
             hlist_str +=  "<h3>\n" + "<a id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</h3>" ;
             console.log(hlist_str);
         }*/
-        /*var pattren=/^[\\u4E00-\\u9FA5]+$/;
+        var pattren=/[0-9]/;
         var name_text= "";
         for( j=0;j<hlist[i].text.length;j++)
         {
-            console.log(hlist[i].text[j]+"=========="+pattren.test(hlist[i].text[j]));
-            if(pattren.test(hlist[i].text[j])||hlist[i].text[j] == '?')
+            if(hlist[i].text[j] != "."&&!pattren.test(hlist[i].text[j]))
             {
                 name_text+=hlist[i].text[j];
             }
-        }*/
-        name_text=hlist[i].text.slice(hlist[i].text.indexOf(" "),hlist[i].text.length);
+        }
         console.log(hlist[i].type+"======"+name_text);
         if(hlist[i].type == "h1")
             hlist_str +=  "<dt>\n" + "<a class='name1' id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
         else if(hlist[i].type == "h2")
-            hlist_str +=  "<dt>\n" + "<a class='name2'  onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+            if(name_text.length >12 )
+            {
+                hlist_str +=  "<dt>\n" + "<a class='name2' style='line-height:20px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+            }
+            else
+            {
+                hlist_str +=  "<dt>\n" + "<a class='name2'  onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+            }
         else if(hlist[i].type == "h3")
         {
             console.log(name_text.length);
             if(name_text.length >12)
             {
-                hlist_str +=  "<dt>\n" + "<a class='name3' style='line-height:15px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+                hlist_str +=  "<dt>\n" + "<a class='name3' style='line-height:20px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
             }
             else
             {
@@ -102,17 +139,24 @@ function onclickButton(str)
      hlist_str = "<dl>" + hlist_str + "</dl>";
  //   console.log(hlist_str);
 
+    str_name = str.replace(/-/g,"_");
+    //console.log(str+"=============="+str_name+"======="+date[str_name]);
     html_new = "<h1><a name='paga_top'>"+info.title+"</a></h1>"
-                                +"<p  style='text-align: left;font-size: 10px;text-indent: 0px;'>更新时间：****年**月**日</p>"
+                                +"<p  class='date' style='text-indent: 0px;'>更新时间："
+                                +date[str_name]
+                                +"</p>"
                                 +"<HR style='margin-bottom: 34px;margin-top: 10px'>"
                                 +html
                                 +"<HR style='margin-top: 20px'>"
                                 +"<div class='paga_top' >"
+                                +"<img src='file:////usr/share/kylin-user-guide/data/icon返回顶部.png' "+"/>"
                                 +"<a style='text-decoration: none;' onclick=onclickA('') href='#paga_top'>返回顶部</a>"
                                 +"</div>"
 
     document.getElementById("hlist").innerHTML = hlist_str
+    document.getElementById("content").scrollTop = 0;
     document.getElementById("content").innerHTML = html_new
+    
 
 }
 
@@ -139,6 +183,10 @@ function onclickA(str)
         document.getElementById(str).style.backgroundColor="#3D6BE5"
         document.getElementById(str).style.color="white"
         old_str = str
+    }
+    if(str == "")
+    {
+        document.getElementById("hlist").scrollTop = 0;
     }
 }
 
