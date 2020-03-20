@@ -60,6 +60,7 @@ public:
     void showPosition();
     void jump_app(QString);
     void set_Cursor(QPoint &event);
+    QString system_name();
 protected:
     void closeEvent(QCloseEvent *);
     void mousePressEvent(QMouseEvent * );

@@ -145,7 +145,6 @@ void GuideWidget::initUI()
     connect(closeOffButton,SIGNAL(released()),this,SLOT(slot_onClicked_closeOffButton()));
     connect(minOffButton,SIGNAL(released()),this,SLOT(slot_onClicked_minOffButton()));
     connect(maxOffButton,SIGNAL(released()),this,SLOT(slot_onClicked_maxOffButton()));
-    connect(this,SIGNAL(sig_backOff2js()),this,SLOT(slot_backOffButton_hide()));
 
 
     QVBoxLayout *main_layout = new QVBoxLayout(this);
@@ -165,8 +164,22 @@ void GuideWidget::initUI()
     widget_layout->setColumnStretch(89,2);
 
     widget_layout->addWidget(m_pWebView,1,0,1,106);
+
+    QString name = system_name();
+    qDebug() << "--------" <<name;
+    if(name == "kylin")
+    {
+        m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
+    }
+//    else if (name == "Ubuntu")
+//    {
+//        m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
+//    }
+    else if (name == "Ubuntu Kylin"){
+        m_pWebView->load(QUrl(QString(LOCAL_URL_PATH_UBUNTUKYLIN)+"index-ubuntukylin.html"));
+    }
 //    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
-    m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
+    //m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
     m_pWebView->page()->setLinkDelegationPolicy(QWebPage::DelegateExternalLinks);//外链
     m_pWebView->settings()->setObjectCacheCapacities(0,0,0);
 //    m_pWebView->settings()->setAttribute(QWebSettings::WebSecurityEnabled, false);//关闭浏览器安全
@@ -180,7 +193,7 @@ void GuideWidget::initUI()
     m_pWebView->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
     m_pWebView->settings()->setAttribute(QWebSettings::AutoLoadImages,true);
     m_pWebView->settings()->setAttribute(QWebSettings::PluginsEnabled, true);
-    //m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
+    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
 
     QObject::connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
@@ -244,7 +257,18 @@ void GuideWidget::slot_backOffButton()
 {
     qDebug() << Q_FUNC_INFO;
 //    emit sig_backOff2js();
-    m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
+    QString name = system_name();
+    if(name == "kylin")
+    {
+        m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
+    }
+//    else if (name == "Ubuntu") {
+//        m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
+//    }
+    else if (name == "Ubuntu Kylin") {
+        m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI_ubuntu();");
+    }
+    //m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
     QPushButton *button = this->m_yWidget->findChild<QPushButton *>("backOffButton");
     button->hide();
 }
@@ -285,10 +309,39 @@ void GuideWidget::slot_onClicked_closeOffButton()
     }
 }
 
+QString GuideWidget::system_name()
+{
+    QFile system (SYSTEM_FILE);
+    if(!system.exists())
+    {
+        return "";
+    }
+    if (!system.open(QIODevice::ReadOnly))
+    {
+        return "";
+    }
+    QString str = system.readLine();
+    QString name = str.section("\"",1,1);
+    return name;
+    //return "Ubuntu Kylin";
+}
+
 QString GuideWidget::js_getIndexMdFilePath(QString appName)
 {
     qDebug() << Q_FUNC_INFO << appName;
-    QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
+    QString IndexMdFilePath;
+    QString name = system_name();
+    if(name == "kylin")
+    {
+        IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
+    }
+//    else if (name == "Ubuntu") {
+//        IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
+//    }
+    else if (name == "Ubuntu Kylin"){
+        IndexMdFilePath = LOCAL_FILE_PATH_UBUNTUKYLIN + appName + "/" +  gLang + "/index.md";
+    }
+    //QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
     QPushButton *button = this->m_yWidget->findChild<QPushButton *>("backOffButton");
     qDebug() << button;
     button->show();

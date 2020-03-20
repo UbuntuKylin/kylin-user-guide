@@ -66,6 +66,7 @@ div.system-app {
     border-radius:4px;
     margin-left: 22px;
     margin-bottom: 24px;
+    box-shadow:5px 5px 2px  rgb(231,231,231);
 }
 
 div.system-app img {
@@ -87,6 +88,12 @@ div.system-app:hover
     border-radius: 4px;
     background: #3D6BE5;
     color: white;
+}
+
+div.system-app:active
+{
+    padding-left: 5px;
+    padding-top: 5px;
 }
 
 div.hlist-div a[class="name2"]
@@ -243,6 +250,10 @@ a[target="_blank"]
 
 div.paga_top
 {
+    /*position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 999;*/
     text-align: right;
     margin-top: 24px;
     margin-right: 10px;
@@ -259,6 +270,27 @@ div.paga_top img
     border-radius: 0px;
     border: 0px;
 }
+
+/*div#top
+{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 999;
+    border-radius: 0px;
+    /*border: 1px black;*/
+    /*background-color: #3D6BE5;
+}*/
+
+/*div#top img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}*/
 /*
 [img~=svg]
 {

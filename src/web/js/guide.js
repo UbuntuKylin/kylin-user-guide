@@ -78,6 +78,7 @@ function onclickButton(str)
 
     var mdPath = window.guideWebkit.js_getIndexMdFilePath(str)
     var mdDate = window.guideWebkit.js_getIndexMdFileContent(mdPath)
+    console.log(str,mdPath);
 //    alert(mdDate)
     var m2ht = getDocTop(mdPath,mdDate)
     var html = m2ht.html
@@ -149,9 +150,12 @@ function onclickButton(str)
                                 +html
                                 +"<HR style='margin-top: 20px'>"
                                 +"<div class='paga_top' >"
-                                +"<img src='file:////usr/share/kylin-user-guide/data/icon返回顶部.png' "+"/>"
+                                +"<img src='file:////usr/share/kylin-user-guide/data/icon-go-top.png' "+"/>"
                                 +"<a style='text-decoration: none;' onclick=onclickA('') href='#paga_top'>返回顶部</a>"
                                 +"</div>"
+                                //+"<div id='top'>"
+                                //+"<img src='file:////usr/share/kylin-user-guide/data/go-top.png' "+"/>"
+                                //+"</div>"
 
     document.getElementById("hlist").innerHTML = hlist_str
     document.getElementById("content").scrollTop = 0;
@@ -167,6 +171,11 @@ function goBackMainUI()
     //document.getElementById("mainUI").style.display="inline";
     //document.getElementById("pageContent").style.display="none";
     window.location.href="index.html"
+}
+
+function goBackMainUI_ubuntu()
+{
+    window.location.href="index-ubuntukylin.html"
 }
 
 var old_str="";
