@@ -1,4 +1,4 @@
-/usr/bin/*
+#/usr/bin/*
 debian/version /usr/share/kylin-user-guide/
 data /usr/share/kylin-user-guide/
 src/web /usr/share/kylin-user-guide/

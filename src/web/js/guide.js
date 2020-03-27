@@ -39,6 +39,7 @@ function qt_jumpApp(appName)
 
 var date ={
     kylinOS:"2019年12月18日",
+    ubiquity:"2020年3月23日",
     ukui:"2019年11月13日",
     kydroid2:"2019年11月13日",
     kylin_control_center : "2019年11月13日",
@@ -67,6 +68,8 @@ var date ={
     mate_terminal:"2019年11月13日",
     tools:"2020年3月13日",
     technical_assistance:"2019年3月12日",
+    boxmanage:"2020年3月19日",
+    pammanager:"2020年3月19日",
 };
 
 function onclickButton(str)
@@ -149,7 +152,7 @@ function onclickButton(str)
                                 +html
                                 +"<HR style='margin-top: 20px'>"
                                 +"<div class='paga_top' >"
-                                +"<img src='file:////usr/share/kylin-user-guide/data/icon返回顶部.png' "+"/>"
+                                +"<img src='file:////usr/share/kylin-user-guide/data/icon-go-top.png' "+"/>"
                                 +"<a style='text-decoration: none;' onclick=onclickA('') href='#paga_top'>返回顶部</a>"
                                 +"</div>"
 
@@ -232,6 +235,7 @@ function getDocTop(mdFile, mdData) {
 //            hrefX2 = `${path.join('.')}x2.${ext}`;
             hrefX2 =  path.join('.')+ "x2." + ext;
         }
+        console.log(text);
         if (text == "")
 //            return `<img src="${hrefX2}" data-src="${href}" alt="${text}" />`;
             return '<img src=\"' + hrefX2 + '\" data-src=\"'+ href + '\" alt=' + text +  '/>';
