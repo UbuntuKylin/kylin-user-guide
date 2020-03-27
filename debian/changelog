@@ -1,3 +1,37 @@
+kylin-user-guide (1:1.0.0.0010) v100; urgency=medium
+
+  * modify the pics' size for kysec-ui-pkexec. 
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 27 Mar 2020 11:32:06 +0800
+
+kylin-user-guide (1:1.0.0.0009) v100; urgency=medium
+
+  * update kysec-ui-pkexec
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 27 Mar 2020 09:26:00 +0800
+
+kylin-user-guide (1:1.0.0.0008) v100; urgency=medium
+
+  * update boxmanage's icon.
+  * modify some pics tag.
+  * add system-install.
+
+ -- quyanying <quyanying@kylinos.cn>  Mon, 23 Mar 2020 13:45:23 +0800
+
+kylin-user-guide (1:1.0.0.0007) v100; urgency=medium
+
+  * update
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 19 Mar 2020 18:19:12 +0800
+
+kylin-user-guide (1:1.0.0.0005) v100; urgency=medium
+
+  * changed guide/
+  * add boxmanage and pammanager（guide/ 和 index.html）
+  * add date（.js）
+
+ -- tangguang <tangguang@kylinos.cn>  Thu, 19 Mar 2020 17:23:36 +0800
+
 kylin-user-guide (1.0.0-1) unstable; urgency=medium
 
   * Initial release. (Closes: xxxx)

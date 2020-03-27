@@ -6,3 +6,4 @@ DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 arch ?= $(shell arch)
 %:
 	dh $@ 
+

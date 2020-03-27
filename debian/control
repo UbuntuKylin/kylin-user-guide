@@ -5,7 +5,8 @@ Maintainer: Kylin Team <team+kylin@tracker.debian.org>
 Uploaders: handsome_feng <jianfengli@ubuntukylin.com>
 Build-Depends: cmake,
                libqt5gui5,
-               debhelper-compat (= 12),
+#               debhelper-compat (= 12)
+               debhelper,
                pkg-config,
                qttools5-dev-tools,
                qttools5-dev,
@@ -21,5 +22,4 @@ Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Smanual for UKUI desktop environment
   Kylin User Guide is a simple and lightweight guide written by Qt5/js/md,
-	It has the characteristics of easy maintenance and simple interface
-  A simple and lightweight guide written by Qt5/js/md.
+  It has the characteristics of easy maintenance and simple interface
