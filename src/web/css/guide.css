@@ -235,6 +235,7 @@ div.supportEmail
     margin-bottom: 25px;
     line-height: 20px;
     color: rgb(138, 138, 138);
+    vertical-align: middle;
 }
 
 a[target="_blank"]
