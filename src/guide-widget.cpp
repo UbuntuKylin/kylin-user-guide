@@ -171,7 +171,7 @@ void GuideWidget::initUI()
     {
         m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
     }
-//    else if (name == "Ubuntu")
+//    else if (name == "Ubuntu_Kylin")
 //    {
 //        m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
 //    }
