@@ -179,6 +179,81 @@ function goBackMainUI_ubuntu()
     window.location.href="index-ubuntukylin.html"
 }
 
+var arrows_div={
+    system:0,
+    app:0,
+    support:0,
+}
+
+var  arrows_png={
+    button1:0,
+    button2:0,
+    button3:0,
+}
+
+function change_arrows(button_name)
+{
+    if(arrows_png[button_name] == 0)
+    {
+        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/kylin-user-guide/data/arrows_right.png"+")";
+        document.getElementById(button_name).style.backgroundSize="25px 25px";
+        arrows_png[button_name]=1;
+        return
+    }
+    if(arrows_png[button_name] == 1)
+    {
+        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/kylin-user-guide/data/arrows_bottom.png"+")";
+        document.getElementById(button_name).style.backgroundSize="25px 25px";
+        arrows_png[button_name]=0;
+        return
+    }
+}
+
+function onclickarrows(str)
+{
+    console.log(str)
+    if(str == 'system') 
+    {
+        if(arrows_div[str] == 0)
+        {
+            document.getElementById(str).style.display="none"
+            arrows_div.system=1;
+        }
+        else
+        {
+            document.getElementById(str).style.display="inline"
+            arrows_div.system=0; 
+        }
+    }
+    else if(str == 'app')
+    {
+        if(arrows_div[str] == 0 )
+        {
+            document.getElementById(str).style.display="none"
+            arrows_div.app=1;
+        }
+        else
+        {
+            document.getElementById(str).style.display="inline"
+            arrows_div.app=0;
+        }
+    }
+    else if(str == 'support')
+    {
+        if(arrows_div[str] == 0 )
+        {
+            document.getElementById(str).style.display="none"
+            arrows_div.support=1;
+        }
+        else
+        {
+            document.getElementById(str).style.display="inline"
+            arrows_div.support=0;
+        }
+    }
+       
+}
+
 var old_str="";
 function onclickA(str)
 {
@@ -230,7 +305,7 @@ function getDocTop(mdFile, mdData) {
             console.log(text);
             console.log(type);
         }
-            return "<"+ type + " id="+   id + " text=" +text + ">" + text + "</"+ type + ">\n";
+            return "<"+ type + " id="+   id + " text=" +text + " class='html_h5'>" + text + "</"+ type + ">\n";
     };
 
     renderer.image = function(href, title, text){
