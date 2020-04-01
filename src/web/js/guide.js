@@ -152,7 +152,7 @@ function onclickButton(str)
                                 +"<HR style='margin-top: 20px'>"
                                 +"<div class='paga_top' >"
                                 +"<img src='file:////usr/share/kylin-user-guide/data/icon-go-top.png' "+"/>"
-                                +"<a style='text-decoration: none;' onclick=onclickA('') href='#paga_top'>返回顶部</a>"
+                                +"<a style='text-decoration: none;'onclick=onclickA('') href='#paga_top'>返回顶部</a>"
                                 +"</div>"
                                 //+"<div id='top'>"
                                 //+"<img src='file:////usr/share/kylin-user-guide/data/go-top.png' "+"/>"
@@ -177,81 +177,6 @@ function goBackMainUI()
 function goBackMainUI_ubuntu()
 {
     window.location.href="index-ubuntukylin.html"
-}
-
-var arrows_div={
-    system:0,
-    app:0,
-    support:0,
-}
-
-var  arrows_png={
-    button1:0,
-    button2:0,
-    button3:0,
-}
-
-function change_arrows(button_name)
-{
-    if(arrows_png[button_name] == 0)
-    {
-        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/kylin-user-guide/data/arrows_right.png"+")";
-        document.getElementById(button_name).style.backgroundSize="25px 25px";
-        arrows_png[button_name]=1;
-        return
-    }
-    if(arrows_png[button_name] == 1)
-    {
-        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/kylin-user-guide/data/arrows_bottom.png"+")";
-        document.getElementById(button_name).style.backgroundSize="25px 25px";
-        arrows_png[button_name]=0;
-        return
-    }
-}
-
-function onclickarrows(str)
-{
-    console.log(str)
-    if(str == 'system') 
-    {
-        if(arrows_div[str] == 0)
-        {
-            document.getElementById(str).style.display="none"
-            arrows_div.system=1;
-        }
-        else
-        {
-            document.getElementById(str).style.display="inline"
-            arrows_div.system=0; 
-        }
-    }
-    else if(str == 'app')
-    {
-        if(arrows_div[str] == 0 )
-        {
-            document.getElementById(str).style.display="none"
-            arrows_div.app=1;
-        }
-        else
-        {
-            document.getElementById(str).style.display="inline"
-            arrows_div.app=0;
-        }
-    }
-    else if(str == 'support')
-    {
-        if(arrows_div[str] == 0 )
-        {
-            document.getElementById(str).style.display="none"
-            arrows_div.support=1;
-        }
-        else
-        {
-            document.getElementById(str).style.display="inline"
-            arrows_div.support=0;
-        }
-    }
-       
 }
 
 var old_str="";
@@ -305,7 +230,7 @@ function getDocTop(mdFile, mdData) {
             console.log(text);
             console.log(type);
         }
-            return "<"+ type + " id="+   id + " text=" +text + " class='html_h5'>" + text + "</"+ type + ">\n";
+            return "<"+ type + " id="+   id + " text=" +text + ">" + text + "</"+ type + ">\n";
     };
 
     renderer.image = function(href, title, text){
@@ -323,20 +248,20 @@ function getDocTop(mdFile, mdData) {
         else{
             if(text.lastIndexOf("-big") < 0 ){
 //                return `<h5  style="text-align: center;"><img src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text}</h5>`;
-                return '<h5  style="text-align: center;"><img src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt=' + text + '/><br> ' + text + '</h5>';
+                return '<h5  style="text-align: center;font-family: Noto Sans SC; font-size: 10px;color=#333333;"><img src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt=' + text + '/><br> ' + text + '</h5>';
             }
             else{
                 text1=text.slice(0,text.lastIndexOf("-big"))
 //路径需要用双引号，单引号无法解析相对路径
 //                return `<h5 style="text-align: center;"><img  style="height:98%;width:98%;" src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text1}</h5>`;
-                return '<h5 style="text-align: center;"><img  style="height:98%;width:98%;" src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt='+ text +'/><br>' + text1 + '</h5>';
+                return '<h5 style="text-align: center;font-family: Noto Sans SC; font-size: 10px;color=#333333;"><img  style="height:98%;width:98%;" src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt='+ text +'/><br>' + text1 + '</h5>';
             }
         }
     };
     renderer.table = function(header,body){
         console.log(header,body)
         if (body) body = '<tbody>' + body + '</tbody>';
-        return '<div align="center"><table border=black cellspacing="0">\n'
+        return '<div align="center"style="font-family:Noto Sans SC;font-size: 12px;"><table border=black cellspacing="0" width="90%">\n'
         + '<thead>\n'
         + header
         + '</thead>\n'

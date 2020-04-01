@@ -26,8 +26,8 @@ div.hlist-div::-webkit-scrollbar-track
 
 #mainUI
 {
-    margin-left: 4.7%;
-    margin-right: 4.7%;
+    margin-left: 47px;
+    margin-right: 47px;
     margin-bottom: 50px;
     margin-top: 40px;
 }
@@ -86,7 +86,8 @@ div.system-app span {
 div.system-app:hover
 {
     border-radius: 4px;
-    background: #3D6BE5;
+    background:  rgb(228, 243, 255) ;
+    /* background:  rgb(191, 205, 236) ; */
     color: white;
 }
 
@@ -95,46 +96,6 @@ div.system-app:active
     padding-left: 5px;
     padding-top: 5px;
 }
-
-div.container
-{
-    width: 902px;
-    height: 31px;
-    margin-bottom: 15px;
-}
-
-div.container button
-{
-    width: 24px;
-    height: 24px;
-    outline: none;
-    border: none;
-    position: relative;
-    top: 2px;
-    background-image: url('./../../../data/arrows_bottom.png');
-    background-color: #fff;
-    background-size: 25px 25px;
-}
-
-div.wrap
-{
-    width: 130px;
-    height: 31px;
-    z-index: 2;
-    background-color: #ffffff;
-    position: relative;
-}
-
-div.line
-{
-    width: 802px;
-    border: 1px solid rgb(230, 230, 230);;
-    position: relative;
-    left: 10%;
-    z-index: -1;
-    bottom: 16px;
-}
-
 
 div.hlist-div a[class="name2"]
 {
@@ -148,7 +109,7 @@ div.hlist-div a[class="name3"]
 
 div.hlist-div dl
 {
-    margin-top: 12px;
+    margin-top: 4px;
     font-weight:400;
     color: #000000;
     line-height:32px;
@@ -156,7 +117,6 @@ div.hlist-div dl
 
 div.hlist-div dt
 {
-    margin-top: 4px;
     margin-left: 2px;
     margin-right: 4px;
 }
@@ -187,7 +147,7 @@ div.hlist-div a:link
 
 div.content-div
 {
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
     width:75%;
     height: 100%;
@@ -204,8 +164,9 @@ div.content-div
 div.content-div h1
 {
     text-align: left;
-    font-family: sans-serif;
+    font-family: Noto Sans SC;
     font-size: 24px;
+    color: rgba(38, 38, 38, 1);
     margin-top: 62px;
     margin-bottom: 9px;
     line-height: 36px;
@@ -214,21 +175,41 @@ div.content-div h1
 div.content-div h2
 {
     line-height: 34px;
+    font-family: Noto Sans SC;
+    font-size: 20px;
+    color:  rgba(64, 64, 64, 1) ;
 }
 
 div.content-div h3
 {
     line-height: 30px;
+    font-family: Noto Sans SC;
+    font-size: 18px;
+    color: rgba(61, 107, 229, 1);
 }
 
 div.content-div h4
 {
     line-height: 28px;
+    font-family: Noto Sans SC;
+    font-size: 16px;
+    color: rgba(89, 89, 89, 1);
 }
 
 div.content-div h5
 {
-    font-size: 10px;
+    line-height: 24px;
+    font-family: Noto Sans SC;
+    font-size: 14px;
+    color:  rgba(89, 89, 89, 1) ;
+}
+
+div.content-div h6
+{
+    line-height: 20px;
+    font-family: Noto Sans SC;
+    font-size: 12px;
+    color: rgba(89, 89, 89, 1);
 }
 
 div.content-div li
@@ -247,14 +228,14 @@ div.content-div img
 div.content-div p
 {
     font-family: Noto Sans CJK SC;
-    text-indent: 30px;
+    text-indent: 32px;
     /*line-height: 20px;*/
 }
 
 p.date
 {
     text-align: left;
-    font-size: 10px;
+    font-size: 12px;
     color: #737373;
 }
 
@@ -269,7 +250,6 @@ div.supportContent
     line-height: 20px;
     color: rgb(138, 138, 138);
     margin-left: 20px;
-    vertical-align: middle;
 }
 
 div.supportEmail
@@ -307,37 +287,69 @@ div.paga_top
     margin-right: 10px;
     margin-bottom: 50px;
     vertical-align: middle;
+    font-family:Noto Sans SC ;
+    : #6b8eeb;
     float: right;
 }
 
 div.paga_top img
 {
-    width: 15px;
-    height: 15px;
+    position: relative;
+    top: 5px;
+    width: 14px;
+    height: 10px;
     object-fit: cover;
     border-radius: 0px;
     border: 0px;
 }
 
-div#top
+hr
+{
+    border: 0;    
+    background-color:  #E9E9E9 ;
+    height: 1px;
+}
+
+table {
+    width: 100%;
+    max-width: 820px;
+    border: 1px solid #dedede;
+    margin: 15px auto;
+    border-collapse: collapse;
+    empty-cells: show;
+}
+table th{
+    font-weight: bold;
+    border: 1px solid #E9E9E9;
+    background-color:  #F7F7F7 ;
+    padding: 0 10px;
+}
+table td{
+    height: 35px;
+    border: 1px solid #E9E9E9;
+    background-color:  #FCFCFC ;
+    padding: 0 10px;
+}
+/*div#top
 {
     display: inline-block;
     width: 30px;
     height: 30px;
     position: fixed;
-    right: 5px;
-    bottom: 20px;
+    right: 50px;
+    bottom: 50px;
     z-index: 999;
     border-radius: 0px;
     /*border: 1px black;*/
-    /*background-color: #3D6BE5;*/
-}
+    /*background-color: #3D6BE5;
+}*/
 
-div#top img
+/*div#top img
 {
-    width: 90%;
-    height: 90%;
-}
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}*/
 /*
 [img~=svg]
 {
