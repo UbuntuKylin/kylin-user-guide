@@ -152,7 +152,7 @@ function onclickButton(str)
                                 +"<HR style='margin-top: 20px'>"
                                 +"<div class='paga_top' >"
                                 +"<img src='file:////usr/share/kylin-user-guide/data/icon-go-top.png' "+"/>"
-                                +"<a style='text-decoration: none;' onclick=onclickA('') href='#paga_top'>返回顶部</a>"
+                                +"<a style='text-decoration: none;'onclick=onclickA('') href='#paga_top'>返回顶部</a>"
                                 +"</div>"
                                 //+"<div id='top'>"
                                 //+"<img src='file:////usr/share/kylin-user-guide/data/go-top.png' "+"/>"
@@ -248,20 +248,20 @@ function getDocTop(mdFile, mdData) {
         else{
             if(text.lastIndexOf("-big") < 0 ){
 //                return `<h5  style="text-align: center;"><img src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text}</h5>`;
-                return '<h5  style="text-align: center;"><img src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt=' + text + '/><br> ' + text + '</h5>';
+                return '<h5  style="text-align: center;font-family: Noto Sans SC; font-size: 10px;color=#333333;"><img src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt=' + text + '/><br> ' + text + '</h5>';
             }
             else{
                 text1=text.slice(0,text.lastIndexOf("-big"))
 //路径需要用双引号，单引号无法解析相对路径
 //                return `<h5 style="text-align: center;"><img  style="height:98%;width:98%;" src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text1}</h5>`;
-                return '<h5 style="text-align: center;"><img  style="height:98%;width:98%;" src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt='+ text +'/><br>' + text1 + '</h5>';
+                return '<h5 style="text-align: center;font-family: Noto Sans SC; font-size: 10px;color=#333333;"><img  style="height:98%;width:98%;" src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt='+ text +'/><br>' + text1 + '</h5>';
             }
         }
     };
     renderer.table = function(header,body){
         console.log(header,body)
         if (body) body = '<tbody>' + body + '</tbody>';
-        return '<div align="center"><table border=black cellspacing="0">\n'
+        return '<div align="center"style="font-family:Noto Sans SC;font-size: 12px;"><table border=black cellspacing="0" width="90%">\n'
         + '<thead>\n'
         + header
         + '</thead>\n'

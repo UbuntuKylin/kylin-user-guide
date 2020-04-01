@@ -26,7 +26,7 @@
 |设备文件（字符设备文件/块设备文件）|	系统用它来识别各个设备驱动器，内核使用它们与硬件设备通信
 |符号链接|	存放的数据是文件系统中通向某个文件的路径； 当调用符号链接文件时，系统将自动访问保存在文件中的路径
 
-表 1 支持的文件类型
+**<center><font face="Noto Sans SC" size=1 color=#333333>表 1 支持的文件类型</center></font>**
 
 ## 窗口组成
 文件浏览器窗口可划分为工具栏和地址栏、文件夹标签预览区、侧边栏、窗口区和状态栏、预览窗口六个部分，示意如图 2所示。
@@ -45,7 +45,7 @@
 |![](image/icon5.png)|最小化|![](image/icon11.png)|		最大化
 |![](image/icon6.png)|	关闭		||||
 	
-表 2 图标功能说明
+**<center><font face="Noto Sans SC" size=1 color=#333333>表 2 图标功能说明</center></font>**
 
 ### 文件夹标签预览区
 用户可通过文件夹标签预览区查看已打开的文件夹，并能够通过点击“![](image/icon12-o.png)”图标添加其他文件夹，如图 3所示。
@@ -76,7 +76,7 @@
 | :------------ | :------------ | :------------ | :------------ |
 |![](image/icon14.png)|	仅文件预览	|![](image/icon15.png)|	文件详情预览
 	
-表 3 预览图标说明
+**<center><font face="Noto Sans SC" size=1 color=#333333>表 3 预览图标说明</center></font>**
 
 ![图 7 预览窗口](image/7.png)
 
@@ -196,7 +196,7 @@
 	|![](image/icon24.png)|共享所选项目	|![](image/icon25.png)|	打印机与扫描仪功能项
 	|![](image/icon26.png)|/	|![](image/icon27.png)|	发送电子邮件功能项
 	
-表 4 首选项图标说明
+**<center><font face="Noto Sans SC" size=1 color=#333333>表 4 首选项图标说明</center></font>**
 
 ![图 21 首选项设置](image/21.png)
 
@@ -211,7 +211,7 @@
 |帮助	|跳转到用户手册
 |关于	|显示文件浏览器的详细信息
 
-表 5 标签页功能说明
+**<center><font face="Noto Sans SC" size=1 color=#333333>表 5 标签页功能说明</center></font>**
 
 ## 常见问题
 ### 附录1 快捷键
