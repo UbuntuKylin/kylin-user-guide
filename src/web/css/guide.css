@@ -26,8 +26,8 @@ div.hlist-div::-webkit-scrollbar-track
 
 #mainUI
 {
-    margin-left: 4.7%;
-    margin-right: 4.7%;
+    margin-left: 47px;
+    margin-right: 47px;
     margin-bottom: 50px;
     margin-top: 40px;
 }
@@ -96,46 +96,6 @@ div.system-app:active
     padding-top: 5px;
 }
 
-div.container
-{
-    width: 902px;
-    height: 31px;
-    margin-bottom: 15px;
-}
-
-div.container button
-{
-    width: 24px;
-    height: 24px;
-    outline: none;
-    border: none;
-    position: relative;
-    top: 2px;
-    background-image: url('./../../../data/arrows_bottom.png');
-    background-color: #fff;
-    background-size: 25px 25px;
-}
-
-div.wrap
-{
-    width: 130px;
-    height: 31px;
-    z-index: 2;
-    background-color: #ffffff;
-    position: relative;
-}
-
-div.line
-{
-    width: 802px;
-    border: 1px solid rgb(230, 230, 230);;
-    position: relative;
-    left: 10%;
-    z-index: -1;
-    bottom: 16px;
-}
-
-
 div.hlist-div a[class="name2"]
 {
     font-size: 16px;
@@ -148,7 +108,7 @@ div.hlist-div a[class="name3"]
 
 div.hlist-div dl
 {
-    margin-top: 12px;
+    margin-top: 4px;
     font-weight:400;
     color: #000000;
     line-height:32px;
@@ -156,7 +116,6 @@ div.hlist-div dl
 
 div.hlist-div dt
 {
-    margin-top: 4px;
     margin-left: 2px;
     margin-right: 4px;
 }
@@ -187,7 +146,7 @@ div.hlist-div a:link
 
 div.content-div
 {
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
     width:75%;
     height: 100%;
@@ -226,11 +185,6 @@ div.content-div h4
     line-height: 28px;
 }
 
-div.content-div h5
-{
-    font-size: 10px;
-}
-
 div.content-div li
 {
     list-style:inside;
@@ -247,7 +201,7 @@ div.content-div img
 div.content-div p
 {
     font-family: Noto Sans CJK SC;
-    text-indent: 30px;
+    text-indent: 20px;
     /*line-height: 20px;*/
 }
 
@@ -269,7 +223,6 @@ div.supportContent
     line-height: 20px;
     color: rgb(138, 138, 138);
     margin-left: 20px;
-    vertical-align: middle;
 }
 
 div.supportEmail
@@ -319,25 +272,26 @@ div.paga_top img
     border: 0px;
 }
 
-div#top
+/*div#top
 {
     display: inline-block;
     width: 30px;
     height: 30px;
     position: fixed;
-    right: 5px;
-    bottom: 20px;
+    right: 50px;
+    bottom: 50px;
     z-index: 999;
     border-radius: 0px;
     /*border: 1px black;*/
-    /*background-color: #3D6BE5;*/
-}
+    /*background-color: #3D6BE5;
+}*/
 
-div#top img
+/*div#top img
 {
-    width: 90%;
-    height: 90%;
-}
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}*/
 /*
 [img~=svg]
 {
