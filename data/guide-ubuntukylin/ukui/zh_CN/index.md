@@ -107,7 +107,7 @@
 |![](image/icon16.png)|	复制剪切板上的该内容	|![](image/icon18.png)|	编辑剪切板上的该内容
 |![](image/icon17.png)|	删除剪切板上的该内容	||||	
 	
-**<center><font face="Noto Sans SC" size=1 color=#333333>表 4 剪切板图标说明</center></font?**
+**<center><font face="Noto Sans SC" size=1 color=#333333>表 4 剪切板图标说明</center></font>**
 
 
 ![图 12 剪切板](image/12.png)
@@ -138,7 +138,7 @@
 ##### •U盘
 U盘插入主机后，自动读取U盘数据，点击任务栏中U盘“![](image/icon26-o.png)”图标弹窗如图 16所示。需要卸载U盘时仅需点击弹出“![](image/icon27-o.png)”图标即可。
 
-![图 16 U盘状态窗口](image/.16png)
+![图 16 U盘状态窗口](image/16.png)
 
 ##### •电源
 没有检测到电源设备时，用户通过点击鼠标左键任务栏中电源“![](image/icon28-o.png)”图标，电源管理器如图 17所示。
@@ -312,7 +312,6 @@ U盘插入主机后，自动读取U盘数据，点击任务栏中U盘“![](imag
 |属性	|查看应用的类型、名字、命令和注释信息
 
 **<center><font face="Noto Sans SC" size=1 color=#333333>表 8 选项功能说明</center></font>**
-
 
 ## 常见问题
 ### 任务栏不显示？
