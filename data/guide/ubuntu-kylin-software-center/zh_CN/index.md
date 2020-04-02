@@ -78,7 +78,7 @@
 
 - 需要勾选的项保持默认即可，“deb-src”是用于获取软件源码。
 
-- “file:///media/kylin/Kylin-4.0.2”，从“/media”开始，是指光盘挂载的路径，其中“kylin”为用户名。
+- “file:///media/kylin/Kylin-Desktop-V10”，从“/media”开始，是指光盘挂载的路径，其中“kylin”为用户名。
 
 - “juniper”，是指软件包的系列。
 
