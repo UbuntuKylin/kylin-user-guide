@@ -134,10 +134,10 @@ int main(int argc, char *argv[])
     {
         gLang = "zh_CN";
     }
-    else
-    {
-        gLang = "en_US";
-    }
+//    else
+//    {
+//        gLang = "en_US";
+//    }
     app.setApplicationName(APPLICATION_NAME);
 //    app.setQuitOnLastWindowClosed(true);
 
