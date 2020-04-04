@@ -68,7 +68,7 @@ var date ={
     mate_terminal:"2019年11月13日",
     tools:"2020年3月13日",
     technical_assistance:"2019年3月12日",
-    boxmanage:"2020年3月19日",
+    box_manager:"2020年4月2日",
     pammanager:"2020年3月19日",
 };
 
