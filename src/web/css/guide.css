@@ -106,20 +106,20 @@ div.container
 
 div.container button
 {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     outline: none;
     border: none;
     position: relative;
     top: 2px;
-    background-image: url('./../../../data/arrows_bottom.png');
+    background-image: url('/usr/share/kylin-user-guide/data/arrows_bottom.png');
     background-color: #fff;
-    background-size: 25px 25px;
+    background-size: 20px 20px;
 }
 
 div.wrap
 {
-    width: 130px;
+    width: 140px;
     height: 31px;
     z-index: 2;
     background-color: #ffffff;
@@ -128,10 +128,10 @@ div.wrap
 
 div.line
 {
-    width: 90%;
+    width: 95%;
     border: 1px solid rgb(230, 230, 230);;
     position: relative;
-    left: 10%;
+    left: 5%;
     z-index: -1;
     bottom: 16px;
 }
@@ -275,6 +275,8 @@ div.content-div p
 {
     font-family: Noto Sans CJK SC;
     text-indent: 32px;
+    text-align: justify;
+    /*text-justify:inter-ideograph;
     /*line-height: 20px;*/
 }
 

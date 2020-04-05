@@ -196,14 +196,14 @@ function change_arrows(button_name)
     if(arrows_png[button_name] == 0)
     {
         document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/kylin-user-guide/data/arrows_right.png"+")";
-        document.getElementById(button_name).style.backgroundSize="25px 25px";
+        document.getElementById(button_name).style.backgroundSize="20px 20px";
         arrows_png[button_name]=1;
         return
     }
     if(arrows_png[button_name] == 1)
     {
         document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/kylin-user-guide/data/arrows_bottom.png"+")";
-        document.getElementById(button_name).style.backgroundSize="25px 25px";
+        document.getElementById(button_name).style.backgroundSize="20px 20px";
         arrows_png[button_name]=0;
         return
     }
