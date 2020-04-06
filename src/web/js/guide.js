@@ -19,6 +19,7 @@ require(['marked'], function (markedSetCustom){
     });
 
     console.log(marked('I am using __markdown__.'));
+    addhtmlapp();
  });
 
 //readFile = function (fileName, callback) {
@@ -79,17 +80,17 @@ function onclickButton(str)
 
     var mdPath = window.guideWebkit.js_getIndexMdFilePath(str)
     var mdDate = window.guideWebkit.js_getIndexMdFileContent(mdPath)
-    console.log(str,mdPath);
+    //console.log(str,mdPath);
 //    alert(mdDate)
     var m2ht = getDocTop(mdPath,mdDate)
     var html = m2ht.html
     var hlist = m2ht.hlist
     var info = m2ht.info
-    console.log(html);
-    console.log("--------------------------------------hlist");
-    console.log(hlist);
-    console.log("--------------------------------------info");
-    console.log(info);
+    //console.log(html);
+    //console.log("--------------------------------------hlist");
+    //console.log(hlist);
+    //console.log("--------------------------------------info");
+    //console.log(info);
     var hlist_str = "";
     for (i = 0; i < hlist.length; i++) {
         /*name_text=hlist[i].text.slice(hlist[i].text.indexOf(" "),hlist[i].text.length);
@@ -112,7 +113,7 @@ function onclickButton(str)
                 name_text+=hlist[i].text[j];
             }
         }
-        console.log(hlist[i].type+"======"+name_text);
+        //console.log(hlist[i].type+"======"+name_text);
         if(hlist[i].type == "h1")
             hlist_str +=  "<dt>\n" + "<a class='name1' id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
         else if(hlist[i].type == "h2")
@@ -126,7 +127,7 @@ function onclickButton(str)
             }
         else if(hlist[i].type == "h3")
         {
-            console.log(name_text.length);
+            //console.log(name_text.length);
             if(name_text.length >12)
             {
                 hlist_str +=  "<dt>\n" + "<a class='name3' style='line-height:20px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
@@ -135,7 +136,7 @@ function onclickButton(str)
             {
                 hlist_str +=  "<dt>\n" + "<a class='name3' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
             }
-            console.log(hlist_str);
+            //console.log(hlist_str);
         }   
      }
      hlist_str = "<dl>" + hlist_str + "</dl>";
@@ -163,6 +164,64 @@ function onclickButton(str)
     document.getElementById("content").innerHTML = html_new
     
 
+}
+
+function getapp_name(qpp)
+{
+    var mdPath = window.guideWebkit.js_getIndexMdFilePathOther(qpp)
+    var mdDate = window.guideWebkit.js_getIndexMdFileContent(mdPath)
+
+    var m2ht = getDocTop(mdPath,mdDate)  
+    var info = m2ht.info
+    if(info.title.search("帮助手册")<0)
+    {
+        return info.title;
+    }
+    else
+    {
+        //console.log(info.title.slice(0,info.title.search("帮助手册")))
+        return info.title.slice(0,info.title.search("帮助手册"))
+    }
+}
+
+function addhtmlapp()
+{
+    var test=window.guideWebkit.js_getIntoFilename();
+    for(i=0;i<test.length;i++)
+    {
+        var dirname=test[i].slice(0,test[i].indexOf("|"))
+        var pngname=test[i].slice(test[i].indexOf("|")+1,test[i].length)
+        if(dirname=="software-compatibility"||dirname=="technical-assistance"
+           ||dirname=="kylinOS"||dirname=="ukui"||dirname=="ukui-control-center"
+           ||dirname=="biometric-manager"||dirname=="hot-key"||dirname=="hardware-compatibility")
+        {
+            continue
+        }
+        else
+        {
+            var realname=getapp_name(dirname);
+            var element=document.getElementById("app");
+            var para=document.createElement("div")
+            var node1=document.createElement("br")
+            var node2=document.createElement("img")
+            var node3=document.createElement("span")
+            var apptext=document.createTextNode(realname)
+            var attr=document.createAttribute("onclick")
+            attr.value="onclickButton('"+dirname+"')"
+            node3.appendChild(apptext)
+            node2.src="file:////usr/share/kylin-user-guide/data/guide-ubuntukylin/"+dirname+"/"+pngname+""
+            node2.alt=dirname
+            para.id="user";
+            para.style.marginLeft="25px";
+            para.className="system-app";
+            //para.onclick(onclickButton('biometric-manager'))
+            para.setAttributeNode(attr)
+            para.appendChild(node2)
+            para.appendChild(node1)
+            para.appendChild(node3)
+            element.appendChild(para)
+        }
+    }
 }
 
 function goBackMainUI()
@@ -211,7 +270,7 @@ function change_arrows(button_name)
 
 function onclickarrows(str)
 {
-    console.log(str)
+    //console.log(str)
     if(str == 'system') 
     {
         if(arrows_div[str] == 0)
@@ -257,7 +316,7 @@ function onclickarrows(str)
 var old_str="";
 function onclickA(str)
 {
-     console.log(old_str,str) 
+     //console.log(old_str,str) 
      if(old_str != "")
      {
         document.getElementById(old_str).style.backgroundColor="rgb(231,231,231)" 
@@ -290,27 +349,27 @@ function getDocTop(mdFile, mdData) {
             var title = text.split('|')[0];
             var logo = text.split('|')[1];
             logo = path + logo;
-            console.log(logo);
+            //console.log(logo);
             info = { "title":title, "logo":logo };
             return "";
         }
         if (level == 2) {
             text = text.split('|')[0];
-            console.log(text);
+            //console.log(text);
         }
         var type = 'h' + level;
         if (level == 2 || level == 3) {
             hlist.push({ "id":id, "text":text, "type":type });
-            console.log(id);
-            console.log(text);
-            console.log(type);
+            //console.log(id);
+            //console.log(text);
+            //console.log(type);
         }
             return "<"+ type + " id="+   id + " text=" +text + " class='html_h5'>" + text + "</"+ type + ">\n";
     };
 
     renderer.image = function(href, title, text){
         var hrefX2 = href;
-    console.log(hrefX2);
+        //console.log(hrefX2);
         if (devicePixelRatio >= 1.5 && href.indexOf('.svg') == -1) {
             var path = href.split('.');
             var ext = path.pop();
@@ -334,7 +393,7 @@ function getDocTop(mdFile, mdData) {
         }
     };
     renderer.table = function(header,body){
-        console.log(header,body)
+        //console.log(header,body)
         if (body) body = '<tbody>' + body + '</tbody>';
         return '<div align="center"style="font-family:Noto Sans SC;font-size: 12px;"><table border=black cellspacing="0" width="90%">\n'
         + '<thead>\n'
