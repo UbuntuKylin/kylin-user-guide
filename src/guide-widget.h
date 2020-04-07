@@ -60,6 +60,8 @@ public:
     void showPosition();
     void jump_app(QString);
     void set_Cursor(QPoint &event);
+    QString system_name();
+    QStringList getDirAndPng();
 protected:
     void closeEvent(QCloseEvent *);
     void mousePressEvent(QMouseEvent * );
@@ -87,7 +89,9 @@ private slots:
     void slot_webGoto(QUrl);
 public slots:
     Q_INVOKABLE QString js_getIndexMdFilePath(QString);
+    Q_INVOKABLE QString js_getIndexMdFilePathOther(QString);
     Q_INVOKABLE QString js_getIndexMdFileContent(QString);
+    Q_INVOKABLE QStringList js_getIntoFilename();
 public:
 
 signals:
