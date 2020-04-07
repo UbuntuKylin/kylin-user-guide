@@ -168,13 +168,21 @@ void GuideWidget::initUI()
     widget_layout->addWidget(m_pWebView,1,0,1,106);
 
     QString name = system_name();
-    qDebug() << "--------" <<name;
+    //qDebug() << "--------" <<name;
+    QLocale localeNew;
     if(name == "kylin")
     {
         m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
     }
     else if (name == "Ubuntu Kylin"){
-        m_pWebView->load(QUrl(QString(LOCAL_URL_PATH_UBUNTUKYLIN)+"index-ubuntukylin.html"));
+        if(localeNew.language()==QLocale::Chinese)
+        {
+            m_pWebView->load(QUrl(QString(LOCAL_URL_PATH_UBUNTUKYLIN)+"index-ubuntukylin.html"));
+        }
+        else
+        {
+            m_pWebView->load(QUrl(QString(LOCAL_URL_PATH_UBUNTUKYLIN)+"index-ubuntukylin_en_US.html"));
+        }
     }
 //    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
     //m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
@@ -324,16 +332,26 @@ QString GuideWidget::system_name()
 QStringList GuideWidget::getDirAndPng()
 {
     QStringList list;
-    QDir path(LOCAL_FILE_PATH_UBUNTUKYLIN);
+    QString PathForSystem;
+    QString NameForSystem=system_name();
+    if(NameForSystem == "kylin")
+    {
+        PathForSystem = LOCAL_FILE_PATH;
+    }
+    else if(NameForSystem == "Ubuntu Kylin")
+    {
+        PathForSystem = LOCAL_FILE_PATH_UBUNTUKYLIN;
+    }
+    QDir path(PathForSystem);
     if(!path.exists())
     {
-        qDebug()<< LOCAL_FILE_PATH_UBUNTUKYLIN << "is not exists !!!";
+        qDebug()<< PathForSystem << "is not exists !!!";
     }
     QStringList dirList = path.entryList();
     dirList.sort();
     for(int i=0;i<dirList.size();++i)
     {
-        QDir dirname(LOCAL_FILE_PATH_UBUNTUKYLIN);
+        QDir dirname(PathForSystem);
         if(dirList.at(i) == "."||dirList.at(i)=="..")
         {
             continue;

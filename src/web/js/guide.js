@@ -168,19 +168,46 @@ function onclickButton(str)
 
 function getapp_name(qpp)
 {
+    var dirforapp
     var mdPath = window.guideWebkit.js_getIndexMdFilePathOther(qpp)
     var mdDate = window.guideWebkit.js_getIndexMdFileContent(mdPath)
 
-    var m2ht = getDocTop(mdPath,mdDate)  
-    var info = m2ht.info
-    if(info.title.search("帮助手册")<0)
+    console.log(mdPath)
+    if(navigator.language=="zh-CN")
     {
-        return info.title;
+        if(mdPath.search("/guide/")>0)
+        {
+            dirforapp="guide"
+        }
+        else if(mdPath.search("/guide-ubuntukylin/")>0)
+        {
+            dirforapp="guide-ubuntukylin"
+        }
+        var m2ht = getDocTop(mdPath,mdDate)  
+        //console.log(m2ht.html)
+        var info = m2ht.info
+        //console.log(info+"======"+qpp)
+        if(info.title.search("帮助手册")<0)
+        {
+            return info.title+"|"+dirforapp;
+        }
+        else
+        {
+            //console.log(info.title.slice(0,info.title.search("帮助手册")))
+            return info.title.slice(0,info.title.search("帮助手册"))+"|"+dirforapp
+        }
     }
     else
     {
-        //console.log(info.title.slice(0,info.title.search("帮助手册")))
-        return info.title.slice(0,info.title.search("帮助手册"))
+        if(mdPath.search("/guide/")>0)
+        {
+            dirforapp="guide"
+        }
+        else if(mdPath.search("/guide-ubuntukylin/")>0)
+        {
+            dirforapp="guide-ubuntukylin"
+        }
+        return dirforapp
     }
 }
 
@@ -193,13 +220,26 @@ function addhtmlapp()
         var pngname=test[i].slice(test[i].indexOf("|")+1,test[i].length)
         if(dirname=="software-compatibility"||dirname=="technical-assistance"
            ||dirname=="kylinOS"||dirname=="ukui"||dirname=="ukui-control-center"
-           ||dirname=="biometric-manager"||dirname=="hot-key"||dirname=="hardware-compatibility")
+           ||dirname=="biometric-manager"||dirname=="hot-key"
+           ||dirname=="hardware-compatibility"
+           ||dirname=="ubiquity"||dirname=="kydroid2")
         {
             continue
         }
         else
         {
-            var realname=getapp_name(dirname);
+            if(navigator.language=="zh-CN")
+            {
+                var NameAndDir=getapp_name(dirname);
+                var realname=NameAndDir.slice(0,NameAndDir.indexOf("|"));
+                var dir=NameAndDir.slice(NameAndDir.indexOf("|")+1,NameAndDir.length)
+            }
+            else
+            {
+                var NameAndDir=getapp_name(dirname);
+                var dir=NameAndDir
+                var realname=dirname.replace(/-/g," ")
+            }
             var element=document.getElementById("app");
             var para=document.createElement("div")
             var node1=document.createElement("br")
@@ -209,7 +249,7 @@ function addhtmlapp()
             var attr=document.createAttribute("onclick")
             attr.value="onclickButton('"+dirname+"')"
             node3.appendChild(apptext)
-            node2.src="file:////usr/share/kylin-user-guide/data/guide-ubuntukylin/"+dirname+"/"+pngname+""
+            node2.src="file:////usr/share/kylin-user-guide/data/"+dir+"/"+dirname+"/"+pngname+""
             node2.alt=dirname
             para.id="user";
             para.style.marginLeft="25px";
