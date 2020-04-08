@@ -168,13 +168,15 @@ void GuideWidget::initUI()
     widget_layout->addWidget(m_pWebView,1,0,1,106);
 
     QString name = system_name();
-    qDebug() << "--------" <<name;
-    if(name == "kylin")
+    //qDebug() << "--------" <<name;
+    QLocale localeNew;
+    if(localeNew.language()==QLocale::Chinese)
     {
-        m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
-    }
-    else if (name == "Ubuntu Kylin"){
         m_pWebView->load(QUrl(QString(LOCAL_URL_PATH_UBUNTUKYLIN)+"index-ubuntukylin.html"));
+    }
+    else
+    {
+        m_pWebView->load(QUrl(QString(LOCAL_URL_PATH_UBUNTUKYLIN)+"index-ubuntukylin_en_US.html"));
     }
 //    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
     //m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
@@ -255,14 +257,14 @@ void GuideWidget::slot_backOffButton()
 {
     qDebug() << Q_FUNC_INFO;
 //    emit sig_backOff2js();
-    QString name = system_name();
-    if(name == "kylin")
-    {
-        m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
-    }
-    else if (name == "Ubuntu Kylin") {
-        m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI_ubuntu();");
-    }
+//    QString name = system_name();
+//    if(name == "kylin")
+//    {
+//        m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
+//    }
+//    else if (name == "Ubuntu Kylin") {
+    m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI_ubuntu();");
+//    }
     //m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
     QPushButton *button = this->m_yWidget->findChild<QPushButton *>("backOffButton");
     button->hide();
@@ -324,16 +326,26 @@ QString GuideWidget::system_name()
 QStringList GuideWidget::getDirAndPng()
 {
     QStringList list;
-    QDir path(LOCAL_FILE_PATH_UBUNTUKYLIN);
+    QString PathForSystem;
+    QString NameForSystem=system_name();
+//    if(NameForSystem == "kylin")
+//    {
+//        PathForSystem = LOCAL_FILE_PATH;
+//    }
+//    else if(NameForSystem == "Ubuntu Kylin")
+//    {
+    PathForSystem = LOCAL_FILE_PATH_UBUNTUKYLIN;
+//    }
+    QDir path(PathForSystem);
     if(!path.exists())
     {
-        qDebug()<< LOCAL_FILE_PATH_UBUNTUKYLIN << "is not exists !!!";
+        qDebug()<< PathForSystem << "is not exists !!!";
     }
     QStringList dirList = path.entryList();
     dirList.sort();
     for(int i=0;i<dirList.size();++i)
     {
-        QDir dirname(LOCAL_FILE_PATH_UBUNTUKYLIN);
+        QDir dirname(PathForSystem);
         if(dirList.at(i) == "."||dirList.at(i)=="..")
         {
             continue;
@@ -360,14 +372,14 @@ QString GuideWidget::js_getIndexMdFilePath(QString appName)
 {
     qDebug() << Q_FUNC_INFO << appName;
     QString IndexMdFilePath;
-    QString name = system_name();
-    if(name == "kylin")
-    {
-        IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
-    }
-    else if (name == "Ubuntu Kylin"){
-        IndexMdFilePath = LOCAL_FILE_PATH_UBUNTUKYLIN + appName + "/" +  gLang + "/index.md";
-    }
+//    QString name = system_name();
+//    if(name == "kylin")
+//    {
+//        IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
+//    }
+//    else if (name == "Ubuntu Kylin"){
+    IndexMdFilePath = LOCAL_FILE_PATH_UBUNTUKYLIN + appName + "/" +  gLang + "/index.md";
+//    }
     //QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
     QPushButton *button = this->m_yWidget->findChild<QPushButton *>("backOffButton");
     qDebug() << button;
@@ -379,14 +391,14 @@ QString GuideWidget::js_getIndexMdFilePathOther(QString appName)
 {
     qDebug() << Q_FUNC_INFO << appName;
     QString IndexMdFilePath;
-    QString name = system_name();
-    if(name == "kylin")
-    {
-        IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
-    }
-    else if (name == "Ubuntu Kylin"){
-        IndexMdFilePath = LOCAL_FILE_PATH_UBUNTUKYLIN + appName + "/" +  gLang + "/index.md";
-    }
+//    QString name = system_name();
+//    if(name == "kylin")
+//    {
+//        IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
+//    }
+//    else if (name == "Ubuntu Kylin"){
+    IndexMdFilePath = LOCAL_FILE_PATH_UBUNTUKYLIN + appName + "/" +  gLang + "/index.md";
+//    }
     return IndexMdFilePath;
 }
 
