@@ -238,7 +238,12 @@ function addhtmlapp()
             {
                 var NameAndDir=getapp_name(dirname);
                 var dir=NameAndDir
-                var realname=dirname.replace(/-/g," ")
+                realname=dirname.replace(dirname[0],dirname[0].toUpperCase())
+                while(realname.search("-") !== -1)
+                {
+                    realname=realname.replace(realname[realname.indexOf("-")+1],realname[realname.indexOf("-")+1].toUpperCase())
+                    realname=realname.replace("-"," ")
+                }
             }
             var element=document.getElementById("app");
             var para=document.createElement("div")
@@ -249,10 +254,11 @@ function addhtmlapp()
             var attr=document.createAttribute("onclick")
             attr.value="onclickButton('"+dirname+"')"
             node3.appendChild(apptext)
+            node3.style.lineHeight="10px"
             node2.src="file:////usr/share/kylin-user-guide/data/"+dir+"/"+dirname+"/"+pngname+""
             node2.alt=dirname
             para.id="user";
-            para.style.marginLeft="25px";
+            para.style.marginLeft="26px";
             para.className="system-app";
             //para.onclick(onclickButton('biometric-manager'))
             para.setAttributeNode(attr)
@@ -270,12 +276,26 @@ function goBackMainUI()
     //console.log(str)
     //document.getElementById("mainUI").style.display="inline";
     //document.getElementById("pageContent").style.display="none";
-    window.location.href="index.html"
+    if(navigator.language=="zh-CN")
+    {
+        window.location.href="index.html"
+    }
+    else
+    {
+        window.location.href="index_en_US.html"
+    }
 }
 
 function goBackMainUI_ubuntu()
 {
-    window.location.href="index-ubuntukylin.html"
+    if(navigator.language=="zh-CN")
+    {
+        window.location.href="index-ubuntukylin.html"
+    }
+    else
+    {
+        window.location.href="index-ubuntukylin_en_US.html"
+    }
 }
 
 var arrows_div={
