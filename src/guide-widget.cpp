@@ -48,6 +48,7 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
     //this->resize(850,640);
     this->resize(1000,750);
     this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
+    //this->setWindowIcon(QIcon::fromTheme("kylin-user-guide"));
     this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
 //    QPalette palette;
@@ -59,6 +60,7 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 
     initSettings();
     initUI();
+    getDirAndPng();
 }
 
 GuideWidget::~GuideWidget()
@@ -145,7 +147,6 @@ void GuideWidget::initUI()
     connect(closeOffButton,SIGNAL(released()),this,SLOT(slot_onClicked_closeOffButton()));
     connect(minOffButton,SIGNAL(released()),this,SLOT(slot_onClicked_minOffButton()));
     connect(maxOffButton,SIGNAL(released()),this,SLOT(slot_onClicked_maxOffButton()));
-    connect(this,SIGNAL(sig_backOff2js()),this,SLOT(slot_backOffButton_hide()));
 
 
     QVBoxLayout *main_layout = new QVBoxLayout(this);
@@ -165,8 +166,26 @@ void GuideWidget::initUI()
     widget_layout->setColumnStretch(89,2);
 
     widget_layout->addWidget(m_pWebView,1,0,1,106);
+
+    QString name = system_name();
+    qDebug() << "--------" <<name;
+    QLocale localeNew;
+    if(name == "kylin")
+    {
+        if(localeNew.language()==QLocale::Chinese)
+        {
+            m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
+        }
+        else
+        {
+            m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index_en_US.html"));
+        }
+    }
+    else if (name == "Ubuntu Kylin"){
+        m_pWebView->load(QUrl(QString(LOCAL_URL_PATH_UBUNTUKYLIN)+"index-ubuntukylin.html"));
+    }
 //    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
-    m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
+    //m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
     m_pWebView->page()->setLinkDelegationPolicy(QWebPage::DelegateExternalLinks);//外链
     m_pWebView->settings()->setObjectCacheCapacities(0,0,0);
 //    m_pWebView->settings()->setAttribute(QWebSettings::WebSecurityEnabled, false);//关闭浏览器安全
@@ -180,7 +199,7 @@ void GuideWidget::initUI()
     m_pWebView->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
     m_pWebView->settings()->setAttribute(QWebSettings::AutoLoadImages,true);
     m_pWebView->settings()->setAttribute(QWebSettings::PluginsEnabled, true);
-    //m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
+    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
 
     QObject::connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
@@ -244,7 +263,15 @@ void GuideWidget::slot_backOffButton()
 {
     qDebug() << Q_FUNC_INFO;
 //    emit sig_backOff2js();
-    m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
+    QString name = system_name();
+    if(name == "kylin")
+    {
+        m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
+    }
+    else if (name == "Ubuntu Kylin") {
+        m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI_ubuntu();");
+    }
+    //m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
     QPushButton *button = this->m_yWidget->findChild<QPushButton *>("backOffButton");
     button->hide();
 }
@@ -285,13 +312,101 @@ void GuideWidget::slot_onClicked_closeOffButton()
     }
 }
 
+QString GuideWidget::system_name()
+{
+    QFile system (SYSTEM_FILE);
+    if(!system.exists())
+    {
+        return "";
+    }
+    if (!system.open(QIODevice::ReadOnly))
+    {
+        return "";
+    }
+    QString str = system.readLine();
+    QString name = str.section("\"",1,1);
+    return name;
+    //return "Ubuntu Kylin";
+}
+
+QStringList GuideWidget::getDirAndPng()
+{
+    QStringList list;
+    QString PathForSystem;
+    QString NameForSystem=system_name();
+    if(NameForSystem == "kylin")
+    {
+        PathForSystem = LOCAL_FILE_PATH;
+    }
+    else if(NameForSystem == "Ubuntu Kylin")
+    {
+        PathForSystem = LOCAL_FILE_PATH_UBUNTUKYLIN;
+    }
+    QDir path(PathForSystem);
+    if(!path.exists())
+    {
+        qDebug()<< PathForSystem << "is not exists !!!";
+    }
+    QStringList dirList = path.entryList();
+    qDebug() << path.entryList();
+    dirList.sort();
+    for(int i=0;i<dirList.size();++i)
+    {
+        QDir dirname(PathForSystem);
+        if(dirList.at(i) == "."||dirList.at(i)=="..")
+        {
+            continue;
+        }
+        else
+        {
+            dirname.cd(dirList.at(i));
+            //qDebug() << dirname.entryList();
+            QStringList namelist=dirname.entryList();
+            QStringList Pngname = namelist.filter(".png");
+            list << dirList.at(i)+"|"+Pngname.at(0);
+        }
+    }
+    qDebug()<<list;
+    return list;
+}
+
+QStringList GuideWidget::js_getIntoFilename()
+{
+    QStringList test=getDirAndPng();
+    return test;
+}
+
 QString GuideWidget::js_getIndexMdFilePath(QString appName)
 {
     qDebug() << Q_FUNC_INFO << appName;
-    QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
+    QString IndexMdFilePath;
+    QString name = system_name();
+    if(name == "kylin")
+    {
+        IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
+    }
+    else if (name == "Ubuntu Kylin"){
+        IndexMdFilePath = LOCAL_FILE_PATH_UBUNTUKYLIN + appName + "/" +  gLang + "/index.md";
+    }
+    //QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
     QPushButton *button = this->m_yWidget->findChild<QPushButton *>("backOffButton");
     qDebug() << button;
     button->show();
+    return IndexMdFilePath;
+}
+
+QString GuideWidget::js_getIndexMdFilePathOther(QString appName)
+{
+    qDebug() << Q_FUNC_INFO << appName;
+    QString IndexMdFilePath;
+    QString name = system_name();
+    if(name == "kylin")
+    {
+        IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
+    }
+    else if (name == "Ubuntu Kylin"){
+        IndexMdFilePath = LOCAL_FILE_PATH_UBUNTUKYLIN + appName + "/" +  gLang + "/index.md";
+    }
     return IndexMdFilePath;
 }
 
@@ -361,7 +476,6 @@ void GuideWidget::set_Cursor(QPoint &currentPoint)
 
 void GuideWidget::mousePressEvent(QMouseEvent *event)
 {
-    //qDebug()<<event->localPos()<<event->screenPos()<<event->windowPos()<<event->globalPos();
     mouseinwidget = false; //避免在其他控件上按下鼠标移动出现位置不正确问题
     if(event->pos().y()>=3&&event->pos().y()<=30)
         mCanDrag = true;
@@ -380,7 +494,6 @@ void GuideWidget::mouseMoveEvent(QMouseEvent *event)
     QRect rect = this->rect();
     QPoint tl = mapToGlobal(rect.topLeft());
     QPoint rb = mapToGlobal(rect.bottomRight());
-    //qDebug() << event->globalPos() << tl << rb;
     if (!mouseinwidget)
     {
         set_Cursor(gloPoint);
