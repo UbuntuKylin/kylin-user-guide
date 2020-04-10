@@ -141,19 +141,33 @@ function onclickButton(str)
      }
      hlist_str = "<dl>" + hlist_str + "</dl>";
  //   console.log(hlist_str);
-
-    str_name = str.replace(/-/g,"_");
-    //console.log(str+"=============="+str_name+"======="+date[str_name]);
+    str_name = str.replace(/-/g,"_"); 
+    if(navigator.language=="zh-CN")
+    {
+        var update="更新时间："
+        var goTop="返回顶部"
+        var Data=date[str_name]
+    }
+    else
+    {
+        var update="update："
+        var goTop="Go Top"
+        var Data=date[str_name].replace(/[\u4e00-\u9fa5]/g,".")
+        Data=Data.slice(0,Data.length-1)
+    }
     html_new = "<h1><a name='paga_top'>"+info.title+"</a></h1>"
-                                +"<p  class='date' style='text-indent: 0px;'>更新时间："
-                                +date[str_name]
+                                +"<p  class='date' style='text-indent: 0px;'>"
+                                +update
+                                +Data
                                 +"</p>"
                                 +"<HR style='margin-bottom: 34px;margin-top: 10px'>"
                                 +html
                                 +"<HR style='margin-top: 20px'>"
                                 +"<div class='paga_top' >"
                                 +"<img src='file:////usr/share/kylin-user-guide/data/icon-go-top.png' "+"/>"
-                                +"<a style='text-decoration: none;'onclick=onclickA('') href='#paga_top'>返回顶部</a>"
+                                +"<a style='text-decoration: none;'onclick=onclickA('') href='#paga_top'>"
+                                +goTop
+                                +"</a>"
                                 +"</div>"
                                 //+"<div id='top'>"
                                 //+"<img src='file:////usr/share/kylin-user-guide/data/go-top.png' "+"/>"

@@ -49,7 +49,7 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
     this->resize(1000,750);
 //    this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
     this->setWindowIcon(QIcon::fromTheme("kylin-user-guide"));
-    this->setWindowTitle(GUIDE_WINDOW_TITLE);
+//    this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
 //    QPalette palette;
 //    palette.setBrush(QPalette::Background, QBrush(QPixmap("://picture/backImage-700x540.png")));
@@ -102,7 +102,7 @@ void GuideWidget::initUI()
     m_pIconLabel->setScaledContents(true);
     m_pIconLabel->setPixmap((QPixmap(QString::fromLocal8Bit(":/image/kylin-user-guide_16_24.png"))));
 
-    m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
+//    m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
 
     //QIcon iconReturn(":/image/return.png"); //让QIcon对象指向想要的图标
     //backOffButton->setIcon(iconReturn); //给按钮添加图标
@@ -172,10 +172,12 @@ void GuideWidget::initUI()
     QLocale localeNew;
     if(localeNew.language()==QLocale::Chinese)
     {
+        m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
         m_pWebView->load(QUrl(QString(LOCAL_URL_PATH_UBUNTUKYLIN)+"index-ubuntukylin.html"));
     }
     else
     {
+        m_pTitleLabel->setText("Kylin User Guide");
         m_pWebView->load(QUrl(QString(LOCAL_URL_PATH_UBUNTUKYLIN)+"index-ubuntukylin_en_US.html"));
     }
 //    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
