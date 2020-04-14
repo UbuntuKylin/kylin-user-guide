@@ -44,9 +44,12 @@
 
 GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 {
+//    setAttribute(Qt::WA_TranslucentBackground);
     this->isTopLevel();
     //this->resize(850,640);
     this->resize(1000,750);
+
+
 //    this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
     this->setWindowIcon(QIcon::fromTheme("kylin-user-guide"));
 //    this->setWindowTitle(GUIDE_WINDOW_TITLE);
@@ -55,12 +58,37 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 //    palette.setBrush(QPalette::Background, QBrush(QPixmap("://picture/backImage-700x540.png")));
 //    this->setPalette(palette);
     this->setAutoFillBackground(true);
+//    this->setStyleSheet("border-radius:10px");
     QDesktopWidget *desktop = QApplication::desktop();
     this->move((desktop->width()-this->width())/2,(desktop->height()-this->height())/2);
 
     initSettings();
     initUI();
     getDirAndPng();
+}
+
+void GuideWidget::paintEvent(QPaintEvent *event)
+{
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);  // 反锯齿;
+    painter.setBrush(QBrush(Qt::white));
+    painter.setPen(Qt::transparent);
+    QRect rect = this->rect();
+/*    qDebug() <<"====" <<this->rect() << rect.width() << rect.height()*/;
+    rect.setWidth(rect.width()-2);
+    rect.setHeight(rect.height()-2);
+    painter.drawRoundedRect(rect, 15, 15);
+
+    QStyleOption opt;
+    opt.init(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+//    //也可用QPainterPath 绘制代替 painter.drawRoundedRect(rect, 15, 15);
+//    {
+//        QPainterPath painterPath;
+//        painterPath.addRoundedRect(rect, 15, 15);
+//        p.drawPath(painterPath);
+//    }
+    QWidget::paintEvent(event);
 }
 
 GuideWidget::~GuideWidget()
@@ -71,16 +99,27 @@ GuideWidget::~GuideWidget()
 void GuideWidget::initUI()
 {
     m_pWebView = new QWebView;
-    m_yWidget = new  QWidget;
-    m_yWidget->setObjectName("m_yWidget");
-    QPushButton *backOffButton = new QPushButton(m_yWidget);
-    QPushButton *minOffButton = new QPushButton(m_yWidget);
-    QPushButton *maxOffButton = new QPushButton(m_yWidget);
-    QPushButton *closeOffButton = new QPushButton(m_yWidget);
-    QPushButton *menuOffButton = new QPushButton(m_yWidget);
-    QLabel *m_pIconLabel = new QLabel(m_yWidget);
-    QLabel *m_pTitleLabel = new QLabel(m_yWidget);
-    QLineEdit *search_Line = new QLineEdit(m_yWidget);
+    m_pWebView->installEventFilter(this);
+    m_pWebView->setStyleSheet("border-radius:10px");
+//    m_yWidget = new  QWidget(this);
+    qDebug() <<"------------"<< m_pWebView->width() << m_pWebView->height();
+
+//    m_pWebView->setFixedSize(980,730);
+//    QPainterPath path;
+//    path.addRoundedRect(0, 0, 997, 703, 10, 10);
+//    m_pWebView->setMask(path.toFillPolygon().toPolygon());
+//    m_pWebView->setAttribute(Qt::WA_TranslucentBackground);
+
+
+    this->setObjectName("m_yWidget");
+    QPushButton *backOffButton = new QPushButton(this);
+    QPushButton *minOffButton = new QPushButton(this);
+    QPushButton *maxOffButton = new QPushButton(this);
+    QPushButton *closeOffButton = new QPushButton(this);
+    QPushButton *menuOffButton = new QPushButton(this);
+    QLabel *m_pIconLabel = new QLabel(this);
+    QLabel *m_pTitleLabel = new QLabel(this);
+    QLineEdit *search_Line = new QLineEdit(this);
 
     QIcon icon1;
     icon1.addFile(tr(":/image/icon-search.png"));
@@ -150,7 +189,7 @@ void GuideWidget::initUI()
 
 
     QVBoxLayout *main_layout = new QVBoxLayout(this);
-    QGridLayout *widget_layout = new QGridLayout(m_yWidget);
+    QGridLayout *widget_layout = new QGridLayout(this);
 
     widget_layout->addWidget(m_pIconLabel,0,1,1,3);
     widget_layout->addWidget(m_pTitleLabel,0,4,1,10);
@@ -182,6 +221,7 @@ void GuideWidget::initUI()
     }
 //    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
     //m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
+    m_pWebView->setStyleSheet("border-radius:10px");
     m_pWebView->page()->setLinkDelegationPolicy(QWebPage::DelegateExternalLinks);//外链
     m_pWebView->settings()->setObjectCacheCapacities(0,0,0);
 //    m_pWebView->settings()->setAttribute(QWebSettings::WebSecurityEnabled, false);//关闭浏览器安全
@@ -204,33 +244,27 @@ void GuideWidget::initUI()
     widget_layout->setContentsMargins(0, 0, 0, 1);
     widget_layout->setVerticalSpacing(0);
 
-    main_layout->addWidget(m_yWidget);
+    main_layout->addLayout(widget_layout);
 
     //设置窗体透明
     this->setAttribute(Qt::WA_TranslucentBackground, true);
     //设置无边框
     this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
-    //实例阴影shadow
-    QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect(this);
-    //设置阴影距离
-    shadow->setOffset(0, 0);
-    //设置阴影颜色
-    shadow->setColor(QColor("#444444"));
-    //设置阴影圆角
-    shadow->setBlurRadius(30);
-    //给嵌套QWidget设置阴影
-    this->m_yWidget->setGraphicsEffect(shadow);
-    //给嵌套QWidget设置背景色
-    //this->m_yWidget->setStyleSheet("background-color:lightgray");
-    this->m_yWidget->setStyleSheet("background-color:white");
 
-    main_layout->setMargin(2);
+    QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
+    shadow_effect->setBlurRadius(5);
+    shadow_effect->setColor(QColor(0, 0, 0, 127));
+    shadow_effect->setOffset(2, 2);
+    this->setGraphicsEffect(shadow_effect);
+
+//    main_layout->setMargin(2);
+    main_layout->setContentsMargins(2,2,2,2);
 
     this->setLayout(widget_layout);
     this->setLayout(main_layout);
 
     this->setMouseTracking(true);
-    this->m_yWidget->setMouseTracking(true);
+//    this->m_yWidget->setMouseTracking(true);
     qDebug() << this->frameGeometry().width() << this->frameGeometry().height();
 }
 
@@ -268,7 +302,7 @@ void GuideWidget::slot_backOffButton()
     m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI_ubuntu();");
 //    }
     //m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
-    QPushButton *button = this->m_yWidget->findChild<QPushButton *>("backOffButton");
+    QPushButton *button = this->findChild<QPushButton *>("backOffButton");
     button->hide();
 }
 
@@ -291,7 +325,7 @@ void GuideWidget::slot_onClicked_maxOffButton()
     QWidget *m_pWindow = this->window();
     if(m_pWindow->isTopLevel())
     {
-        QPushButton *button = this->m_yWidget->findChild<QPushButton *>("maxOffButton");
+        QPushButton *button = this->findChild<QPushButton *>("maxOffButton");
         QIcon iconFull(":/image/restore.png");
         QIcon iconRestore(":/image/fullscreen.png");
         m_pWindow->isMaximized() ? m_pWindow->showNormal() : m_pWindow->showMaximized();
@@ -364,6 +398,16 @@ QStringList GuideWidget::getDirAndPng()
     return list;
 }
 
+bool GuideWidget::eventFilter(QObject *watched, QEvent *event)
+{
+    if (event->type() == QEvent::Resize) {
+        QPainterPath path;
+        path.addRoundedRect(0, 0, this->width()-3, this->height()-47, 10, 10);
+        m_pWebView->setMask(path.toFillPolygon().toPolygon());
+    }
+    return false;
+}
+
 QStringList GuideWidget::js_getIntoFilename()
 {
     QStringList test=getDirAndPng();
@@ -383,7 +427,7 @@ QString GuideWidget::js_getIndexMdFilePath(QString appName)
     IndexMdFilePath = LOCAL_FILE_PATH_UBUNTUKYLIN + appName + "/" +  gLang + "/index.md";
 //    }
     //QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
-    QPushButton *button = this->m_yWidget->findChild<QPushButton *>("backOffButton");
+    QPushButton *button = this->findChild<QPushButton *>("backOffButton");
     qDebug() << button;
     button->show();
     return IndexMdFilePath;
@@ -566,7 +610,7 @@ void GuideWidget::mouseDoubleClickEvent(QMouseEvent *event)
         QWidget *m_yWindow = this->window();
         if(m_yWindow->isTopLevel())
         {
-            QPushButton *button1 = this->m_yWidget->findChild<QPushButton *>("maxOffButton");
+            QPushButton *button1 = this->findChild<QPushButton *>("maxOffButton");
             QIcon iconFull(":/image/restore.png");
             QIcon iconRestore(":/image/fullscreen.png");
             m_yWindow->isMaximized() ? m_yWindow->showNormal() : m_yWindow->showMaximized();
