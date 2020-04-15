@@ -62,12 +62,16 @@ public:
     void set_Cursor(QPoint &event);
     QString system_name();
     QStringList getDirAndPng();
+
+    bool eventFilter(QObject *watched, QEvent *event);
+
 protected:
     void closeEvent(QCloseEvent *);
     void mousePressEvent(QMouseEvent * );
     void mouseMoveEvent(QMouseEvent *);
     void mouseReleaseEvent(QMouseEvent *);
     void mouseDoubleClickEvent(QMouseEvent *);
+    void paintEvent(QPaintEvent *);
     QPoint dragPos;
     bool mouseinwidget =false;
     bool isClose = false;
