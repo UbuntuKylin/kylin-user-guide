@@ -72,7 +72,7 @@ void GuideWidget::paintEvent(QPaintEvent *event)
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);  // 反锯齿;
     painter.setBrush(QBrush(Qt::white));
-    painter.setPen(Qt::transparent);
+    painter.setPen(QColor(79,79,79));
     QRect rect = this->rect();
 /*    qDebug() <<"====" <<this->rect() << rect.width() << rect.height()*/;
     rect.setWidth(rect.width()-2);
@@ -195,10 +195,10 @@ void GuideWidget::initUI()
     widget_layout->addWidget(m_pTitleLabel,0,4,1,10);
     widget_layout->addWidget(backOffButton,0,22,1,4);
     widget_layout->addWidget(search_Line,0,40,1,40);
-    widget_layout->addWidget(menuOffButton,0,90,1,4);
-    widget_layout->addWidget(minOffButton,0,94,1,4);
-    widget_layout->addWidget(maxOffButton,0,98,1,4);
-    widget_layout->addWidget(closeOffButton,0,102,1,4);
+    widget_layout->addWidget(menuOffButton,0,89,1,4);
+    widget_layout->addWidget(minOffButton,0,93,1,4);
+    widget_layout->addWidget(maxOffButton,0,97,1,4);
+    widget_layout->addWidget(closeOffButton,0,101,1,4);
     widget_layout->setColumnStretch(40,6);
     widget_layout->setColumnStretch(6,2);
     widget_layout->setColumnStretch(39,1);
@@ -251,11 +251,11 @@ void GuideWidget::initUI()
     //设置无边框
     this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
 
-    QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
-    shadow_effect->setBlurRadius(5);
-    shadow_effect->setColor(QColor(0, 0, 0, 127));
-    shadow_effect->setOffset(2, 2);
-    this->setGraphicsEffect(shadow_effect);
+//    QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
+//    shadow_effect->setBlurRadius(5);
+//    shadow_effect->setColor(QColor(0, 0, 0, 127));
+//    shadow_effect->setOffset(2, 2);
+//    this->setGraphicsEffect(shadow_effect);
 
 //    main_layout->setMargin(2);
     main_layout->setContentsMargins(2,2,2,2);
@@ -400,7 +400,7 @@ QStringList GuideWidget::getDirAndPng()
 
 bool GuideWidget::eventFilter(QObject *watched, QEvent *event)
 {
-    if (event->type() == QEvent::Resize) {
+    if (watched == m_pWebView && event->type() == QEvent::Resize) {
         QPainterPath path;
         path.addRoundedRect(0, 0, this->width()-3, this->height()-47, 10, 10);
         m_pWebView->setMask(path.toFillPolygon().toPolygon());
