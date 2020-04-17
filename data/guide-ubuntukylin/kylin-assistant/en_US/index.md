@@ -20,7 +20,11 @@ Users can click the “Details” button to see the informations.
 
 <br>
 
+<<<<<<< HEAD
 ## Optimized Acceleration
+=======
+## Optimization and Speedup
+>>>>>>> 1d6456ae2a910a895865932739640437cb471f01
 
 It provides three options: 
 

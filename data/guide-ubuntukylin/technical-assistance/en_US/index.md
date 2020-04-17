@@ -78,3 +78,4 @@ Users can Search for solutions to common problems at : [**UbuntuKylin Wiki**](ht
 In order to enable customers to enjoy attentive, perfect, technically professional and image friendly service, and to provide a strong guarantee for the service enjoyed by customers, our **Long Term Support Version (LTS)** provides 5 years of renewal and maintenance, **Short Term Support Version** provides 9 months of renewal and maintenance.
 
 
+

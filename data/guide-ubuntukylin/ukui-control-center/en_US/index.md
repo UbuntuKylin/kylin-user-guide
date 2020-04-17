@@ -379,3 +379,4 @@ After modifying the control state, the control immediately reverts to its pre-mo
 It is highly likely that the reason for the above problems is due to a question of authority. Use the following methods to fix the problem.
 Open the command line terminal by pressing Ctrl+Alt+t on the keyboard, enter “rm ~/.config/dconf/user” and press Enter to fix the problem.
 Reconfiguration.
+
