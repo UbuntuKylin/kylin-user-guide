@@ -1,8 +1,8 @@
-# Technical services
+# Technical Services
 
 UKUI is a lightweight desktop environment based on pluggable framework for Linux and other Unix-like Distributions.Developed using Qt, which is powered by the Ubuntu Kylin open source operating system by default, it provides a simpler and more enjoyable experience for browsing, searching and managing your computer.
 
-## Official channels
+## Official Channels
 
 In order to ensure the timely update and feedback during the installation, operation and maintenance process, we provide the following official channels for feedback and assistance.
 
@@ -21,7 +21,7 @@ From the forum navigation window, select the common questions that you need feed
 
 ![Forum navigation](image/2.png)
 
-### WeChat public number.
+### WeChat Public Platform
 Ubuntu_Kylin
 
 ![WeChat QR code](image/WeChat-Ubuntu_Kylin.png)
@@ -30,18 +30,18 @@ The WeChat menu is divided into three sections: About Us, Community, and System 
 
 ![WeChat Public Menu](image/3.png)
 
-#### (1) About us
+#### (1) About Us
 In this section, you can view official profiles, international rankings, development history and more.
 #### (2) Community
 In this section, you can view community news updates, community events, and direct links to the forum.
-#### (3) System use
+#### (3) System Use
 In this section, you can view the system installation information, video tutorials, and communicate your suggestions, questions and feedback directly with us through Q&A.
 
-##### System installation.
+##### System Installation.
 
 ![system-use-system-install-big](image/4.png)
 
-##### video tutorials
+##### Video Tutorials
 
 The video tutorials provided by Ubuntu Kylin Public are directed to the BiliBili:
 
@@ -57,14 +57,14 @@ The Q&A contains feedback on installation, startup, wireless card, graphics card
 ### Tweets.
 [Ubuntu Kylin Community Weibo] (https://weibo.com/goodkylin)
 
-### Community mailbox.
+### Community Mailbox.
 contact@ubuntukylin.com
 
-### User feedback process in the system
+### User Feedback  In  System
 
 ![User feedback program in the system](image/8.png)
 
-### Online feedback from the official website
+### Online Feedback From The Official Website
 
 
 ![Online feedback interface on the official website -big](image/9.png)
@@ -73,8 +73,9 @@ contact@ubuntukylin.com
 
 Users can Search for solutions to common problems at : [**UbuntuKylin Wiki**](https://ubuntukylin.github.io/).
 
-## Service guarantees
+## Service Guarantees
 
 In order to enable customers to enjoy attentive, perfect, technically professional and image friendly service, and to provide a strong guarantee for the service enjoyed by customers, our **Long Term Support Version (LTS)** provides 5 years of renewal and maintenance, **Short Term Support Version** provides 9 months of renewal and maintenance.
+
 
 

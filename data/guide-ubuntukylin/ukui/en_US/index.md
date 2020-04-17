@@ -15,7 +15,8 @@ The system places three icons Computer, Recycle Bin and Personal by default, and
 | ![](image/icon2.png) | Recycle Bin: Show documents that have been diverted|
 | ![](image/icon3.png) | Personal: Show personal home directory|
 	
-**<center><font face="Noto Sans SC" size=1 color=#333333>Table 1 Icon’s Function Description</center></font>**
+
+**<center><font face="Noto Sans SC" size=2 color=#333333>Table 1 Icon’s Function Description</center></font>**
 
 In addition, right-clicking “Computer” and selecting "Properties", it can show the current system version, kernel version, activation and other related informations, as shown in Figure 2.
 
@@ -34,7 +35,8 @@ Some of the options are described in Table 2.
 | View type | Four view types are available: small icon, medium icon, large icon, super large icon |
 | Arrangement | Multiple ways to arrange icons |
 
-**<center><font face="Noto Sans SC" size=1 color=#333333>Table 2 Option’s Function Description</center></font>**
+
+**<center><font face="Noto Sans SC" size=2 color=#333333>Table 2 Option’s Function Description</center></font>**
 
 <br>
 
@@ -57,7 +59,8 @@ The individual components are shown in Table 3.
 |![](image/icon9.png)| Tray Menu: Include settings for input method, voice, internet connection, date |
 |Show Desktop| The button is on the far right. Minimize all windows on the desktop and return to the desktop; Clicking again will restore the windows |
 
-**<center><font face="Noto Sans SC" size=1 color=#333333>Table 3 Component’s Funtion Description</center></font>**
+
+**<center><font face="Noto Sans SC" size=2 color=#333333>Table 3 Component’s Funtion Description</center></font>**
 
 #### Multi View Switch
 Click the icon “![](image/icon10-o.png)” on the taskbar to enter the interface shown in Figure 5, and select the operation area that you need to work on at the moment in multiple work areas.
@@ -105,7 +108,8 @@ Clicking “![](image/icon15-o.png)”, you can edit the the contents of the cli
 | ![](image/icon16.png) | Copy the content | ![](image/icon18.png) | Edit the content |
 | ![](image/icon17.png) | Delete the content |  |  |	
 	
-**<center><font face="Noto Sans SC" size=1 color=#333333>Table 4 Clipboard Icon Description</center></font>**
+
+**<center><font face="Noto Sans SC" size=2 color=#333333>Table 4 Clipboard Icon Description</center></font>**
 
 The second label of the clipboard is the small plug-in that contains alarm clock, notebook, user feedback, as shown in Figure 14.
 
@@ -126,7 +130,8 @@ Input method icons’ description as shown in Table 5.
 |![](image/icon21.png)|	Duplex input |![](image/icon24.png)|	Five-Stroke input |
 |![](image/icon22.png)|	CapsLock |![](image/icon25.png)|	CapsLock release |
 	
-**<center><font face="Noto Sans SC" size=1 color=#333333>Table 5 Input Method’s Icons Description</center></font>**
+
+**<center><font face="Noto Sans SC" size=2 color=#333333>Table 5 Input Method’s Icons Description</center></font>**
 
 ##### U Disk
 When the U disk is inserted into the computer, it will be automatically read the data inside. Click “![](image/icon26-o.png)” to open the window as shown in Figure 16. When you need to umount the U disk, please click the icon “![](image/icon27-o.png)”.
@@ -163,7 +168,9 @@ Users can choose wired or wireless network connections by clicking the icon “!
 |![](image/icon35.png)|	Wifi unconnected |![](image/icon40.png)|	Wificonnection limited |
 |![](image/icon36.png)|	Wifi locked |![](image/icon41.png)|	Wifi connecting |
 	
-**<center><font face="Noto Sans SC" size=1 color=#333333>Table 6 Network Connection’s Icons Description</center></font>**
+
+**<center><font face="Noto Sans SC" size=2 color=#333333>Table 6 Network Connection’s Icons Description</center></font>**
+
 
 ![Fig 21 Network Connection](image/21.png)
 
@@ -238,7 +245,8 @@ The functions provided as shown in Table 7.
 | Drag and Drop | Long press the left mouse button at the title bar to move the window to any position |
 | Resize | Move the mouse to the corner of the window and long press the left button to resize the window |
 
-**<center><font face="Noto Sans SC" size=1 color=#333333>Table 7 Window Manager’s Functions</center></font>**
+
+**<center><font face="Noto Sans SC" size=2 color=#333333>Table 7 Window Manager’s Functions</center></font>**
 
 ### Window Switch
 There are three ways to switch windows:
@@ -329,7 +337,7 @@ The options are described in Table 8.
 | Uninstall |Remove the application|
 | Attribute |Show the application’s type, name, command and comment information|
 
-**<center><font face="Noto Sans SC" size=1 color=#333333>Table 8 Options’ Description</center></font>**
+**<center><font face="Noto Sans SC" size=2 color=#333333>Table 8 Options’ Description</center></font>**
 
 <br>
 
@@ -341,7 +349,9 @@ The options are described in Table 8.
 
 （3）If it’s still not effective, please do ”reboot”.
 
-### Can't login to the system after locking the screen?
+
+### Can’t login to the system after locking the screen?
+
 （1）Switch to character terminal by <Ctrl + Alt + F1>.
 
 （2）Input the user-name and passwd to login to the system.

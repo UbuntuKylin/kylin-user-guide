@@ -109,7 +109,7 @@ Click on the Change Password button in the settings or click on the Retrieve Pas
 ![Fig. 13 Software Center Change Password and Password Retrieval Interface](image/15.png)
 <br>
 
-## Frequently Q&A
+## FAQ
 ### Usage needs
 Since the server IP is unknown before construction, so the client uses the domain name to access the server, there are two ways to resolve.
 
