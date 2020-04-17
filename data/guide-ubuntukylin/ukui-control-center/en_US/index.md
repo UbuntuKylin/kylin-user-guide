@@ -2,7 +2,7 @@
 ## Overview
 The control center provides a user-friendly graphical user interface for managing common operating system configuration items. The control center boils down common configurations into two categories, system configuration and hardware configuration. The system configuration mainly contains the desktop environment and system level configuration items; the hardware configuration mainly contains the computer hardware and its related configuration items, the main interface is shown in Fig. 1.
 
-![Fig. 1 Control Center Main Interface - big](image/1.png)
+![Fig. 1 Control Center Main Interface -big](image/1.png)
 
 ## System 
 The system configuration settings provide four modules: monitor, default application, power, and power-on.
@@ -323,12 +323,12 @@ Click "Change format of data", the pop-up window is shown in Fig.50, you can cus
 The preferred recommended language for displaying system windows, menus and web pages is Simplified Chinese.
 Users can add other area languages as an alternative to the system language by clicking "Add main language".
 
-## Updates and backups
+## Update And Backup
 The Update and Backup settings provide two modules, Update and Backup, as shown in Fig. 51.
 
 ![Fig. 51 Update and backup main interface-big](image/51.png)
 
-### Updated
+### Update
 View the latest system via system update detection, as shown in Fig. 51. Under update settings, users can set system update reminders, auto invite mutual package cache, auto download updates, smart image source, etc., as shown in Fig. 52.
 
 ![Fig. 52 Update Settings](image/52.png)
@@ -338,7 +338,7 @@ Backup provides two panels for backup and recovery, as shown in Fig. 53, select 
 
 ![Fig. 53 Backup settings-big](image/53.png)
 
-## Notifications and missions
+## Notification & Task
 Notifications and Tasks provides four modules: Notice, Multitasking, About Native OS, Experience Plan.
 ### Notice
 Notice include two panels, Notification, Set Notification Source, as shown in Fig. 54.
@@ -369,11 +369,13 @@ In the Experience Plan section, users can join the user experience plan and add 
 
 ![Fig. 59 User Experience Program Agreement](image/59.png)
 
-## Frequently Q&A
-## Can't start? No response when I click the "Control Center" button on the "Start Menu"?
+## FAQ
+## Can’t start? 
+No response when I click the "Control Center" button on the "Start Menu"?
 Press Ctrl+Alt+t on the keyboard to open the command line terminal, type ukui-control-center and then press Enter.
 View error output.
-## Can't change the configuration? After modifying the control state, the control immediately reverts to its pre-modification state?
+## Can’t change the configuration? 
+After modifying the control state, the control immediately reverts to its pre-modification state?
 It is highly likely that the reason for the above problems is due to a question of authority. Use the following methods to fix the problem.
 Open the command line terminal by pressing Ctrl+Alt+t on the keyboard, enter “rm ~/.config/dconf/user” and press Enter to fix the problem.
 Reconfiguration.

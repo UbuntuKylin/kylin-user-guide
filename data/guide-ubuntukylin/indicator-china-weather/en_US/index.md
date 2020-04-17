@@ -26,5 +26,5 @@ Click on the minimize icon and Kylin Weather Indicator will minimize to the tray
 ###### 3) Close
 Click on the close icon and Kylin Weather Indicator will be closed.
 ## FAQ
-### Why can't I get weather information?
+### Why can’t  I get weather information?
 Please keep the network open.

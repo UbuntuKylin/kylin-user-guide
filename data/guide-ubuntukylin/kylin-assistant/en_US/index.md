@@ -20,7 +20,7 @@ Users can click the “Details” button to see the informations.
 
 <br>
 
-## Optimization and Speedup
+## Optimized Acceleration
 
 It provides three options: 
 
@@ -70,3 +70,4 @@ As the extension of Kylin Assistant, “Tools” uses plug-in development mode, 
 ## FAQ
 ### No "Memory" information be seen in "Local Information"
 Because Kylin Assistant does not get the memory information from the underlying interface, the "Memory" entry will not be displayed on the interface either.
+

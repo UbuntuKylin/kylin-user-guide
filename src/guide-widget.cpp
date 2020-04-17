@@ -258,7 +258,7 @@ void GuideWidget::initUI()
 //    this->setGraphicsEffect(shadow_effect);
 
 //    main_layout->setMargin(2);
-    main_layout->setContentsMargins(2,2,2,2);
+    main_layout->setContentsMargins(2,2,2,15);
 
     this->setLayout(widget_layout);
     this->setLayout(main_layout);

@@ -150,7 +150,7 @@ function onclickButton(str)
     }
     else
     {
-        var update="update："
+        var update="Update："
         var goTop="Go Top"
         var Data=date[str_name].replace(/[\u4e00-\u9fa5]/g,".")
         Data=Data.slice(0,Data.length-1)
@@ -456,13 +456,13 @@ function getDocTop(mdFile, mdData) {
         else{
             if(text.lastIndexOf("-big") < 0 ){
 //                return `<h5  style="text-align: center;"><img src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text}</h5>`;
-                return '<h5  style="text-align: center;font-family: Noto Sans SC; font-size: 10px;color=#333333;"><img src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt=' + text + '/><br> ' + text + '</h5>';
+                return '<h5  style="text-align: center;font-family: Noto Sans SC; font-size: 12px;color=#333333;"><img src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt=' + text + '/><br> ' + text + '</h5>';
             }
             else{
                 text1=text.slice(0,text.lastIndexOf("-big"))
 //路径需要用双引号，单引号无法解析相对路径
 //                return `<h5 style="text-align: center;"><img  style="height:98%;width:98%;" src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text1}</h5>`;
-                return '<h5 style="text-align: center;font-family: Noto Sans SC; font-size: 10px;color=#333333;"><img  style="height:98%;width:98%;" src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt='+ text +'/><br>' + text1 + '</h5>';
+                return '<h5 style="text-align: center;font-family: Noto Sans SC; font-size: 12px;color=#333333;"><img  style="height:98%;width:98%;" src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt='+ text +'/><br>' + text1 + '</h5>';
             }
         }
     };
