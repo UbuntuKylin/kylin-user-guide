@@ -60,12 +60,12 @@ The sudo command can also be used to authenticate with biometric features when t
 ![Fig. 11 sudo command using biocertification](image/11.png)
 
 ## FAQ
-### What to do if the screenlock is stuck and I can't enter my password?
+### What to do if the screenlock is stuck and I can’t enter my password?
 1.switch to the character terminal by Ctrl + Alt + F1.
 2.Enter the user name and password of the user who is in the screenlock.
 3.Execute the command "killall ukui-screensaver-dialog".
 4.Cut back to the graphical interface by Ctrl + Alt + F7, or Ctrl + Alt + F8 if multiple users are logged in.
-### Can't use biocertification?
+### Can’t use biocertification?
 1.Opening biometric management tools.
 2.Confirm whether the biometric switch is on, whether the device is connected, whether the drive state is on or not.
 3.Check whether the device is set as the default device.
