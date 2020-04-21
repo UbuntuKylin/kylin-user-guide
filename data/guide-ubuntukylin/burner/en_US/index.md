@@ -65,11 +65,11 @@ The mirror burning interface is shown in Fig. 8.
 
 ![Fig. 8 Mirror recording interface-big](image/8.png)
 #### Use Steps
-######## 1) Select the disc mirror
+######  1) Select the disc mirror
 Click “Browse” and select the disc image users want to burn.
 ###### 2) Click on the disc to be selected
 Select a disc to burn.(It is automatically displayed in the disc selection area when the system recognizes the disc).
-######## 3) Click to start burning
+######  3) Click to start burning
 On the basis of steps one and two, click “Start Burn” to start burning mirrors. The Mirror Burn Progress interface is shown in Fig. 9.
 
 ![Fig. 9 Mirror Burn Progress Interface](image/9.png)
@@ -86,11 +86,11 @@ The replication CD-ROM interface is shown below.
 ![Fig. 11 Copying the CD-ROM Interface-big](image/11.png)
 
 #### Use Steps
-######## 1) Select the disc mirror
+###### 1) Select the disc mirror
 Click Browse and select the disc mirror users want to copy.
 ###### 2) Click on the disc to be selected.
 Select a disc to burn.(It is automatically displayed in the disc selection area when the system recognizes the disc).
-######## 3) Click to create a mirror
+######  3) Click to create a mirror
 On the basis of steps one and two, click Create Mirror to start copying.The CD-ROM progress copying interface is shown in Fig. 12.
 
 ![Fig. 12 Copying the Disc Progress Interface](image/12.png)
@@ -132,8 +132,8 @@ Users can also access the file filtering interface by clicking "View File Filter
 ###What do users need to be aware of when using it?
 1)Image burning requirexs the file to be burned first to generate an image file with the .iso suffix.This manual provides a method for generating mirror files: First click Burn data, add the source file that users want to generate the image file, before users put the CD, click Burn to generate the image file with .iso suffix.
 2)Erase CD, this function can only be used for readable and writable CD, read-only CD cannot be erased.
-## Appendices
-### Shortcuts
+## Appendix
+### Shortcut key
 |Options|Shortcut key|Operational content|
 | :------------ | :------------ | :------------ |
 |Open（O）...|Ctrl+O|Open Item

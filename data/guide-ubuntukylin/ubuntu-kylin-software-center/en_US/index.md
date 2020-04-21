@@ -8,7 +8,7 @@ Kylin Software Center provides users with a graphical interface to recommend com
 
 The Software Center provides software source display, delete and add features, and software source list display. The software display is also dynamically loaded according to the software source, the Win Sub interface shows the replacement of the user's commonly used software under windows, the download interface shows the user's download and installation progress information.
 
-![Fig. 1 Kylin Software Center main interface- big](image/1.png)
+![Fig. 1 Kylin Software Center main interface-big](image/1.png)
 
 <br>
 
