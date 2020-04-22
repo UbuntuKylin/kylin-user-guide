@@ -122,12 +122,12 @@ The various documents are sorted as follows:
 ### Advanced Search Function
 The Peony provides advanced search for users, using the Simple Search feature by default.Simple search function:Click the "![](image/icon18-o.png)" icon button to switch to the search input box.users can search for files in the current directory by entering the contents in the search box and pressing the Enter key, as shown in Fig.13.
 
-![Fig.13 Advanced Search Function - BIG](image/13.png)
+![Fig.13 Advanced Search Function-big](image/13.png)
 
 Advanced search function:Under the current directory (contains subdirectories), user-defined conditions are available.Search by name for keywords, type for file type, file size for file size to be searched, modification time for a certain time period, etc.
 The default advanced search box is shown in Fig.14.
 
-![Fig.14 search box](image/14.png)
+![Fig.14 search box-big](image/14.png)
 
 Expand the default advanced search with modification time as the search criterion, whose pop-up window is shown in Fig.15.
 
