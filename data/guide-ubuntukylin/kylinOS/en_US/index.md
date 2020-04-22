@@ -70,11 +70,11 @@ If you have any questions about this statement, or any related suggestions, plea
 
 **Ubuntu Kylin Open Source Operating System**
 
-**Official Website**: [www.ubuntukylin.com](http://www.ubuntukylin.com)
+**Official Website**: [www.ubuntukylin.com](https://www.ubuntukylin.com/)
 
 **WeChat Public Number**: Ubuntu_Kylin
 
-**WeiBo**: [UbuntuKylin’s WeiBo](https://weibo.com/goodkylin)
+**Weibo**: [UbuntuKylin’s Weibo](https://weibo.com/goodkylin)
 
 **Community E-mail**: contact@ubuntukylin.com
 
