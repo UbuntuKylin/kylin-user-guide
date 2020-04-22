@@ -72,6 +72,7 @@ protected:
     void mouseReleaseEvent(QMouseEvent *);
     void mouseDoubleClickEvent(QMouseEvent *);
     void paintEvent(QPaintEvent *);
+    void resizeEvent(QResizeEvent *e);
     QPoint dragPos;
     bool mouseinwidget =false;
     bool isClose = false;

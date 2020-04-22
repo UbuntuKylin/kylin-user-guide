@@ -74,10 +74,10 @@ void GuideWidget::paintEvent(QPaintEvent *event)
     painter.setBrush(QBrush(Qt::white));
     painter.setPen(QColor(79,79,79));
     QRect rect = this->rect();
-/*    qDebug() <<"====" <<this->rect() << rect.width() << rect.height()*/;
+//    qDebug()<<"====" <<this->rect() << rect.width() << rect.height();
     rect.setWidth(rect.width()-2);
     rect.setHeight(rect.height()-2);
-    painter.drawRoundedRect(rect, 15, 15);
+    painter.drawRoundedRect(rect, 10, 10);
 
     QStyleOption opt;
     opt.init(this);
@@ -91,6 +91,19 @@ void GuideWidget::paintEvent(QPaintEvent *event)
     QWidget::paintEvent(event);
 }
 
+void GuideWidget::resizeEvent(QResizeEvent *e)
+{
+    QWidget::resizeEvent(e);
+    //调整边距
+    auto rect = this->rect();
+    QPainterPath blurPath;
+    //增加圆角
+    blurPath.addRoundedRect(rect, 10, 10);
+    //使用QPainterPath的api生成多边形Region
+    setProperty("blurRegion", QRegion(blurPath.toFillPolygon().toPolygon()));
+    this->update();
+}
+
 GuideWidget::~GuideWidget()
 {
 
@@ -100,16 +113,8 @@ void GuideWidget::initUI()
 {
     m_pWebView = new QWebView;
     m_pWebView->installEventFilter(this);
-    m_pWebView->setStyleSheet("border-radius:10px");
 //    m_yWidget = new  QWidget(this);
     qDebug() <<"------------"<< m_pWebView->width() << m_pWebView->height();
-
-//    m_pWebView->setFixedSize(980,730);
-//    QPainterPath path;
-//    path.addRoundedRect(0, 0, 997, 703, 10, 10);
-//    m_pWebView->setMask(path.toFillPolygon().toPolygon());
-//    m_pWebView->setAttribute(Qt::WA_TranslucentBackground);
-
 
     this->setObjectName("m_yWidget");
     QPushButton *backOffButton = new QPushButton(this);
@@ -172,7 +177,7 @@ void GuideWidget::initUI()
     closeOffButton->setIconSize(QSize(30,25));
     closeOffButton->setFlat(true);
     closeOffButton->setFocusPolicy(Qt::NoFocus);
-    closeOffButton->setStyleSheet("QPushButton:pressed{background-color:rgb(234,234,234)}");
+//    closeOffButton->setStyleSheet("QPushButton:pressed{background-color:rgb(234,234,234)}");
 
     QIcon iconMenu(tr(":/image/open-menu-symbolic.png"));
     menuOffButton->setIcon(iconMenu);
@@ -402,7 +407,7 @@ bool GuideWidget::eventFilter(QObject *watched, QEvent *event)
 {
     if (watched == m_pWebView && event->type() == QEvent::Resize) {
         QPainterPath path;
-        path.addRoundedRect(0, 0, this->width()-3, this->height()-47, 10, 10);
+        path.addRoundedRect(0, 0, this->width()-3, this->height()-47, 5, 5);
         m_pWebView->setMask(path.toFillPolygon().toPolygon());
     }
     return false;
