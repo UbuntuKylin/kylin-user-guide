@@ -2,6 +2,7 @@
 # Kylin Weather Indicator
 ## Overview
 Kylin Weather Indicator is a software that helps users to get weather forecast, through the graphical interface of city management and search, users can quickly get city weather information and life index information,For example: weekly climate, dressing index, cold index, UV index, car wash index, air index, exercise index, etc.
+
 The main interface of Kylin Weather Indicator is shown in Fig. 1.
 
 ![Fig. 1 Kylin Weather Indicator Main Interface-big](image/1.png)
@@ -22,7 +23,7 @@ Clicking on Kylin Weather Indicator City Management will provide users with a gr
 
 ![Fig. 4 Urban Management-big](image/4.png)
 
-######2) Minimize
+###### 2) Minimize
 Click on the minimize icon and Kylin Weather Indicator will minimize to the tray tool.
 ###### 3) Close
 Click on the close icon and Kylin Weather Indicator will be closed.

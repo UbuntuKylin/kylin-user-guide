@@ -13,13 +13,21 @@ The display can be configured to display related settings, including modules suc
 
 ####  Monitor
 The monitor settings can be selected for the current monitor, adjusting the screen resolution, orientation, screen refresh rate, etc., while the screen can be scaled and the brightness adjusted.
+
 The upper colored rectangle represents the current screen, with the monitor name and interface name displayed in the middle.
+
 The drop-down list on the right side of the monitor contains all the current monitors, and these are active. If users need to set the selected monitor as the main screen, then click "set as home screen" . And there is and only one home screen at the same time.
+
 All configuration changes to resolution, refresh rate, etc. are for the currently active monitor.
-Resolution: The drop-down list on the right contains a list of resolutions supported by the system and monitor.The resolution of the currently active monitor can be toggled by the drop-down list, and the change will take effect.
-Orientation: The drop-down list on the right contains 4 options: arrow-up, 90°arrow-right,arrow-down,90°arrow-left, check to make the change real.
-Refresh Rate:The drop-down list on the right contains the list of the current refresh rate supported by the monitor at the current resolution automatically and 59.9993Hz, checked to make the change real.
-Turn off the monitor : This option is only effective when there are two or more monitors, and the opener on/off button is changed.
+
+**Resolution:** The drop-down list on the right contains a list of resolutions supported by the system and monitor.The resolution of the currently active monitor can be toggled by the drop-down list, and the change will take effect.
+
+**Orientation:**The drop-down list on the right contains 4 options: arrow-up, 90°arrow-right,arrow-down,90°arrow-left, check to make the change real.
+
+**Refresh Rate:**The drop-down list on the right contains the list of the current refresh rate supported by the monitor at the current resolution automatically and 59.9993Hz, checked to make the change real.
+
+**Turn off the monitor :** This option is only effective when there are two or more monitors, and the opener on/off button is changed.
+
 All monitors display the home screen image: this option needs to be changed only if there are multiple monitors and the change is true by turning on their on/off buttons.
 #### Night mode
 Turn on the night mode as shown in Fig. 3, the user can modify the time and set the monitor on drink off time to adjust the color temperature of the monitor.
@@ -33,23 +41,33 @@ The default application provides configuration items for the system's default ap
 
 ### Power
 The Power management offers three power plans : Balance(suggest) mode, Saving Minimize performance mode, custom mode are provided for the user to choose. 
+
 User-defined Power supply or Battery powered, and screen protection settings: 30 minutes for the computer to go to sleep, 30 minutes for the system to turn off the monitor.
+
 ![Fig. 5 System power settings-big](image/5.png)
 
 ### Autoboot
 Autoboot provides configuration management functions for the booting software, whose interface is shown in Fig.6.
+
 ![Fig. 6 boot up-big](image/6.png)
 
 The list shows the boot software that already exists on the current system, the left side of the list is the software name; the right side of the list is the boot status of the corresponding software.
+
 The switch button on the right side of the list represents the boot state of the software on the left side, open means the software starts with boot; otherwise it means the software does not start. Status can be switched by clicking the on/off button.
+
 Click "+" to add the boot application button to bring up the add window, as shown in Fig. 7.
 
 ![Fig. 7 Autoboot added](image/7.png)
 
 #### Add autoboot app
 (1) Fill in the "Program name".
+
 (2) fill in the "program exec", pay attention to ensure that the command is legal and valid or by clicking the "Open" button, in the pop-up file selection interface, select the file with the suffix "desktop" and the program will automatically parse and export the command data in the desktop file.
+
+(3) "Description of the procedure" is optional and may be filled in.
+
 (4) Finally, by clicking the "Certain" button, a new start-up item is created and displayed in the list.
+
 (5) The newly created startup item defaults to the boot-up state.
 
 ## Equipment
@@ -75,10 +93,14 @@ General Settings mainly sets the basic settings related to keyboard input, the i
 ![Fig. 11 Keys Settings](image/11.png)
 
 When you turn on the Enable Key Repeat setting and activate the Repeat Key function, the system will enter the behavior as a repeated uninterrupted keyboard input when a certain key is pressed and not released; when you turn it off, the system will enter the behavior as a keyboard input when a certain key is pressed and not released.
+
 When the key repeat setting is enabled, the delay and speed options can be set.
-Delay: The slider on the right side is used to set the interval between pressing a key and the system starting to receive keyboard input, near the "short" direction, the shorter the interval, the faster the system starts to receive keyboard input; and vice versa.
-Speed: The slider on the right is used to set the interval between repetitive inputs after the button is pressed, near the "slow" direction, the longer the interval, the less the number of repetitive inputs in the same time; and vice versa.
-Enter characters to test repetition speed: The text box below is used to test the effect of the settings. Left mouse click on the text box to get the input focus and press a button to see the effect in real time.
+
+**Delay:**The slider on the right side is used to set the interval between pressing a key and the system starting to receive keyboard input, near the "short" direction, the shorter the interval, the faster the system starts to receive keyboard input; and vice versa.
+
+**Speed:** The slider on the right is used to set the interval between repetitive inputs after the button is pressed, near the "slow" direction, the longer the interval, the less the number of repetitive inputs in the same time; and vice versa.
+
+**Enter characters to test repetition speed:**The text box below is used to test the effect of the settings. Left mouse click on the text box to get the input focus and press a button to see the effect in real time.
 
 #### Keyboard Layout 
 Set the keyboard layout of the current system, and the main interface is shown in Fig. 12.
@@ -86,6 +108,7 @@ Set the keyboard layout of the current system, and the main interface is shown i
 ![Fig. 12 Keyboard layout Settings](image/12.png)
 
 The keyboard language drop-down menu displays a list of installed keyboard layout, and up to 4 keyboard layout can be added.
+
 Click "Install layouts" to add another language.
 ### Shortcut
 Shortcut allow users to make changes to system shortcuts, and custom shortcuts can be added or removed. View all the shortcuts in the system via The control center Device > Shortcuts key, as shown in Fig. 13.
@@ -93,12 +116,17 @@ Shortcut allow users to make changes to system shortcuts, and custom shortcuts c
 ![Fig. 13 shortcut setting-big](image/13.png)
 
 There are currently two categories of shortcuts: system shortcuts and custom shortcuts.
-System Shortcut: Only hotkey key values can be modified.
-Custom Shortcut: These are user shortcuts that can be added, deleted, or modified.
+
+**System Shortcut:** Only hotkey key values can be modified.
+
+**Custom Shortcut:**These are user shortcuts that can be added, deleted, or modified.
+
 Click the "Add Custom Shortcut" button to bring up the Shortcut Add screen, as shown in Fig. 14.
+
 ![Fig. 14 Add Shortcut](image/14.png)
 
 Fill in the shortcut name and shortcut exec, note that to ensure that the command is legal and valid, if it is occupied, it will be prompted at the bottom: this shortcut key has been occupied by "open terminal", please reset.
+
 In this case, users need to reset it, and after clicking "Certain" if the shortcut is set legally, the shortcut will be added successfully and take effect immediately.
 ### Audio
 Input, output, and system sound can be set via Control Center Devices > Sound, as shown in Fig. 15.
@@ -110,23 +138,28 @@ The output provides the relevant configuration of the output device and the main
 
 ![Fig. 16 Audio Device Output Settings](image/16.png)
 
-Select Output Device: The list below shows all available sound output devices for the current system, switch output devices by clicking the radio button.
-Master Volume Size: Adjusts the master volume size of the output device.
-Channel balance: users can set the channel for the selected output device, near "left" for the left channel and near "right" for the right channel.
+**Select Output Device:**The list below shows all available sound output devices for the current system, switch output devices by clicking the radio button.
+
+**Master Volume Size:** Adjusts the master volume size of the output device.
+
+**Channel balance:** users can set the channel for the selected output device, near "left" for the left channel and near "right" for the right channel.
 #### Input
 The input provides the relevant configuration of the input device and the main interface is shown in Fig. 17.
 
 ![Fig. 17 Audio Device Output Settings](image/17.png)
 
-Select Input Device: The list below lists all the current input devices, select the input device by clicking the radio button.
-Volume: users can configure the input volume size of the input settings.
-Input level: users can configure the level of sound input device, near "low" direction is low level, near "high" direction is advanced.
+**Select Input Device:** The list below lists all the current input devices, select the input device by clicking the radio button.
+
+**Volume:** users can configure the input volume size of the input settings.
+
+**Input level:** users can configure the level of sound input device, near "low" direction is low level, near "high" direction is advanced.
 #### System sound
 System sound provides settings for system sound themes and personalized settings for the prompt tones for power on, log off, wake up, operation success, etc., as shown in Fig. 18.
 
 ![Fig. 18 System Sound Settings](image/18.png)
 
 There is only one UbuntuKylin sound theme for the current system.
+
 The initial sound effects provide four effects: bark, raindrops, glass, and sonar, which can be switched by clicking the corresponding option. 
 ### Bluetooth
 The Bluetooth switch can be turned on via Control Center Devices > Bluetooth and a list of available Bluetooth devices will be displayed at the bottom.
@@ -183,22 +216,28 @@ Under Select Desktop Background>Select Background Form select: image.
 ![Fig. 28 image background settings-big](image/28.png)
 
 Browse the thumbnails in the background list, encounter the intention background directly click the thumbnail desktop background is set successfully, the current desktop background corresponding to the thumbnail will have an obvious stroke for differentiation.
+
 Click on the drop-down list on the right side of the "image placement", there will be panning, zooming, centering, proportional enlargement, stretching, suitable for the width of the six image placement methods for configuration, select the placement method directly on the current desktop background effect.
+
 Click "Browse Local Wallpaper" to bring up the file selection screen, as shown in Fig. 29
 
 ![Fig. 29 background-add-big](image/29.png)
 
 Use the left mouse button to select the desired wallpaper file, click the "Open" button, to add wallpaper will be selected as the current desktop background and added to the background list.
+
 Clicking "Delete Wallpaper" will remove the current desktop background from the background list and the next wallpaper file will be set as a new desktop background.
 #### Slides
 Select Background Form:slideshow. Click on the drop-down list on the right side of the "image placement", there will be panning, zooming, centering, proportional enlargement, stretching, suitable for the width of the six image placement methods for configuration, select the placement method directly on the current desktop background effect.
+
 Click "Picture Switching Frequency" to set the time interval for desktop background slideshows to be changed, and users can turn on the disorder switch to randomly play the pictures in the slideshow album.
+
 Click the "Default Wallpapers" folder below, that is, every 30 minutes, users can switch a picture in the default wallpaper in the order of the picture, users can also customize the slideshow album, the desktop background slideshow switch.
 
 ![Fig. 30 slide background settings-big](image/30.png)
 
 ### Lock screen
 The lock screen module for the lock screen interface provides users with two ways to switch between lock screen background custom background images: by browsing local images and browsing more online wallpapers.
+
 Users can set the time required for the computer to turn on the lock screen by selecting the button that displays the lock screen background image on the login screen.
 
 ![Fig. 31 Lock screen settings-big](image/31.png)
@@ -207,6 +246,7 @@ Users can set the time required for the computer to turn on the lock screen by s
 Screensaver module to be added.
 ### Font
 The Font module provides configuration items for system fonts and font sizes, and the main interface is shown in Fig. 32. The user can set the font and its size and width according to the requirements, provide the corresponding font settings in the advanced settings, and preview the font below.
+
 Click the "Reset to default" button to restore all font settings to the system default state.
 
 ![Fig. 32 font-set-big](image/32.png)
@@ -265,19 +305,23 @@ Users can change the password of their current account by clicking "Change pwd".
 
 #### Change type
 There are two types of system users, standard users and administrators. The difference is that administrators can temporarily enhance root privileges by entering their own password; standard users cannot enhance their privileges. Users can switch from regular user to administrator by clicking on "Change type".
+
 Click the left mouse button to select the radio button, then click the Confirm button to update the user type of the current user. Note that the system needs to have at least one administrator user, so the last remaining administrator user cannot modify the user type to a standard user. And a standard user switching to an administrator needs to know the password of any system administrator to be allowed to switch.
+
 The current user cannot delete himself/herself.
 
 ![Fig. 43 Change user type](image/43.png)
 
 ### Other users
 In the Other Users section, users can edit other users' avatars and account types to match the current account settings, and add/delete operations to other users, as shown in Fig. 44.
+
 Other users' account avatars show the default system avatar, click the account avatar area to bring up the system avatar list, click the avatar file in the list or click "Select face from local" in the pop-up list to select a custom avatar file, and the avatar in the avatar setting area is updated to the latest avatar.
 
 ![Fig. 44 Other user settings](image/44.png)
 
 #### Add new user
 Click "Add new user" to define the Username, Password, Account type, etc. as shown in Fig. 45.
+
 Enter the new account name, select the password type, enter the password, confirm the password, click the user type radio button below to determine the type of the new user, click the "Confirm" button, the new user is created.
 
 ![Fig. 45 Add new user](image/45.png)
@@ -321,9 +365,10 @@ Click "Change format of data", the pop-up window is shown in Fig.50, you can cus
 
 ####  First language
 The preferred recommended language for displaying system windows, menus and web pages is Simplified Chinese.
+
 Users can add other area languages as an alternative to the system language by clicking "Add main language".
 
-## Update And Backup
+## Update & Backup
 The Update and Backup settings provide two modules, Update and Backup, as shown in Fig. 51.
 
 ![Fig. 51 Update and backup main interface-big](image/51.png)
@@ -372,11 +417,16 @@ In the Experience Plan section, users can join the user experience plan and add 
 ## FAQ
 ## Can’t start? 
 No response when I click the "Control Center" button on the "Start Menu"?
+
 Press Ctrl+Alt+t on the keyboard to open the command line terminal, type ukui-control-center and then press Enter.
+
 View error output.
 ## Can’t change the configuration? 
 After modifying the control state, the control immediately reverts to its pre-modification state?
+
 It is highly likely that the reason for the above problems is due to a question of authority. Use the following methods to fix the problem.
+
 Open the command line terminal by pressing Ctrl+Alt+t on the keyboard, enter “rm ~/.config/dconf/user” and press Enter to fix the problem.
+
 Reconfiguration.
 

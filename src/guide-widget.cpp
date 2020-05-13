@@ -150,9 +150,9 @@ void GuideWidget::initUI()
 
     //QIcon iconReturn(":/image/return.png"); //让QIcon对象指向想要的图标
     //backOffButton->setIcon(iconReturn); //给按钮添加图标
-    //backOffButton->setIconSize(QSize(30,25));//重置图标大小
+//    backOffButton->setIconSize(QSize(30,25));//重置图标大小
     backOffButton->setFixedSize(25,25);
-    backOffButton->setStyleSheet("QPushButton{border-image: url(:/image/return.png)}"\
+    backOffButton->setStyleSheet(/*"QPushButton{border-image: url(:/image/return.png)}"\*/
                                  "QPushButton:pressed{background-color:rgb(231,231,231)}");
     backOffButton->setFlat(true);
     backOffButton->setFocusPolicy(Qt::NoFocus);
@@ -178,6 +178,12 @@ void GuideWidget::initUI()
     closeOffButton->setFlat(true);
     closeOffButton->setFocusPolicy(Qt::NoFocus);
 //    closeOffButton->setStyleSheet("QPushButton:pressed{background-color:rgb(234,234,234)}");
+
+    QIcon iconReturn(tr(":/image/return.png"));
+    backOffButton->setIcon(iconReturn);
+    backOffButton->setIconSize(QSize(30,25));
+    backOffButton->setFlat(true);
+    backOffButton->setFocusPolicy(Qt::NoFocus);
 
     QIcon iconMenu(tr(":/image/open-menu-symbolic.png"));
     menuOffButton->setIcon(iconMenu);
