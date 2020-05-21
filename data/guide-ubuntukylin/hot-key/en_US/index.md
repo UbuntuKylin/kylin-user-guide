@@ -113,11 +113,11 @@ The following describes the desktop keyboard shortcuts, primarily provided by th
 |Move forward through options |Tab    
 |Move back through options| Shift + Tab    
 |Select or clear the check box if the active option is a check box |Spacebar
-|Open a folder one level up if a folder is selected in the Save As or Open dialog box| Backspace    
+|Open a folder one level up if a folder is selected in the Save As or Open dialog box| Backspace       
 
 ### File Explorer keyboard shortcut
 
-|To do this|Press this key| 
+|To do this|Press this key|
 |:---|:---|
 |Select the address bar| Alt + D    
 |Select the search box| Ctrl + E (or Ctrl + F)    
@@ -138,7 +138,7 @@ The following describes the desktop keyboard shortcuts, primarily provided by th
 
 ###  Virtual desktops keyboard shortcuts
 
-|To do this|Press this key| 
+|To do this|Press this key|
 |:---|:---|
 |Open Task view |Win + Tab    
 |Add a virtual desktop| Win + Ctrl + D    
@@ -148,7 +148,7 @@ The following describes the desktop keyboard shortcuts, primarily provided by th
 
 ###  Taskbar keyboard shortcuts
 
-|To do this|Press this key|     
+|To do this|Press this key|
 |:---|:---|
 |Open an app or quickly open another instance of an app| Shift + click a taskbar button
 |Open an app as an administrator |Ctrl + Shift + click a taskbar button    
@@ -158,7 +158,7 @@ The following describes the desktop keyboard shortcuts, primarily provided by th
 
 ### Settings keyboard shortcuts
 
-|To do this|Press this key| 
+|To do this|Press this key|
 |:---|:---|
 |Open settings| Win + I    
 |Go back to the settings home page| Backspace    
