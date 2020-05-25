@@ -37,6 +37,7 @@
 #include <QApplication>
 #include <QToolTip>
 #include <QGraphicsDropShadowEffect>
+#include <QPixmap>
 
 #include "guide-widget.h"
 #include "main_controller.h"
@@ -148,15 +149,17 @@ void GuideWidget::initUI()
 
 //    m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
 
-    //QIcon iconReturn(":/image/return.png"); //让QIcon对象指向想要的图标
-    //backOffButton->setIcon(iconReturn); //给按钮添加图标
-//    backOffButton->setIconSize(QSize(30,25));//重置图标大小
+//    QIcon iconReturn(":/image/back.png"); //让QIcon对象指向想要的图标
+//    backOffButton->setIcon(iconReturn); //给按钮添加图标
+//    backOffButton->setIconSize(QSize(25,25));//重置图标大小
     backOffButton->setFixedSize(25,25);
-    backOffButton->setStyleSheet(/*"QPushButton{border-image: url(:/image/return.png)}"\*/
-                                 "QPushButton:pressed{background-color:rgb(231,231,231)}");
+    backOffButton->setStyleSheet("QPushButton{border-image: url(:/image/back.png);border-image-size:25px,25px;border-radius:5px;}"\
+                                 "QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
+                                 "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
+
     backOffButton->setFlat(true);
     backOffButton->setFocusPolicy(Qt::NoFocus);
-    //backOffButton->setVisible(false);
+    backOffButton->setVisible(false);
     backOffButton->hide();
     qDebug() << backOffButton->objectName()<< "=========="<<backOffButton->parent()->objectName();
 
@@ -246,7 +249,7 @@ void GuideWidget::initUI()
     m_pWebView->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
     m_pWebView->settings()->setAttribute(QWebSettings::AutoLoadImages,true);
     m_pWebView->settings()->setAttribute(QWebSettings::PluginsEnabled, true);
-    //m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
+    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
 
     QObject::connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
