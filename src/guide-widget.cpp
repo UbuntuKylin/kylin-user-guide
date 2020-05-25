@@ -157,7 +157,7 @@ void GuideWidget::initUI()
                                  "QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
                                  "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
     backOffButton->setFlat(true);
-//    backOffButton->setFocusPolicy(Qt::NoFocus);
+    backOffButton->setFocusPolicy(Qt::NoFocus);
     backOffButton->setVisible(false);
     backOffButton->hide();
     qDebug() << backOffButton->objectName()<< "=========="<<backOffButton->parent()->objectName();
