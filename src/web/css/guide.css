@@ -85,16 +85,21 @@ div.system-app span {
 
 div.system-app:hover
 {
-    border-radius: 4px;
-    background:  rgb(228, 243, 255) ;
+    /* border-radius: 4px;
+    background:  rgb(228, 243, 255) ; */
     /* background:  rgb(191, 205, 236) ; */
-    color: white;
+    /* color: white; */
+    transform: translateY(-10px);
 }
 
 div.system-app:active
 {
-    padding-left: 5px;
-    padding-top: 5px;
+    /* padding-left: 5px;
+    padding-top: 5px; */
+    /* transform: translateY(-10px); */
+    border-radius: 4px;
+    background:  rgb(228, 243, 255) ;
+    color: white;
 }
 
 div.container

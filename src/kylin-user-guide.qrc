@@ -9,5 +9,6 @@
         <file>image/open-menu-symbolic.png</file>
         <file>image/restore.png</file>
         <file>image/return.png</file>
+        <file>image/back.png</file>
     </qresource>
 </RCC>
