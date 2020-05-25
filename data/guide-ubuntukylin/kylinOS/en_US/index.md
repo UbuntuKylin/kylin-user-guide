@@ -8,7 +8,7 @@ Ubuntu Kylin is an official derivative of Ubuntu, which has received widespread 
 
 - **Expression habits and Explanations**
 
-1)Menus and buttons are marked with "".
+1)Menus and buttons are marked with " ".
 
 2)Paths are marked with > , e.g: "Start Menu" > "Kylin Control Center".
 
@@ -30,7 +30,7 @@ Once you open this software, indicate you accepte the terms of this agreement. I
 
 This software contains the components based on the corresponding open source licenses, which are located in the documentation of the specific components, and each of them are different. You should comply with their provisions of the appropriate licenses when using.
 
-This agreement applies only to this software, and does not limit your rights under the licenses’ terms of any particular software components, nor grant you the rights to supersede the terms above.
+This agreement applies only to this software, and does not limit your rights under the licenses' terms of any particular software components, nor grant you the rights to supersede the terms above.
 
 ### II. Limitation
 This software is protected by the Copyright Act, Trademark Act, and International Intellectual Property Conventions, etc. Ubuntu Kylin Community or its licensors retain the ownership of this software and all related intellectual property rights. This agreement does not authorize any right, ownership or interest in any trademarks, service marks, logos or trade names of Ubuntu Kylin Community or its licensors.
@@ -49,7 +49,7 @@ The replication, modification and distribution do not include any softwares thoe
 Any dispute resolutions (including but not limited to litigation, arbitration, etc) in connection with this agreement shall be governed by the laws of the PRC. The legal rules of any other Countries or Territories shall not apply.
 
 ### IV. Trademarks and Logos
-Ubuntu Kylin Community owns the Ubuntu Kylin Community’s Trademarks, as well as all trademarks, service marks, logos and other brand marks associated with Ubuntu Kylin Community(“Ubuntu Kylin Community Mark”).
+Ubuntu Kylin Community owns the Ubuntu Kylin Community's Trademarks, as well as all trademarks, service marks, logos and other brand marks associated with Ubuntu Kylin Community("Ubuntu Kylin Community Mark").
 
 **The agreement is available in both English and Chinese, and if there were any inconsistencies, the Chinese version should prevail.**
 
@@ -74,7 +74,7 @@ If you have any questions about this statement, or any related suggestions, plea
 
 **WeChat Public Number**: Ubuntu_Kylin
 
-**Weibo**: [UbuntuKylin’s Weibo](https://weibo.com/goodkylin)
+**Weibo**: [UbuntuKylin's Weibo](https://weibo.com/goodkylin)
 
 **Community E-mail**: contact@ubuntukylin.com
 

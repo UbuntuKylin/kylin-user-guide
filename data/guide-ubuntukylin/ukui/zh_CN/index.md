@@ -15,7 +15,7 @@
 |![](image/icon2.png)	|回收站：显示除移的文件
 |	![](image/icon3.png)|主文件夹：显示个人主目录
 	
-**<center><font face="Noto Sans SC" size=1 color=#333333>表 1 图标功能说明</center></font>**
+**<center><font face="Noto Sans SC" size=2 color=#333333>表 1 图标功能说明</center></font>**
 
 另外，右键单击“我的电脑”，选择“属性”，可显示当前系统版本、内核版本、激活等相关信息，如图 2所示。
 
@@ -34,7 +34,7 @@
 |视图类型	|提供四种视图类型：小图标、中图标、大图标、超大图标
 |排列方式	|提供多种排列图标的方式
 
-**<center><font face="Noto Sans SC" size=1 color=#333333>表 2 选项功能说明</center></font>**
+**<center><font face="Noto Sans SC" size=2 color=#333333>表 2 选项功能说明</center></font>**
 
 <br>
 
@@ -57,7 +57,7 @@
 |![](image/icon9.png)|	托盘菜单，包含了对输入法、声音、网络连接、日期的设置
 |显示桌面|	按钮位于最右侧；最小化桌面的所有窗口，返回桌面；再次单击将恢复窗口
 
-**<center><font face="Noto Sans SC" size=1 color=#333333>表 3 组件功能说明</center></font>**
+**<center><font face="Noto Sans SC" size=2 color=#333333>表 3 组件功能说明</center></font>**
 
 #### 多视图切换
 点击任务栏“![](image/icon10-o.png)”图标，即可进入如图 5所示界面，在多个工作区内选择当下需要工作的操作区。
@@ -100,7 +100,7 @@
 |![](image/icon16.png)|	复制剪切板上的该内容	|![](image/icon18.png)|	编辑剪切板上的该内容
 |![](image/icon17.png)|	删除剪切板上的该内容	||||	
 	
-**<center><font face="Noto Sans SC" size=1 color=#333333>表 4 剪切板图标说明</center></font>**
+**<center><font face="Noto Sans SC" size=2 color=#333333>表 4 剪切板图标说明</center></font>**
 
 <br>
 
@@ -127,7 +127,7 @@
 |![](image/icon21.png)|	双拼输入	|![](image/icon24.png)|	五笔输入
 |![](image/icon22.png)|	大写锁定	|![](image/icon25.png)|	大写解除
 	
-**<center><font face="Noto Sans SC" size=1 color=#333333>表 5 任务栏输入法图标说明</center></font>**
+**<center><font face="Noto Sans SC" size=2 color=#333333>表 5 任务栏输入法图标说明</center></font>**
 
 ##### U盘
 U盘插入主机后，自动读取U盘数据，点击任务栏中U盘“![](image/icon26-o.png)”图标弹窗如图 16所示。需要卸载U盘时仅需点击弹出“![](image/icon27-o.png)”图标即可。
@@ -236,7 +236,7 @@ U盘插入主机后，自动读取U盘数据，点击任务栏中U盘“![](imag
 |窗口拖拽	|在窗口标题栏长按鼠标左键，可移动窗口到任意位置
 |窗口大小调整	|将鼠标移至窗口四角，长按左键，可任意调整窗口大小
 
-**<center><font face="Noto Sans SC" size=1 color=#333333>表 7 窗口管理器功能</center></font>**
+**<center><font face="Noto Sans SC" size=2 color=#333333>表 7 窗口管理器功能</center></font>**
 
 ### 窗口切换
 用户有三种方式可以切换：
@@ -328,7 +328,7 @@ U盘插入主机后，自动读取U盘数据，点击任务栏中U盘“![](imag
 |卸载|	卸载软件
 |属性	|查看应用的类型、名字、命令和注释信息
 
-**<center><font face="Noto Sans SC" size=1 color=#333333>表 8 选项功能说明</center></font>**
+**<center><font face="Noto Sans SC" size=2 color=#333333>表 8 选项功能说明</center></font>**
 
 ## 常见问题
 ### 任务栏不显示？
