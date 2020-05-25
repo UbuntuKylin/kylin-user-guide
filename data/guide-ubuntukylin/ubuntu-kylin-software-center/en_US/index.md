@@ -13,10 +13,10 @@ The Software Center provides software source display, delete and add features, a
 <br>
 
 ## Basic functions
-### Main menu.
+### Main menu
 In the main interface, users can see the ad interface of the Software Center, search bar, software category bar, download management icon, recommended software.
 
-#### Introduction.
+#### Introduction
 1) Close the Software Center
 
 Click the close icon in the top right "![](image/icon1-o.png)" to close the Software Center.
@@ -35,10 +35,14 @@ Click on the application in the interface, the installation/upgrade/uninstall/bo
 
 5) Search
 
-Step1：Click the search box, select the search path.
+**Step1：**Click the search box, select the search path.
+
 A.global search: search all applications under the software source, the software found may have unavailable or other quality problems;
+
 B.select search: search in the tested and filtered software, the default is select search
-Step2：Enter the search content, users can find the software with usersr own keywords。
+
+**Step2：**Enter the search content, users can find the software with usersr own keywords。
+
 In Android, upgrade, uninstall interface search is under the current interface software search, other interfaces search keywords in all software, as shown in Fig. 2.
 
 ![Fig. 2 Software Center Search Interface](image/2.png)
@@ -47,7 +51,6 @@ In Android, upgrade, uninstall interface search is under the current interface s
 Click on the button on the left to enter the interface, the Software Center has classified the software, users can quickly find usersr own application in a certain category, as shown in Fig. 3.
 
 ![Fig. 3 Software Center Treasure Trove Interface](image/3.png)
-
 
 #### Upgrades
 Click the upgrade button on the left to enter the upgrade interface, users can see which software can be upgraded, including the number of upgradeable software, as shown in Fig. 5.
@@ -75,12 +78,12 @@ Click the download management icon to see the download interface, as shown in Fi
 ### Setup interface
 Click the Setup button to enter the setup interface, and users can edit the software source in the setup interface, as shown in Fig. 9.
 
-![Fig. 8 Software Center Setup Interface](image/9.png)
+![Fig. 8 Software Center Setup Interface-big](image/9.png)
 
 ### Interfaces
 Clicking on any of the software in any interface can enter the software details interface, as shown in Fig. 10.The software details interface displays the package name, current version, source version, software rating, download size, number of downloads, and software description, as well as multiple screenshots of the software, user ratings and comment sections, and all user comments.Click on the back and forth buttons of the picture to switch the picture.
 
-![Fig. 9 Software Center Software Details Interface](image/10.png)
+![Fig. 9 Software Center Software Details Interface-big](image/10.png)
 
 #### Comment interface
 The user review interface is shown below, where users rate the software objectively according to their personal preferences.
@@ -91,9 +94,13 @@ In the user review interface, it is also possible to rate the software and show 
 
 ### Login interface
 Software Center login module: 
-(1)User can click the login button in the top left corner of the main interface, the login interface will pop up as shown in Fig. 13.;
+
+(1)User can click the login button in the top left corner of the main interface, the login interface will pop up as shown in Fig. 13;
+
 (2)Users can choose the quick login or account registration for related operations, in the quick login interface, enter the corresponding registered user name and password;
+
 (3)Users can also choose to remember the password and automatic login settings (automatic login function needs to be checked at the same time to remember the password to take effect);
+
 (4)Users can click the upper right corner "![](image/icon1-o.png)" to close the login window.
 
 ![Fig. 11 Software Center quick login](image/13.png)
@@ -110,7 +117,7 @@ Click on the Change Password button in the settings or click on the Retrieve Pas
 <br>
 
 ## FAQ
-### Usage needs
+### Usage Needs
 Since the server IP is unknown before construction, so the client uses the domain name to access the server, there are two ways to resolve.
 
 1) Do DNS resolution in the LAN routing, resolve the server IP to: service.ubuntukylin.com, all clients can access correctly.

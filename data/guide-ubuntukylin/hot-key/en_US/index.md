@@ -1,9 +1,10 @@
 # Keyboard shortcuts in Kylin
 ## Overview
-The way to quickly execute a command or launch a piece of software in an operating system through a combination of different keys is called a shortcut button. The Windows logo key is displayed as the Windows flag on the keyboard, and there are also keyboard keys marked as text Win or Windows, hereafter referred to as “Win”.
+The way to quickly execute a command or launch a piece of software in an operating system through a combination of different keys is called a shortcut button. The Windows logo key is displayed as the Windows flag on the keyboard, and there are also keyboard keys marked as text Win or Windows, hereafter referred to as "Win".
+
 Currently we have two categories of system shortcuts: "System" and "Desktop".
 ## System
-The following describes the general keyboard shortcuts for the system and the Windows logo key combinations (“Win+” ).
+The following describes the general keyboard shortcuts for the system and the Windows logo key combinations ("Win+" ).
 ### Copy, paste, and other general keyboard shortcuts
 
 |To do this|Press this key|

@@ -37,7 +37,7 @@ In this section, you can view community news updates, community events, and dire
 #### (3) System Use
 In this section, you can view the system installation information, video tutorials, and communicate your suggestions, questions and feedback directly with us through Q&A.
 
-##### System Installation.
+##### System Installation
 
 ![system-use-system-install-big](image/4.png)
 
@@ -47,17 +47,17 @@ The video tutorials provided by Ubuntu Kylin Public are directed to the BiliBili
 
 ![system-video-tutorial-big](image/5.png)
 
-####### Q & A
+###### Q & A
 The Q&A contains feedback on installation, startup, wireless card, graphics card, system use, etc. ,users can find the answers according to the tags.If you don't find a satisfactory answer, drop us a line in the background of the WeChat public platform of the Ubuntu Kylin.
 
 ![System use - Q&A-big](image/6.png)
 
 ![Feedback from Ubuntu Kylin WeChat](image/7.png)
 
-### Tweets.
+### Tweets
 [Ubuntu Kylin Community Weibo] (https://weibo.com/goodkylin)
 
-### Community Mailbox.
+### Community Mailbox
 contact@ubuntukylin.com
 
 ### User Feedback  In  System
@@ -65,7 +65,6 @@ contact@ubuntukylin.com
 ![User feedback program in the system](image/8.png)
 
 ### Online Feedback From The Official Website
-
 
 ![Online feedback interface on the official website -big](image/9.png)
 

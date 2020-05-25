@@ -156,6 +156,7 @@ void GuideWidget::initUI()
     backOffButton->setStyleSheet("QPushButton{border-image: url(:/image/back.png);border-image-size:25px,25px;border-radius:5px;}"\
                                  "QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
                                  "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
+
     backOffButton->setFlat(true);
     backOffButton->setFocusPolicy(Qt::NoFocus);
     backOffButton->setVisible(false);
@@ -180,6 +181,12 @@ void GuideWidget::initUI()
     closeOffButton->setFlat(true);
     closeOffButton->setFocusPolicy(Qt::NoFocus);
 //    closeOffButton->setStyleSheet("QPushButton:pressed{background-color:rgb(234,234,234)}");
+
+    QIcon iconReturn(tr(":/image/return.png"));
+    backOffButton->setIcon(iconReturn);
+    backOffButton->setIconSize(QSize(30,25));
+    backOffButton->setFlat(true);
+    backOffButton->setFocusPolicy(Qt::NoFocus);
 
     QIcon iconMenu(tr(":/image/open-menu-symbolic.png"));
     menuOffButton->setIcon(iconMenu);

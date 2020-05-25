@@ -2,20 +2,28 @@
 ## Overview
 The peony can view files and folders on the system categorically, supporting common operations for files and folders, and its main interface is shown in Fig.1.
 
-![Fig.1Peony-big](image/1.png)
+![Fig.1 Peony-big](image/1.png)
 
 ## Basic Function
 ### File Name
-(1)The maximum length of the system file name can be 255 characters, usually by letters, numbers, "." (dotted), "_" (underlined) and "-" (minus).
-(2)"-" cannot be the first letter of a file name.
-(3)File names cannot contain the "/" symbol; because "/" is in the operating system directory tree and indicates a separator symbol in the root directory or path.
+
+(1)The maximum length of the system file name can be 255 characters, usually by letters, numbers, "."(dotted), "_"(underlined) and "-"(minus).
+
+(2)"-"cannot be the first letter of a file name.
+
+(3)File names cannot contain the "/"symbol; because "/"is in the operating system directory tree and indicates a separator symbol in the root directory or path.
 ### Path
 (1)When using a file in the current directory, users can quote the file name directly; if users want to use a file in another directory, users must specify the directory where the file is located.
+
 (2)The absolute path is certain and the relative path changes with the user's working directory.
-Absolute path —— A path from the root directory, such as” /home/kylin/test”
-Relative path —— The path from the current directory.For example, when located in the /home directory, the relative path of the test file is “kylin/test”
-There are "." and ".." files under each directory.
-(3)The "." file representing the current directory and the ".." file representing the directory level above the current directory.When located in the /etc directory, the relative path of the test file is represented as... “/home/kylin/test”
+
+**Absolute path** —— A path from the root directory, such as "/home/kylin/test"
+
+**Relative path** —— The path from the current directory.For example, when located in the /home directory, the relative path of the test file is "kylin/test"
+
+There are "."and ".."files under each directory.
+
+(3)The "."file representing the current directory and the ".."file representing the directory level above the current directory.When located in the /etc directory, the relative path of the test file is represented as... "/home/kylin/test"
 ### File Type
 The system supports file types such as those in Table 1. 
 
@@ -48,7 +56,7 @@ The functions corresponding to the icons on the toolbar are shown in Table 2.
 **<center><font face="Noto Sans SC" size=2 color=#333333>Table 2 Icon function statement</center></font>**
 
 ### Folder Tag Preview Area
-Users can view open folders through the folder tab preview area and are able to add additional folders by clicking the "![](image/icon12-o.png)" icon to add additional folders, as shown in Fig.3.
+Users can view open folders through the folder tab preview area and are able to add additional folders by clicking the "![](image/icon12-o.png)"icon to add additional folders, as shown in Fig.3.
 
 ![Fig.3 Folder Label Preview Area](image/3.png)
 
@@ -58,14 +66,17 @@ The sidebar lists the directory hierarchy for all files, providing a view of the
 ![Fig.4 Peony Sidebar](image/4.png)
 
 ### Window Area
-The window area lists the subdirectories, files under the current directory node.In the sidebar list, click on a directory, the contents of which should be displayed here, and the "![](image/icon13-o.png)" icon indicates that the file is selected as shown in Fig.5.
+The window area lists the subdirectories, files under the current directory node.In the sidebar list, click on a directory, the contents of which should be displayed here, and the "![](image/icon13-o.png)"icon indicates that the file is selected as shown in Fig.5.
 
 ![Fig.5 window area](image/5.png)
 
 ### Status Bar
 (1)When entering a directory, the number of files in the current location is displayed.
+
 (2)When a folder is selected, the number of files in that folder is displayed.
+
 (3)When a file is selected, the type and size of that file is displayed.
+
 (4)The slider in the bottom right corner is a zoom bar that can be dragged to adjust the file size.
 
 ![Fig.6 Status bar](image/6.png)
@@ -84,10 +95,12 @@ Click on the preview icon in the upper right corner of the preview window to pre
 ## Main Function
 ### View 
 Users can use the peony to view and manage files on local files, local storage devices (such as external hard drives), file servers and network shares.
+
 In the peony , double-click any folder to view its contents (by default application);Or right-click a folder to open it in a new tab or new window.
 #### View mode
 By default, the system displays all files and directories in the form of icons.
-The user can select the file view mode by clicking the "![](image/icon16-o.png)" icon to select the file view mode, as shown in Fig.8, the icon can be set to: large icon, small icon, list, details, tiled five modes.
+
+The user can select the file view mode by clicking the "![](image/icon16-o.png)"icon to select the file view mode, as shown in Fig.8, the icon can be set to: large icon, small icon, list, details, tiled five modes.
 
 ![Fig.8 View Mode](image/8.png)
 
@@ -100,31 +113,41 @@ In the list view, files in the  peony are displayed as <small icon + file name +
 ![Fig.10 List view-big](image/10.png)
 
 #### Sort By
-Files can be sorted in different ways while browsing. The way the files are arranged depends on the folder view method currently in use, and the user can change it by clicking the "![](image/icon17-o.png)" icon on the toolbar to change it, as shown in Fig.11.
+Files can be sorted in different ways while browsing. The way the files are arranged depends on the folder view method currently in use, and the user can change it by clicking the "![](image/icon17-o.png)"icon on the toolbar to change it, as shown in Fig.11.
 
 ![Fig.11 sorted by](image/11.png)
 
 The various documents are sorted as follows:
+
 (1)Sort by name: Alphabetical order by file name.
+
 (2)Sort by modification date: Sort by the date and time the file was last changed; by default it is sorted from oldest to newest.
+
 (3)Sort by type: files are sorted alphabetically by file type; similar files are grouped together and then sorted by name.
+
 (4)Sort by size: Sort by file size; by default it is sorted from smallest to largest.
+
 (5)Sort by creation date: Sort by the date the file was created; by default it is sorted from earliest to most recent.
+
 (6)Sort by folder path: sort by path of folder storage.
+
 (7)Sort by tag: As shown in Fig.12, the file manager provides the tagging function, and after the user tags, the default sort by tag is, sort by color red > orange > yellow > green > green > blue > purple > gray > no color.
 
-![Fig.12-mark sort-big](image/12.png)
+![Fig.12 mark sort-big](image/12.png)
 
 (8)Incremental sorting: sort documents in numerical, alphabetical ascending order.
+
 (9)Descending sorting: sort documents in numerical, alphabetical descending order.
+
 (10)Sort items ... : By selecting this item, the user can customize the sorting method in the menu.
 
 ### Advanced Search Function
-The Peony provides advanced search for users, using the Simple Search feature by default.Simple search function:Click the "![](image/icon18-o.png)" icon button to switch to the search input box.users can search for files in the current directory by entering the contents in the search box and pressing the Enter key, as shown in Fig.13.
+The Peony provides advanced search for users, using the Simple Search feature by default.Simple search function:Click the "![](image/icon18-o.png)"icon button to switch to the search input box.users can search for files in the current directory by entering the contents in the search box and pressing the Enter key, as shown in Fig.13.
 
 ![Fig.13 Advanced Search Function-big](image/13.png)
 
 Advanced search function:Under the current directory (contains subdirectories), user-defined conditions are available.Search by name for keywords, type for file type, file size for file size to be searched, modification time for a certain time period, etc.
+
 The default advanced search box is shown in Fig.14.
 
 ![Fig.14 search box-big](image/14.png)
@@ -135,44 +158,67 @@ Expand the default advanced search with modification time as the search criterio
 
 ### Common Operation
 (1)Copy
-* Way 1:Check, right-click > "Copy" > Target, right-click > "Paste"
+
+* Way 1:Check, right-click > "Copy"> Target, right-click > "Paste"
+
 * Way 2:Check, Ctrl+C > Target, Ctrl+V
+
 * Way 3:Drag from the folder window where the project is located to the destination folder window
-In way 3, if both folders are on the same hard disk device on the computer, the item is moved;If dragged from a USB stick to the system folder, the item will be copied.To drag copy on the same device, users need to hold down “Ctrl” while dragging.
+
+In way 3, if both folders are on the same hard disk device on the computer, the item is moved;If dragged from a USB stick to the system folder, the item will be copied.To drag copy on the same device, users need to hold down "Ctrl"while dragging.
+
 (2)Move
-* Way 1:Check, right-click > "Cut" > Target, right-click > "Paste"
+
+* Way 1:Check, right-click > "Cut"> Target, right-click > "Paste"
+
 * Way 2:Check, Ctrl+X > Target, Ctrl+V
+
 (3)Delete
+
 Delete to recycling bin:
+
 * Way 1:Check, right-click > "Delete"
+
 * Way 2:Selected, Delete
-* Way 3:Select it and drag it to the "Trash" on the desktop
+
+* Way 3:Select it and drag it to the "Trash"on the desktop
+
 If the deleted files are on a removable device, eject the device without emptying the Trash, the deleted files on the removable device may not be visible on other operating systems, but they still exist;When the device is reinserted into the system used to delete this file, it will be visible in the Trash.
+
 Delete permanently:
+
 * Way 1:Delete again in the "Trash"
+
 * Way 2:Selected, Shift+Delete
+
 (4)Rename
+
 * Way 1:Check, right-click > "Rename"
+
 * Way 2:Selected, F2
+
 To undo a rename, press Ctrl+Z to restore it.
 ### Formatting And Unloading Equipment
 In the sidebar, for the device accessing the system, right-click and the menu appears as shown in Fig.16.
 
 ![Fig.16 Mobile device right-click menu](image/16.png)
 
-* Unload/pop:Both of these serve the purpose of offloading mobile devices.The difference is that the device still exists in the system after uninstallation (unmounted state) and can no longer be found in the system when ejected.The "![](image/icon18-o.png)" button on the right side of the device is the pop-up role.
+* Unload/pop:Both of these serve the purpose of offloading mobile devices.The difference is that the device still exists in the system after uninstallation (unmounted state) and can no longer be found in the system when ejected.The "![](image/icon18-o.png)"button on the right side of the device is the pop-up role.
+
 * Formatting:System default format is FAT32 file system, users can change to Ext2/3/4 or NTFS format;To use this feature, users need to uninstall the device first. As shown in Fig.17.
 
 ![Fig.17 formatted](image/17.png)
 
 ### Access Network
 Used to share files over a LAN.
-Exp:Right-click "Music", select "Share”, and a dialog box will pop up, as shown in Fig.18.Users can set information and permissions for shared folders.
+
+Exp:Right-click "Music", select "Share", and a dialog box will pop up, as shown in Fig.18.Users can set information and permissions for shared folders.
 
 ![Fig.18 Share option](image/18.png)
 
 (1)When users click "Create", the folder icon will change to![](image/icon19-o.png), indicating that it belongs to a shared file.
-(2)On another system on the same LAN, open a peony , select "Browse Network" and find the host name of the shared file.When opened, users can see the file that was shared. Double-click the file to bring up the connection prompt box, as shown in Fig.19.
+
+(2)On another system on the same LAN, open a peony , select "Browse Network"and find the host name of the shared file.When opened, users can see the file that was shared. Double-click the file to bring up the connection prompt box, as shown in Fig.19.
 
 ![fig.19 connect-tip-big](image/19.png)
 
@@ -182,10 +228,14 @@ Exp:Right-click "Music", select "Share”, and a dialog box will pop up, as show
 
 (4)If users want to stop sharing the folder, users can right-click the folder again, and uncheck the sharing.
 ## Advanced Settings
-Click the "![](image/icon10.png)" icon on the toolbar to enter the setup interface.
+Click the "![](image/icon10.png)"icon on the toolbar to enter the setup interface.
+
 Advanced settings are the peony preferences, as shown in Fig.21,Preferences are divided into three parts: edit, share, and drop-down menus.
+
 (1)Edit: copy, paste, cut and delete
+
 (2)Share: sharing, printer, zip, mailbox sharing
+
 (3)Drop-down menus: file safe, quick select (file name, extension, tag), hide file, file comparison, help, about.
 
 |Icons|Description|Icons|Description
