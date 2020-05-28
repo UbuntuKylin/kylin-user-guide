@@ -153,7 +153,7 @@ void GuideWidget::initUI()
 //    backOffButton->setIcon(iconReturn); //给按钮添加图标
 //    backOffButton->setIconSize(QSize(25,25));//重置图标大小
     backOffButton->setFixedSize(25,25);
-    backOffButton->setStyleSheet("QPushButton{border-image: url(:/image/back.png);border-image-size:25px,25px;border-radius:5px;}"\
+    backOffButton->setStyleSheet(/*"QPushButton{border-image: url(:/image/back.png);border-image-size:25px,25px;border-radius:5px;}"\*/
                                  "QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
                                  "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
 
