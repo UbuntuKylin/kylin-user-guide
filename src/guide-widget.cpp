@@ -148,6 +148,7 @@ void GuideWidget::initUI()
     m_pIconLabel->setPixmap((QPixmap(QString::fromLocal8Bit(":/image/kylin-user-guide_16_24.png"))));
 
 //    m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
+    m_pTitleLabel->setFixedHeight(30);
 
     QIcon iconReturn(":/image/back.png"); //让QIcon对象指向想要的图标
     backOffButton->setIcon(iconReturn); //给按钮添加图标
@@ -412,6 +413,10 @@ bool GuideWidget::eventFilter(QObject *watched, QEvent *event)
         QPainterPath path;
         path.addRoundedRect(0, 0, this->width()-3, this->height()-47, 5, 5);
         m_pWebView->setMask(path.toFillPolygon().toPolygon());
+    }
+
+    if (watched == m_pWebView && event->type() == QEvent::Leave) {
+        return true;
     }
     return false;
 }
