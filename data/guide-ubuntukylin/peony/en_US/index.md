@@ -1,6 +1,6 @@
 # Peony 
 ## Overview
-The peony can view files and folders on the system categorically, supporting common operations for files and folders, and its main interface is shown in Fig.1.
+The peony can view files and folders on the system categorically, supporting common operations for files and folders, and its main interface is shown in figure below.
 
 ![Fig.1 Peony-big](image/1.png)
 
@@ -25,7 +25,7 @@ There are "."and ".."files under each directory.
 
 (3)The "."file representing the current directory and the ".."file representing the directory level above the current directory.When located in the /etc directory, the relative path of the test file is represented as... "/home/kylin/test"
 ### File Type
-The system supports file types such as those in Table 1. 
+The system supports file types such as those in table below. 
 
 |File type| Description
 | :------------ | :------------ |
@@ -34,15 +34,15 @@ The system supports file types such as those in Table 1.
 | Equipment files(Character device file/block device file)|The system uses it to identify individual device drivers, which the kernel uses to communicate with hardware devices
 |Symbolic link|Stored data is the path to a file in the file system;When a symbolic link file is invoked, the system will automatically access the paths saved in the file
 
-**<center><font face="Noto Sans SC" size=2 color=#333333>Table 1 Supported file types</center></font>**
+<br>
 
 ## Window Composition
-The Peony window can be divided into the toolbar and address bar, the folder label preview area, the sidebar, the window area and status bar, and the preview window in six sections, as shown in Fig.2.
+The Peony window can be divided into the toolbar and address bar, the folder label preview area, the sidebar, the window area and status bar, and the preview window in six sections.
 
 ![Fig.2 Schematic of the window partition-big](image/2.png)
 
 ### Toolbar And Address Bar
-The functions corresponding to the icons on the toolbar are shown in Table 2.
+The functions corresponding to the icons on the toolbar are shown in table below.
 
 |Icons|Description|Icons|Description
 | :------------ | :------------ | :------------ | :------------ |
@@ -53,20 +53,20 @@ The functions corresponding to the icons on the toolbar are shown in Table 2.
 |![](image/icon5.png)|Minimize|![](image/icon11.png)|Maximize
 |![](image/icon6.png)|Close||||
 
-**<center><font face="Noto Sans SC" size=2 color=#333333>Table 2 Icon function statement</center></font>**
+<br>
 
 ### Folder Tag Preview Area
-Users can view open folders through the folder tab preview area and are able to add additional folders by clicking the "![](image/icon12-o.png)"icon to add additional folders, as shown in Fig.3.
+Users can view open folders through the folder tab preview area and are able to add additional folders by clicking the "![](image/icon12-o.png)"icon to add additional folders.
 
 ![Fig.3 Folder Label Preview Area](image/3.png)
 
 ### Sidebar
-The sidebar lists the directory hierarchy for all files, providing a view of the different types of folder directories in users operating system.External mobile devices, remotely connected shared devices are also shown here, as shown in Fig.4.
+The sidebar lists the directory hierarchy for all files, providing a view of the different types of folder directories in users operating system.External mobile devices, remotely connected shared devices are also shown here.
 
 ![Fig.4 Peony Sidebar](image/4.png)
 
 ### Window Area
-The window area lists the subdirectories, files under the current directory node.In the sidebar list, click on a directory, the contents of which should be displayed here, and the "![](image/icon13-o.png)"icon indicates that the file is selected as shown in Fig.5.
+The window area lists the subdirectories, files under the current directory node.In the sidebar list, click on a directory, the contents of which should be displayed here, and the "![](image/icon13-o.png)"icon indicates that the file is selected as shown in figure below.
 
 ![Fig.5 window area](image/5.png)
 
@@ -82,13 +82,13 @@ The window area lists the subdirectories, files under the current directory node
 ![Fig.6 Status bar](image/6.png)
 
 ### Preview Window
-Click on the preview icon in the upper right corner of the preview window to preview the details of the file, to the picture file as an example, as shown in Fig.7.In the preview window users can view the image name, type, size, creation time, resolution and other information, and underneath the image information, users can also rotate, edit, delete and other operations on the image.
+Click on the preview icon in the upper right corner of the preview window to preview the details of the file, to the picture file as an example.In the preview window users can view the image name, type, size, creation time, resolution and other information, and underneath the image information, users can also rotate, edit, delete and other operations on the image.
 
 |Icons|Description|Icons|Description
 | :------------ | :------------ | :------------ | :------------ |
 |![](image/icon14.png)|Document Preview Only|![](image/icon15.png)|Document details preview
 
-**<center><font face="Noto Sans SC" size=2 color=#333333>Table 3 Preview icon description</center></font>**
+<br>
 
 ![Fig.7 Preview window](image/7.png)
 
@@ -100,20 +100,20 @@ In the peony , double-click any folder to view its contents (by default applicat
 #### View mode
 By default, the system displays all files and directories in the form of icons.
 
-The user can select the file view mode by clicking the "![](image/icon16-o.png)"icon to select the file view mode, as shown in Fig.8, the icon can be set to: large icon, small icon, list, details, tiled five modes.
+The user can select the file view mode by clicking the "![](image/icon16-o.png)"icon to select the file view mode, the icon can be set to: large icon, small icon, list, details, tiled five modes.
 
 ![Fig.8 View Mode](image/8.png)
 
-In the icon view, files in the peony are displayed as <big icon + file name>, as shown in Fig.10.
+In the icon view, files in the peony are displayed as <big icon + file name>.
 
 ![Fig.9 icon view-big](image/9.png)
 
-In the list view, files in the  peony are displayed as <small icon + file name + file information>, as shown in Fig.10.
+In the list view, files in the  peony are displayed as <small icon + file name + file information>.
 
 ![Fig.10 List view-big](image/10.png)
 
 #### Sort By
-Files can be sorted in different ways while browsing. The way the files are arranged depends on the folder view method currently in use, and the user can change it by clicking the "![](image/icon17-o.png)"icon on the toolbar to change it, as shown in Fig.11.
+Files can be sorted in different ways while browsing. The way the files are arranged depends on the folder view method currently in use, and the user can change it by clicking the "![](image/icon17-o.png)"icon on the toolbar to change it.
 
 ![Fig.11 sorted by](image/11.png)
 
@@ -131,7 +131,7 @@ The various documents are sorted as follows:
 
 (6)Sort by folder path: sort by path of folder storage.
 
-(7)Sort by tag: As shown in Fig.12, the file manager provides the tagging function, and after the user tags, the default sort by tag is, sort by color red > orange > yellow > green > green > blue > purple > gray > no color.
+(7)Sort by tag: The file manager provides the tagging function, and after the user tags, the default sort by tag is, sort by color red > orange > yellow > green > green > blue > purple > gray > no color.
 
 ![Fig.12 mark sort-big](image/12.png)
 
@@ -142,17 +142,17 @@ The various documents are sorted as follows:
 (10)Sort items ... : By selecting this item, the user can customize the sorting method in the menu.
 
 ### Advanced Search Function
-The Peony provides advanced search for users, using the Simple Search feature by default.Simple search function:Click the "![](image/icon18-o.png)"icon button to switch to the search input box.users can search for files in the current directory by entering the contents in the search box and pressing the Enter key, as shown in Fig.13.
+The Peony provides advanced search for users, using the Simple Search feature by default.Simple search function:Click the "![](image/icon18-o.png)"icon button to switch to the search input box.users can search for files in the current directory by entering the contents in the search box and pressing the Enter key.
 
 ![Fig.13 Advanced Search Function-big](image/13.png)
 
 Advanced search function:Under the current directory (contains subdirectories), user-defined conditions are available.Search by name for keywords, type for file type, file size for file size to be searched, modification time for a certain time period, etc.
 
-The default advanced search box is shown in Fig.14.
+The default advanced search box is shown in figure below.
 
 ![Fig.14 search box-big](image/14.png)
 
-Expand the default advanced search with modification time as the search criterion, whose pop-up window is shown in Fig.15.
+Expand the default advanced search with modification time as the search criterion, whose pop-up window is shown in figure below.
 
 ![Fig.15 Expanded search terms](image/15.png)
 
@@ -199,30 +199,30 @@ Delete permanently:
 
 To undo a rename, press Ctrl+Z to restore it.
 ### Formatting And Unloading Equipment
-In the sidebar, for the device accessing the system, right-click and the menu appears as shown in Fig.16.
+In the sidebar, for the device accessing the system, right-click and the menu appears as shown in figure below.
 
 ![Fig.16 Mobile device right-click menu](image/16.png)
 
 * Unload/pop:Both of these serve the purpose of offloading mobile devices.The difference is that the device still exists in the system after uninstallation (unmounted state) and can no longer be found in the system when ejected.The "![](image/icon18-o.png)"button on the right side of the device is the pop-up role.
 
-* Formatting:System default format is FAT32 file system, users can change to Ext2/3/4 or NTFS format;To use this feature, users need to uninstall the device first. As shown in Fig.17.
+* Formatting:System default format is FAT32 file system, users can change to Ext2/3/4 or NTFS format;To use this feature, users need to uninstall the device first.
 
 ![Fig.17 formatted](image/17.png)
 
 ### Access Network
 Used to share files over a LAN.
 
-Exp:Right-click "Music", select "Share", and a dialog box will pop up, as shown in Fig.18.Users can set information and permissions for shared folders.
+Exp:Right-click "Music", select "Share", and a dialog box will pop up.18.Users can set information and permissions for shared folders.
 
 ![Fig.18 Share option](image/18.png)
 
 (1)When users click "Create", the folder icon will change to![](image/icon19-o.png), indicating that it belongs to a shared file.
 
-(2)On another system on the same LAN, open a peony , select "Browse Network"and find the host name of the shared file.When opened, users can see the file that was shared. Double-click the file to bring up the connection prompt box, as shown in Fig.19.
+(2)On another system on the same LAN, open a peony , select "Browse Network"and find the host name of the shared file.When opened, users can see the file that was shared. Double-click the file to bring up the connection prompt box.
 
 ![fig.19 connect-tip-big](image/19.png)
 
-(3)After connecting, the contents of the shared file can be seen, and the connected host is also displayed in the sidebar, as shown in Fig.20.
+(3)After connecting, the contents of the shared file can be seen, and the connected host is also displayed in the sidebar.
 
 ![Fig.20 shared folder contents-big](image/20.png)
 
@@ -230,7 +230,7 @@ Exp:Right-click "Music", select "Share", and a dialog box will pop up, as shown 
 ## Advanced Settings
 Click the "![](image/icon10.png)"icon on the toolbar to enter the setup interface.
 
-Advanced settings are the peony preferences, as shown in Fig.21,Preferences are divided into three parts: edit, share, and drop-down menus.
+Advanced settings are the peony preferences.21,Preferences are divided into three parts: edit, share, and drop-down menus.
 
 (1)Edit: copy, paste, cut and delete
 
@@ -245,11 +245,11 @@ Advanced settings are the peony preferences, as shown in Fig.21,Preferences are 
 	|![](image/icon24.png)|Share selected projects|![](image/icon25.png)|Printer and scanner functional items
 	|![](image/icon26.png)|Share the selected zip file|![](image/icon27.png)|Send email function item
 
-**<center><font face="Noto Sans SC" size=2 color=#333333>Table 4 Preference icon description</center></font>**
+<br>
 
 ![Fig.21 Preferences](image/21.png)
 
-The content that can be set contains multiple aspects, and the functions corresponding to each tab are briefly described in Table 5.
+The content that can be set contains multiple aspects, and the functions corresponding to each tab are briefly described in table below.
 
 |Tabs|Description
 | :------------ | :------------ |
@@ -260,7 +260,7 @@ The content that can be set contains multiple aspects, and the functions corresp
 |Help|Jump to User Manual
 |About|Show details of the peony 
 
-**<center><font face="Noto Sans SC" size=2 color=#333333>Table 5 Functional descriptions of tabs</center></font>**
+<br>
 
 ## FAQ
 ### Appendix one Shortcuts

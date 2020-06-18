@@ -43,59 +43,59 @@ B.select search: search in the tested and filtered software, the default is sele
 
 **Step2：**Enter the search content, users can find the software with usersr own keywords。
 
-In Android, upgrade, uninstall interface search is under the current interface software search, other interfaces search keywords in all software, as shown in Fig. 2.
+In Android, upgrade, uninstall interface search is under the current interface software search, other interfaces search keywords in all software.
 
-![Fig. 2 Software Center Search Interface](image/2.png)
+![Fig. 2 Software Center Search Interface-big](image/2.png)
 
 #### Treasure Trove
-Click on the button on the left to enter the interface, the Software Center has classified the software, users can quickly find usersr own application in a certain category, as shown in Fig. 3.
+Click on the button on the left to enter the interface, the Software Center has classified the software, users can quickly find usersr own application in a certain category.
 
-![Fig. 3 Software Center Treasure Trove Interface](image/3.png)
+![Fig. 3 Software Center Treasure Trove Interface-big](image/3.png)
 
 #### Upgrades
-Click the upgrade button on the left to enter the upgrade interface, users can see which software can be upgraded, including the number of upgradeable software, as shown in Fig. 5.
+Click the upgrade button on the left to enter the upgrade interface, users can see which software can be upgraded, including the number of upgradeable software.
 
-![Fig. 4 Software Center Upgrade Interface](image/5.png)
+![Fig. 4 Software Center Upgrade Interface-big](image/4.png)
 
 #### Unload
-Click on the uninstall button on the left to see a list of software that the system has installed and can uninstall, and to show the number of installed software. As shown in Fig. 6.
+Click on the uninstall button on the left to see a list of software that the system has installed and can uninstall, and to show the number of installed software.
 
-![Fig. 5 Software Center Uninstall Interface](image/6.png)
+![Fig. 5 Software Center Uninstall Interface-big](image/5.png)
 
 #### Win Sub
 Click on the Treasure Win Sub button to see the recommended windows replacement software for users commonly used under Linux, as shown in the figure.
 
-![Fig. 6 Software Center Win Sub Interface](image/7.png)
+![Fig. 6 Software Center Win Sub Interface-big](image/6.png)
 
 #### Download Management
-Click the download management icon to see the download interface, as shown in Fig. 8.
+Click the download management icon to see the download interface.
 
-![Fig. 7 Software Center Download Interface](image/8.png)
+![Fig. 7 Software Center Download Interface](image/7.png)
 
 <br>
 
 ## Advanced features
 ### Setup interface
-Click the Setup button to enter the setup interface, and users can edit the software source in the setup interface, as shown in Fig. 9.
+Click the Setup button to enter the setup interface, and users can edit the software source in the setup interface.
 
-![Fig. 8 Software Center Setup Interface-big](image/9.png)
+![Fig. 8 Software Center Setup Interface-big-big](image/8.png)
 
 ### Interfaces
-Clicking on any of the software in any interface can enter the software details interface, as shown in Fig. 10.The software details interface displays the package name, current version, source version, software rating, download size, number of downloads, and software description, as well as multiple screenshots of the software, user ratings and comment sections, and all user comments.Click on the back and forth buttons of the picture to switch the picture.
+Clicking on any of the software in any interface can enter the software details interface.The software details interface displays the package name, current version, source version, software rating, download size, number of downloads, and software description, as well as multiple screenshots of the software, user ratings and comment sections, and all user comments.Click on the back and forth buttons of the picture to switch the picture.
 
-![Fig. 9 Software Center Software Details Interface-big](image/10.png)
+![Fig. 9 Software Center Software Details Interface-big](image/9.png)
 
 #### Comment interface
 The user review interface is shown below, where users rate the software objectively according to their personal preferences.
 
-![Fig. 10 Software Center Software Review Interface](image/12.png)
+![Fig. 10 Software Center Software Review Interface-big](image/10.png)
 
 In the user review interface, it is also possible to rate the software and show all users' reviews of the software, review interface.
 
 ### Login interface
 Software Center login module: 
 
-(1)User can click the login button in the top left corner of the main interface, the login interface will pop up as shown in Fig. 13;
+(1)User can click the login button in the top left corner of the main interface, the login interface will pop up;
 
 (2)Users can choose the quick login or account registration for related operations, in the quick login interface, enter the corresponding registered user name and password;
 
@@ -103,17 +103,18 @@ Software Center login module:
 
 (4)Users can click the upper right corner "![](image/icon1-o.png)" to close the login window.
 
-![Fig. 11 Software Center quick login](image/13.png)
+![Fig. 11 Software Center quick login-big](image/11.png)
 
 #### Registration interface
 When registering an account in the account registration screen, fill in the user name, password and email address (if users are a developer, please check if users are a developer).
 
-![Fig. 12 Software Center Registration Interface](image/14.png)
+![Fig. 12 Software Center Registration Interface-big](image/12.png)
 
 #### Change Password and Password Retrieval Interface
 Click on the Change Password button in the settings or click on the Retrieve Password button in the login screen to go to the appropriate screen to retrieve or change usersr password as appropriate.
 
-![Fig. 13 Software Center Change Password and Password Retrieval Interface](image/15.png)
+![Fig. 13 Software Center Change Password and Password Retrieval Interface-big](image/13.png)
+
 <br>
 
 ## FAQ
@@ -123,3 +124,4 @@ Since the server IP is unknown before construction, so the client uses the domai
 1) Do DNS resolution in the LAN routing, resolve the server IP to: service.ubuntukylin.com, all clients can access correctly.
 
 2) Client machine in /etc/hosts to map the server IP to: service.ubuntukylin.com, the machine can access correctly.
+

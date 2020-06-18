@@ -14,15 +14,17 @@ To default to biocertification, 4 conditions need to be met.
 
 ![Fig. 1 Biometric manager main interface-big](image/1.png)
 
-The unlock interface for biometric manager fingerprint authentication is shown in Fig. 2.
+The unlock interface for biometric manager fingerprint authentication is shown in figure below.
 
 ![Fig. 2 screenlock unlocked using fingerprint authentication-big](image/2.png)
 
 ## Basic Function
 ### Biometric Manager
-Biometric Manager is an aid for managing biometrics developed by the Kylin team.The main functions include biometric authentication management, biometric service management, biometric device driver management and biometric feature management.
+Biometric Manager is an aid for managing biometrics developed by the Kylin team.
 
-As shown in Fig.3, above the main interface of the management tool, the main interface, fingerprint, finger vein, iris and voice print are shown, respectively. The Delegate Management Tool has five pages.
+The main functions include biometric authentication management, biometric service management, biometric device driver management and biometric feature management.
+
+Above the main interface of the management tool, the main interface, fingerprint, finger vein, iris and voice print are shown, respectively. The Delegate Management Tool has five pages.
 
 ![Fig. 3 biometric manager main interface-big](image/3.png)
 
@@ -31,14 +33,18 @@ At the top of the main interface, "System components authenticated with biometri
 
 ![Fig. 4 Biometric Status Switch](image/4.png)
 
-The left side of the main interface shows the type of the biometric feature, and the right side shows the driver device to which that type corresponds, showing the device name, whether the device status is connected, the driver status, and whether it is the default device.When users want to use a certain biometric device, users need to connect to it first and then set it as the default device so that users can use it for biometric authentication, as shown in the Figure below.
+The left side of the main interface shows the type of the biometric feature, and the right side shows the driver device to which that type corresponds, showing the device name, whether the device status is connected, the driver status, and whether it is the default device.
+
+When users want to use a certain biometric device, users need to connect to it first and then set it as the default device so that users can use it for biometric authentication, as shown in the figure below.
 
 ![Fig. 5 Device Status Information](image/5.png)
 
 ### Log In
-The login application provides a graphical interface to enter the desktop, requiring the user to enter the user's password to log in, after successful login, users can start the desktop environment and enter the desktop.The interface for logging in with a password is shown in Fig. 11.
+The login application provides a graphical interface to enter the desktop, requiring the user to enter the user's password to log in, after successful login, users can start the desktop environment and enter the desktop.The interface for logging in with a password.
 
-Verification biometrics can also be used for authentication after biometric authentication has been turned on.Logging in defaults to biometric authentication when all conditions for biometric authentication are met. If no default device is set at this point, password authentication will be used by default, but a biometric button will be displayed on the login screen and you can switch to the biometric interface by clicking on it.
+Verification biometrics can also be used for authentication after biometric authentication has been turned on.Logging in defaults to biometric authentication when all conditions for biometric authentication are met. 
+
+If no default device is set at this point, password authentication will be used by default, but a biometric button will be displayed on the login screen and you can switch to the biometric interface by clicking on it.
 
 ![Fig. 6 Login to use password authentication-big](image/6.png)
 
@@ -49,7 +55,9 @@ When the number of biometric devices inserted is 2 or more, the Other Devices bu
 ![Fig. 8 Selecting a device-big](image/8.png)
 
 ### Screenlock
-If the control center is set to display the screenlock when the system is idle, the screenlock program will be launched when the system is idle, requiring the user to enter the password to unlock the screenlock before entering the desktop.The interface and operation of the screenlock and login are essentially similar, unlockable by entering a password and unlockable using biometric authentication.The screenlock shown in Fig. 9 and Fig. 10 can be unlocked with multiple users switching.
+If the control center is set to display the screenlock when the system is idle, the screenlock program will be launched when the system is idle, requiring the user to enter the password to unlock the screenlock before entering the desktop.
+
+The interface and operation of the screenlock and login are essentially similar, unlockable by entering a password and unlockable using biometric authentication.The screenlock can be unlocked with multiple users switching.
 
 ![Fig. 9 Screenlock Enter Password to Unlock-big](image/9.png)
 
@@ -69,6 +77,7 @@ The sudo command can also be used to authenticate with biometric features when t
 3.Execute the command "killall ukui-screensaver-dialog".
 
 4.Cut back to the graphical interface by Ctrl + Alt + F7, or Ctrl + Alt + F8 if multiple users are logged in.
+
 ### Can’t use biocertification?
 1.Opening biometric management tools.
 
@@ -77,10 +86,13 @@ The sudo command can also be used to authenticate with biometric features when t
 3.Check whether the device is set as the default device.
 
 4.Check whether fingerprints have been entered.
+
 ### How to turn off biometrics
 Simply turn on thebiometric managerand turn off the system component above the main interface using the Biometric Status switch.
+
 ## Appendix
 ### List of currently supported fingerprint devices
+
 |Biological Feature|Manufacturer|Model |Submodel
 | :------------ | :------------ | :------------ | :------------ |
 |Finger vein|TOP GLORY TECH|UD650|UD650
@@ -110,10 +122,4 @@ Simply turn on thebiometric managerand turn off the system component above the m
 		|||VFS101|	0x0001
 	|||	VFS301	|0x0005,0x0008
 		|||VFS5011	|0x0010,0x0011, 0x0017,0x0018
-
-
-
-
-
-
 
