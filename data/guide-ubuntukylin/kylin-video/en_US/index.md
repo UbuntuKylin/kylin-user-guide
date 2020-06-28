@@ -2,15 +2,15 @@
 ## Overview
 Kylin Video is a video player developed by Kylin Team, and its simple & easy-to-use interface provides users with a convenient video experience for leisure and entertainment.
 
-Kylin Video is a graphical front-end desktop product based on MPlayer and MPV. The main interface is simple and intuitive, including title bar (advanced function list, minimize, maximize and close) and playback window (play, previous, pause, next, volume, full screen, playlist), as shown in Fig. 1.
+Kylin Video is a graphical front-end desktop product based on MPlayer and MPV. The main interface is simple and intuitive, including title bar (advanced function list, minimize, maximize and close) and playback window (play, previous, pause, next, volume, full screen, playlist).
 
 ![Fig. 1 Kylin Video-big](image/1.png)
 
-During playback as shown in Fig. 2.
+During playback as shown in figure below.
 
 ![Fig. 2 Playing-big](image/2.png)
 
-Kylin Video supports multiple audio and video source formats, as shown below.
+Kylin Video supports multiple audio and video and subtitle formats, as shown below.
 
 | Category | Format |
 | :------------ | :------------ |
@@ -21,7 +21,7 @@ Kylin Video supports multiple audio and video source formats, as shown below.
 <br>
 
 ## Basic Function
-Main interface description:
+Main interface as shown in figure below.
 
 ![Fig. 3 Basic Functional Area-big](image/3.png)
 
@@ -40,7 +40,7 @@ Icons and Functions:
 Userc can click the icon "![](image/icon11.png)" at the bottom right corner or double-click the screen to open full screen mode.
 
 ### Playlist
-Uses can click the icon "![](image/icon6.png)" at the bottom right corner to view the playlist, add or remove files, as shown in Fig. 4.
+Uses can click the icon "![](image/icon6.png)" at the bottom right corner to view the playlist, add or remove files.
 
 ![Fig. 4 Playlist-big](image/4.png)
 
@@ -56,16 +56,16 @@ Right-clicking in the playlist will pop up a pull-down menu, and the description
 <br>
 
 #### Add
-Users can click "Add" in the play list or the icon "![](image/icon1.png)" > "Open Files" to go to the window of choosing files as shown in Fig. 5. First to choose the path; Second to select the files (multiple choices by clicking Ctrl and mouse-left-bottom at the same time); And then click "Open". For example, open the folder on desktop to view the videos.
+Users can click "Add" in the play list or the icon "![](image/icon1.png)" > "Open Files" to go to the window of choosing files. First to choose the path; Second to select the files (multiple choices by clicking Ctrl and mouse-left-bottom at the same time); And then click "Open". For example, open the folder on desktop to view the videos.
 
 ![Fig. 5 Playlist - Add](image/5.png)
 
 #### Delete
-- Way 1: Click "Delete" in the playlist to pop up the window as shown in Fig. 6. Select "Yes" will clean the playlist immediately, otherwise select "No".
+- Way 1: Click "Delete" in the playlist to pop up the window as shown below. Select "Yes" will clean the playlist immediately, otherwise select "No".
 
 ![Fig. 6 Playlist - Delete Way 1](image/6.png)
 
-- Way 2: The position where the mouse hovers (the background color of the list darkens) will appear the icon, and then click to delete, as shown in Fig. 7.
+- Way 2: The position where the mouse hovers (the background color of the list darkens) will appear the icon "![](image/icon-o.png)", and then click to delete.
 
 ![FIg. 7 Playlist - Delete Way 2](image/7.png)
 
@@ -101,9 +101,9 @@ Users can take a screenshot of the current video scene and save it locally by "S
 <br>
 
 ### Settings
-Users can personalize the General, Video, Audio, Performance, Letters, Screenshot, Shortcut by "Settings" option, as shown in Fig. 9.
+Users can personalize the General, Video, Audio, Performance, Subtitles, Screenshot, Shortcut by "Settings" option.
 
-![Fig. 9 Settings-big](image/9.png)
+![Fig. 9 Settings](image/9.png)
 
 Descriptions as shown below.
 
@@ -120,14 +120,12 @@ Descriptions as shown below.
 <br>
 
 #### General
-Users can choose player engine: MPlayer or MPV. And accroding to the needs, customize that if pause during minimization, preview during video play or not. As shown in Fig. 10.
-
-![Fig. 10 General-big](image/10.png)
+Users can choose player engine: MPlayer or MPV. And accroding to the needs, customize that if pause during minimization, preview during video play or not.
 
 #### Video Setting
 Output driver is default mode, and others options can be customized by users' needs: enable post-processing by default, use software video equalizers, direct rendering, double buffer, draw video using slicing method. As shown in Fig. 11.
 
-![Fig. 11 Video Setting-big](image/11.png)
+![Fig. 11 Video Setting](image/11.png)
 
 #### Audio Setting
 According to users needs, it can customize volume including global volume set, use software volume control, default volume normalization, maximum amplification, and select automatic audio/video synchronization also.
@@ -136,14 +134,12 @@ Output driver is default mode.
 
 Default Chanel: 2(Stereo), 4(4.0 surround), 6(5.1 surround), 7(6.1 surround), 8(7.1 surround), 8.
 
-Detail as shown in Fig. 12.
-
-![Fig. 12 Audio Setting-big](image/12.png)
+![Fig. 12 Audio Setting](image/12.png)
 
 #### Performance Setting
-According to users needs, it can customize caches (local file caches KB, stream caches KB) and decoding (MPEG1/2 and H.264 decoding threads only, hardware decoding). Detail as shown in Fig. 13.
+According to users needs, it can customize caches (local file caches KB, stream caches KB) and decoding (MPEG1/2 and H.264 decoding threads only, hardware decoding).
 
-![Fig. 13 Performance Setting-big](image/13.png)
+![Fig. 13 Performance Setting](image/13.png)
 
 Hardware decoding's formats as shown below.
 
@@ -158,17 +154,15 @@ It can load subtitle files automatically in format of *.srt, *.sub, and so on, w
 
 Default subtitle encoding is UTF-8, and automatic language detection can be attempted, such as Chinese (zh), Russian (ru).
 
-Detail as shown in Fig. 14.
-
-![Fig. 14 Subtitle Setting-big](image/14.png)
+![Fig. 14 Subtitle Setting](image/14.png)
 
 #### Screen Shot
-Interface as shown in Fig. 15.
+Interface as shown in Figure below.
 
-![Fig. 15 Screen Shot-big](image/15.png)
+![Fig. 15 Screen Shot](image/15.png)
 
 #### Short-Cut Key
-It allows users to change majority of the current short-cut keys, as shown in Fig. 16.
+It allows users to change majority of the current short-cut keys.
 
 ![Fig. 16 Short-Cut Key](image/16.png)
 
@@ -176,17 +170,17 @@ Users can double-click or press Enter to modify the short-cut key.
 
 - If the capture button is enabled, then you just need to press the new keys for this action. (It doesn't apply to all buttons)
 
-- If the capture button is disabled, then you can input the full name of the key. As shown in Fig. 17.
+- If the capture button is disabled, then you can input the full name of the key.
 
 ![Fig. 17 Customize Short-cut Key](image/17.png)
 
 ### Help
-Though "Help" option, users can view the videos'/audios'/subtitles' formats that Kylin Video supports, as shown in Fig. 18.
+Though "Help" option, users can view the videos'/audios'/subtitles' formats that Kylin Video supports.
 
-![Fig. 18 Help-big](image/18.png)
+![Fig. 18 Help](image/18.png)
 
 ### About Kylin Video
-It shows the product information, version, and related links in "About Kylin Video", as shown in Fig. 19. Contributor related Information as shown in Fig. 20.
+It shows the product information, version, and related links in "About Kylin Video", as shown in Fig. 19. Contributor related Information.
 
 ![Fig. 19 About Kylin Video](image/19.png)
 

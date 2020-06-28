@@ -2,9 +2,10 @@
 ## Overview
 Kylin Assistant as a system-level configuration tool, mainly for the system to expand the configuration. In addition, you can check the hardware details of the current computer in real time, so that users can better understand the composition of the computer.
 
-Kylin Assistant provides 7 functions, as shown in Fig. 1.
+Kylin Assistant provides 7 functions.
 
 ![Fig. 1 Kylin Assistant-big](image/1.png)
+
 <br>
 
 ## Computer Clean
@@ -30,8 +31,6 @@ It provides three options:
 
 - Software speedup: Exit softwares which are temporarily unused.
 
-As shown in Fig. 3.
-
 ![Fig. 3 Optimization and Speedup-big](image/3.png)
 
 Clicking the "Speedup Immediately" button, the program begins to scan the optimized options. After the scan is complete, "One-click Optimizing" button shows up, as shown below.
@@ -43,19 +42,21 @@ Users can click the "Details" button to see the informations.
 <br>
 
 ## Performance Monitor
-Users can get the informations about device temperature, fan speed and CPU FM through this feature. As shown in Fig. 5.
+Users can get the informations about device temperature, fan speed and CPU FM through this feature. 
 
 ![Fig. 5 Performance Monitor-big](image/5.png)
+
 <br>
 
 ## Driver Manager
-Users can get the version of all drivers in the system though this feature. It can upgrade the driver's version, backup and restore the drivers, uninstall the drivers also. As shown in Fig. 6.
+Users can get the version of all drivers in the system though this feature. It can upgrade the driver's version, backup and restore the drivers, uninstall the drivers also.
  
 ![Fig. 6 Driver Manager-big](image/6.png)
+
 <br>
 
 ## Local Information
-Users can get the informations of this compuer (including model, kernel architecture, OS version, etc) and kinds of hardwares. As shown in Fig. 7 and Fig. 8.
+Users can get the informations of this compuer (including model, kernel architecture, OS version, etc) and kinds of hardwares. 
 
 ![Fig. 7 Local Information up-big](image/7.png)
  
@@ -65,6 +66,7 @@ Users can get the informations of this compuer (including model, kernel architec
 As the extension of Kylin Assistant, "Tools" uses plug-in development mode, and all functions are integrated into Kylin Assistant in the form of plug-ins. The main interface is shown in the figure below.
  
 ![Fig.9 Tools-big](image/9.png)
+
 <br>
 
 ## FAQ
