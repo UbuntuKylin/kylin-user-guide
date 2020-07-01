@@ -351,7 +351,7 @@ Enter the new account name, select the password type, enter the password, confir
 ![Fig. 44 Add new user](image/44.png)
 
 ## Datetime 
-Datetime settings provide two modules, date time and Area.
+Datetime settings provide two modules.
 
 ![Fig. 45 Datetime settings-big](image/45.png)
 
