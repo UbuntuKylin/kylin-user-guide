@@ -35,7 +35,46 @@ require(['marked'], function (markedSetCustom){
 
 function qt_jumpApp(appName)
 {
-    onclickButton(appName)
+    appName = appName.trim()
+    if(appName.search("/") > 0)
+    {
+        if(appName.indexOf("/") == 0){
+            appName = appName.slice(1,appName.length)
+        }
+        var list = appName.split("/")
+        if(list.length == 2){
+            onclickButton(list[0])
+            $(document).ready(function(){
+                switch (list[1]){
+                    case "mate-calc":
+                        document.getElementById("list_h34").click()
+                        break;
+                    case "onboard":
+                        document.getElementById("list_h48").click()
+                        break;
+                    case "filezilla":
+                        document.getElementById("list_h20").click()
+                        break;
+                    case "cheese":
+                        document.getElementById("list_h15").click()
+                        break;
+                    case "goseditmainmenu-53":
+                        document.getElementById("list_h41").click()
+                        break;
+                    case "mate-search-tool":
+                        document.getElementById("list_h55").click()
+                        break;
+                    case "blueman-manager":
+                        document.getElementById("list_h1").click()
+                        break;
+                    default:
+                        break;
+                }
+            });
+        }    
+    }
+    else
+        onclickButton(appName);
 }
 
 var date ={
