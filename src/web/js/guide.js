@@ -35,7 +35,40 @@ require(['marked'], function (markedSetCustom){
 
 function qt_jumpApp(appName)
 {
-    onclickButton(appName)
+    appName = appName.trim()
+    if(appName.search("/") > 0)
+    {
+        if(appName.indexOf("/") == 0){
+            appName = appName.slice(1,appName.length)
+        }
+        var list = appName.split("/")
+        if(list.length == 2){
+            onclickButton(list[0])
+            $(document).ready(function(){
+                switch (list[1]){
+                    case "mate-calc":
+                        document.getElementById("list_h10").click()
+                        break;
+                    case "ukui-system-monitor":
+                        document.getElementById("list_h1").click()
+                        break;
+                    case "onboard":
+                        document.getElementById("list_h23").click()
+                        break;
+                    case "cheese":
+                        document.getElementById("list_h6").click()
+                        break;
+                    case "gnome-screenshot":
+                        document.getElementById("list_h16").click()
+                        break; 
+                    default:
+                        break;
+                }
+            });
+        }    
+    }
+    else
+        onclickButton(appName);
 }
 
 var date ={
