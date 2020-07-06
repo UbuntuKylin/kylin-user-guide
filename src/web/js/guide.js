@@ -33,17 +33,24 @@ require(['marked'], function (markedSetCustom){
 //  xhr.send();
 //};
 
+//手册dbus跳转页面js接口函数
 function qt_jumpApp(appName)
 {
+    //去掉传过来字段两端的空格
     appName = appName.trim()
+    //判断是否是需要跳转标题的字段
     if(appName.search("/") > 0)
     {
+        //处理字段可能开头就是"/"的情况
         if(appName.indexOf("/") == 0){
             appName = appName.slice(1,appName.length)
         }
+        //截取跳转的app手册内容和显示app内容后的标题
         var list = appName.split("/")
         if(list.length == 2){
+            //跳转app手册内容页面
             onclickButton(list[0])
+            //页面的资源都加载完成后跳转需要的标题
             $(document).ready(function(){
                 switch (list[1]){
                     case "mate-calc":
@@ -230,18 +237,17 @@ function getapp_name(qpp)
         {
             dirforapp="guide-ubuntukylin"
         }
-        var m2ht = getDocTop(mdPath,mdDate)  
-        //console.log(m2ht.html)
-        var info = m2ht.info
+        var info = window.guideWebkit.js_getIndexMdFileTitle(mdPath)
+        // console.log(window.guideWebkit.js_getIndexMdFileTitle(mdPath))  
         //console.log(info+"======"+qpp)
-        if(info.title.search("帮助手册")<0)
+        if(info.search("帮助手册")<0)
         {
-            return info.title+"|"+dirforapp;
+            return info+"|"+dirforapp;
         }
         else
         {
             //console.log(info.title.slice(0,info.title.search("帮助手册")))
-            return info.title.slice(0,info.title.search("帮助手册"))+"|"+dirforapp
+            return info.slice(0,info.search("帮助手册"))+"|"+dirforapp
         }
     }
     else

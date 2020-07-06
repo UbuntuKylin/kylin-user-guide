@@ -244,7 +244,7 @@ void GuideWidget::initUI()
     m_pWebView->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
     m_pWebView->settings()->setAttribute(QWebSettings::AutoLoadImages,true);
     m_pWebView->settings()->setAttribute(QWebSettings::PluginsEnabled, true);
-    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
+//    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
 
     QObject::connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
@@ -470,6 +470,19 @@ QString GuideWidget::js_getIndexMdFileContent(QString IndexMdFilePath)
     if(!file.open(QIODevice::ReadOnly))
         return "";
     return file.readAll();
+}
+
+QString GuideWidget::js_getIndexMdFileTitle(QString IndexMdFilePath)
+{
+    qDebug() << Q_FUNC_INFO << IndexMdFilePath;
+    QFile file (IndexMdFilePath);
+    if(!file.exists())
+        return "";
+    if(!file.open(QIODevice::ReadOnly))
+        return "";
+    QString title = file.readLine();
+    title = title.mid(1,title.length());
+    return title.trimmed();
 }
 
 
