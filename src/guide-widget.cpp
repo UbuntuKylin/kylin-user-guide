@@ -421,6 +421,19 @@ QString GuideWidget::js_getIndexMdFileContent(QString IndexMdFilePath)
     return file.readAll();
 }
 
+QString GuideWidget::js_getIndexMdFileTitle(QString IndexMdFilePath)
+{
+    qDebug() << Q_FUNC_INFO << IndexMdFilePath;
+    QFile file (IndexMdFilePath);
+    if(!file.exists())
+        return "";
+    if(!file.open(QIODevice::ReadOnly))
+        return "";
+    QString title = file.readLine();
+    title = title.mid(1,title.length());
+    return title.trimmed();
+}
+
 
 void GuideWidget::initSettings()
 {
