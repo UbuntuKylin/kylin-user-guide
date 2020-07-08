@@ -237,19 +237,17 @@ function getapp_name(qpp)
         else if(mdPath.search("/guide-ubuntukylin/")>0)
         {
             dirforapp="guide-ubuntukylin"
-        }
-        var m2ht = getDocTop(mdPath,mdDate)  
-        //console.log(m2ht.html)
-        var info = m2ht.info
+        }  
+        var info = window.guideWebkit.js_getIndexMdFileTitle(mdPath)
         //console.log(info+"======"+qpp)
-        if(info.title.search("帮助手册")<0)
+        if(info.search("帮助手册")<0)
         {
-            return info.title+"|"+dirforapp;
+            return info+"|"+dirforapp;
         }
         else
         {
             //console.log(info.title.slice(0,info.title.search("帮助手册")))
-            return info.title.slice(0,info.title.search("帮助手册"))+"|"+dirforapp
+            return info.slice(0,info.search("帮助手册"))+"|"+dirforapp
         }
     }
     else
@@ -325,7 +323,10 @@ function goBackMainUI()
     //console.log(str)
     //document.getElementById("mainUI").style.display="inline";
     //document.getElementById("pageContent").style.display="none";
-    window.location.href="index.html"
+    if(navigator.language=="zh-CN")
+	window.location.href="index.html"
+    else
+	window.location.href="index_en_US.html"
 }
 
 function goBackMainUI_ubuntu()
