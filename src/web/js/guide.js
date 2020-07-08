@@ -323,7 +323,10 @@ function goBackMainUI()
     //console.log(str)
     //document.getElementById("mainUI").style.display="inline";
     //document.getElementById("pageContent").style.display="none";
-    window.location.href="index.html"
+    if(navigator.language=="zh-CN")
+	window.location.href="index.html"
+    else
+	window.location.href="index_en_US.html"
 }
 
 function goBackMainUI_ubuntu()
