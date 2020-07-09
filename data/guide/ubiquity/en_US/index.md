@@ -1,120 +1,97 @@
-# 安装手册
-## 安装准备
-* 安装系统之前，请将硬盘上的重要数据备份到其他存储设备中。
+# System Installation
+## Installation Preparation
+* A hard disk can be divided into multiple partitions and they are independent of each other. So accessing different partitions is like accessing different hard disks.
 
-* 一块硬盘可以被划分为多个分区，分区之间是相互独立的，访问不同的分区如同访问不同的硬盘。
+* There are two types of partition: Primary, Logical.
 
-* 一块硬盘最多可以有四个主分区，如果想在一块硬盘上拥有多于四个分区，就需要把分区类型设为逻辑分区。
+* Please backup the important data to other storage devices before reinstalling system.
+<br>
+
+## Install Steps
+### Boot Up
+Insert the installation CD/U-disk and reboot.
+
+According to the reminder at bootup, select to boot from installation device.
+
+The system supports "Try without Installation" mode.
+
+### Installation
+Double click the installation icon on desktop.
+
+#### Select language on the welcome page.
+
+![Fig 1 Language select-big](image/1.png)
+
+#### License agreement
+
+Check to agree the license
+
+![Fig 2 License agreement-big](image/2.png)
+
+#### Installation type
+
+Select "Install from liveos" ("Install from ghost image" can refer to Ghost Image part in backup tools).
+
+![Fig 3 Install from-big](image/3.png)
+
+#### Installation option
+
+![Fig 4 Install options-big](image/4.png)
+
+- "Create Backup Partition": The mount point is "/backup". Check it and select "Erase disk and install Kylin", this partition size will be same as root partition. To use backup tool, this partition has to be created.
+
+- "Create Data Partition": The mount point is "/data". Check it and select "Erase disk and install Kylin", this partition size will be the rest free space.
+
+**These two choices are only for "Erase disk and install Kylin"**
+
+- "Advanced installation": Customize partitions. 
+
+- "Erase disk and install Kylin": Format the whole disk and partition it automatically.
+
+Click "Install Now" in Fig 4 and the prompt windows as shown in Fig 5.
+
+![Fig 5 Format prompt-big](image/5.png)
+
+Click "Continue" (the disk has been formated and re-partition).
+
+5) User configuration
+
+Users can select to set up the account information now or next time start.
+
+![Fig 6 Configuration mode-big](image/6.png)
+
+Choose set up now here. 
+
+![Fig 7 Create account-big](image/7.png)
+
+6) Click "Continue" to start copying files to the disk.
+
+![Fig 8 Installing-big](image/8.png)
+
+When installation completed, click "Restart Now" to reboot the system.
 
 <br>
 
-## 安装步骤
-### 启动引导
-插入安装光盘/U盘，重启机器。
+## Advanced Installation
+Select "free space" > click "+", to create new partition.
 
-根据启动时的提醒，进入固件管理界面，选择从安装盘启动。
+- /boot partition: (must be /dev/sda1 on FT1500A and Mips64el, and not less than 1G)
 
-本系统支持体验模式，可试用一个全功能的操作系统而不安装。
+![Fig 9 Creat /boot](image/9.png)
 
-### 系统安装
-进入试用模式后，双击桌面上的“安装 Kylin-Desktop-V10”图标，进入安装程序。
+- / partition:
 
-1）语言选择
+![Fig 10 Create /](image/10.png)
 
-![图1 语言选择-big](image/1.png)
+- /swap partition: (2x the size of memory)
 
-2）许可协议
+![Fig 11 Create /swap](image/11.png)
 
-勾选同意许可协议。
+- Create /backup and /data partitions: (don't need to check in the previous step)
 
-![图2 许可协议-big](image/2.png)
+![Fig 12 Create /backup](image/12.png)
 
-3）安装方式
+![Fig 13 Create /data](image/13.png)
 
-选择“从Live镜像安装”（从Ghost镜像安装”可参考备份还原工具中的Ghost镜像部分）。
-
-![图3 安装方式-big](image/3.png)
-
-4）安装类型
-
-![图4 安装类型-big](image/4.png)
-
-以下是对4个选项的详细介绍：
-
-- “创建备份还原分区”：挂载点为“/backup”。勾选后，选择“快速安装Kylin”时，分区大小默认与根分区相同。只有创建了该分区，备份还原功能才可以使用。备份还原对用户恢复数据或系统非常有帮助，建议创建。
-
-- “创建数据盘”：挂载点为“/data”。勾选后，选择“快速安装Kylin”时，分区大小为整个磁盘除掉其他分区外的所有空间。/data类似于Windows系统除C盘外的其他盘符，建议创建。
-
-注意，以上两个选项的勾选，是针对快速安装的设置。
-
-- “高级安装”：用户自行根据实际需求，进行分区创建和分区大小分配。详细说明见后续。
-
-- “快速安装Kylin”：全盘安装，该选项将会格式化整个硬盘，并进行自动分区。
-
-选择“快速安装Kylin”选项，同时勾选“创建备份还原分区”和“创建数据盘”，点击“现在安装”按钮，弹出格式化分区警告信息。
-
-![图5 格式化分区警告](image/5.png)
-
-点击“继续”（此时硬盘已经被格式化和重新分区）。
-
-5）创建用户信息
-
-用户可选择当下立即配置用户信息，也可以选择下次开机再设置，如图5所示。
-
-![图6 配置方式选择-big](image/6.png)
-
-此处选择立即设置，进入填写信息窗口。
-
-![图7 创建用户信息-big](image/7.png)
-
-6）信息正确填完后，“继续”按钮由灰变亮，点击“继续”按钮，此时会将系统信息写入硬盘。
-
-![图8 系统安装-big](image/8.png)
-
-安装完成后，会弹出提示窗口。点击“现在重启”按钮，系统会重新启动。
-
-重启过程中系统会提示除移安装介质。
-
-取回光驱或U盘后，等待系统进入登录界面，输入密码即可进入系统。
-
-<br>
-
-## 高级安装
-在安装类型界面选择“高级安装”，点击“继续”，则出现硬盘分区界面。点击“新建分区表”，弹出提示窗口，选择“继续”，即可创建硬盘分区。
-
-![图9 创建新分区表提示](image/9.png)
-
-选中“空闲”所在行，此时“＋”由灰变亮。点击“＋”，则弹出创建分区窗口，开始创建分区。
-
-注意：在arm64架构上，/boot必须是主分区中的第一个分区；在amd64架构上，对于挂载点顺序和分区，没有特殊要求。
-
-- /boot分区创建如图所示：
-
-![图10 创建/boot分区](image/10.png)
-
-- 在创建根分区的时候，“新分区的类型”选择“主分区”，“新分区的位置”默认为“空间起始位置”，“用于”选择“Ext4日志文件系统”：
-
-![图11 创建/分区](image/11.png)
-
-- 交换分区大小一般设置为内存的2倍大小，“新分区的类型”选择“逻辑分区，“新分区的位置”保持默认，“用于”选择“交换空间”；
-
-![图12 创建交换分区](image/12.png)
-
-- 不管是否勾选“创建备份还原分区”和“创建数据盘”，用户都可以创建“/backup”分区和“/data”分区。这两个分区创建时，“新分区的类型”选择“逻辑分区”，“新分区的位置”默认为“空间起始位置”，“用于”选择“Ext4日志文件系统”，挂载点选择对应的/backup、/data即可；建议/backup分区和根分区大小一致。
-
-![图13-1 创建备份还原分区](image/13-1.png)
-
-![图13-2 创建数据盘](image/13-2.png)
-
-- 建议用户创建EFI系统分区。EFI分区大小应在100M — 2G之间：
-
-![图14 创建EFI分区](image/14.png)
-
-- 若是中途需要改变已创建的分区，具体方式如下：
-
-1）添加分区：选中空闲分区所在行，点击“+”按钮。
-
-2）编辑分区：选中已创建的分区，点击“更改”按钮。
-
-3）删除分区：选中已创建的分区，点击“-”按钮。
+- Suggest to create EFI partition, and the size from 100M to 2G.
 

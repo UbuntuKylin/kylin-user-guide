@@ -46,26 +46,29 @@ function qt_jumpApp(appName)
             onclickButton(list[0])
             $(document).ready(function(){
                 switch (list[1]){
-                    case "mate-calc":
-                        document.getElementById("list_h34").click()
-                        break;
-                    case "onboard":
-                        document.getElementById("list_h48").click()
-                        break;
-                    case "filezilla":
-                        document.getElementById("list_h20").click()
-                        break;
                     case "cheese":
-                        document.getElementById("list_h15").click()
+                        document.getElementById("list_h1").click()
+                        break;
+                    case "mate-calc":
+                        document.getElementById("list_h4").click()
                         break;
                     case "goseditmainmenu-53":
-                        document.getElementById("list_h41").click()
+                        document.getElementById("list_h7").click()
+                        break;
+                    case "onboard":
+                        document.getElementById("list_h9").click()
                         break;
                     case "mate-search-tool":
-                        document.getElementById("list_h55").click()
+                        document.getElementById("list_h13").click()
+                        break;
+                    case "sharing-desktop":
+                        document.getElementById("list_h16").click()
                         break;
                     case "blueman-manager":
-                        document.getElementById("list_h1").click()
+                        document.getElementById("list_h21").click()
+                        break;
+                    case "indicator-china-weather":
+                        document.getElementById("list_h25").click()
                         break;
                     default:
                         break;
@@ -78,38 +81,37 @@ function qt_jumpApp(appName)
 }
 
 var date ={
-    kylinOS:"2019年12月18日",
-    ubiquity:"2020年3月23日",
-    ukui:"2019年11月13日",
-    kydroid2:"2019年11月13日",
-    kylin_control_center : "2019年11月13日",
-    biometric_manager : "2020年3月13日",
-    hot_key:"2019年11月13日",
-    caja:"2019年11月13日",
-    ubuntu_kylin_software_center:"2019年11月13日", 
-    kylin_video:"2019年11月13日",
-    brasero:"2019年11月13日",
-    youker_assistant:"2019年11月13日",
-    kylin_ipmsg:"2019年11月13日",
-    kysec_ui_pkexec:"2019年11月13日",
-    kybackup:"2019年11月13日",
-    audacious:"2019年11月13日",
-    eom :"2019年11月13日",
-    kylin_update_manager:"2019年11月13日",
-    remmina:"2019年11月13日",
-    vino_preferences:"2019年11月13日",
-    claws_mail:"2019年11月13日",
-    system_config_printer:"2019年11月13日",
-    simple_scan:"2019年11月13日",
-    mate_system_monitor:"2019年11月13日",
-    gparted:"2019年11月13日",
-    engrampa:"2019年11月13日",
-    audio_recorder:"2019年11月13日",
-    mate_terminal:"2019年11月13日",
-    tools:"2020年3月13日",
-    technical_assistance:"2019年3月12日",
-    box_manager:"2020年4月2日",
-    pammanager:"2020年3月19日",
+    audacious:"2020年7月8日",
+    audio_recorder:"2020年7月8日",
+    biometric_manager:"2020年7月8日",
+    box_manager:"2020年7月8日",
+    brasero:"2020年7月8日",
+    caja:"2020年7月8日",
+    claws_mail:"2020年7月8日",
+    engrampa:"2020年7月8日",
+    eom:"2020年7月8日",
+    faq:"2020年7月8日",
+    filezilla:"2020年7月8日",
+    gparted:"2020年7月8日",
+    hot_key:"2020年7月8日",
+    ksc_defender:"2020年7月8日",
+    kybackup:"2020年7月8日",
+    kydroid:"2020年7月8日",
+    kylin_control_center:"2020年7月8日",
+    kylin_ipmsg:"2020年7月8日",
+    kylinOS:"2020年7月8日",
+    kylin_video:"2020年7月8日",
+    kysec_ui_pkexec:"2020年7月8日",
+    mate_system_monitor:"2020年7月8日",
+    mate_terminal:"2020年7月8日",
+    remmina:"2020年7月8日",
+    simple_scan:"2020年7月8日",
+    technical_assistance:"2020年7月8日",
+    tools:"2020年7月8日",
+    ubiquity:"2020年7月8日",
+    ubuntu_kylin_software_center:"2020年7月8日", 
+    ukui:"2020年7月8日",
+    youker_assistant:"2020年7月8日",
 };
 
 function onclickButton(str)
@@ -275,7 +277,8 @@ function addhtmlapp()
            ||dirname=="kylinOS"||dirname=="ukui"||dirname=="ukui-control-center"
            ||dirname=="biometric-manager"||dirname=="hot-key"
            ||dirname=="hardware-compatibility"
-           ||dirname=="ubiquity"||dirname=="kydroid2")
+           ||dirname=="kylin-control-center"||dirname=="faq"
+           ||dirname=="ubiquity"||dirname=="kydroid")
         {
             continue
         }

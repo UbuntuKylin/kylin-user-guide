@@ -1,97 +1,66 @@
-# 系统监视
-## 系统监视器
-系统监视器是一款可以查看进程、资源、文件系统的图形化系统应用工具，能动态地监视系统的使用情况，主界面由标题栏、菜单及监视显示区构成，如图1所示。
+# System Monitor
+## Mate System Monitor
+Mate System Monitor is used to view system processes, resources and file systems, and it supports to monitor system usage dynamically. The main interface as shown in Fig 1.
 
-![图 1 系统监视器主界面-big](image/1.png)
+![Fig 1 Mate system monitor-big](image/1.png)
+
+### Basic Function
+#### Processes
+Click "Processes" tab to see the current running processes' informations, including name, % CPU, ID, etc.. As shown in Fig 2.
+
+![Fig 2 Processes-big](image/2.png)
+
+#### Resources
+Click "Resources" tab to see the used resources details dynamically at the cunrrent system runtime, including CPU, memory, network. As shown in Fig 1.
+
+#### File Systems
+Click "File Systems" tab to see the informations, including device, mount point, size, etc..
+
+![Fig 3 File systems-big](image/3.png)
+
+### Advanced Function
+#### Edit Processes
+Select a process and click "Edit", and users can choose the opearation for this process. As shown in Fig 4.
+
+![Fig 4 Edit processes](image/4.png)
+
+#### View Processes
+- Click "View" and choose a category to see: Active Processes, All Processes and My Processes. Meanwhile, "Dependencies" can be choose to show or not.
+
+- Select a process and click "View", and memory maps, open files, properties can be seen.
+
+![Fig 5 View processes](image/5.png)
+
+#### Preferences
+Click "Edit" > "Preferences" to set the details of each tab
+
+![Fig 6 Preferences-big](image/6.png)
 <br>
 
-### 基本功能
-主界面介绍：
+### Appendix
+#### Shortcut Key
 
-![图 2 基本功能图标及其功能介绍](image/2.png)
-
-#### 进 程
-用户通过点击监视显示区的“进程”即可查看当前系统所运行的进程信息，如图1所示。
-
-#### 资 源
-用户通过点击监视显示区的“资源”即可动态地查看当前系统运行时，所使用的资源信息，如图3所示。
-
-![图 3 资源-big](image/3.png)
-
-#### 文件系统
-用户通过点击监视显示区的“文件系统”即可查看文件系统信息，如图4所示。
-
-![图 4 文件系统-big](image/4.png)
-<br>
-
-### 高级功能
-用户可以通过菜单的监视器、编辑、查看、帮助选项，对系统监视器进行相关操作。
-
-主界面介绍：
-
-![图 5 系统监视器高级功能区介绍](image/5.png)
-
-图标及其功能介绍：
-
-|图标|	图标功能说明	|图标|	图标功能说明
-| :------------ | :------------ | :------------ | :------------ |
-|![](image/icon1.png)|退出系统监视器|![](image/icon4.png)|对系统监视器进行相关设置
-|![](image/icon2.png)|刷新系统监视器|![](image/icon5.png)|	查看用户手册
-|![](image/icon3.png)|关于系统监视器||||
-	
-<br>
-
-#### 监视器
-用户通过点击：菜单 > 监视器，可选择退出系统监视器。
-
-#### 编 辑
-用户通过点击：菜单 > 编辑，可对进程进行停止、继续、结束、杀死等操作。
-
-##### 更改优先级
-用户通过点击：菜单 > 编辑 > 更改优先级，可对进程进行优先级更改，如图6所示。
-
-![图 6 更改优先级-big](image/6.png)
-
-##### 首选项
-用户通过点击：菜单 > 编辑 > 首选项，可对进程、资源、文件系统进行设置，如图7所示。
-
-![图 7 系统监视器首选项](image/7.png)
-
-#### 查 看
-用户通过点击：菜单 > 查看，可查看相应进程、进程间的依赖关系、选中进程的内存映像、属性等。
-
-#### 帮 助
-##### 目 录
-用户通过点击：菜单 > 帮助 > 目录，可查看用户手册。
-
-##### 关 于
-用户通过点击：菜单 > 帮助 > 关于，可查看关于系统监视器的信息，如图8所示，
-
-![图 8 关于系统监视器](image/8.png)
-
-### 附 录
-#### 快捷键
-
-|选项	|快捷键	|操作内容
-| :------------ | :------------ | :------------ |
-|退出（Q）	|Ctrl+Q|	退出系统监视器
-|停止进程（S）|	Ctrl+S|	停止当前选择进程
-|继续进程（C）|	Ctrl+C|	继续当前选择进程
-|结束进程（E）|	Ctrl+E|	结束当前选择进程
-|杀死进程（K）|	Ctrl+K|	杀死当前选择进程
-|依赖关系（D）|	Ctrl+D|查看进程间的依赖关系
-|内存映像（M）|	Ctrl+M	|查看当前内存影响
-|打开的文件（F）|	Ctrl+F|	打开当前进程文件
-|刷新（R）|	Ctrl+R|	刷新进程
+| Shortcut | Function |
+| :------------ | :------------ |
+|Ctrl+Q| Quit system monitor |
+|Ctrl+S| Stop the selected process |
+|Ctrl+C| Continue the selected process |
+|Ctrl+E| End the selected process |
+|Ctrl+K| Kill the selected process |
+|Ctrl+D| See the dependencies among processes |
+|Ctrl+M| See memory maps of the selected process |
+|Ctrl+F| See the files opened by the selected process |
+|Ctrl+R| Refresh processes |
 
 <br>
 
-## 麒麟磁盘I/O监视器
-用户可通过“开始菜单” > “所有程序” > “麒麟磁盘I/O监视器”打开该应用。磁盘I/O监视器提供了对当前磁盘读写速率的显示，主界面如图所示：
+## Kylin I/O Monitor
+Kylin I/O Monitor provides an interface to show the I/O speed of the current disk, as shown in Fig 7.
 
-![图9 麒麟磁盘I/O监视器-big](image/9.png)
+![Fig 7 Kylin I/O monitor-big](image/7.png)
 
-- 在窗口顶部，实时显示了当前磁盘的总读/写速率和实际读写速率。
+Click "Start Menu" > "All APP" > "Kylin I/O Monitor" to open it.
 
-- 下部信息显示区包含了线程ID，所属用户，磁盘读、写速率，swap交换百分比和线程/进程的命令。
+- At the top of the window, it shows the current disk's total read/write speed and actual read/write speed.
 
+- At the lower part of the window, it shows the thread ID, user, disk read/write speed, % swap and command. 

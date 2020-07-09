@@ -55,7 +55,7 @@ Click "![](image/icon8.png)" to open a file, which will cover all the contents o
 ### New Playlist
 Click "![](image/icon13.png)" under the volume button to create a New Playlist.
 
-![Fig 8 Add playlist](image/8.png)
+![Fig 8 Add playlist-big](image/8.png)
 <br>
 
 ## Advanced Function

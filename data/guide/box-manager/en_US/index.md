@@ -1,94 +1,104 @@
-# 麒麟文件保护箱
-## 概 述
-麒麟文件保护箱是由麒麟安全团队开发的一款用户文件保护箱程序，界面简洁，旨在为用户提供便捷、安全的个人文件保护。
+# Kylin Box-manager
+## Overview
+Kylin Box-manager is developed by Kylin-Security-Team with a simple interface, and it aims to provide users with convenient and safe personal file protection.
 
-麒麟文件保护箱的位置：开始菜单 > 所有程序 > 麒麟文件保护箱，软件打开后，主界面如下图所示：
+Click "Start Menu" > "All App" > "box-manager" to open this app, as shown in Fig 1.
 
-![图 1 麒麟文件保护箱-big](image/1.png)
+![Fig 1 Kylin box-manager-big](image/1.png)
 
-麒麟文件保护箱通过隔离隐藏、加密保护和共享授权相结合的方式，实现用户私有数据的安全保护与共享。文件保护箱具有如下特性：
+Kylin Box-manager can realize the security protection and sharing of user's private data by the combination of isolation and hiding, encryption protection and sharing authorization. The features as shown below:
 
-- 新创建的个人目录（即保护箱、保护箱目录，或BOX、BOX目录）仅对用户自己可见，对其他用户不可见；
+- Newly created personal directories (i.e. BOX, BOX directories) are visible only to the user himself and not to other users.
 
-- 用户可以授权其他用户以只读或读写权限访问私有的BOX，也可访问其他用户共享的BOX；
+- Users can authorize other users to access private box with read-only or read-write permission, and access the box shared by other users.
 
-- 用户可对私有BOX进行加密设置，其他用户访问加密BOX，除了需要具备共享授权，还要进行密码认证，通过验证方可访问BOX中的数据；
+- Users can set encryption for private box. Therefor other users need to have sharing authorization and password authentication to access encrypted box.
 
-- 加密BOX需挂载后使用，已挂载的BOX不可删除或重命名，不可进行密码设置、共享设置，如需进行上述变更操作，需先卸载该BOX。具体可参见下图：
+- Encrypted box needs to be used after mounting. The mounted box cannot be deleted or renamed; Password setting and sharing setting are not allowed, either. If the changes above are necessary, the box should be umount first. As shown below:
 
-![图 2 文件保护箱—挂载-big](image/2.png)
+![Fig 2 Mount-big](image/2.png)
 
-![图 3 文件保护箱—挂载（密码认证）-big](image/3.png)
+![Fig 3 Mount (password authentication)-big](image/3.png)
 
-![图 4 文件保护箱—卸载-big](image/4.png)
+![Fig 4 Umount-big](image/4.png)
 
-麒麟文件保护箱窗口中用不同的图标表示BOX目录的不同状态，如是否加密、共享或挂载，具体说明如下：
+Different icons mean different states of the box directory，as shown below:
 
-|图标|说明|
+| Icon | Decription |
 |:-----|:-----|
-|![](image/icon1.png)|普通BOX目录|
-|![](image/icon2.png)|加密BOX目录|
-|![](image/icon3.png)|加密BOX目录（挂载状态）|
-|![](image/icon4.png)|已共享BOX目录|
-|![](image/icon5.png)|加密并共享的BOX目录|
-|![](image/icon6.png)|加密并共享的BOX目录（挂载状态）|
-|![](image/icon7.png)|其他用户共享的BOX目录|
-|![](image/icon8.png)|其他用户共享的加密BOX目录|
-|![](image/icon9.png)|其他用户共享的加密BOX目录（挂载状态）|
+|![](image/icon1.png)| General box directory |
+|![](image/icon2.png)| Encrypted box directory |
+|![](image/icon3.png)| Encrypted box directory (Mount state) |
+|![](image/icon4.png)| Box directory shared |
+|![](image/icon5.png)| Encrypted and sharing box directory |
+|![](image/icon6.png)| Encrypted and sharing box directory (Mount state) |
+|![](image/icon7.png)| Box directory shared by other users |
+|![](image/icon8.png)| Encrypted box directory shared by other users |
+|![](image/icon9.png)| Encrypted box directory shared by other users (Mount state) |
 
 <br>
 
-## 基本功能
-麒麟文件保护箱提供了保护箱的创建、重命名、删除、密码与共享设置等功能，并支持图标、列表两种方式查看保护箱，用户可以通过功能按钮和右键菜单进行有关操作。
+## Basic Function
+Kylin Box-manager provides box creation, rename, delete, encryption and share settings, etc., and two ways to view - icon, list. Users can operate them by using function buttons and right-click menu.
 
-![图 5 文件保护箱—功能按钮与右键菜单-big](image/5.png)
+![Fig 5 Function buttons and right-click menu-big](image/5.png)
 
-不同用户创建的保护箱位于对应的 /box/用户名称/目录 下，用户可以通过保护箱管理工具界面，双击对应图标，访问该BOX目录。保护箱中的文件、目录的操作方法与普通文件、目录一致，都可以通过命令行终端或文件管理器进行。
+The boxes created by different user are located at "/box/[UserName]/", and users can access this directory by double-clicking the corresponding icon on the tool interface. The operations for the files and directories in the box are the same way as in general - terminal and caja are both allowed.
 
-### 新 建
-用户可以点击“新建”按钮创建新的私有BOX，输入新建BOX名称，然后点击确认即可，具体参见下图：
+### New
+Click "New" button to create a new private box. Input the name of the box and click "Yes", as shown in Fig 6:
 
-![图 6 文件保护箱—新建-big](image/6.png)
+![Fig 6 New-big](image/6.png)
 
-如果用户希望创建BOX目录的同时进行加密操作，仅需打开“是否加密”开关，然后输入并确认密码即可，如下图所示：
+If users want to encrypt at the same time, please open the encrypt switch and input the password, as shown below:
 
-![图 7 文件保护箱—新建（设置加密）-big](image/7.png)
+![Fig 7 New-Encrypt-big](image/7.png)
 
-### 删 除
-用户删除不再需要的BOX目录，只需选中后点击“删除”按钮，在警示弹窗中确认以完成相关操作，如下图所示：
+### Delete
+Click "Delete" button to delete the box directory that users don't need anymore. Select "Yes" in the pop-up window, as shown in Fig 8.
 
-![图 8 文件保护箱—删除-big](image/8.png)
+![Fig 8 Delete-big](image/8.png)
 
-### 重命名
-右键点击需要改名的BOX目录，选择右键弹出菜单中的“重命名”项，输入新名称并确认。加密BOX需要验证密码才可重命名；挂载状态的加密BOX不能重命名，需卸载后继续操作。重命名如下图所示：
+### Rename
+Right click the box directory choosing "Rename", and input the new name. If the box is encrypted: 
 
-![图 9 文件保护箱—重命名-big](image/9.png)
+- Password verification is required.
 
-### 密码设置
-对于未加密的BOX目录，用户可以点击“密码设置”按钮，对选中的BOX目录进行加密保护，输入并确认密码后，点击确认即可完成设置，如下图所示：
+- Mount state is not allowed. 
 
-![图 10 文件保护箱—密码设置-big](image/10.png)
+As shown below:
 
-已经加密的BOX目录，可以修改密码或解除保护，用户选中加密BOX后点击“密码设置”，即可修改原有设置。如果该BOX处于挂载状态，需要先卸载，再进行后续操作。修改加密设置如下图所示：
+![Fig 9 Rename-big](image/9.png)
 
-![图 11 文件保护箱—密码设置（修改密码）-big](image/11.png)
+### Set Password
+For unencrypted box directories, users can click "Set Password" button to encrypt them, as shown below: 
 
-![图 12 文件保护箱—密码设置（解除保护）-big](image/12.png)
+![Fig 10 Set password-big](image/10.png)
 
-### 共享设置
-如果用户需要将私有BOX目录共享给其他用户，选中待共享BOX后，点击“共享设置”按钮，在共享设置窗口中为相关用户设置权限，然后点击“应用”按钮即可生效；设置、修改、取消共享设置的操作步骤相同。如果修改共享设置前BOX处于挂载状态，需要先卸载。共享设置见下图所示：
+For encrypted box directory, it can change password or removal protection. If the box is mounted, you should umount it first.
 
-![图 13 文件保护箱-共享设置-big](image/13.png)
+![Fig 11 Change password-big](image/11.png)
 
-对已加密BOX目录进行共享设置，需要密码验证，通过后方可进行后续操作。
+![Fig 12 Removal protection-big](image/12.png)
 
-![图 14 文件保护箱—设置共享（密码验证）-big](image/14.png)
+### Share Settings
+If it's necessary to share the private box to others, you can choose the box and click "Share settings" button to set permissions for associated users in the share settings window. And then click "Apply" to make it effective. If the box is mounted, you should umount it first. As shown below:
 
-### 视图切换
-管理工具支持以图标、列表两种视图方式显示保护箱目录，默认为图标视图。图标视图下，光标悬停在BOX上，可以显示详细路径；列表视图支持查看BOX的详细信息，可以根据加密、共享情况以及创建人进行筛选显示。
+![Fig 13 Share settings-big](image/13.png)
 
-如需切换查看方式，点击窗口右下方的功能按钮即可。
+For encrypted boxes, password authentication is required.
 
-![图 15 文件保护箱—图标视图-big](image/15.png)
+![Fig 14 Password authentication-big](image/14.png)
 
-![图 16 文件保护箱—列表视图（筛选显示）-big](image/16.png)
+### View Switching
+It provides two types of views: Icon and List. And the default is icon view.
+
+- Icon view: When the cursor hovers over the box, it will show the detailed path.
+
+- List view: It supports to show the detailed informations of the box, and it can filter display by encryption, sharing and creator.
+
+To change the viewing type, click the function button at the bottom right of the window.
+
+![Fig 15 Icon view-big](image/15.png)
+
+![Fig 16 List view-big](image/16.png)

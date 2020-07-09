@@ -1,123 +1,90 @@
-#  麒麟软件商店
-## 概 述
-本手册包括软件中心总体结构，以及个功能模块的详细操作说明。
+# Kylin Software Center
+## Overview
+Kylin Software Center provides the functions to install/uninstall/search/upgrade softwares, edit sources list, etc.. The main interface as shown in Fig 1.
 
-麒麟软件商店是一款帮助用户管理软件和编辑软件源的图形化软件管理工具，具备应用搜索、安全下载、在线安装、一键卸载、升级等功能特性，通过软件详情、下载信息显示、软件评分、用户评论、软件分类和软件源编辑等功能，给用户提供轻松、友好、安全的软件管理体验。
-
-软件商店通过图形界面，为用户推荐常用软件和高评分软件，同时可通过软件分类信息和搜索，方便用户快速查找到所需软件。
-
-软件商店提供软件源显示、删除和增加功能以及软件源列表显示。软件的显示也是根据软件源来进行动态加载的，Win替换界面显示用户在windows下常用软件的替换，下载界面显示用户下载安装软件的进度信息。
-
-![图 1 麒麟软件商店主界面-big](image/1.png)
+![Fig 1 Kylin Software Center-big](image/1.png)
 <br>
 
-## 基本功能
-### 主菜单
-在主界面可以看到软件商店的广告界面、搜索栏、软件分类栏、下载管理图标、推荐软件。
+## Basic Function
+### Search Software
+Input the key words and press Enter/click search icon. 
 
-#### 简 介
-1）关闭软件商店
+Search mode:
 
-点击右上角“![](image/icon1-o.png)”关闭图标，关闭软件商店。
+- ALL: Search from all softwares in the source list, and the found softwares may be unavailable or have other quality problems.
 
-2）最小化软件商店
+- Chc: Search from the filtered softwares. It's default mode.
 
-点击“![](image/icon2-o.png)”最小化图标，软件商店将最小到任务栏。
+![Fig 2 Search](image/2.png)
 
-3）搜索应用
+When search in the "Cell Phone", "Upgrade", "Uninstall" page, it means search in the current page softwares.
 
-软件商店自带搜索功能，在搜索框前选择搜索路径，输入关键字，按下Enter键或点击搜索框的放大镜图标，显示包含关键字的应用。
+### Download Management
+Click "![](image/icon1.png)" to see the download box, as shown in Fig 3.
 
-4）下载安装/升级/卸载/启动应用
+![Fig 3 Download](image/3.png)
 
-点击界面的应用，会根据应用安装情况出现安装/升级/卸载/启动等按钮进行操作，也可以点击软件图标进入软件详情界面进行其它操作。
+### Library
+The softwares have been divided into multiple categories, and the "All soft" as shown in Fig 4.
 
-5）搜索
+![Fig 4 Library-All soft-big](image/4.png)
 
-点击搜索框，选择搜索路径（全局搜索：是在软件源下搜索全部应用软件，搜索到的软件可能会有不可用或者其他质量问题；精选搜索：是在测试筛选过的软件中进行搜索，默认为精选搜索），输入搜索内容，就可以找到带自己关键词的软件（在安卓、升级、卸载界面搜索是在当前界面软件下搜索，其他界面为在所有软件里面搜索关键词），如图2所示。
+### Cell Phone
+This page provides Kydroid, so users can install Android apps, such as QQ, Wechat, etc..
 
-![图 2 软件商店搜索界面](image/2.png)
+Tips: Not all platforms support this function.
 
-### 宝 库
-点击左边宝库按钮，进入宝库界面，软件商店对软件进行了分类，可以在某个分类快速找到自己的应用，如图3所示。
+### Upgrade
+It prompts which softwares can be upgraded to the newer version, as shown in Fig 5.
 
-![图 3 软件商店宝库界面](image/3.png)
+![Fig 5 Upgrade-big](image/5.png)
 
-### 安 卓
-点击左侧安卓按钮，进入安卓软件界面，用户可在这里对安卓软件进行管理，包括安装、卸载、升级、启动、评分评论等，如下图4所示。
+### Uninstall
+It shows the list of softwares can be uninstalled, as shown in Fig 6.
 
-![图 4 安卓软件界面-big](image/4.png)
-
-### 升 级
-点击左侧升级按钮，进入升级界面，可以看到有哪些软件可以升级，包括可升级软件数目，如图5所示。
-
-![图 5 软件商店升级界面](image/5.png)
-
-### 卸 载
-点击左侧卸载按钮，可以看到系统已经安装并能卸载的软件列表，并显示已安装软件数目。如图6所示。
-
-![图 6 软件商店卸载界面](image/6.png)
-
-### Win替换
-点击宝库Win替换按钮，可以看到为用户推荐的在Linux下常用的windows替代软件，如图所示。
-
-![图 7 软件商店Win替换界面](image/7.png)
-
-### 下载管理
-点击下载管理图标，可以看到下载界面，如图8所示。
-
-![图 8 软件商店下载界面](image/8.png)
+![Fig 6 Unstall-big](image/6.png)
 
 <br>
 
-## 高级功能
-### 设置界面
-点击设置按钮，进入设置界面，在设置界面可以对软件源进行编辑，如图9所示。
+## Advanced Function
+### Login and Register
+Click the login icon at the top left corner, and the popup as shown below.
 
-![图 9 软件商店设置界面](image/9.png)
+![Fig 7 Login and register-big](image/7.png)
 
-- 需要勾选的项保持默认即可，“deb-src”是用于获取软件源码。
+### Source List
+Click "![](image/icon2.png)" to set the source list, as shown in Fig 8.
 
-- “file:///media/kylin/Kylin-Desktop-V10”，从“/media”开始，是指光盘挂载的路径，其中“kylin”为用户名。
+![Fig 8 Source list](image/8.png)
 
-- “juniper”，是指软件包的系列。
+- "deb-src" is used to obtain the software's code.
 
-完成后，“添加软件源” > “更新软件源”。
+- Take CD source for example, "file:///media/kylin/Kylin". Start from "/media" means the path of CD, and "kylin" means the user name.
 
-### 交互界面
-点击任意界面的任一款软件可以进入软件详情界面，可以看到如图10所示，软件详情界面显示软件包名、当前版本、软件源版本、软件评分、下载大小、下载次数，以及软件介绍等，也包括多张软件截图显示、用户对软件评分和评论区以及所有用户评论显示。点击图片的前后按钮可以进行上一张下一张移动。
+- "juniper" means the series of softwares.
 
-![图 10 软件商店软件详情界面](image/10.png)
+Then, click "Determine" > "Update software source".
 
-### 翻译界面
-在软件详情界面还可以对软件进行评分，满分为5颗星，软件评分较高的软件会排名靠前。可以对软件进行评论，并显示所有用户的评论。点击完善翻译，可以对软件进行翻译，提交翻译后经过管理员的评审，就能显示你修改的翻译了。
+### Reset Password
+This function as shown below.
 
-![图 11 软件商店软件翻译界面](image/11.png)
+![Fig 9 Reset password](image/9.png)
 
-### 评论界面
-用户评论界面如下图所示，用户根据个人喜好客观的对软件进行评分；还可以显示所有用户对软件的评价。
+### Software Details
+Click a software to see the details.
 
-![图 12 软件商店软件评论界面](image/12.png)
+![Fig 10 Software information-big](image/10.png)
 
-### 登录界面
-软件商店登录模块：点击主界面左上角登录按钮，便会弹出如下登录界面，用户可以选择快捷登录或账号注册进行相关操作，在快捷登录界面输入相应注册的用户名密码，还可以选择记住密码和自动登录设置（自动登录功能需要同时勾选记住密码才能生效），点击右上角号“![](image/icon1-o.png)”关闭登录窗口。
-
-![图 13 软件商店快捷登录界面](image/13.png)
-
-### 注册界面
-在账号注册界面注册账号时，填写用户名、密码和邮箱（如果是开发者，请在勾选是否为开发者）。
-
-![图 14 件商店账号注册界面](image/14.png)
-
-### 修改密码与密码找回
-点击设置中的密码修改找回按钮或点击登录界面的找回密码，跳转到相应界面，根据情况找回或者修改密码。
-
+It includes name, version, introduction, rating and comments.
 <br>
 
-## 常见问题
-### 使用需要事项
-由于服务器IP搭建前是未知的，因此客户端采用域名形式访问服务器，有两种方法解析：
+## Kylin Update Manager
+Kylin Update Manager provides to upgrade applications, quilts, and system series. Click "Start Menu" > "All App" > "Kylin Update Manager" to open it, and the loading interface as shown in Fig 11.
 
-1）在局域网路由中做DNS解析，将服务器IP解析为：service.ubuntukylin.com，所有客户端即可正确访问。
+![Fig 11 Loading](image/11.png)
 
-2）客户端机器在 /etc/hosts 中将服务器IP映射为：service.ubuntukylin.com，该机器即可正确访问。
+After loading, it will show the details, including name, version number, and description.
+
+Click “![](image/icon3.png)” to set the detection mode.
+
+![Fig 12 Setting](image/12.png)

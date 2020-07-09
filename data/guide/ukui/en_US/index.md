@@ -1,223 +1,196 @@
-# 基础桌面环境
-## 概述
-桌面是用户进行图形界面操作的基础，提供了多个功能部件，包括任务栏、开始菜单等，主界面如图所示。
+# Basic Desktop Environment
+## Overview
+Desktop Environment is the basis for the user's operation on the graphical interface, and it provides multiple functions including taskbar, start menu, etc.. As shown in Fig 1.
  
-![图 1 桌面主界面-big](image/1.png)
+![Fig 1 Desktop Environment-big](image/1.png)
 <br>
 
-## 桌面
-### 桌面图标
-系统默认放置了“我的电脑”、“回收站”、“个人”三个图标，鼠标左键双击即可打开页面。功能如下表。
+## Desktop
+### Desktop Icon
+There are three icons: personal folder, "Computer", "Trash" by default. Double click to open it.
 
-| 图标  | 说明  |
+Right-clicking "Computer" and selecting "Properties", it can show the current system version, kernel version, activation and other related informations, as shown in Figure 2.
+
+(Tips: The picture is only for reference.) 
+
+![Fig 2 "Computer" > "Properties"-big](image/2.png)
+
+### Right-click Menu
+Right-click on the desktop blank and a menu appears as shown in Figure 3.
+ 
+![Fig 3 Right-click menu](image/3.png)
+
+Some of the options as shown below.
+
+| Option | Function |
 | :------------ | :------------ |
-| ![](image/icon1.png)  | 显示连接到本机的驱动器和硬件  |
-| ![](image/icon2.png)  | 显示除移的文件  |
-| ![](image/icon3.png)  | 显示个人主目录  |
+| Create Document | Create folders or empty files |
+| Arrange Items | Provide multiple ways to arrange icons |
+| Icon Size | Zoom in/out or normal size |
 
 <br>
 
-另外，右键单击“我的电脑”，选择“属性”，可显示当前系统版本、内核版本、激活等相关信息，如图所示。
+### Taskbar
+#### Basic Function
+Taskbar is located at the bottom and includes the Start Menu, Firefox Web Browser, File Browser, and Tray Menu.
 
-（注：截图中显示的信息仅供参考，具体以实际为准。） 
+The individual components as shown below.
 
-![图 2 “我的电脑”-“属性”-big](image/2.png)
-
-### 右键菜单
-在桌面空白处单击鼠标右键，出现的菜单如图所示，为用户提供了一些快捷功能。
- 
-![图 3 右键菜单](image/3.png)
-
-部分选项说明如下表。
-
-| 选项  | 说明  |
+| Component | Decsription |
 | :------------ | :------------ |
-| 新建  | 可新建文件夹、文本文档、WPS文件  |
-| 排列项目  | 提供多种排列图标的方式  |
-| 图标大小  | 放大、缩小图标显示  |
+| ![](image/icon4.png)  | Start menu: Open the system menu to find applications and files |
+| ![](image/icon5.png)  | Firefox Web Browser: Provide a convenient and safe way to access the Internet |
+| ![](image/icon6.png)  | File Browser: Browse and manage documents in the system |
+| Window Area | The blank part in the middle of the horizontal bar. Display running programs, opened documents, and allow to close windows, top windows, etc. |
+| ![](image/icon7.png)  | Tray Menu: Include settings for input method, volume, network connection, date and time |
+| Show Desktop | The button is on far right. Minimize all windows and return to the desktop; Click again will restore the windows |
 
 <br>
 
-### 任务栏
-#### 基本功能
-任务栏位于底部，包括开始菜单、Firefox网络浏览器、文件浏览器和状态菜单，如图所示。
+#### Advanced Function
+Right click the taskbar, as shown below.
  
-![图 4 任务栏-big](image/4.png)
+![Fig 4 Right-click menu of the taskbar](image/4.png)
 
-其各个组件如下表。
-
-| 组件  | 说明  |
-| :------------ | :------------ |
-| ![](image/icon4.png)  | 开始菜单，用于弹出系统菜单，可查找应用和文件  |
-| ![](image/icon5.png)  | Firefox网页浏览器，提供便捷安全的上网方式  |
-| ![](image/icon6.png)  | 文件浏览器，可浏览和管理系统中的文件  |
-| 窗口显示区  | 横条中间空白部分；显示正在运行的程序或打开的文档，可进行关闭窗口、窗口置顶操作。  |
-| ![](image/icon7.png)  | 状态菜单，包含了对输入法、声音、网络连接、日期的设置  |
-| 显示桌面  | 按钮位于最右侧；最小化桌面的所有窗口，返回桌面；再次单击将恢复窗口  |
-
-<br>
-
-#### 高级功能
-右键单击任务栏，出现的菜单如图所示。
+The "Settings" window as shown in Fig 5. And select "Reset Panel" in the right-click menu to restore default settings.
  
-![图 5 任务栏右键菜单](image/5.png)
+![Fig 5 Taskbar settings](image/5.png)
 
-在“任务栏设置”中，可进行相关设置，包括任务栏透明度、位置、高度、是否锁定任务栏等，如图所示。若想要直接恢复默认设置，可选择右键菜单中的“重置该面板”。
- 
-![图 6 任务栏设置](image/6.png)
+### Workspace
+Users can place the current works classification in different workspaces. Uncheck "Hide workspace" in the taskbar settings and the workspace will show up.
 
-### 工作区
-通过使用工作区，用户可以把当前工作分类放置在不同区域中，便于管理窗口。系统默认隐藏了工作区域，在任务栏设置中取消对“隐藏工作区”的勾选后，工作区会显示在任务栏上。
-
-工作区默认为2行2列，左键单击不同的区块，可以直接切换工作区；右键单击工作区，可进行设置，如图所示。
+There are 2 rows and 2 columns by default. Click to switching, and right click to setting, as shown in Fi6.
    
-![图 7 工作区右键菜单和设置](image/7-1.png)
-
-![图 7 工作区右键菜单和设置](image/7-2.png)
+![Fig 6 Workspace menu and settings](image/6.png)
 <br>
 
-## 窗口
-### 窗口管理器
-窗口管理器为用户提供了如表所示的功能。
+## Windows
+### Window manager
+The functions provided as shown below.
 
-| 功能  | 说明  |
+| Function | Description |
 | :------------ | :------------ |
-| 窗口标题栏  | 显示当前窗口的标题名称  |
-| 最小化/最大化/关闭  | 标题栏右侧的三个图标按钮，分别对应最小化窗口、最大化窗口、关闭窗口的功能  |
-| 侧边滑动  | 在窗口右侧提供滑动条，可上下滚动查看页面  |
-| 窗口堆叠  | 允许窗口之间产生重叠  |
-| 窗口拖拽  | 在窗口标题栏长按鼠标左键，可移动窗口到任意位置  |
-| 窗口大小调整  | 将鼠标移至窗口四角，长按左键，可任意调整窗口大小  |
+| Title Bar | Show the title name of current window |
+| Minimize/Maximize/Close | The three icon buttons at the right of the title bar correspond to minimize, maximize and close |
+| Side Sliding | Scroll up and down to view the page by the slider at the right of the window |
+| Stack | Allow overlap among windows |
+| Drag and Drop | Long press the left mouse button at the title bar to move the window to any position |
+| Resize | Move the mouse to the corner of the window and long press the left button to resize the window |
 
 <br>
 
-### 窗口切换
-用户有三种方式可以切换：
+### Window Switch
+There are three ways:
 
-* 在任务栏上点击窗口标题；
+* Click the window title on the Taskbar
 
-* 在桌面上点击不同窗口；
+* Click the different window at the desktop
 
-* 使用快捷键 Alt + Tab 。
+* Shortcut Alt + Tab
 
 <br>
 
-## 开始菜单
-### 基本功能
-单击“开始菜单”按钮，主界面如图所示。
+## Start Menu
+### Basic Function
+Click the button to open it, and the main interface as shown in Fig 7.
  
-![图 8 开始菜单主界面](image/8.png)
+![Fig 7 Start Menu](image/7.png)
 
-左侧默认显示四个分类：“常用软件”、“所有程序”、“我的电脑”、“控制面板”。其中：
+There are four categories on the left side: "Favorite", "All App", "Home", "Settings".
 
-* 常用软件：列出最近使用过的软件
+* Favorite: List the applications used recently
 
-* 所有程序：列出系统中的所有软件
+* All App: List all applications
 
-用户还可以在搜索框中，通过关键字搜索应用。如所示，可输入中文，也可以输入软件包名，查询结果会随着输入自动显示出来。
-   
-（注：软件商店对应的包名为kylin-software-center。）
+Input the key words at the search box to find the application. The key words can be the name of the package or the Chinese name.
 
-![图 9-1 搜索应用](image/9-1.png)
-
-![图 9-2 搜索应用](image/9-2.png)
-
-### 高级功能
-右键单击开始菜单图标，会出现如图所示的选项。
+### Advanced Function
+Right click Start Menu icon, and the options as shown in Fig 8.
  
-![图 10 开始菜单右键选项](image/10.png)
+![Fig 8 Right-click menu of the start menu](image/8.png)
 
-通过“属性”，可以对开始菜单的类型、历史打开文件/应用的显示、透明度进行设置，如下图。
+Select "Property" to open the setting window, as shown below.
  
-![图 11 开始菜单属性](image/11.png)
+![Fig 9 Property of the start menu](image/9.png)
 
-其中：
+* Normal Menu: Default way. Don't classify applications in "All App"
 
-* 常规菜单：为系统默认的方式；在“所有程序”中，不对应用进行分类，直接显示。
-
-* 分类菜单：在“所有程序”中，对应用进行分类显示，如下图。
+* Category Menu: Classify applications in "All App" as below
  
-![图 12 分类菜单显示](image/12.png)
+![Fig 10 Category Menu](image/10.png)
 
-### 应用
-对开始菜单中的某个应用右键单击，会出现如下图所示的菜单。
+### Application
+Right click an application in the start menu, and the pop up menu as shown below.
  
-![图 13 应用的右键菜单](image/13.png)
+![Fig 11 Right-click menu of application](image/11.png)
 
-各个选项说明如下表。
-
-| 选项  | 说明  |
+| Option | Function |
 | :------------ | :------------ |
-| 打开  | 打开软件  |
-| 添加到桌面  | 在桌面生成应用的快捷方式图标  |
-| 锁定到任务栏  | 在任务栏上生成应用的图标  |
-| 附到[开始菜单]  | 在开始菜单中的“常用软件”添加应用  |
-| 卸载  | 卸载软件  |
-| 属性  | 查看应用的类型、名字、命令和注释信息  |
+| Add to desktop | Generate a shortcut icon of this app on the desktop |
+| Lock to panel | Generate the icon of this app on the taskbar |
+| Add to startup menu | Add this app to "Favorite" |
+| Property | View this app's type, name, command and note |
 
 <br>
 
-## 关机菜单
-关机菜单位于“开始菜单”左下角的“关闭”按钮处，如图所示。
+## Shutdown Menu
+"Start Menu" > the button near "Power", there provides some options.
  
-![图 14 关机菜单](image/14.png)
+![Fig 12 Shutdown menu](image/12.png)
 
-### 锁屏
-当用户暂时不需要使用计算机时，可以选择锁屏（不会影响系统当前的运行状态），防止误操作；用户返回后，输入密码即可重新进入系统。在默认设置下，系统在一段空闲时间后，将自动锁定屏幕。
-
-锁屏界面如图所示。
+### Lock Screen
+When users do not need to use the computer temporarily, the lock screen can be selected (without affecting the current running state of the system) to prevent misoperations. And input the password to re-enter the system. The system will automatically lock the screen after a period of idle time by default.
  
-![图 15 锁屏界面-big](image/15.png)
+![Fig 13 Lock screen-big](image/13.png)
 
-### 切换用户和注销
-当要选择其他用户登录使用计算机时，可选择“注销”或“切换用户”。此时，系统会关闭所有正在运行的应用；所以，在执行此操作前，请先保存当前工作。
+### Switch Users & Log Out
+When you want to select another user to log in uing the computer, you can select "Log out" or "Switch user". At this point, the system will close all running applications; Therefore, please save the current jobs before performing this action.
 
-### 关机与重启
-有两种操作方式：
+### Shutdown & Reboot
+There are two ways:
 
-1）“开始菜单” > “关机”
+1) "Start Menu" > "Power"
 
-会弹出如图所示的对话框，用户可根据需要选择重启或关机。
+It will pop up a window and users can choose shutdown or reboot as needed.
+
+2) "Start Menu" > the button near "Power" > "Power"/"Reboot"
+
+The system will shutdown or reboot immediately without poping up window.
+
+### Timing Shutdown
+Users can set the time and frequency of shutdown, as shown below.
  
-![图 16 关闭系统对话框-big](image/16.png)
+![Fig 14 Timing shutdown](image/14.png)
+<br>
 
-2）“开始菜单” > “关机”按钮右边菜单 > “关机”/“重启”
+## Q&A
+### Taskbar doesn't show
+1) Open the terminal by Ctrl + Alt + T
 
-系统将直接关机/重启，不再弹出对话框。
+2) Execute "sudo mate-panel --reset" to restart the taskbar
 
-### 定时关机
+3) If it's still not effective, please execute "reboot"
 
-系统还提供了定时关机的功能，用户可根据需要设置关机时间和关机频率，如图所示。
- 
-![图 17 定时关机](image/17.png)
+### Can't login the system after locking the screen
+1) Switch to terminal interface by Ctrl + Alt + F1
 
-## 常见问题
-### 任务栏不显示
-1）通过Ctrl + Alt + T打开终端。
+2) Input the user-name and password to login
 
-2）执行命令“sudo mate-panel --reset”，重新启动任务栏。
+3) Execute "sudo rm -rf ~/.Xauthority"
 
-3）若依然未生效，可执行命令“reboot”，重启系统。
+4) Switch to graphical interface by Ctrl + Alt + F7, and input the password
 
-### 锁屏后无法登录系统
-1）通过Ctrl + Alt + F1切换到字符终端。
+<br>
 
-2）输入用户名和密码后登录。
+## Appendix 
+### Shortcut Key
 
-3）执行命令“sudo rm -rf ~/.Xauthority”。
-
-4）通过Ctrl + Alt + F7切回图形界面，输入用户密码登录。
-
-## 附 录 
-### 快捷键
-
-| 快捷键  | 功能  |
+| Shortcut | Function |
 | :------------ | :------------ |
-| F5  | 刷新桌面  |
-| F1  | 打开用户手册  |
-| Alt + Tab  | 切换窗口  |
-| win  | 打开开始菜单  |
-| Ctrl + Alt + L  | 锁屏  |
-| Ctrl + Alt + Delete  | 注销  |
-| Ctrl + Alt + F1~6  | 切换至字符系统界面  |
-| Ctrl + Alt + F7  | 切换至图形界面  |
+| F5  | Refresh desktop |
+| Alt + Tab  | Switch window |
+| win  | Open the start menu |
+| Ctrl + Alt + L  | Lock screen |
+| Ctrl + Alt + Delete  | Log out |
+| Ctrl + Alt + F1~6  | Switch to terminal interface |
+| Ctrl + Alt + F7  | Switch to graphic interface |

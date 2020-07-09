@@ -170,7 +170,7 @@ void GuideWidget::initUI()
     QString name = system_name();
     qDebug() << "--------" <<name;
     QLocale localeNew;
-    if(name == "kylin")
+    if(name == "Kylin")
     {
         if(localeNew.language()==QLocale::Chinese)
         {
@@ -264,7 +264,7 @@ void GuideWidget::slot_backOffButton()
     qDebug() << Q_FUNC_INFO;
 //    emit sig_backOff2js();
     QString name = system_name();
-    if(name == "kylin")
+    if(name == "Kylin")
     {
         m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
     }
@@ -334,7 +334,7 @@ QStringList GuideWidget::getDirAndPng()
     QStringList list;
     QString PathForSystem;
     QString NameForSystem=system_name();
-    if(NameForSystem == "kylin")
+    if(NameForSystem == "Kylin")
     {
         PathForSystem = LOCAL_FILE_PATH;
     }
@@ -381,7 +381,7 @@ QString GuideWidget::js_getIndexMdFilePath(QString appName)
     qDebug() << Q_FUNC_INFO << appName;
     QString IndexMdFilePath;
     QString name = system_name();
-    if(name == "kylin")
+    if(name == "Kylin")
     {
         IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
     }
@@ -400,7 +400,7 @@ QString GuideWidget::js_getIndexMdFilePathOther(QString appName)
     qDebug() << Q_FUNC_INFO << appName;
     QString IndexMdFilePath;
     QString name = system_name();
-    if(name == "kylin")
+    if(name == "Kylin")
     {
         IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
     }

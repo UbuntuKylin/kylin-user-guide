@@ -1,277 +1,102 @@
-# 光盘刻录器
+# Kylin Burner
 
-## 概 述
-本手册包括光盘刻录器的功能介绍，以及部分功能模块的详细介绍。
+## Overview
+Kylin burner is a tool for burning discs, including data burning and iso burning. It provides users with the ability to burn discs, erase discs, check disc integrity, etc..
 
-光盘刻录器是一款用于帮助用户刻录光盘的工具，包括数据刻录和镜像刻录两种方式。为用户提供了刻录光盘、擦除光盘、检查光盘完整性等功能。
-
-光盘刻录器通过图形界面，直观的显示光盘刻录器为用户提供的功能，方便用户使用。
-
-![图 1 光盘刻录器主界面-big](image/1.png)
+![Fig 1 Kylin-burner-big](image/1.png)
 <br>
 
-## 基本功能
-主界面介绍：
+## Basic Function
+There are four options on menu bar: Project, Edit, Tools and Help. The left sidebar has three options: Welcome project, Data project and Burn image. Users can see the latest projects on the main interface.
 
-![图 2 基本功能区介绍-big](image/2.png)
+### Data project
+The Data project interface provides four buttons: Add, Remove, Empty project and New Folders.
 
-### 欢迎界面
-在欢迎界面的顶部有项目、编辑、工具和帮助；左侧一栏有欢迎界面、数据刻录和镜像刻录三个选项；在主界面的用户可以看到最近项目。欢迎界面如图1所示。
+It will show the files name, size, description and space. The disc type, size, estimated project size will shown at the buttom of this interface.
+If to generate a mirror file, the size of the mirror file will be displayed instead of the size of the disc.
 
-1）项目
+Data burning window as shown in Fig 2:
 
-显示项目菜单栏。
+![Fig 2 Data burning-big](image/2.png)
 
-2）编辑
+1) Add
 
-显示编辑菜单栏。
+Click "Add" to open select files window, and choose files to burn in the project.
 
-3）工具
+2) Remove
 
-显示工具菜单栏。
+Delete the selected files.
 
-4）帮助
+3) Empty project
 
-显示帮助菜单栏。
+Delete all files in this project.
 
-5）右上角的最小化图标
+4) New Folders
 
-将光盘刻录器最小化到任务栏。
+Create a new folder in the project.
 
-6）右上角的最大化图标
+### Burn image
+Image burning setup as shown in Fig 3:
 
-将光盘刻录器的界面最大化成屏幕的大小。
+![Fig 3 Image burning setup](image/3.png)
 
-7）窗口最大化是右上角的缩小图标
+#### Steps introduction
+- 1) Select disc image 
 
-将最大化的光盘刻录器恢复原来大小。
+Open the select files interface, and choose the image file.
 
-8）欢迎界面
+- 2) Select disc 
 
-点击欢迎界面，如果在主界面点击欢迎界面不会有任何变化。如果在数据刻录或镜像刻录的界面点击欢迎界面，则会显示欢迎界面。
+When the system recognizes discs, it will be automatically displayed in the selection menu.
 
-9）数据刻录
+- 3) Burn
 
-显示数据刻录界面。
-
-10）镜像刻录
-
-显示镜像刻录界面。
-
-### 数据刻录
-数据刻录界面添加、删除、清空项目、新建文件夹、项目、编辑、工具、帮助等按钮。在加入文件时，如果未插入CD/DVD盘片时，会出现提示语。
-
-界面会显示你加入的文件名称、大小、描述以及空间。在界面的下方会显示光盘类型、光盘的大小、估算项目的大小以及刻录按钮；如果要生成镜像文件，则显示的是生成的镜像文件而不是光盘的大小。
-
-数据刻录界面如图3所示：
-
-![图 3 数据刻录界面](image/3.png)
-
-1）添加
-
-点击添加，进入选择文件界面，在项目中添加要刻录的文件。选择文件界面如图4所示：
-
-![图 4 选择文件界面-big](image/4.png)
-
-点击取消，即取消添加文件，退出选择文件界面。
-
-2）删除
-
-删除在项目中选中的文件。
-
-3）清空项目
-
-清空项目中添加的所有文件。
-
-4）新文件夹
-
-即在项目中添加一个新的文件夹。
-
-5）导入
-
-将光盘中的文件导入到项目中。
-
-6）点击刻录
-
-进入光盘刻录设置界面。光盘刻录设置界面如图5所示：
-
-![图 5 光盘刻录设置界面](image/5.png)
-
-- 光盘刻录设置界面可以进行刻录速度选择、选项的勾选以及临时文件的选择。
-
-- 选项中的“直接刻录镜像文件而不保存到光盘”，勾选该选项可以提高刻录的速度。
-
-- 勾选“不关闭盘片以下次能追加刻录另外的文件”选项，可以在本次刻录结束后，下次刻录另外的文件能从上次结束的地方追加刻录。
-
-- 使用“Burn-Proof”，勾选该选项可以降低失败的风险。
-
-- 勾选“刻录前先模拟”选项，会在刻录前模拟刻录；如果刻录失败则不会真正刻入光盘，减少光盘存储空间的消耗。
-
-点击光盘刻录设置界面的刻录，进行刻录，显示刻录进度界面。如图6所示：
-
-![图 6 刻录进度界面](image/6.png)
-
-刻录成功结束后，显示数据刻录成功界面。如图7所示：
-
-![图 7 数据刻录成功界面](image/7.png)
-
-### 镜像刻录
-镜像刻录界面显示镜像刻录设置界面。镜像刻录设置界面如图8所示：
-
-![图 8 镜像录制设置界面](image/8.png)
-
-#### 使用步骤简介
-- 1）勾选点击选择光盘镜像
-
-进入文件选择界面，选择要刻录的文件（选择的文件必须是镜像文件）。文件选择界面如图9所示：
-
-![图 9 选择光盘镜像-big](image/9.png)
-
-点击打开，即选择了要刻录的光盘镜像。
-
-点击取消，即取消选择文件，退出选择光盘镜像界面。
-
-- 2）点击要选入的盘片
-
-选择一个要进行刻录操作的盘片（系统识别到了盘片后会自动显示在盘片选择区）。
-
-- 3）点击刻录
-
-在步骤一和步骤二的基础上，点击刻录，开始刻录镜像。镜像刻录进度界面如图10所示：
-
-![图 10 镜像刻录进度界面](image/10.png)
-
-刻录成功结束后，显示刻录成功界面。镜像刻录成功界面如图11所示：
-
-![图 11 镜像刻录成功界面](image/11.png)
-
-若点击取消，即取消镜像刻录，退出镜像刻录界面。
+Click "Burn" to start burning process.
 
 <br>
 
-## 高级功能
-菜单栏界面只在欢迎界面和数据刻录界面可用，镜像界面虽然有显示，但不能进行具体操作。
+## Advanced Function
+### Edit -> Plugins
+Choose and set plugins, as shown in Fig 4.
 
-### 项目菜单栏
-项目菜单栏中有新建项目、打开、最近项目、保存、另存为、刻录、退出。
+![Fig 4 Plugins](image/4.png)
 
-1）新建项目
+Click "About" to show the informations about this plugin, as shown in Fig 5.
 
-当鼠标放在新建项目时，会显示子菜单，有新建数据刻录项目和刻录镜像。
+![Fig 5 About for plugin](image/5.png)
 
-点击新建数据刻录项目，即进行数据刻录，显示数据刻录界面；点击刻录镜像，即进行镜像刻录，显示镜像刻录界面。
+Click "Configure" to setup this plugin, as shown in Fig 6.
 
-2）打开
+![Fig 6 Configure for plugin](image/6.png)
 
-打开一个镜像，进行镜像刻录，显示镜像刻录界面。
+### Tools -> Blank
+Only readable and writable discs can be erased.
 
-3）最近项目
+### Tools -> Check integrity
+The interface as shown in Fig 7.
 
-鼠标放在最近项目时，会显示子菜单，子菜单中显示最近项目。
+![Fig 7 Check integrity](image/7.png)
 
-4）保存
+Click "Check" to start check process, and when check is over, there will show a
 
-保存该项目。
+## Q&A
+### Using tips
+1) When using burn image, only the file with the suffix of .iso can be selected.
 
-5）另存为
+There is a way to make a mirror image: Click Data project and add files; Click "Burn" without a blank DVD inserted.
 
-将项目存放到一个新的位置，也可以更改项目的名称。
-
-6）刻录
-
-进行数据刻录操作。
-
-7）退出
-
-退出光盘刻录器。
-
-### 编辑菜单栏
-编辑菜单栏有添加文件、删除文件、清空项目、新文件夹、导入光盘和插件。编辑菜单栏的所有操作都是针对数据刻录。
-
-1）添加文件
-
-在数据刻录项目中添加文件。
-
-2）删除文件
-
-在数据刻录项目中删除选中的文件。
-
-3）清空项目
-
-清空数据项目中添加的文件。
-
-4）新文件夹
-
-在数据刻录项目中创建一个新文件夹。
-
-5）光盘导入
-
-允许将光盘中的数据导入到数据刻录项目中。
-
-6）插件
-
-进行插件的设置和选择，显示插件界面。插件界面如图12所示：
-
-![图 12 插件界面](image/12.png)
-
-点击“关于”，显示关于该插件的信息界面，如图13所示：
-
-![图 13 关于插件界面](image/13.png)
-
-点击“配置”，进入插件的配置界面。如图14所示：
-
-![图 14 插件配置界面](image/14.png)
-
-### 工具菜单栏
-
-1）擦 除
-
-擦除操作只有可读可写的光盘可一进行此操作。
-
-点击擦除，进入光盘擦除界面。擦除界面如图15所示：
-
-![图 15 擦除界面](image/15.png)
-
-擦除过程界面如图16所示：
-
-![图 16 擦除过程界面](image/16.png)
-
-擦除成功后，会显示擦除成功界面。如图17所示：
-
-![图 17 擦除成功界面](image/17.png)
-
-点击关闭，关闭擦除界面。
-
-2）检查完整性
-
-点击检查完整性，进入检查完整性界面。如图18所示：
-
-![图 18 检查完整性界面](image/18.png)
-
-点击检查，检查光盘的完整性。
-
-检查结束，会显示提示信息界面。如图19所示：
-
-![图 19 提示信息](image/19.png)
-<br>
-
-## 常见问题
-### 使用注意事项
-1）镜像刻录时需要先将要刻录的文件生成.iso后缀的镜像文件。
-
-本手册提供一种生成镜像文件的方法：先点击数据刻录，添加要生成镜像文件的源文件，在没有放入光盘前，点击刻录，即可生成.iso后缀的镜像文件。
-
-2）擦除光盘功能只可以用于可读可写的光盘，只读光盘不能进行擦除操作。
+2) Read-only disc can not be erased.
 
 <br>
 
-## 附 录
-### 快捷键
+## Appendix
+### Shortcut Key
 
-|选项	|快捷键
+|Function |Shortcut Key
 | :------------ | :------------ | 
-|打开（O）...	|Ctrl+O|
-|保存（S）	|Ctrl+S|
-|退出（Q）	|Ctrl+Q	|
+| Open | Ctrl+O|
+| Save | Ctrl+S|
+| Quit | Ctrl+Q	|
+| Contents | F1	|
 
 
