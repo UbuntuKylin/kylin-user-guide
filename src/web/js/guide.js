@@ -35,7 +35,46 @@ require(['marked'], function (markedSetCustom){
 
 function qt_jumpApp(appName)
 {
-    onclickButton(appName)
+    appName = appName.trim()
+    if(appName.search("/") > 0)
+    {
+        if(appName.indexOf("/") == 0){
+            appName = appName.slice(1,appName.length)
+        }
+        var list = appName.split("/")
+        if(list.length == 2){
+            onclickButton(list[0])
+            $(document).ready(function(){
+                switch (list[1]){
+                    case "mate-calc":
+                        document.getElementById("list_h34").click()
+                        break;
+                    case "onboard":
+                        document.getElementById("list_h48").click()
+                        break;
+                    case "filezilla":
+                        document.getElementById("list_h20").click()
+                        break;
+                    case "cheese":
+                        document.getElementById("list_h15").click()
+                        break;
+                    case "goseditmainmenu-53":
+                        document.getElementById("list_h41").click()
+                        break;
+                    case "mate-search-tool":
+                        document.getElementById("list_h55").click()
+                        break;
+                    case "blueman-manager":
+                        document.getElementById("list_h1").click()
+                        break;
+                    default:
+                        break;
+                }
+            });
+        }    
+    }
+    else
+        onclickButton(appName);
 }
 
 var date ={
@@ -198,19 +237,17 @@ function getapp_name(qpp)
         else if(mdPath.search("/guide-ubuntukylin/")>0)
         {
             dirforapp="guide-ubuntukylin"
-        }
-        var m2ht = getDocTop(mdPath,mdDate)  
-        //console.log(m2ht.html)
-        var info = m2ht.info
+        }  
+        var info = window.guideWebkit.js_getIndexMdFileTitle(mdPath)
         //console.log(info+"======"+qpp)
-        if(info.title.search("帮助手册")<0)
+        if(info.search("帮助手册")<0)
         {
-            return info.title+"|"+dirforapp;
+            return info+"|"+dirforapp;
         }
         else
         {
             //console.log(info.title.slice(0,info.title.search("帮助手册")))
-            return info.title.slice(0,info.title.search("帮助手册"))+"|"+dirforapp
+            return info.slice(0,info.search("帮助手册"))+"|"+dirforapp
         }
     }
     else
@@ -286,7 +323,10 @@ function goBackMainUI()
     //console.log(str)
     //document.getElementById("mainUI").style.display="inline";
     //document.getElementById("pageContent").style.display="none";
-    window.location.href="index.html"
+    if(navigator.language=="zh-CN")
+	window.location.href="index.html"
+    else
+	window.location.href="index_en_US.html"
 }
 
 function goBackMainUI_ubuntu()
