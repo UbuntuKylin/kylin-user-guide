@@ -1,121 +1,76 @@
-# 远程桌面客户端
-## 概 述
-远程桌面客户端是一款网络应用软件，可通过 VN(图形)和 SSH(终端)远程连接协议远程连接计算机。主界面如图1所示。
+# Remmina
+## Overview
+Remmina provides the function that connect to remote computers through VNC (graphic) or SSH (terminal). The main interface as shown in Fig 1.
 
-![图 1 远程桌面客户端主界面](image/1.png)
+![Fig 1 Remmina](image/1.png)
 <br>
 
-## 基本功能
-主界面介绍：
+## Basic Function
+Icons and Function:
 
-![图 2 远程桌面客户端基本功能区介绍](image/2.png)
-
-图标及其功能介绍:
-
-|图标	|图标功能说明|	图标|	图标功能说明
+| Icon | Function | Icon | Function |
 | :------------ | :------------ | :------------ | :------------ |
-|![](image/icon1.png)|打开选定的远程桌面文件的连接	|![](image/icon5.png)|	新建一个远程桌面文件
-|![](image/icon2.png)|为选定的远程桌面文件建立副本	|![](image/icon6.png)|	编辑选定的远程桌面文件
-|![](image/icon3.png)|删除选定的远程桌面文件	|![](image/icon7.png)|	打开首选项对话框
-|![](image/icon4.png)|快速查找||||
+|![](image/icon1.png)| Connect to the selected remote desktop |![](image/icon5.png)| Create a new connection |
+|![](image/icon2.png)| Copy a connection |![](image/icon6.png)| Edit a connection
+|![](image/icon3.png)| Delete |![](image/icon7.png)| Open preferences
 
 <br>
 
-### 新建远程桌面文件
-用户通过点击“![](image/icon5.png)”图标，新建一个远程桌面文件，如以 SSH 协议为例,连接 192.168.68.202 的计算机。
+### New Connection Steps
+Click "![](image/icon5.png)" to create a new connection. Taking SSH for example, connect to the computer with IP address 172.19.40.86.
 
-#### 使用步骤简介
-1）首先确认这两台计算机的sshd服务都是运行的。
+1) Ensure the sshd service is running on two computers.
 
-点击“![](image/icon5.png)”图标或单击：菜单 > 连接 > 新建，弹出远程桌面设定界面如图3所示。
+The preferences window as shown in Fig 2.
 
-![图 3 远程桌面文件设定](image/3.png)
+![Fig 2 Remote desktop preferences](image/2.png)
 
-2）选择 SSH 协议。
+2) Select SSH
 
-“服务器”框中输入 ip 地址：192.168.68.202，“SSH验证”中的“用户名”改为被连接计算机的名称，点击“连接”，并输入 SSH 密码（若首次连接目标机器，需要信任新公钥）。
+"Server" box : Input IP address 172.19.40.86
 
-![图 4 SSH连接](image/4.png)
+"SSH Authentication" - "User name" : Input the name of connected computer
 
-3）验证通过后，界面如图5所示。
+![Fig 3 Input informations](image/3.png)
 
-![图 5 连接成功](image/5.png)
+Click "Connect" and input the password of connected computer. If it's first time to connect to this computer, users are needed to trust the new public key.
 
-#### 首选项
-用户通过点击“![](image/icon7.png)”图标或点击：菜单 > 编辑 > 首选项，进入首选项对话框，可对远程桌面客户端进行设置，如图6所示。
+![Fig 4 Connecting-big](image/4.png)
 
-![图 6 首选项](image/6.png)
+3) After authenticated, the interface as shown in Fig 5.
+
+![Fig 5 Connect successfully](image/5.png)
+
+### Preferences
+Click "![](image/icon7.png)" or "Edit" > "Preferences" to customize the remmina settings, as shown in Fig 6.
+
+![Fig 6 Preferences](image/6.png)
 <br>
 
-## 高级功能
-用户可以通过菜单的连接、编辑、视图、工具、帮助选项，对远程桌面客户端进行相关操作。
+## Advanced Function
+### View
+Click "View" to select the items displayed on the window.
 
-图标及其功能介绍：
+![Fig 7 View](image/7.png)
 
-|图标|图标功能说明	|图标	|图标功能说明
-|-----|-------|---------|---------|
-|![](image/icon8.png)|	关闭远程桌面客户端|![](image/icon9.png)	|	查看关于远程桌面客户端信息
+### Import & Export
+Click "Tools" > "Import" to import a file of other connection, or click "Tools" > "Export" to generate a configuration file from a connection.
 
+### Plugins
+CLick "Tools" > "Plugins" to see the current plugins' informations, such as name, type, etc., as shown in Fig 8.
+
+![Fig 8 Plugins](image/8.png)
 <br>
 
-### 连 接
-用户可以通过点击：菜单 > 连接，进入到连接选项，如图7所示。
+## Appendix
+### Shortcut Key
 
-![图 7 连接](image/7.png) 
-
-### 编 辑
-用户可以通过点击：菜单 > 编辑，进入到编辑选项，如图8所示。
-
-![图 8 编辑](image/8.png)
-
-### 视 图
-用户可以通过点击：菜单 > 视图，如图9所示。
-
-![图 9 视图](image/9.png)
-
-### 工 具
-用户可以通过点击：菜单 > 工具，如图10所示。
-
-![图 10 工具](image/10.png)
-
-#### 导入&导出
-用户可以通过点击：菜单 > 编辑 > 导入&导出，实现远程桌面文件的导入和导出，如图11所示。
-
-![图 11 导入&导出-big](image/11.png)
-
-#### 插 件
-用户可以通过点击：菜单 > 编辑 > 插件，如图12所示。
-
-![图 12 插件](image/12.png)
-
-### 帮 助
-用户可以通过点击：菜单 > 帮助，如图13所示。
-
-![图 13 帮助](image/13.png)
-
-#### 查看用户手册
-用户可以通过点击：菜单 > 帮助 > 帮助，查看用户手册。
-
-#### 调试窗口
-用户可以通过点击：菜单 > 帮助 > 调试窗口，如图14所示。
-
-![图 14 调试窗口](image/14.png)
-
-#### 关 于
-用户可以通过点击：菜单 > 帮助 > 关于，可查看关于远程桌面客户端信息，如图15所示。
-
-![图 15 关于远程桌面客户端](image/15.png)
-<br>
-
-## 附 录
-### 快捷键
-
-|选项	|快捷键
- | :------------ | :------------ |
-|连接（O）|	Ctrl+O
-|新建（N）|	Ctrl+N
-|复制（C）|	Ctrl+C
-|编辑（E）|	Ctrl+E
-|删除（D）|	Ctrl+D
-|关闭（C）|	Ctrl+X
-|首选项（P）|	Ctrl+P
+| Shortcut | Function |
+| :------------ | :------------ |
+| Ctrl+O | Connect |	
+| Ctrl+N | New |	
+| Ctrl+C | Copy |	
+| Ctrl+E | Edit |	
+| Ctrl+D | Delete |	
+| Ctrl+X | Quit |	
+| Ctrl+P | Preferences |	

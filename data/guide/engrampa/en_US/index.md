@@ -1,131 +1,131 @@
-# 归档管理器
-## 概 述
-压缩文件和解压文件，用户可通过开始菜单 > 附件 > 归档管理器打开应用，主界面如下图所示。
+# Engrampa Archive Manager
+## Overview
+Compress and unzip files. Open by Start Menu > Accessories > Engrampa Archive Manager, and the main interface as shown below.
  
-![图 1 归档管理器](image/1.png)
+![Fig 1 Engrampa archive manager](image/1.png)
 <br>
 
-## 基本功能
-### 创建新归档
-#### 直接创建
-1）右键单击要压缩的文件/文件夹，选择“压缩…”。
+## Basic Function
+### Create New Archive
+#### Create Directly
+1) Right click the selected files or folders, choosing "Compress".
  
-![图 2 右键压缩](image/2.png)
+![Fig 2 Compress by right-click](image/2.png)
 
-2）在如下图所示的对话框中，输入压缩文件的名称，并选择压缩的格式和保存的位置。
+2) Enter the name of archive file, and select the compress format, location.
  
-![图 3 压缩对话框](image/3.png)
+![Fig 3 Compress box](image/3.png)
 
-3）点击“创建”后，即生成压缩文件。
+3) Click "Create".
 
-#### 通过归档管理器创建
-1）在主界面上点击归档文件 > 新建。
+#### Through Engrampa 
+1) Click "Archive" > "New" at the main interface.
 
-2）在弹出的新建对话框中，输入归档文件名称，并选择保存位置。如下图所示。
+2) Enter the name of archive file and select the location in the pop up window, as shown below.
  
-![图 4 新建-big](image/4.png)
+![Fig 4 New-big](image/4.png)
 
-默认压缩格式为tar.gz，用户可在 文件格式折叠框 或 全部归档文件下拉框 中选择压缩格式，如下图所示。
+The default format is "tar.gz". Users can change it in the "File Format" fold box or "All Archive" combobox, as shown below.
    
-![图 5 压缩文件格式选择](image/5.png)
+![Fig 5-a Select file format(fold box)-big](image/5-a.png)
 
-3）点击创建后，可通过工具栏上的图标，往归档文件里添加内容，或者直接拖拽文件到窗口。若未添加文件，则归档文件不会生成。
+![Fig 5-b Select file format(combobox)](image/5-b.png)
 
-* ![](image/icon1-o.png) ：添加文件。
-* ![](image/icon2-o.png) ：添加文件夹。
+3) After clicking "Create", users can add contents to the archive file through the icon on the tool bar, or dragging files to the window directly. (Only can be added once.)
 
-### 查看归档文件
-* 方法1：归档文件右键单击 > 使用归档管理器打开
+The archive file won't be generated without any file added.
 
-* 方法2：双击归档文件
+* ![](image/icon1-o.png): Add files.
 
-可以看到文件的名称，大小，类型，修改日期，如下图所示。
+* ![](image/icon2-o.png): Add a folder.
 
-![图 6 查看归档文件](image/6.png)
+### View Archive
+* Way 1: Right click archive file > "Open With Engrampa Archive Manager"
 
-此时，双击1.png，可以查看图片；双击pics文件夹，会进入该目录，显示文件夹中的内容。
+* Way 2: Double click archive file
 
-### 编辑归档文件
-#### 添 加
-打开归档文件后，可按照创建新归档的添加方式，为该归档文件添加新文件/文件夹。
+Name, size, type, date modified will be shown, as Fig 6.
 
-#### 删 除
-1）删除单个文件：
+![Fig 6 View](image/6.png)
 
-* 方式1：右键单击目标文件 > 删除
+Double click 1.png to see the picture; Double click pics folder to enter it and show the contents.
 
-* 方式2：选中文件 > Delete
+### Edit Archive
+#### Delete
+1) Delete single file:
 
-* 方式3：Delete > 选择“文件”，指定文件名 > 删除
+* Way 1: Right click file > "Delete"
 
-如下图所示：归档文件中，所有名为1.png的文件，都将被删除。
+* Way 2: Select file > Delete
+
+* Way 3: Delete > select "Files" and specify file name > "Delete"
+
+As shown below: All the files named 1.png will be deleted.
  
-![图 7 Delete删除指定文件](image/7.png)
+![Fig 7 "Delete" to remove specified files](image/7.png)
 
-2）删除全部文件：
+2) Delete all files:
 
-* 方式1：选中所有文件，右键单击 > 删除
+* Way 1: Select all files and right click > Delete
 
-* 方式2：Delete > 选择“全部文件” > 删除
+* Way 2: Delete > select "All Files" > "Delete"
  
-![图 8 Delete删除全部文件](image/8.png)
+![Fig 8 "Delete" to remove all files](image/8.png)
 
-#### 重命名
+#### Rename
+Right click file > "Rename"
 
-右键单击目标文件 > “重命名”
+#### Copy, Cut, Paste
+Right click file > "Copy"/"Cut" > go to the destination in archive file and right click > "Paste"
 
-#### 复制、剪切、粘贴
-
-右键单击目标文件 > “复制”/“剪切” > 进入归档文件中的目标位置，右键单击 > “粘贴”
-
-此时会弹出粘贴提示对话框，如下图所示。确认后，复制/剪切操作完成。
+It will pop up a paste prompt box. Click "Paste" after ensuring.
  
-![图 9 粘贴提示](image/9.png)
+![Fig 9 Paste prompt](image/9.png)
 
-### 提取归档文件
-#### 直接解压
-1）右键单击目标归档文件。
+### Extract Archive
+#### Unzip directly
+1) Right click archive file.
 
-2）选择解压缩到此处。
+2) Select "Extract Here".
 
-#### 通过归档管理器解压
-1）打开归档文件后，点击工具栏上的“解压缩”；或者右键单击归档文件，选择“解压缩到…” 。
+#### Unzip through Engrampa
+1) Click "Extract" on the tool bar after openning archive file; Or right click archive file > select "Extract To…".
 
-2）弹出对话框如下图所示。用户指定解压文件的位置后，点击“解压缩”。
+2) The popup as shown below. After choosing location, click "Extract".
  
-![图 10 解压缩对话框-big](image/10.png)
+![Fig 10 Extract box-big](image/10.png)
 
-3）如果归档受密码保护，则接下来将要求用户输入密码。
+3) If it's an encrypted archive, password will be required.
  
-![图 11 输入密码提示](image/11.png)
+![Fig 11 Password required](image/11.png)
 <br>
 
-## 高级功能
-### 创建加密归档
-创建一个新归档时，在“其他选项”中，可以为归档文件设置密码。
+## Advanced Function
+### Create Encrypted Archive
+When creating, "Other Options" provides function to set the password for this archive file.
 
-不是所有压缩格式都支持加密，可以使用密码保护的类型：7z、jar、zip。
+Not all the compress formats supports encryption. Able to encrypted formats: 7z, jar, zip.
  
-![图 12 设置密码](image/12.png)
+![Fig 12 Set password](image/12.png)
 
-### 提取指定文件
-提取归档文件时，在解压对话框底部，可以指定要解压的文件。
+### Extract Specified Files
+Users can specify files to be extracted at the bottom of the extract window.
  
-![图 13 提取指定文件](image/13.png)
+![Fig 13 Extract specified files](image/13.png)
 
-指定文件名后，归档文件中所有为该名字的文件都会被提取出来；若是在归档文件中的子目录里，提取的文件也会包含文件目录。
+All the file with this name in the archive will be extracted; If the file is under the sub directory, the extracted file will include this directory also. 
 
 <br>
 
-## 附 录 
-### 快捷键
+## Appdenix 
+### Shortcut Key
 
-| 快捷键  | 功能  |
+| Shortcut | Function |
 | :------------ | :------------ |
-| Ctrl+C  | 复制  |
-| Ctrl+X  | 剪切  |
-| Ctrl+V  | 粘贴  |
-| Delete  | 删除  |
-| Ctrl+A  | 全选  |
-| F2  | 重命名  |
+| Ctrl+C  | Copy |
+| Ctrl+X  | Cut |
+| Ctrl+V  | Paste |
+| Delete  | Delete |
+| Ctrl+A  | Select all |
+| F2  | Rename |
 

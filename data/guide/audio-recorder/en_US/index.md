@@ -1,47 +1,44 @@
-# 音频录制器
-## 概 述
-录制音频，设置音频源、录音文件格式等。用户可通过开始菜单 > 所有程序 > 音频录制器打开该软件。
+# Audio Recorder
+## Overview
+Record audio, and set audio source, recording file format, etc..
 
-![图1 音频录制器](image/1.png)
+Click Start Menu > All App > Audio Recorder to open this application.
+
+![Fig 1 Audio recorder](image/1.png)
 <br>
 
-## 基本功能
-### 录 音
-在"文件"输入框内输入文件名，点击"开始录制"即可开始录音，如下图所示。录制的文件默认保存在用户主目录下的"音频"文件夹中。
+## Basic Function
+### Recording
+Input the file name at the "File" box, and click "Start recording", as shown below.
 
-![图2 正在录音](image/2.png)
+The recording files are saved in "Audio" folder at the user's home directory.
+
+![Fig 2 Recording](image/2.png)
 <br>
 
-## 高级功能
-点开音频设置的折叠菜单，可对以下项进行设置。
+## Advanced Function
+Click the fold menu of Audio settings to set the following items.
 
-### 音频源设置
+### Source
 
-![图3 音频源设置](image/3.png)
-<br>
+![Fig 3 Audio source](image/3.png)
 
-### 录音文件格式
-软件提供了多种录音文件的格式可选。
+### Format
+There provides various of recording file formats to be selected.
 
-![图4 格式设置](image/4.png)
-<br>
+![Fig 4 File formats](image/4.png)
 
-### 附加设置
+### Additional settings
 
-- **常规** ：修改文件保存位置，托盘显示，登录自启动。
+- **General** : Modify the saving location, icon displaying, and auto-start.
   
-![图5 常规标签页](image/5.png)
+![Fig 5 General](image/5.png)
 
-- **设备设置** ：设置音频源。
+- **Device setting** : Set audio source and recording device.
  
-![图6 设备设置标签页](image/6.png)
+![Fig 6 Device settings](image/6.png)
 
-“麦克风”结尾：以麦克风作为音频源。
-
-“Audio output”结尾：以电脑内部正在播放的声音为音频源。
-
-- **录制命令** ：调整录制命令，设置默认文件格式等。
+- **Recording commands** : Modify the recording command and set file's default format, etc..
   
-![图7 录制命令标签页](image/7.png)
-<br>
+![Fig 7 Recording commands](image/7.png)
 

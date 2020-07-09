@@ -1,246 +1,244 @@
-# 银河麒麟操作系统许可协议和隐私政策声明
-## 前 言
-欢迎使用银河麒麟桌面操作系统！
+# Kylin Operating System License Agreement and Privacy Statement
+## Preface
+Welcome to Kylin Operating System!
 
-麒麟软件有限公司（简称“麒麟软件”）以安全可信操作系统技术为核心，旗下拥有“中标麒麟”、“银河麒麟”两大产品品牌，既面向通用领域打造安全创新操作系统和相应解决方案，又面向国防专用领域打造高安全高可靠操作系统和解决方案，现已形成了服务器操作系统、桌面操作系统、嵌入式操作系统、麒麟云等产品，能够同时支持飞腾、龙芯、申威、兆芯、海光、鲲鹏等国产 CPU。企业坚持开放合作打造产业生态，为客户提供完整的国产化解决方案。
+KylinSoft Corporation ("we", "our", "us", and KylinSoft) is based on secure and reliable operating system technology, and has two product brands: "NeoKylin", "Kylin". We build innovative security operating systems and corresponding solutions for general areas, as well as highly secure and reliable operating systems and solutions for national defenses. Now KylinSoft has formed the server operating system, desktop operating system, embedded operating system, kylincloud operating system and so on. Meanwhile, we support a variety of domestic CPUs, such as Phytium, Loongson, ShenWei, ZhaoXin, HaiGuang, KunPeng. Our company insists on opening cooperation to build industrial ecology, and provides customers with complete localized solutions.
 
-麒麟软件注重核心技术创新，先后申请专利 320 余项，其中授权专利 138项，登记软件著作权 340 余项，主持和参与起草国家、行业、联盟技术标准 30余项，荣获国家科技进步一等奖在内的各类国家级、省部级和行业奖项 400 余个，并被授予“国家规划布局内重点软件企业”、“国家高技术产业化示范工程”等称号。企业注重质量体系和创新能力打造，通过了 CMMI5 级评估，现有博士后工作站、省部级基础软件工程中心等，具有雄厚的科研能力和严格的管理规范。
+KylinSoft focuses on core technological innovations: applied for patents more than 320 (including 138 granted patents), registered software copyrights more than 340, hosted/participated/drafted the technical standards of nation/industry/union more than 30, and received various national, provincial and industry awards (including first prize of national scientific and technological progress) more than 400. What's more, we were awarded the title of "Key Software Enterprises in National Planning and Layout" and "National High-Tech Industrialization Demonstration Project", etc..
 
-麒麟软件在天津、北京、上海、长沙、广州、太原、郑州、成都、西安、沈阳等地设有分支机构，服务网点遍布全国 31 个省会城市。旗下的操作系统系列产品，在党政、国防、金融、电信、能源、交通、教育、医疗等行业获得广泛应用。根据赛迪顾问统计，麒麟软件旗下操作系统产品，连续 8 年位列中国 Linux市场占有率第一名。
+KylinSoft also focuses on the quality system and innovative capacity building: passed the CMMI5 level assessment, and now has the post-doctoral workstation, provincial basic software engineering center, etc., with strong scientific research capacities and strict management standards.
 
-- **手册文字表达习惯和说明**
+KylinSoft has branches in TianJin, BeiJing, ShangHai, Guangzhou, TaiYuan, ZhengZhou, ChengDu, Xi'An, ShenYang, etc., and service outlets in 31 provincial capitals nationwide. Our productions are widely used in party and government, defense, finance, telecommunication, energy, transportation, education, medical and other industries. According to Sadie's consulting, KylinSoft's productions rank 1st in Linux market share in China for 8 years in a row.
 
-1）菜单和按钮都用中文模式下的“”标明；
+- **Expression habits and Explanations**
 
-2）路径用 > 标识，如“开始菜单” > “控制面板”。
+1）Menus and buttons are marked with "".
 
-受硬件设备、平台架构、软件版本等方面的影响，本手册中的截图示例与部分功能仅供参考，**具体状态以真实系统为准**。
+2）Paths are marked with > , e.g: "Start Menu" > "Kylin Control Center".
 
-<br>
-<br>
-
-## 银河麒麟最终用户使用许可协议
-尊敬的银河麒麟操作系统及相关产品用户（以下称“您”或“贵机构”）:
-
-首先感谢您选用由麒麟软件有限公司开发并制作发行的银河麒麟操作系统软件产品。
-
-请在打开本软件介质包之前，仔细阅读本协议条款、提供的所有补充许可条款（统称“协议”）及银河麒麟操作系统隐私政策声明。一旦您打开本软件介质包，即表明您已接受本协议的条款，本协议将立即生效，对您和本公司双方具有法律约束力。
-
-### 一 使用许可
-按照已为之支付费用的用户数目及计算机硬件类型，麒麟软件有限公司（下称“麒麟软件”） 向您授予非排他、不可转让的许可，仅允许内部使用由麒麟软件提供的随附软件和文档以及任何错误纠正（统称“本软件”）。
-
-- **软件使用许可**
-
-在遵守本协议的条款和条件的情况下，麒麟软件给予贵机构非独占、不可转让、有限的许可，允许贵机构至多使用软件的五(5)份完整及未经修改的二进制格式副本，而此种软件副本仅可安装于贵机构操作的电脑中。
-
-- **教育机构使用许可**
-
-在遵守本协议的条款和条件的情况下，如果贵机构是教育机构，麒麟软件给予贵机构非独占、不可转让的许可，允许贵机构仅在内部使用随附的未经修改的二进制格式的软件。此处的“在内部使用”是指由在贵机构入学的学生、贵机构教员和员工使用软件。 
-
-- **字型软件使用**
-
-软件中包含生成字体样式的软件（“字型软件”）。贵机构不可从软件中分离字型软件。贵机构不可改动字型软件，以新增此等字型软件被作为软件的一部分交付予贵机构时所不具备的任何功能。贵机构不可将字型软件嵌入作为商业产品提供以换取收费或其他报酬的文件。 
-
-### 二 限制
-本软件受到版权（著作权）法、商标法和其他法律及国际知识产权公约的保护。麒麟软件和/或其许可方保留对本软件的所有权及所有相关的知识产权。对于麒麟软件或其许可方的任何商标、服务标记、标识或商号的任何权利、所有权或利益，本协议均不作任何授权。
-
-- **关于复制、修改及分发**
-
-如果在所有复制品中维持本协议书不变，您可以且必须根据《GNU GPL-GNU通用公共许可证》复制、修改及分发银河麒麟操作系统软件产品中遵守《GNU GPL-GNU通用公共许可证》协议的软件，其他不遵守《GNU GPL-GNU通用公共许可证》协议的银河麒麟操作系统软件产品必须根据符合相关法律之其他许可协议进行复制、修改及分发，但任何以银河麒麟操作系统软件产品为基础的衍生发行版未经麒麟软件有限公司的书面授权不能使用任何麒麟软件有限公司的商标或其他任何标志。
-
-- **特别注意**
-
-该复制、修改及分发不包括本产品中包含的任何不适用《GNU GPL-GNU通用公共许可证》的软件，如银河麒麟操作系统软件产品中包含的输入法软件、字库软件、第三方应用软件等。除非适用法律禁止实施，否则您不得对上述软件进行复制、修改（包括反编译或反向工程）、分发。
-
-### 三 有限担保
-麒麟软件向您担保，自购买或其它合法取得之日起九十（90）天内（以收据副本为凭证），本软件的存储介质（如果有的话）在正常使用的情况下无材料和工艺方面的缺陷。除上述内容外，本软件按“原样”提供。在本有限担保项下，您的所有补偿及麒麟软件的全部责任为由麒麟软件选择更换本软件介质或退还本软件的购买费用。
-
-### 四 担保的免责声明
-除非在本协议中有明确规定，否则对于任何明示或默示的条件、陈述及担保，包括对适销性、对特定用途的适用性或非侵权性的任何默示的担保，均不予负责，但上述免责声明被认定为法律上无效的情况除外。
-
-### 五 责任限制
-在法律允许范围内，无论在何种情况下，无论采用何种有关责任的理论，无论因何种方式导致，对于因使用或无法使用本软件引起的或与之相关的任何收益损失、利润或数据损失，或者对于特殊的、间接的、后果性的、偶发的或惩罚性的损害赔偿，麒麟软件或其许可方均不承担任何责任（即使麒麟软件已被告知可能出现上述损害赔偿）。根据本协议，在任何情况下，无论是在合同、侵权行为（包括过失）方面，还是在其他方面，麒麟软件对您的责任将不超过您就本软件所支付的金额。即使上述担保未能达到其基本目的，上文所述的限制仍然适用。
-
-### 六 终止
-本协议在终止之前有效。您可以随时终止本协议，但必须同时销毁本软件的全部正本和副本。如果您未遵守本协议的任何规定，则本协议将不经麒麟软件发出通知立即终止。终止时，您必须销毁本软件的全部正本和副本，并且需承担因未遵守本协议而导致的法律责任。
-
-### 七 法律适用
-与本协议相关的任何争议解决（包括但不限于诉讼、仲裁等）均适用中华人民共和国法律。任何其它国家和地区的法律规则不予适用。
-
-### 八 可分割性
-如果本协议中有任何规定被认定为无法执行，则删除相应规定，本协议仍然有效，除非该删除会防碍各方根本目的的实现（在这种情况下，本协议将立即终止）。
-
-### 九 完整性
-本协议是您与麒麟软件就其标的达成的完整协议。它取代此前或同期的所有和本协议不一致的口头或书面往来信息、建议、陈述和担保，有关报价、订单、回执或各方之间就本协议标的进行的其他往来通信中的任何冲突条款或附加条款，均以本协议为准。对本协议的任何修改均无约束力，除非通过书面进行修改并由每一方的授权代表签字。
-
-### 十 商标和标识
-贵机构承认并与麒麟软件有着以下共识，即麒麟软件拥有麒麟软件、银河麒麟商标，以及所有与麒麟软件、银河麒麟相关的商标、服务标记、标识及其他品牌标识（“麒麟软件标记”）。贵机构对麒麟软件标记的任何使用都应有利于麒麟软件。 
-
-### 十一 源代码
-本软件可能包含源代码，其提供之唯一目的是在符合本协议条款之规定时供参考之用。源代码不可再分发，除非在本协议中有明确规定。 
-
-### 十二 因侵权而终止
-如果本软件成为或在任一方看来可能成为任何知识产权侵权索赔之标的，则任一方可立即终止本协议。 
-
-### 十三 Java技术限制
-贵机构不可更改“Java平台界面”（简称“JPI”，即指明为“java”包或“java”包的任何子包中的类），无论通过在JPI中创建额外的类，还是通过其他方式导致对JPI中的类进行增添或更动，均为不可。如果贵机构创建一个额外的类以及一个或多个相关的API，而它们（i）扩展Java平台的功能；并且（ii）可供第三方软件开发者用于开发可调用上述额外API的额外软件，则贵机构必须迅即广泛公布对此种API的准确说明，以供所有开发者免费使用。贵机构不可创建、或授权贵机构的被许可人创建以任何方式标示为“java”、“javax”、“sun”的额外的类、界面、子包或Sun在任何命名约定中指明的类似约定。参见Java运行时环境二进制代码许可的适当版本，目前位于[http://www.java.sun.com/jdk/index.html](http://www.java.sun.com/jdk/index.html "查看适当版本")，以了解可与Java小程序和应用程序共同分发的运行时代码的可供情况。
-
-**协议提供中英文两种版本，以上任何内容如有歧义，以中文版本为准。**
+Due to the hardware devices, platform architectures, software versions, etc., the sample pictures and some of the functions in this manual are for reference only. **The actual status are based on the real system**.
 
 <br>
 <br>
 
-## 银河麒麟操作系统隐私政策声明
-版本发布日期：2019年12月18日
+## The End-User License Agreement
+Respectable users of Kylin Linux (hereinafter referred to as "you" or "your organization"):
 
-版本生效日期：2019年12月18日
+Thank you for using Kylin Linux products developed&published by KylinSoft Corporation (For short "KylinSoft").
 
-尊敬的银河麒麟操作系统用户（以下简称“您”），银河麒麟操作系统系列软件产品是由麒麟软件有限公司（以下简称“我们”或“麒麟软件”）研制发行的，用于办公或构建企业及政府的信息化基础设施。
+Read the terms of this agreement and any provided supplemental license terms (Collectively "AGREEMENT") carefully before opening the software media package. By opening the software media package, you agree to the terms of this AGREEMENT. This Agreement takes effect at the moment, and it has force effect to both user and our company.
 
-麒麟软件非常重视您的个人信息和隐私保护，在您使用本产品的过程中，我们会按照《银河麒麟操作系统隐私政策声明》（以下简称“本声明”）收集、存储、使用您的个人信息。为了保证对您的个人隐私信息合法、合理、适度的收集、使用，并在安全、可控的情况下进行传输、存储，我们制定了本声明。我们将向您说明收集、保存和使用您的个人信息的方式，以及您访问、更正、删除和保护这些信息的方式。我们将会按照法律要求和业界成熟安全标准，为您的个人信息提供相应的安全保护措施。如您点击或勾选“同意”并确认提交，即视为您同意本隐私政策声明，并同意我公司将按照本政策来收集、存储和使用您的相关信息。
+### Ⅰ LICENSE TO USE
+KylinSoft grants you a non-exclusive and non-transferable license for the internal use only of the accompanying software and documentation and any error corrections provided by KylinSoft (collectively "Software"), by the number of users and the class of computer hardware for which the corresponding fee has been paid.
 
-本声明将帮助您了解以下内容：
-一 关于收集和使用涉及您的个人信息
+- **License to use software**
 
-二 如何存储和保护涉及您的个人信息
+KylinSoft grants you a non-exclusive, non-transferable and limited license for the internal use under this Agreement and Terms. You are allowed to use FIVE(5) integrated and unmodified binary copies at most, which are only installed on the computer owned by your organization.
 
-三 如何管理您的个人信息
+- **License to use in Educational Organization**
 
-四 关于第三方软件的隐私说明
+For Educational Organization, KylinSoft grants you a non-exclusive and non-transferable license for the internal use of the accompanying binary software under this Agreement and Terms. Here, "internal use" means that the software could be used by students, teachers, and staffs who belong to your organization.
 
-五 关于未成年人使用产品
+- **License to use Font Software**
 
-六 本声明如何更新
+This software includes softwares that can generate font style ("Font Software"). You are not allowed to separate "Font Software" from this software. You are not granted to change "Font Software" to add any new functions not included in it when the Font Software was provided as a part of this software. You are not allowed to embed the Font Software in any file that may be used in commercial purpose or to get something in reward.
 
-七 如何联系我们
+### Ⅱ RESTRICTIONS
+Software is confidential and copyrighted. Title to Software and all associated intellectual property rights is retained by KylinSoft and/or its licensors. Except as specifically authorized in any Supplemental License Terms, you may not make copies of Software, other than a single copy of Software for archival purposes. No right, title or interest in or to any trademark, service mark, logo or trade name of KylinSoft or its licensors is granted under this Agreement.
+
+- **License to copy, modify and distribute software**
+
+For all copies that are granted under this Agreement, you may and must copy, modify and distribute the special part of Kylin Linux products which complies with "GNU GPL-GNU General Public License" according to the terms of "GNU GPL-GNU General Public License". For other Kylin Linux products which do not comply with "GNU GPL-GNU General Public License",you should copy, modify and distribute them according to the terms of related law. For any version derived from Kylin Linux products, you are not granted to use any KylinSoft, Kylin -related trademarks, service marks,logos and other brand designations ("Kylin Marks") without KylinSoft’s authorization.
+
+- **Special Notice:**
+
+The definition of "copy, modify and distribute" mentioned as above does not apply to the software included in Kylin Linux products which does not comply with "GNU GPL-GNU General Public License", such as Input Method Software,Font Software, and Third Party Application Software,etc. Unless enforcement is prohibited by applicable law, you may not copy, modify(including decompile, or reverse engineer) and distribute this Software.
+
+### Ⅲ LIMITED WARRANTY
+KylinSoft warrants to you that for a period of ninety (90) days from the date of purchase or the date of obtaining Software through other legal means, as evidenced by a copy of the receipt, the media on which Software is furnished (if any) will be free of defects in materials and workmanship under normal use. Except for the foregoing, Software is provided “AS IS”. Your exclusive remedy and KylinSoft's entire liability under this limited warranty will be at KylinSoft's option to replace Software media or refund the fee paid for Software.
+
+### Ⅳ DISCLAIMER OF WARRANTY
+Unless specified in this agreement, all express or implied conditions, representations and warranties, including any implied warranty of merchantability, fitness for a particular purpose or non-infringement are disclaimed, except to the extent that these disclaimers are held to be legally invalid.
+
+### Ⅴ LIMITATION OF LIABILITY
+To the extent not prohibited by law, in no event will KylinSoft or its licensors be liable for any lost revenue, profit or data, or for special, indirect, consequential, incidental or punitive damages, however caused regardless of the theory of liability, arising out of or related to the use of or inability to use software, even if KylinSoft has been advised of the possibility of such damages. In no event will KylinSoft's liability to you, whether in contract, tort(including negligence),or otherwise, exceed the amount paid by you for Software under this Agreement. The foregoing limitations will apply even if the above stated warranty fails of its essential purpose.
+
+### Ⅵ TERMINATION
+This Agreement is effective until terminated. You may terminate this Agreement at any time, but you should destroy all copies of Software at the same time. This Agreement will terminate immediately without notice from KylinSoft if you fail to comply with any provision of this Agreement. Upon Termination, you must destroy all copies of Software, and you shall bear the legal liability caused by non-compliance with this agreement.
+
+### Ⅶ APPLICABLE LAW
+Any dispute settlement (including but not limited to litigation, arbitration, etc.) related to this Agreement will be governed by People's Republic of China law. The laws of any other country or region shall not apply.
+
+### Ⅷ SEVERABILITY
+If any provision of this Agreement is held to be unenforceable, this Agreement will remain in effect with the provision omitted, unless omission would frustrate the fundamental intent of the parties, in which case this Agreement will immediately terminate.
+
+### Ⅸ INTEGRATION
+This Agreement is the entire agreement between you and KylinSoft relating to its subject matter. It supersedes all prior or contemporaneous oral or written communications, proposals, representations and warranties which inconsistent with this Agreement, and prevails over any conflicting or additional terms of any quote, order, acknowledgment, or other communication between the parties relating to its subject matter. No modification of this Agreement will be binding, unless in writing and signed by an authorized representative of each party.
+
+### Ⅹ TRADEMARKS AND LOGOS
+You acknowledge and agree as between you and KylinSoft that KylinSoft owns the KylinSoft, Kylin trademark and all KylinSoft, Kylin-related trademarks, service marks, logos and other brand designations ("Kylin Marks") and you agree to comply with the KylinSoft Trademark and Logo Usage Requirements. Any use you make of the Kylin Marks inures to KylinSoft's benefit. 
+
+### Ⅺ SOURCE CODE
+The Kylin Software may contain source code that is provided solely for reference purposes pursuant to the terms of this Agreement. Unless specified in this agreement,source code may not be redistributed.
+
+### Ⅻ TERMINATION FOR INFRINGEMENT
+Either party may terminate this Agreement immediately should any Software become, or in either party's opinion be likely to become, the subject of a claim of infringement of any intellectual property right. 
+
+### ⅩⅢ JAVATM TECHNOLOGY RESTRICTIONS
+You may not modify the JavaTM Platform Interface ("JPI", identified as classes contained within the "java" package or any subpackages of the "java" package), by creating additional classes within the JPI or otherwise causing the addition to or modification of the classes in the JPI. In the event that you create an additional class and associated API(s) which (i) extends the functionality of the JavaTM Platform, and (ii) is exposed to third party software developers for the purpose of developing additional software which invokes such additional API, you must promptly publish broadly an accurate specification for such API for free use by all developers. Youmay not create, or authorize your licensees to create additional classes, interfaces, or subpackages that are in any way identified as "java", "javax", "sun" or similar onvention as specified by Sun in any naming convention designation. Refer to the appropriate version of the JavaTM Runtime Environment binary code license (currently located at http://www.java.sun.com/jdk/index.html) for the availability of runtime code which may be distributed with JavaTM applets and applications.
+
+**The agreement is provided in both Chinese and English. In case of any ambiguity, the Chinese version shall prevail.**
+
+<br>
+<br>
+
+## Kylin Operating System Privacy Statement
+Release Date：December 28, 2019
+
+Effective date：December 18, 2019
+
+Dear users("you"), the Kylin Operating System is developed and issued by KylinSoft Corporation ("we" and "KylinSoft"). It is mainly used as desktop office software or applied in building enterprise and government information infrastructure.
+
+KylinSoft Corporation ("we", "our", "us", and KylinSoft) fully understand and respect the importance of your privacy, and we will handle your personal data based on the "Kylin Operating System Privacy Statement" ("this Statement"). This statement is to ensure the legal and appropriate collection and use of your personal data. This Statement describes how we handle your personal data, and how you can access, correct, delete, and protect it. We will protect your personal data as the law and industrial standards required.  Upon agreeing and submitting this Statement, you accept all provisions as follows.
+
+We created this Statement to help you understand:
+
+Ⅰ How KylinSoft Collects and Uses Your Personal Data
+
+Ⅱ How KylinSoft Keep and Protect Your Personal Data
+
+Ⅲ How KylinSoft Handles Your Personal Data
+
+Ⅳ Third Party Providers and Their Services
+
+Ⅴ How KylinSoft Handles the Personal Data of Children
+
+Ⅵ How to Update this Statement
+
+Ⅶ How to Contact KylinSoft
 
 <br>
 
-### 一 如何收集和使用您的个人信息
-#### 1.收集涉及您的个人信息的情况
-我们在您使用银河麒麟操作系统产品过程中收集相关的信息，主要为了向您提供更高质量、更易用的产品和更好的服务。
+### Ⅰ How KylinSoft Collects Your Personal Data
+#### 1.Collects Your Personal Data
+KylinSoft collects your personal data mainly to improve its services to better satisfy customer needs.
 
-1）银河麒麟操作系统的产品授权许可机制，会根据您所使用计算机的网卡、固件和主板等信息通过加密机制和转换方法生成申请产品正式授权许可的机器码；您将该机器码发给麒麟软件商务人员根据合同及相关协议可申请正式许可。该机器码不包含您所使用计算机的网卡、固件和主板等设备具体信息。
+1）The licensing mechanism of Kylin Operating System will generate the machine code to apply for the formal license through encryption mechanism and conversion according to the your computer's network card, firmware and motherboard; you can apply for formal license by sending the machine code to KylinSoft’s business personnel upon the contract and related agreements. The machine code does not include the details such as the network card, firmware, and motherboard of your computer.
 
-2）银河麒麟操作系统应用商店的服务器端，会根据您所使用计算机的CPU类型信息以及IP地址进行连接；实现您方便快捷使用应用商店。您所使用计算机的IP地址可能会记录在应用商店的服务器端系统的日志中。
+2）The server-side of Kylin Operating System application store will be connected according to the CPU and IP address of your computer for your convenience. The IP address of your computer may be logged in the server-side system of the application store.
 
-3）银河麒麟操作系统的升级更新，会根据您所使用计算机的IP地址进行连接；以便实现您确认是否更新升级系统。
+3）Kylin Operating System will be updated upon your computer's IP address; you can confirm whether to update the system.
 
-4）使用银河麒麟操作系统产品过程中，因业务往来及技术服务等您提供的电子邮箱、电话、姓名等个人信息。
+4）While using Kylin Operating System, we may ask you to provide us with certain personal data that can be used to contact you or offer technical support to you. Personal data includes email address, phone number, name, etc.
 
-5）银河麒麟操作系统可能提供生物识别相关功能，会存储身份鉴别相关的信息在您的机器。这部分信息我们不收集和上传服务器。
+5）Kylin Operating System may provide biometric-related functions and will store authentication-related information on your machine. We do not collect or spread this part of the information.
 
-以后银河麒麟操作系统产品升级过程中，如新增涉及个人信息收集部分，将及时更新本部分内容。
+In the future, when updating Kylin Operating System, more personal data needed will be informed to you in a timely manner.
 
-#### 2.使用涉及您的个人信息的情况
-我们严格遵守法律法规的规定及与用户的约定，将收集的信息用于以下用途。若我们超出以下用途使用您的信息，我们将再次向您进行说明，并征得您的同意。我们会将收集的信息用于以下用途：
+#### 2.Uses Your Personal Data
+Strictly complying with applicable laws, regulations, as well as our policies, we may use your personal data to:
 
-- **产品功能：**主要涉及产品许可机制、应用商店使用、系统更新维护、生物识别等需要。
+- **Provide product service:** product licensing mechanism, application store, system update, biometric-related functions，etc.
 
-- **安全保障：**为保障您使用银河麒麟操作系统的安全，我们会利用相关信息协助提升产品的安全性、可靠性和可持续服务。
+- **Ensure product security:** while using Kylin Operating System, we may use relevant information to improve the security, reliability and sustainable services of our products.
 
-- **与您沟通：**我们会利用收集的信息（例如你提供的电子邮件地址、电话等）直接与你沟通。例如，业务联系、技术支持或服务回访。
+- **Contact you to establish business relationships:** provide technical support and do service satisfaction survey.
 
-- **产品改进：**将收集的信息用于改进产品当前的易用性、缺陷以及提升产品用户体验等。
+- **Improve our product and service:** accessibility, defects, user experience, etc.
 
-#### 3.信息的分享及对外提供
-我们不会共享或转让你的个人信息至第三方，但以下情况除外：
+Comply with applicable laws, regulations, and industry standards as well as our policies.
 
-1）获取您的明确同意：经您事先同意，我们可能与第三方分享您的个人信息；
+We will contact you and ask for your permission if our use of your personal data is beyond the circumstances mentioned above.
 
-2）为实现外部处理的目的，我们可能会与关联公司或其他第三方合作伙伴（第三方服务供应商、承包商、代理、应用开发者等）分享您的个人信息，让他们按照我们的说明、隐私政策以及其他相关的保密和安全措施来为我们处理上述信息，并用于向您提供我们的服务，实现“如何收集和使用您的个人信息”部分所述目的。如我们与上述关联公司或第三方分享您的信息，我们将会采用加密、匿名化处理等手段保障您的信息安全。
+#### 3.How KylinSoft Discloses Your Personal Data
+KylinSoft promises not to disclose or transfer your personal data to third parties, except the following cases:
 
-3）我们不会对外公开披露所收集的个人信息，如必须公开披露时，我们会向您告知此次公开披露的目的、披露信息的类型及可能涉及的敏感信息，并征得您的明示同意。
+1）KylinSoft will share your personal data to third parties with your prior consent.
 
-4）随着我们业务的持续发展，我们有可能进行合并、收购、资产转让等交易，我们将告知相关情形，按照法律法规及不低于本声明所要求的标准继续保护或要求新的控制者继续保护您的个人信息。
+2）When authorizing relevant companies or other third-parties (service providers, contractors, agents, application developers, etc.) to do processing, KylinSoft may share your personal data with third parties so as to provide a better service to you. In accordance with our privacy policies and other relevant confidentiality measures, we will share your personal data with encryption, anonymity and other means to ensure the security of your information.
 
-5）我们可能基于法律要求或相关部门的执法要求披露您的个人信息。
+3）We will not disclose your personal data . If necessary, we will inform you the purpose and ways of disclosure and sensitive information that involved; we will get your prior consent.
 
-如我们使用您的个人信息，超出了与收集时所声称的目的及具有直接或合理关联的范围，我们将在使用您的个人信息前，再次向您告知并征得你的明示同意。
+4）As our business develops, your personal data can be disclosed if KylinSoft is involved in merger, acquisitions, asset transactions; we will inform you the relevant circumstances, and continue to protect your personal data in accordance with laws, regulations and standards required by this statement.
 
-根据相关法律法规以及国家标准，在以下情况下我们可能会收集、使用您的个人信息，征得授权同意的例外情况：
+5）We may disclose your personal data by corresponding laws and regulations.
 
-1）与国家安全、国防安全等国家利益直接相关的；
+If we use your personal data beyond those specified in this Statement, we will inform you again and obtain your prior consent.
 
-2）与公共安全、公共卫生、公众知情等重大公共利益直接相关的；
+In accordance with relevant laws, regulations and national standards, we may not disclose your personal data without your prior consent except the following cases:
 
-3）与犯罪侦查、起诉、审判和判决执行等直接相关的；
+1）Your personal data is provided in the interest of national security and national defense.
 
-4）出于维护您或其他个人的生命、财产等重大合法权益但又很难得到您本人同意的；
+2）Your personal data is provided in the interest of public safety, public health, public knowledge, etc..
 
-5）所收集的个人信息是您自行向社会公众公开的；
+3）Your personal data is provided for criminal investigation, prosecution, trial and execution.
 
-6）从合法公开披露的信息中收集的个人信息，如合法的新闻报道、政府信息公开等渠道；
+4）Your personal data is provided for protecting your life or other people’s lives, and your property.
 
-7）根据您要求签订和履行合同所必需的；
+5）You disclose your personal data on your own.
 
-8）用于维护所提供的产品或服务的安全稳定运行所必需的。如发现、处置产品或服务的故障；
+6）Your personal data is collected from public, such as news reports, government information disclosure, etc..
 
-9）出于公共利益开展统计或学术研究所必需，且其对外提供学术研究或描述的结果时，对结果中所包含的个人信息进行去标识化处理的；
+7）Your personal data is provided for signing and performance of contracts at your request.
 
-10）法律法规规定的其他情形。
+8）Your personal data is provided to check and solve the product malfunctions.
 
-### 二 如何存储和保护涉及您的个人信息
-#### 1.信息存储的地点
-我们会按照法律法规规定，将在中国境内收集和产生的个人信息存储于中国境内。
+9）Your personal data is provided for public statistical or academic research in which the data is de-identified.
 
-#### 2.信息存储的期限
-一般而言，我们仅为实现目的所必需的时间保留您的个人信息。记录在日志中的信息会按配置在一定期限保存及自动删除。
+10）Your personal data is provided in other cases corresponding by laws and regulations.
 
-当我们的产品或服务发生停止运营的情形时，我们将以通知、公告等形式通知您，在合理的期限内删除您的个人信息或进行匿名化处理，并立即停止收集个人信息的活动。
+### Ⅱ How KylinSoft Keep and Protect Your Personal Data
+#### 1.Location
+We will saves information collected about you in China by corresponding laws and regulations .
 
-#### 3.我们如何保护这些信息
-我们努力为用户的信息安全提供保障，以防止信息的丢失、不当使用、未经授权访问或披露。
+#### 2.Duration
+We will only retain your personal data for the period that is necessary to ensure we can fulfill the purposes outlined in this Statement. It will be saved in the log for a certain period and automatically deleted according to the configuration.
 
-我们将在合理的安全水平内使用各种安全保护措施以保障信息的安全。例如，我们会使用加密技术（例如，SSL /TLS）、匿名化处理等手段来保护您的个人信息。
+When our product stop it's service, we will notify you in the form of notice and announcements, and delete or anonymize your personal data within a reasonable period of time, and immediately stop collecting your information.
 
-我们建立专门的管理制度、流程和组织以保障信息的安全。例如，我们严格限制访问信息的人员范围，要求他们遵守保密义务，并进行审计。
+#### 3.How SC2C Protect Your Personal Data
+We take the utmost care to ensure the security of users' personal data, preventing the loss, misuse, unauthorized access or disclosure of information.
 
-#### 4.若发生个人信息泄露等安全事件
-我们会依法启动应急预案，阻止安全事件扩大，并以推送通知、公告等形式告知您安全事件的情况、事件可能对你的影响以及我们将采取的补救措施。我们还将按照法律法规和监管部门要求，上报个人信息安全事件的处置情况。
+We will use various manners, such as encryption (SSL / TLS) and anonymity, to ensure the security of your personal data. 
 
-### 三 如何管理您的个人信息
-如果担心因使用银河麒麟操作系统产品导致个人信息的泄露，您可根据个人及业务需要考虑暂停或不使用涉及个人信息的相关功能，如产品正式授权许可、应用商店、系统更新升级、生物识别等。
+We establish special management systems, processes and organizations to ensure the security of information. For example, we severely limit the access to information, and require them to conduct audits complying with confidentiality obligations.
 
-在使用银河麒麟操作系统之上使用第三方软件时，请注意个人隐私保护。
+#### 4.In the event of a security incident such as the disclosure of personal data
+We will initiate an emergency plan by corresponding laws and regulations to prevent the expansion of the security incident, and inform you the detail, possible impact and remedial measures in the form of notices, announcements, etc.. We will also report the security incidents by corresponding  laws, regulations and regulatory requirements.
 
-### 四 关于第三方软件的隐私说明
-您在使用银河麒麟操作系统之上安装或使用第三方软件时，第三方软件的隐私保护和法律责任由第三方软件自行负责。
+### Ⅲ How KylinSoft Handles Your Personal Data
+If you worry about the leak of your personal data while using Kylin Operating System, you may consider suspending or not using the relevant functions (such as product formal license, application store, system update,biometric-related functions,etc.)according to your personal and business needs.
 
-您在使用银河麒麟操作系统之上安装或使用第三方软件时，请您仔细阅读和审查对应的隐私声明或条款；注意个人隐私保护。
+When using third-party software on Kylin Operating System, please pay attention to your privacy protection.
 
-### 五 关于未成年人使用产品
-银河麒麟操作系统系列产品仅供成年人使用，如果您是未成年人，则需要您的监护人同意您使用本产品并同意相关服务条款。父母和监护人也应采取适当的预防措施保护未成年人，包括监督其对银河麒麟操作系统系列产品的使用。
+### Ⅳ Third Party Providers and Their Services
+KylinSoft has no control over the privacy and data protection policies of third parties, which are not governed by this Statement. 
 
-### 六 本声明如何更新
-我们保留适时更新本声明的权利，当本声明发生变更时，我们会通过产品安装过程或公司网站向您展示变更后的声明，只有在获取您的同意后，我们才会按照更新后的声明收集、使用、存储您的个人信息。
+When you install or use third-party software on the Kylin Operating System, please refer to the respective privacy protection policies of these third parties before submitting your personal information to third parties or through third-party content.
 
-### 七 如何联系我们
-如您对本声明存在任何疑问，或任何相关的投诉、意见，请联系麒麟软件客服热线400-089-1870、官方网站[www.kylinos.cn](http://www.kylinos.cn "官网")以及麒麟软件进行咨询或反映。您可以通过发送邮件至market@kylinos.cn方式与我们联系。
+### Ⅴ How KylinSoft Handles the Personal Data of Children
+Our products and services are targeted at adults. Children cannot create their own user account without the consent of a parent or guardian. Our products must be used under the permission and supervision of parents and guardians with appropriate precautions.
 
-受理您的问题后，我们会及时、妥善处理。一般情况下，我公司将在15个工作日内给予答复。
-本声明自更新之日起生效，同时提供中英文两种版本，以上任何条款如有歧义，以中文版本为准。
+### Ⅵ How to Update this Statement
+We reserve the right to update this statement in due course. When this statement is changed, we will display the changed statement to you on the company's website. Only after obtaining your consent, will we collect, use and store your personal information in accordance with the updated statement.
 
-最近更新日期：2019年12月18日
+### Ⅶ How to Contact KylinSoft
+If you have any doubts about this Statement or any other problems concerning privacy protection, please contact us via email(market@kylinos.cn); Customer Service Hotline 400-089-1870 or the official website (www.Kylinos.cn) .
+
+After receiving your questions, we will deal with it in a timely manner. Our company will usually give a reply within 15 working days.
+
+This statement will take effect since updated.Both Chinese and English versions are provided. In case of any ambiguity, the Chinese version shall prevail.
+
+Last Updated: December 28, 2019
 
 <br>
 
-**麒麟软件有限公司**
+**KylinSoft Corporation**
 
-**地址：**
+**Tel:** Tianjin（022）58955650  Beijing（010）51659955  Changsha（0731）88280170
 
-天津市滨海高新区塘沽海洋科技园信安创业广场3号楼（300450）
+**Fax:** Tianjin（022）58955651  Beijing（010）62800607 Changsha（0731）88280166
 
-北京市海淀区北四环西路9号银谷大厦20层（100190）
+**Website:** [www.kylinos.cn](http://www.kylinos.cn "Official")
 
-长沙市开福区三一大道156号工美大厦10楼（410073）
-
-**电话：**天津（022）58955650  北京（010）51659955  长沙（0731）88280170
-
-**传真：**天津（022）58955651  北京（010）62800607 长沙（0731）88280166
-
-**公司网站：**[www.kylinos.cn](http://www.kylinos.cn "官网")
-
-**电子邮件：**support@kylinos.cn
-
-**服务热线：**400-089-1870
+**E-mail:** support@kylinos.cn

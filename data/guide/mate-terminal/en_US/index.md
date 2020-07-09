@@ -1,69 +1,70 @@
-# 终 端
-## 概 述
-终端提供了在图形界面下的字符系统窗口，用户可通过开始菜单 > 所有程序 > 终端打开应用，主界面如下图所示。
+# Mate Terminal
+## Overview
+Mate Terminal provides a graphic interface of charaters system. Click "Start Menu" > "All App" > "Mate Terminal" to open it, and the main interface as shown below.
 
-![图 1 终端界面-big](image/1.png)
+![Fig 1 Mate terminal-big](image/1.png)
 <br>
 
-## 基本功能
-- 字符系统
-- 执行各种命令、脚本
-- 使用仅在终端运行的应用/服务
+## Basic Function
+- Charaters system
 
-## 高级设置
-### 单项设置
-仅对当前窗口产生影响，窗口关闭后立即失效。
+- Execute commands and scripts
 
-- 窗口标题
-
-点击菜单栏上的终端 > 设置标题，即可修改终端窗口的名称。如下图所示。
-
-![图 2 设置窗口标题](image/2.png)
-
-- 字符编码
-
-字符编码也称字集码，是把字符集中的字符编码作为指定集合中的某一对象，以便文本在计算机中显示和传递。
-
-点击菜单栏上的终端 > 设定字符编码，用户可对编码进行调整。
-
-![图 3 设置编码](image/3.png)
-
-在“添加或删除”中，可看到更多的编码选项。
-
-![图 4 更多编码](image/4.png)
-
-- 调整窗口大小
-
-点击菜单栏上的“查看”，可设置当前窗口全屏、放大、缩小。此处的放大/缩小，会连带着窗口中的文本一起放大/缩小。
-
-### 配置文件
-
-配置文件中的设置是永久生效的，并适用于所有新建窗口。应用自带了Default配置文件。用户可通过编辑 > 配置文件首选项，修改配置。
-
-![图 5 修改Default配置文件](image/5.png)
-
-也可通过文件 > 新建配置文件，或编辑 > 配置文件，基于某个配置文件创建新配置。
-
-![图 6 新建配置](image/6.png)
-<br>
-
-## 常见问题
-### 输出内容过多时，滚动查看不完全
-这是对回滚的列数做了限制导致的。
-
-选择编辑 > 配置文件首选项 > “滚动”标签页，在“回滚”处勾选“不限制”，这样就可以回滚到开头，完整查看。
+- Use the applications/services only running in terminal
 
 <br>
 
-## 附录
-### 快捷键
+## Advanced Function
+### Single Settings
+Only effective in the current window, and invalid after closing.
 
-|  快捷键 |  功能|
+- Title
+
+Click "Terminal" > "Set Title" to modify the current window's name, as shown in Fig 2.
+
+![Fig 2 Title](image/2.png)
+
+- Charater Encoding
+
+Click "Terminal" > "Set Charater Encoding" to adjust it.
+
+![Fig 3 Encoding](image/3.png)
+
+It provides multiple encodings in "Add or Remove".
+
+![Fig 4 More encodings](image/4.png)
+
+- Window Size
+
+Click "View" to set the current window "Full Screen", "Zoom In", "Zoom Out". And the words in this window will zoom in/out together.
+
+### Profile Preferences
+The settings in profile are permanent and apply to all new windows. There exist a profile "Default", and users can select "Edit" > "Profile Preferences" to modify it.
+
+![Fig 5 Modify Default profile](image/5.png)
+
+Click "File" > "New Profile" or "Edit" > "Profiles" to create a new configuration based on a existed profile. 
+
+![Fig 6 New profile](image/6.png)
+<br>
+
+## Q&A
+### The output content is too much to view them completely through scrolling
+It caused by a limit on the number of columns rolled back.
+
+Click "Edit" > "Profile Preferences" and check "Unlimited" in "Scrolling" tab.
+
+<br>
+
+## Appendix
+### Shortcut Key
+
+| Shortcut | Function |
 | :------------ | :------------ |
-| Ctrl+Alt+T  |  打开新终端窗口 |
-|  Ctrl+Shift+T | 在终端窗口中打开新标签页  |
-| Ctrl+D  | 关闭当前窗口/标签页  |
-| F11  |  全屏显示/退出全屏 |
+| Ctrl+Alt+T  |  Open a new ternimal window |
+|  Ctrl+Shift+T | Open a new tab in the current terminal window |
+| Ctrl+D  | Close the current window/tab |
+| F11  |  Fullscreen/Quit Fullscreen |
 
-更多快捷键可通过编辑 > 键盘快捷键查看或修改。
+More shortcuts can be seen or modified by "Edit" > "Keyboard Shortcuts".
 

@@ -1,178 +1,176 @@
-# 麒麟备份还原工具
-## 概 述
-备份还原工具用于对系统或用户数据进行备份和还原。该工具支持新建备份点，也支持在某个备份点上进行增量备份；支持将系统还原到某次备份时的状态，或者在保留某些数据的情况下进行部分还原。
+# Kylin Backup and Recovery Tool
+## Overview
+Kylin backup and recovery tool is used to backup and restore system or user data.
 
-备份还原工具有3种模式：常规模式、Grub备份还原、LiveCD还原。
+It supports to create new backup points, and incremental backup based on a backup point; as well as restore the system to the state at the time of a backup, and partial restore retaining user data.
+
+There are three modes: General, Grub backup and restore, LiveCD restore.
 
 <br>
 
-## 常规模式
-### 系统备份
-“系统备份”包括“高级系统备份”和“全盘系统备份”两个标签页，主界面如下图所示。
+## General
+### System Backup
+System backup includes "Advanced System Backup" and "Whole Disk Backup" two pages. The interface as shown below.
 
-![图 1-a 高级系统备份-big](image/1-a.png)
+![Fig 1-a Advanced system backup-big](image/1-a.png)
 
-![图 1-b 全盘系统备份-big](image/1-b.png)
+![Fig 1-b Whole disk backup-big](image/1-b.png)
 
-- **新建系统备份** —— 将除备份还原分区、数据分区外的整个系统进行备份。
+- **New System Backup** -- Backup the whole system except the backup partition and the data partition.
 
-选择新建后，点击 “开始备份” ，会弹出一个对话框，供用户指定在备份过程中需要忽略的分区、目录或文件，如下图所示。
+After selecting "New System Backup", click "Backup" and there will pop up a box allowing users to specify partitions, directories, or files those need to be ignored during backup, as shown below.
 
-![图 2 备份忽略目录或文件](image/2.png)
+![Fig 2 Ignore directories or files (backup)](image/2.png)
 
-目录指定说明（以/home为例）：
+Directory specification (take /home for example):
 
-|  路径 | 效果  |
+| Directory | Effect |
 | :------------ | :------------ |
-| /home/\*  |  忽略 /home 目录下的所有文件，会创建内容为空的 /home 目录 |
-| /home  | 忽略 /home 目录下的所有文件，并且不会创建 /home 目录  |
+| /home/\* |  Ignore all the files in /home, and an empty /home directory will be created |
+| /home | Ignore all the files in /home, and the /home directory won't be created |
 
 <br>
 
-当确定进入备份时，系统查找备份还原分区是否有足够的空间来进行本次备份。若没有足够空间，则会有报错弹窗；若有足够空间，则会依次给出提示。
+After clicking "Ok" to backup, the system will chech whether the backup partition has enough space for this operation. If no, it will pop up an 
+error reporting window; Conversely, it will pop up prompt in turn, as shown below.
  
-![图 3 备份提示](image/3.png)
+![Fig 3 Backup prompt-big](image/3.png)
 
-按“继续”按钮，则会在备份还原分区上新建一个备份。在备份过程中，会有如下所示的提示框。备份时间长短与备份内容大小有关。
+Click "Continue" to create a new backup in the backup partition. During backup, there will show a window as shown below. The length of backup time depends on the size of backup contents.
 
-![图 4 正在备份](image/4.png)
+![Fig 4 Backup now](image/4.png)
 
-“开始备份” 旁边的 “备份管理” ，可用来查看系统备份状态，删除无效备份。
+The button "Backup Management" near "Backup" is used to view the state of system backups and delete invalid backups.
 
-![图 5 系统备份管理-big](image/5.png)
+![Fig 5 Backup Management-big](image/5.png)
 
-- **系统增量备份** —— 在一个已有备份的基础上，继续进行备份。
+- **Update System Backup** -- Continue backup based on a existed backup.
 
-当选择增量备份后，会弹出一个列出了所有备份的对话框，供用户选择。
+After selecting this function, there will pop up a window to show all backups. Users can choose one from them.
 
-可以在失败的备份基础上进行增量备份。
+Incremental backup can be performed on the basis of a failed backup.
 
-- **全盘系统备份** —— 将除备份还原分区、数据分区外的整个系统进行备份，不提供用户指定忽略内容的功能。
+- **Whole Disk Backup** -- Backup the whole system except the backup partition and the data partition without the function of specifying contents to be ignored.
 
-### 系统还原
-“系统还原” 可将系统还原到以前一个备份时的状态，分为“高级系统还原”和“全盘系统还原”两个标签页，如下图所示。
+### System Restore
+System restore can restore the system to its previous backup state, and it include "Advanced System Restore" and "Whole Disk Restore" two pages, as  shown below.
 
-![图 6-a 高级系统还原-big](image/6-a.png)
+![Fig 6-a Advanced system restore-big](image/6-a.png)
 
-![图 6-b 全盘系统还原-big](image/6-b.png)
+![Fig 6-b Whole disk restore-big](image/6-b.png)
 
-点击“一键还原”，会弹出一个对话框，供用户指定在还原过程中需要忽略的分区、目录或文件，如下所示。还原成功后，系统会自动重启。
+Click "Restore" and there will pop up a box allowing users to specify partitions, directories, or files that need to be ignored during restore, as shown below. The system will restart automatically after the restore is successfull.
 
-![图 7 还原忽略目录或文件](image/7.png)
+![Fig 7 Ignore directories or files (restore)](image/7.png)
 
-目录指定说明（以/home为例）：
+Directory specification (take /home for example):
 
-| 路径  | 效果  |
+| Directory | Effect |
 | :------------ | :------------ |
-| /home/\*  | 不还原 /home 下的文件，会创建 /home 目录  |
-| /home  | 不还原 /home 下的文件，也不会创建 /home 目录  |
+| /home/\*  | Don't restore the files in /home, but create an empty /home directory |
+| /home  | Neither restore the files in /home nor create /home directory |
 
 <br>
 
-- 若勾选了“保留用户数据”，则在还原时，不会删除现有系统中比备份多出来的文件。
+- If "retaining user data" is checked, the system won't delete the files more than the backup.
 
-- “全盘系统还原”，将系统还原到某个备份状态，不提供用户指定忽略内容的功能。
+- "Whole Disk Restore" means restore the system to its previous backup state without the function of specifying contents to be ignored.
 
-### 数据备份与数据还原
-- **数据备份** —— 对用户指定的目录或文件进行备份，功能与系统备份相似。
+### Data Backup and Data Recovery
+- **Data Backup** -- Backup the directories or files specified by user, and the function is similar to system backup.
 
-![图 8 数据备份主界面-big](image/8.png)
+![Fig 8 Data backup-big](image/8.png)
 
-选择“新建数据备份”后，点击“开始备份”，会弹出一个对话框，供用户指定需要备份的目录或文件，如图所示，会对 /home/kylin/ 目录中的内容进行备份。
+After selecting "New Data Backup", click "Backup" and there will pop up a box allowing users to specify directories or files those need to be backuped. As shown below, it will backup the contents in /home/kylin/.
 
-![图 9 指定数据备份目录](image/9.png)
+![Fig 9 Specify directories or files](image/9.png)
 
-“开始备份”旁边的“备份管理”，可用来查看数据备份状态，删除无效备份。
+The button "Backup Management" near "Backup" is used to view the state of data backups and delete invalid backups.
 
-- **数据增量备份** —— 在某个数据备份的基础上，增加需要备份的数据。
+- **Update Data Backup** -- Add new data to a existed data backup.
 
-- **数据还原** —— 还原到某个数据备份的状态，功能与系统还原相似。
+- **Data Recovery** -- Recovery the data to its previous backup state, and the function is similar to system restore.
 
-![图 10 数据还原主界面-big](image/10.png)
+![Fig 10 Data recovery-big](image/10.png)
 
-完成还原后，系统会自动重启。
+The system will restart automatically after recovery is complete.
 
-### 操作日志
-记录了在备份还原工具上的所有操作，主界面如图所示。可通过“上一页” 、“下一页”按钮进行翻页查看。
+### Log Records
+Record all operations on backup and recovery tool, and the interface as shown below. Turn pages by clicking "Up" and "Next" button.
 
-![图 11 操作日志主界面-big](image/11.png)
+![Fig 11 Log records-big](image/11.png)
 
-### Ghost镜像
-Ghost镜像安装，是指将一台机器上的系统生成一个镜像文件，然后使用该镜像文件来安装操作系统。要使用该功能，首先需要有一个备份。
+### Ghost Image
+Install from ghost image means generate an image file from an installed system, and then use this image file to copy the same state system to other computers. To use this function, a backup is needed first.
 
-#### 创建Ghost镜像
-选择菜单“Ghost镜像”，主界面如下图所示，包含了几点提示。
+#### Create Ghost Image
+The interface as shown below, including some tips.
 
-![图 12 Ghost镜像主界面-big](image/12.png)
+![Fig 12 Ghost image-big](image/12.png)
 
-点击“一键Ghost”后，会弹出当前所有备份的列表；用户选择一个备份，点击“确定”后，开始制作Ghost镜像，如下图所示。
+Click "Ghost" and there will pop up a window to show all backups. Users select one of them and click "Ok" to start creating, as shown below.
 
-（注：名称中的体系架构与硬件平台有关。）
- 
-![图 13 Ghost镜像选择制作](image/13.png)
+(Tips: The architecture in name depends on hardware platform.)
 
-镜像文件名的格式为“主机名+体系架构+备份名称.kyimg”，其中，备份名称只保留了数字。
+![Fig 13 Ghost image select and create-big](image/13.png)
 
-#### 安装Ghost镜像
-1）把制作好的Ghost镜像（存在于 /ghost 目录下）拷贝到U盘等可移动存储设备。
+Image filename is "computer name + architecture + backup name.kyimg", and only numbers in the backup name are retained.
 
-2）进入LiveCD系统后，接入可移动设备。
+#### Install from Ghost Image
+1) Copy the ghost image (saved in /ghost) to U-disk or other removable storage device.
 
-3）若设备没有自动挂载，可通过终端，手动将设备挂载到/mnt目录下：
+2) Enter livecd system and insert the removable device.
+
+3) If it doesn't mount automatically, users can manually mount device through terminal:
 
 sudo mount /dev/sdb1 /mnt
 
-通常情况下，移动设备为/dev/sdb1，可使用命令“fdisk -l”查看。
+Removable device is /dev/sdb1 by general, and it can be seen by command "fdisk -l".
 
-4）双击图标“安装Kylin-Desktop-V10”，开始安装引导。在“安装方式”中选择“从Ghost镜像安装”，并找到移动设备中的Ghost镜像文件。后续安装步骤可参考安装手册。如下图所示。
+4) Double click the install button to start installation guide. Select "Install from ghost image" in Installation Type, and find the ghost image in the removable device, as shown below. The follow-up steps can refer to installation manual.
 
-（注：名称中的体系架构与硬件平台有关。）
+(Tips: The architecture in name depends on hardware platform.)
 
-![图 14 Ghost安装-big](image/14.png)
+![Fig 14 Ghost install-big](image/14.png)
 
-如果制作镜像文件时带有数据盘，则在下一步“安装类型”中也要勾选“创建数据盘”。
-
-<br>
-
-## Grub备份还原
-
-（注：截图中的日期、版本号仅供参考。）
-
-1）开机启动系统时，在Grub菜单选择“系统备份还原模式”。
-
-![图 15 Grub菜单](image/15.png)
-
-2）在此处可选择备份或者还原，如下图所示。若出错，可重启系统再次进行备份或还原。
-
-![图 16 备份、还原模式选择](image/16.png)
-
-
-- 备份模式：系统立即开始备份，屏幕上会给出提示。
-
-对于备份模式而言，等同于常规模式下的“新建系统备份”。如果备份还原分区没有足够空间，则无法成功备份。
-
-- 还原模式：系统立即开始还原到最近一次的成功备份状态屏幕上会给出提示。
-
-对于还原模式而言，等同于常规模式下的“一键还原”。如果备份还原分区上没有一个成功的备份，则系统不能被还原。
+If there exists data partition when creating ghost image file, it needs to check "Create Data Partition" in the next step.
 
 <br>
 
-## LiveCD还原
-通过系统启动盘进入操作系统后，点击“开始菜单” > “所有软件” > “麒麟备份还原工具”打开软件，主界面如下图所示。
+## Grub Backup and Recovery
 
-![图 19 LiveCD还原主界面-big](image/19.png)
+(Tips: The date and time in the figure is for reference only.)
 
-其系统还原和操作日志可参考常规模式下的对应功能。
+1) Select "Backup and Restore" in grub menu when start-up.
+
+2) Backup or restore are both allowed to select here. If there is an error, restart the system and try again.
+
+- Backup mode: The system will start to backup immediately and the prompt will display on the screen.
+
+For backup mode, is smilar to "Whole Disk Backup" in general mode. If there is no enough space, the backup will fail.
+
+- Restore mode: The system will start to restore to the lastest successful backup state, and the prompt will display on the screen.
+
+For restore mode, is smilar to "Whole Disk Restore" in general mode. If there is no successful backup, the system will not be restored.
 
 <br>
 
-## 常见问题
-### 无法使用备份还原工具？
-在安装操作系统时，必须要选中“创建备份还原分区”，备份还原工具才能使用。
+## LiveCD Restore
+Enter livecd system and click "Start Menu" > "All App" > "Kylin Backup and Recovery Tool" to open the application, as shown below.
+
+![Fig 15 Interface in LiveCD-big](image/15.png)
+
+System restore an log records can refer to the function in general mode.
 
 <br>
 
-### 可以对data分区和backup分区进行备份吗？
-数据分区（/data）保存的内容与系统关系不大，且通常容量很大，因此不建议对数据分区进行备份和还原。
+## Q&A
+### Can not use backup and recovery tool?
+In order to use this tool, "Create Backup Partition" must be checked when install system.
 
-备份还原分区（/backup）用于保存和恢复其他分区的数据，故此分区的数据不允许备份或还原。
+<br>
+
+### Backup data/backup partition is allowed?
+The contents in data partition are not important to system and have a large capacity, so it's not necessary to backup /data.
+
+Backup partition is used to save and recovery other partitions data, so /backup is not allowed to be backuped or restored.

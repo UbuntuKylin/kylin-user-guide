@@ -1,184 +1,108 @@
-# 生物特征认证
-## 概 述
-生物特征认证比传统的口令密码更为方便、安全，它不需要记住复杂的密码，每个人的指纹具有与其他人不同的唯一性和在一定时期内不变的稳定性，不易伪造和假冒，利用指纹认证技术进行身份认定，具备安全、可靠、准确的特点。生物特征认证可以支持登录，锁屏，以及授权认证。
+# Biometric Manager
+## Overview
+Biometric certification is safer and more convient than tranditional passwords. It doesn't need to remember the complex passwords.
 
-想要默认使用生物认证，则需要满足4个条件：
+Because each person's fingerprint is different from others', it's not easy to forge or fake. Authenticated by fingerprint is more reliable and accurate.
 
-1）确认设备是已连接状态以及驱动状态为打开。
+It supports login, lock screen and authorized certification.
 
-2）系统组件使用生物特征进行认证开关状态为打开。
+In order to use biometric certification, four conditions need to be meet:
 
-3）设置连接设备为默认设备。
+1) The device is linked and the driver is opened.
 
-4）使用该设备的用户录入了指纹。
+2) Biometrics for authentication is opened.
 
-![图 1 生物特征管理工具主界面-big](image/1.png)
+3) The linked device is set as default.
 
-生物识别管理工具指纹认证时的解锁界面如图2所示。
+4) The user's fingerprint has been recorded by this device already.
 
-![图 2 锁屏使用指纹认证的方式解锁](image/2.png)
+![Fig 1 Biometric manager-big](image/1.png)
+
+## Main Interface
+As shown in Fig 1, there are four biometric feature pages: FingerPrint, FingerVein, Iris, and VoicePrint.
+
+"System components are certified using biometrics" is the switch to turn on biometrics. 
+
+![Fig 2 Biometrics switch-big](image/2.png)
+
+The left side shows the type of biometric, and the right side shows the devices corresponding this type, including device name, device status, driver status and default. 
+
+If want to use one of them, users need to link the device first and check the default box. As shown in Fig 3.
+
+![Fig 3 Device status](image/3.png)
+
+## Biometric Features
+Fingerprint, fingervein, iris and voiceprint pages are similar. Take fingerprint for example here.
+
+The interface as shown in Fig 4:
+
+- Left side shows the driver, and the informations about this driver are shown on the upper right side, including short name, verify type, bus type, etc..
+
+- The middle right side shows fingerprint list, including index and name.
+
+- The bottom right side includes enroll, verify, search,delete and clean functions.
+
+![Fig 4 Fingerprint page-big](image/4.png)
+
+### Enroll
+Clicking "Enroll" and inputting the name, the authentication through password window will pop up, as shown in Fig 5.
+
+![Fig 5 Authentication before enroll-big](image/5.png)
+
+The enroll window as shown in Fig 6. It needs to repeat pressing and lifting finger 5 times.
+
+![Fig 6 Fingerprint enroll](image/6.png)
+
+### Verify
+Selecting a fingerprint and clicking "Verify", it can ensure the accuracy and availability of this fingerprint. The result window will show up when the process finishes.
+
+![Fig 7 Verify result](image/7.png)
+
+### Search
+It can retrieve the index and name of the currently validated fingerprint.
+
+![Fig 8 Search](image/8.png)
+
+### Delete and Clean
+**Delete**: Delete the selected fingerprint.
+
+**Clean**: Empty all the fingerprints of current user.
+
+## Usage Scenarios
+- Login and Lock Screen:
+
+![Fig 9 Login-big](image/9.png)
+
+If there exists 2 more devices, users can choose one of them to use.
+
+- Authentication:
+
+![Fig 10 Authentication in graphic](image/10.png)
+
+![Fig 11 Authentication in terminal](image/11.png)
 <br>
 
-## 基本功能
-### 生物识别管理工具
-生物识别管理工具是由麒麟团队开发的一款用于管理生物识别的辅助软件。主要功能括生物识别认证管理、生物识别服务管理、生物识别设备驱动管理以及生物识别特征的管理等功能。
+## Q&A
+### Stuck in lock screen and unable to enter password
 
-如图3，在管理工具主界面上方，分别显示了主界面，指纹，指静脉，虹膜和声纹。代表管理工具有五个页面。
+1) Switch to teminal by "Ctrl + Alt + F1"
 
-![图 3 生物识别管理工具主页面-big](image/3.png)
+2) Enter the user name and password
 
-#### 主界面
-主界面上方，“系统组件使用生物特征进行认证”是开启生物特征的开关，只有打开这个开关，才能够使用生物认证。
+3) Excute command "killall ukui-screensaver-dialog"
 
-![图 4 生物特征状态开关](image/4.png)
+4) Switch back by "Ctrl + Alt + F7" (If multiple users logged in, the command may be Ctrl + Alt + F8 and so on)
 
-主界面左侧显示了生物特征的类型，右侧显示的是该类型所对应的驱动设备，显示内容包括设备名称、设备状态是否已连接、驱动状态，以及是否为默认设备。
+### Unable to use biometric authentication
 
-当想要使用某种生物特征设备时，需要先连接上该设备，然后将该设备设置为默认设备，这样就可以使用该设备进行生物特征认证了，如下图所示。
+1) Open biometric manager
 
-![图 5 设备状态信息](image/5.png)
+2) Ensure the switch is on, the device is linked, and the driver status is opened
 
-#### 指静脉页面
-指静脉，指纹，虹膜和声纹的页面在这里是类似的，这里主要以指静脉页面作为例子介绍，其它的几种生物特征类型基本也和这里一致。
+3) Check the device is set as default
 
-指静脉页面截图如图6所示:
+4) Make sure there exits one biometric feature at least
 
-- 左侧显示的是指纹驱动，右侧上半部分显示的是该驱动所对应的信息。包括设备简称，验证类型，总线类型等等。
-
-- 右侧中间显示的是这静脉列表，包括指静脉的名称和序列号。
-
-- 右侧下半部分分别录入，验证，搜索，删除，清空按钮，将在下一小节进行介绍。
-
-![图 6 指静脉页面-big](image/6.png)
-
-#### 指静脉的录入及其它操作
-
-- **录 入**
-
-在指静脉页面点击录入，可以进行指静脉的录入，点击录入之后，就会出现图7所示页面，需要输入密码进行验证，在输入密码验证成功之后，就开始录入指静脉了，录入界面如图8所示，之后按照弹出的窗口上面的文字信息，进行指静脉录入即可。在录入成功之后，就可以在指静脉列表里看到对应的指静脉。
-
-![图 7 指静脉录入时需要授权-big](image/7.png)
-
-![图 8 录入指静脉窗口-big](image/8.png)
-
-- **验 证**
-
-选中需要验证的指静脉，然后点击验证，皆可以进行指纹的验证，验证完成后会提示是否验证成功。
-
-![图 9 指静脉验证](image/9.png)
-
-- **搜 索**
-
-点击搜索，然后录入指静脉，可以快速的检索到当前验证的指静脉所对应的序列号和特征名称。
-
-![图 10 指静脉搜索](image/10.png)
-
-- **删除和清空**
-
-选中需要删除的指静脉，然后点击删除，在进行授权操作成功之后，就可以删除所选中的指静脉了。清空操作不需要选择指静脉，点击清空并进行授权成功之后，就会清空当前用户所对应的所有指静脉了。
-
-### 登 录
-
-登录应用提供了进入桌面的图形化界面，需要用户输入用户的密码进行登录，在登录成功以后，就可以启动桌面环境，进入桌面了。使用密码登录的界面如图11所示。
-
-当然，在开启生物特征认证之后，也可以使用验证生物特征进行认证。在满足生物认证的所有条件时，登录会默认使用生物认证。如果此时没有设置默认设备，则会默认使用密码认证，但是登录界面上会显示一个生物识别按钮，点击该按钮就可以切换到生物认证的界面。
-
-登录界面使用生物特征认证的界面如图12所示，可以通过点击密码认证回到使用密码登录的界面。
-
-![图 11登录使用密码认证](image/11.png)
-
-![图 12 登录使用生物特征认证](image/12.png)
-
-当插入的生物特征设备数目为2个或2个以上时，会显示其它设备按钮，点击该按钮可以选择其它设备，其它设备界面如下图所示。
-
-![图 13 选择设备](image/13.png)
-
-### 锁 屏
-
-在系统进入空闲时，如果控制面板设置了显示锁屏。则会在系统进入空闲时启动锁屏程序，需要用户输入密码解锁后才能进入桌面。锁屏和登录的界面和操作基本类似，下面是锁屏时的截图，分别为输入密码解锁和使用生物认证解锁。
-
-![图 14 锁屏输入密码进行解锁](image/14.png)
-
-![图 15 锁屏使用生物认证解锁-big](image/15.png)
-
-### 授 权
-
-当使用需要验证用户身份的程序时，会弹出一个授权窗口，需要输入密码.认证通过以后就可以使用需要特权的程序,授权界面如图16所示。
-
-在满足使用生物特征的条件下，也可以使用生物特征进行认证。界面图如图17所示。按照界面上的提示进行操作即可。
-
-![图 16 输入密码进行授权](image/16.png)
-
-![图 17 使用生物认证的方式进行授权](image/17.png)
-
-### sudo命令
-
-当满足使用生物特征进行认证的条件时，sudo命令也可以使用生物特征进行认证，按照文字提示进行生物特征的验证即可。
-
-![图 18 sudo命令使用生物认证](image/18.png)
-<br>
-
-## 常见问题
-### 锁屏卡住，无法输入密码
-
-1）通过Ctrl + Alt + F1切换到字符终端。
-
-2）输入锁屏时所在的用户的用户名和密码。
-
-3）执行命令“killall ukui-screensaver-dialog”。
-
-4）通过Ctrl + Alt + F7切回图形界面（如果登录了多个用户，也可能是Ctrl + Alt + F8等）。
-
-<br>
-
-### 无法使用生物认证
-
-1）打开生物识别管理工具。
-
-2）分别确认生物识别开关是否打开，设备是否连接，驱动状态是否打开。
-
-3）查看设备是否设置为默认设备。
-
-4）查看是否录入了指纹。
-
-<br>
-
-### 如何关闭生物认证
-
-只需要打开生物识别管理工具，将主界面上方的系统组件使用生物特征状态开关关闭即可。
-
-<br>
-
-## 附录
-### 目前支持的指纹设备列表
-
-|生物特征|	厂商|	型号	|子型号
-| :------------ | :------------ | :------------ | :------------ |
-|指静脉	|圣点科技	|UD650	|UD650
-|虹膜	|北京无线电计量测试研究所|	A210|	A210
-|指纹(共 21 个驱动,支持10 个厂商的 122 款设备)|	杭州城章科技|	R301	|R301
-|	|亚略特生物识别 科技有限公司|	EM03	|EM03
-||	|	EM1600	|EM1600
-|||		TL-FRT610	|TL-FRT610
-	||AuthenTec	|AES1610	|0x1600
-		|||AES1660	|0x2660,0x2680,0x2683,0x2686, 0x2689,0x268c,0x268f,0x2682, 0x2685,0x2688,0x268b,0x268e, 0x2681,0x2684,0x2687,0x268a, 0x268d,0x2691
-		|||AES2500/AES2501	|0x2500,0x2580
-		|||AES2550/AES2810	|0x2550,0x2810
-		|||AES2660|	0x2660,0x2682,0x2685,0x2688, 0x268b,0x268e,0x2680,0x2683, 0x2686,0x2689,0x268c,0x268f, 0x2681,0x2684,0x2687,0x268a, 0x268d,0x2691
-|||		AES3500	|0x5731
-	|||	AES4000	|0x5501
-	||ElanTech	|Fingerprint Sensor	|0x0903,0x0c02,0x0c05,0x0c08, 0x0c0b,0x0c0e,0x0c11,0x0c14, 0x0c17,0x0c1a,0x0c1d,0x0c20, 0x0c23,0x0c26,0x0c29,0x0c2c, 0x0c2f,0x0c32,0x0c01,0x0c04, 0x0c07,0x0c0a,0x0c0d,0x0c10, 0x0c13,0x0c16,0x0c19,0x0c1c, 0x0c1f,0x0c22,0x0c25,0x0c28, 0x0c2b,0x0c2e,0x0c31,0x0907, 0x0c03,0x0c06,0x0c09,0x0c0c, 0x0c0f,0x0c12,0x0c15,0x0c18, 0x0c1b,0x0c1e,0x0c21,0x0c24, 0x0c27,0x0c2a,0x0c2d,0x0c30, 0x0c33
-||	EgisTec(aka Lightuning)	|ES603	|0x0603
-	||Secugen|	FDU 2000	|0x0300
-	||UPEK	|Eikon 2|	0x2016
-	|||	TouchStrip Sensor-Only|	0x1000, 0x1001
-	|||	TouchChip/Eikon Touch 300|	0x2015, 0x3001
-|||		TouchChip Fingerprint Coprocessor	|0x2020
-|||		TouchStrip|	0x2016
-	||Digital Persona	|U.are.U 4000/4000B/4500|	0x00bc,0x00bd,0x0007,0x0008, 0x00bb,0x00ca,0x000a
-	||Veridicom	|5thSense|	0x0110
-	||Validity|	VFS0050	|0x0050
-		|||VFS101|	0x0001
-	|||	VFS301	|0x0005,0x0008
-		|||VFS5011	|0x0010,0x0011, 0x0017,0x0018
+### How to close it
+Change the switch on the main interface to "Closed".
 
