@@ -174,10 +174,12 @@ void GuideWidget::initUI()
     {
         if(localeNew.language()==QLocale::Chinese)
         {
+            m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
             m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
         }
         else
         {
+            m_pTitleLabel->setText("Kylin User Guide");
             m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index_en_US.html"));
         }
     }
