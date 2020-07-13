@@ -47,8 +47,8 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
     this->isTopLevel();
     //this->resize(850,640);
     this->resize(1000,750);
-    this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
-    //this->setWindowIcon(QIcon::fromTheme("kylin-user-guide"));
+//    this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
+    this->setWindowIcon(QIcon::fromTheme("kylin-user-guide"));
     this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
 //    QPalette palette;
@@ -174,10 +174,12 @@ void GuideWidget::initUI()
     {
         if(localeNew.language()==QLocale::Chinese)
         {
+            m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
             m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
         }
         else
         {
+            m_pTitleLabel->setText("Kylin User Guide");
             m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index_en_US.html"));
         }
     }
