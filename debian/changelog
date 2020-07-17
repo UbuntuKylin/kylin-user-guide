@@ -1,3 +1,121 @@
+kylin-user-guide (1:1.0.1.0003-2) v100; urgency=medium
+
+  * modify the contents and pics.
+  * solve the problem English version still exists some Chinese charaters.
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 17 Jul 2020 08:52:15 +0800
+
+kylin-user-guide (1:1.0.1.0003-1) v100; urgency=medium
+
+  * modify kydroid -- support video cards.
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 09 Jul 2020 18:37:49 +0800
+
+kylin-user-guide (1:1.0.1.0003) v100; urgency=medium
+
+  * add ksc-defender and remove pammanage.
+  * update kydroid.
+  * modify some details. 
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 09 Jul 2020 14:47:31 +0800
+
+kylin-user-guide (1:1.0.1.0003~rc1) v100; urgency=medium
+
+  * Modify the icon name.
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 03 Jul 2020 11:29:37 +0800
+
+kylin-user-guide (1:1.0.1.0002) v100; urgency=medium
+
+  * Modify some details. 
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 03 Jul 2020 09:38:50 +0800
+
+kylin-user-guide (1:1.0.1.0001) v100; urgency=medium
+
+  * Use new code.
+  * Add english contents.
+  * Modify all content.
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 02 Jul 2020 17:00:23 +0800
+
+kylin-user-guide (1:1.0.0.0027) v100; urgency=medium
+
+  * Add FAQ in system part.
+  * Remove redundant files brought by version 0025.
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 18 Jun 2020 15:28:34 +0800
+
+kylin-user-guide (1:1.0.0.0025) v100; urgency=medium
+
+  * add Function Comments
+
+ -- tangguang <tangguang@kylinos.cn>  Sat, 23 May 2020 19:14:34 +0800
+
+kylin-user-guide (1:1.0.0.0024-2) v100; urgency=medium
+
+  * update the sources.list picture for software-center.
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 08 May 2020 11:07:06 +0800
+
+kylin-user-guide (1:1.0.0.0024) v100; urgency=medium
+
+  * update kybackup. 
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 08 May 2020 10:39:37 +0800
+
+kylin-user-guide (1:1.0.0.0023) v100; urgency=medium
+
+  * adjust the mate-system-monitor. 
+
+ -- quyanying <quyanying@kylinos.cn>  Wed, 29 Apr 2020 10:39:52 +0800
+
+kylin-user-guide (1:1.0.0.0022) v100; urgency=medium
+
+  * remove content menu
+
+ -- xiaoyiwu <xiaoyiwu@ubuntukylin.com>  Tue, 28 Apr 2020 21:21:33 +0800
+
+kylin-user-guide (1:1.0.0.0021) v100; urgency=medium
+
+  * remove the F1 shortcut in gparted. 
+
+ -- quyanying <quyanying@kylinos.cn>  Tue, 28 Apr 2020 17:26:05 +0800
+
+kylin-user-guide (1:1.0.0.0020) v100; urgency=medium
+
+  * add mate-search-tool to tools.
+  * add disk I/O to mate-system-monitor.
+  * update the pic of gparted.
+  * update audacious and hotkey. 
+
+ -- quyanying <quyanying@kylinos.cn>  Mon, 27 Apr 2020 18:54:33 +0800
+
+kylin-user-guide (1:1.0.0.0019) v100; urgency=medium
+
+  * update some app's icon to be the same as start-menu. 
+  * add network setting and multiple IP setting in kylin-control-center.
+
+ -- quyanying <quyanying@kylinos.cn>  Sat, 18 Apr 2020 12:12:47 +0800
+
+kylin-user-guide (1:1.0.0.0018) v100; urgency=medium
+
+  * modify the shortcut-key of gparted. 
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 16 Apr 2020 14:38:43 +0800
+
+kylin-user-guide (1:1.0.0.0017) v100; urgency=medium
+
+  * copy zh_CN to en_US. 
+
+ -- quyanying <quyanying@kylinos.cn>  Wed, 15 Apr 2020 09:49:59 +0800
+
+kylin-user-guide (1:1.0.0.0016) v100; urgency=medium
+
+  * Modify the part of gparted -> uuid.
+
+ -- quyanying <quyanying@kylinos.cn>  Tue, 14 Apr 2020 17:08:26 +0800
+
 kylin-user-guide (1:1.0.0.0014) v100; urgency=medium
 
   * update the icon of kysec-ui-pkexec.
@@ -7,12 +125,22 @@ kylin-user-guide (1:1.0.0.0014) v100; urgency=medium
 
 kylin-user-guide (1:1.0.0.0013) v100; urgency=medium
 
-  * 0010 to 0013:
-  * change boxmanage to box-manager.
-  * add the description for software-center's sources.list.
   * update the icon of box-manager again.
 
  -- quyanying <quyanying@kylinos.cn>  Thu, 02 Apr 2020 18:00:23 +0800
+
+kylin-user-guide (1:1.0.0.0012) v100; urgency=medium
+
+  * update the icon of box-manager. 
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 02 Apr 2020 17:51:48 +0800
+
+kylin-user-guide (1:1.0.0.0011) v100; urgency=medium
+
+  * change boxmanage to box-manager. 
+  * add the description for software-center's sources.list.
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 02 Apr 2020 16:20:27 +0800
 
 kylin-user-guide (1:1.0.0.0010) v100; urgency=medium
 

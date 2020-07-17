@@ -81,37 +81,37 @@ function qt_jumpApp(appName)
 }
 
 var date ={
-    audacious:"2020年7月8日",
-    audio_recorder:"2020年7月8日",
-    biometric_manager:"2020年7月8日",
-    box_manager:"2020年7月8日",
-    brasero:"2020年7月8日",
-    caja:"2020年7月8日",
-    claws_mail:"2020年7月8日",
-    engrampa:"2020年7月8日",
-    eom:"2020年7月8日",
-    faq:"2020年7月8日",
-    filezilla:"2020年7月8日",
-    gparted:"2020年7月8日",
-    hot_key:"2020年7月8日",
-    ksc_defender:"2020年7月8日",
-    kybackup:"2020年7月8日",
-    kydroid:"2020年7月8日",
-    kylin_control_center:"2020年7月8日",
-    kylin_ipmsg:"2020年7月8日",
-    kylinOS:"2020年7月8日",
-    kylin_video:"2020年7月8日",
-    kysec_ui_pkexec:"2020年7月8日",
-    mate_system_monitor:"2020年7月8日",
-    mate_terminal:"2020年7月8日",
-    remmina:"2020年7月8日",
-    simple_scan:"2020年7月8日",
-    technical_assistance:"2020年7月8日",
-    tools:"2020年7月8日",
-    ubiquity:"2020年7月8日",
-    ubuntu_kylin_software_center:"2020年7月8日", 
-    ukui:"2020年7月8日",
-    youker_assistant:"2020年7月8日",
+    audacious:"2020年7月17日",
+    audio_recorder:"2020年7月17日",
+    biometric_manager:"2020年7月17日",
+    box_manager:"2020年7月17日",
+    brasero:"2020年7月17日",
+    caja:"2020年7月17日",
+    claws_mail:"2020年7月17日",
+    engrampa:"2020年7月17日",
+    eom:"2020年7月17日",
+    faq:"2020年7月17日",
+    filezilla:"2020年7月17日",
+    gparted:"2020年7月17日",
+    hot_key:"2020年7月17日",
+    ksc_defender:"2020年7月17日",
+    kybackup:"2020年7月17日",
+    kydroid:"2020年7月17日",
+    kylin_control_center:"2020年7月17日",
+    kylin_ipmsg:"2020年7月17日",
+    kylinOS:"2020年7月17日",
+    kylin_video:"2020年7月17日",
+    kysec_ui_pkexec:"2020年7月17日",
+    mate_system_monitor:"2020年7月17日",
+    mate_terminal:"2020年7月17日",
+    remmina:"2020年7月17日",
+    simple_scan:"2020年7月17日",
+    technical_assistance:"2020年7月17日",
+    tools:"2020年7月17日",
+    ubiquity:"2020年7月17日",
+    kylin_software_center:"2020年7月17日", 
+    ukui:"2020年7月17日",
+    kylin_assistant:"2020年7月17日",
 };
 
 function onclickButton(str)
@@ -311,11 +311,27 @@ function addhtmlapp()
                 var NameAndDir=getapp_name(dirname);
                 var dir=NameAndDir
                 realname=dirname.replace(dirname[0],dirname[0].toUpperCase())
-                while(realname.search("-") !== -1)
+                /*while(realname.search("-") !== -1)
                 {
                     realname=realname.replace(realname[realname.indexOf("-")+1],realname[realname.indexOf("-")+1].toUpperCase())
                     realname=realname.replace("-"," ")
-                }
+                }*/
+		if(realname.search("-") !== -1){
+			realname = realname.split("-")
+			if(realname.length == 2){
+				realname[1]=realname[1].replace(realname[1][0],realname[1][0].toUpperCase())
+			}
+			else if(realname.length == 3){
+				realname[1]=realname[1].replace(realname[1][0],realname[1][0].toUpperCase())
+				realname[2]=realname[2].replace(realname[2][0],realname[2][0].toUpperCase())			
+			}
+			else if(realname.length == 4){
+				realname[1]=realname[1].replace(realname[1][0],realname[1][0].toUpperCase())
+				realname[2]=realname[2].replace(realname[2][0],realname[2][0].toUpperCase())
+				realname[3]=realname[3].replace(realname[3][0],realname[3][0].toUpperCase())
+			}
+			realname = realname.join("-")
+		}
             }
             var element=document.getElementById("app");
             var para=document.createElement("div")
