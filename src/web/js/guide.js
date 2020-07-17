@@ -483,12 +483,12 @@ function getDocTop(mdFile, mdData) {
     renderer.image = function(href, title, text){
         var hrefX2 = href;
         //console.log(hrefX2);
-        if (devicePixelRatio >= 1.5 && href.indexOf('.svg') == -1) {
-            var path = href.split('.');
-            var ext = path.pop();
-//            hrefX2 = `${path.join('.')}x2.${ext}`;
-            hrefX2 =  path.join('.')+ "x2." + ext;
-        }
+//         if (devicePixelRatio >= 1.5 && href.indexOf('.svg') == -1) {
+//             var path = href.split('.');
+//             var ext = path.pop();
+// //            hrefX2 = `${path.join('.')}x2.${ext}`;
+//             hrefX2 =  path.join('.')+ "x2." + ext;
+//         }
         if (text == "")
 //            return `<img src="${hrefX2}" data-src="${href}" alt="${text}" />`;
             return '<img src=\"' + hrefX2 + '\" data-src=\"'+ href + '\" alt=' + text +  '/>';
