@@ -336,13 +336,6 @@ The options are described in table below.
 <br>
 
 ## FAQ
-### Taskbar not showing?
-（1）Open the terminal by < Ctrl + Alt + T >.
-
-（2）Do "sudo mate-panel --reset" to restart the Taskbar.
-
-（3）If it's still not effective, please do "reboot".
-
 
 ### Can’t login to the system after locking the screen?
 
