@@ -95,18 +95,18 @@ var date ={
     // kysec_ui_pkexec:"2019年11月13日",
     // kybackup:"2019年11月13日",
     // audacious:"2019年11月13日",
-    eom :"2019年11月13日",
+    eom :"2020年3月20日",
     // kylin_update_manager:"2019年11月13日",
-    remmina:"2019年11月13日",
+    remmina:"22020年3月20日",
     // vino_preferences:"2019年11月13日",
     // claws_mail:"2019年11月13日",
     // system_config_printer:"2019年11月13日",
     // simple_scan:"2019年11月13日",
     // mate_system_monitor:"2019年11月13日",
     // gparted:"2019年11月13日",
-    engrampa:"2019年11月13日",
+    engrampa:"2020年3月20日",
     // audio_recorder:"2019年11月13日",
-    mate_terminal:"2019年11月13日",
+    mate_terminal:"2020年3月20日",
     tools:"2020年3月13日",
     technical_assistance:"2020年3月24日",
 };
@@ -499,12 +499,12 @@ function getDocTop(mdFile, mdData) {
     renderer.image = function(href, title, text){
         var hrefX2 = href;
         //console.log(hrefX2);
-        if (devicePixelRatio >= 1.5 && href.indexOf('.svg') == -1) {
-            var path = href.split('.');
-            var ext = path.pop();
-//            hrefX2 = `${path.join('.')}x2.${ext}`;
-            hrefX2 =  path.join('.')+ "x2." + ext;
-        }
+//         if (devicePixelRatio >= 1.5 && href.indexOf('.svg') == -1) {
+//             var path = href.split('.');
+//             var ext = path.pop();
+// //            hrefX2 = `${path.join('.')}x2.${ext}`;
+//             hrefX2 =  path.join('.')+ "x2." + ext;
+//         }
         if (text == "")
 //            return `<img src="${hrefX2}" data-src="${href}" alt="${text}" />`;
             return '<img src=\"' + hrefX2 + '\" data-src=\"'+ href + '\" alt=' + text +  '/>';
