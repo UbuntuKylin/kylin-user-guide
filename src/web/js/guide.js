@@ -95,18 +95,18 @@ var date ={
     // kysec_ui_pkexec:"2019年11月13日",
     // kybackup:"2019年11月13日",
     // audacious:"2019年11月13日",
-    // eom :"2019年11月13日",
+    eom :"2019年11月13日",
     // kylin_update_manager:"2019年11月13日",
-    // remmina:"2019年11月13日",
+    remmina:"2019年11月13日",
     // vino_preferences:"2019年11月13日",
     // claws_mail:"2019年11月13日",
     // system_config_printer:"2019年11月13日",
     // simple_scan:"2019年11月13日",
     // mate_system_monitor:"2019年11月13日",
     // gparted:"2019年11月13日",
-    // engrampa:"2019年11月13日",
+    engrampa:"2019年11月13日",
     // audio_recorder:"2019年11月13日",
-    // mate_terminal:"2019年11月13日",
+    mate_terminal:"2019年11月13日",
     tools:"2020年3月13日",
     technical_assistance:"2020年3月24日",
 };
@@ -292,10 +292,26 @@ function addhtmlapp()
                 var NameAndDir=getapp_name(dirname);
                 var dir=NameAndDir
                 realname=dirname.replace(dirname[0],dirname[0].toUpperCase())
-                while(realname.search("-") !== -1)
-                {
-                    realname=realname.replace(realname[realname.indexOf("-")+1],realname[realname.indexOf("-")+1].toUpperCase())
-                    realname=realname.replace("-"," ")
+                // while(realname.search("-") !== -1)
+                // {
+                //     realname=realname.replace(realname[realname.indexOf("-")+1],realname[realname.indexOf("-")+1].toUpperCase())
+                //     realname=realname.replace("-"," ")
+                // }
+                if(realname.search("-") !== -1){
+                    realname=realname.split("-")
+                    if(realname.length == 2){
+                        realname[1] = realname[1].replace(realname[1][0],realname[1][0].toUpperCase())
+                    }
+                    else if(realname.length == 3){
+                        realname[1] = realname[1].replace(realname[1][0],realname[1][0].toUpperCase())
+                        realname[2] = realname[2].replace(realname[2][0],realname[2][0].toUpperCase())
+                    }
+                    else if(realname.length == 4){
+                        realname[1] = realname[1].replace(realname[1][0],realname[1][0].toUpperCase())
+                        realname[2] = realname[2].replace(realname[2][0],realname[2][0].toUpperCase())
+                        realname[3] = realname[3].replace(realname[3][0],realname[3][0].toUpperCase())
+                    }
+                    realname = realname.join(" ")
                 }
             }
             var element=document.getElementById("app");
