@@ -435,13 +435,13 @@ In this section,users can find details about the version, version number, instal
 ![Fig. 54 about native system-big](image/54.png)
 
 ## FAQ
-## Can’t start? 
+### Can’t start? 
 No response when I click the "Control Center" button on the "Start Menu"?
 
 Press Ctrl+Alt+t on the keyboard to open the command line terminal, type ukui-control-center and then press Enter.
 
 View error output.
-## Can’t change the configuration? 
+### Can’t change the configuration? 
 After modifying the control state, the control immediately reverts to its pre-modification state?
 
 It is highly likely that the reason for the above problems is due to a question of authority. Use the following methods to fix the problem.
