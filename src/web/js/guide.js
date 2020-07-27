@@ -1,6 +1,6 @@
 require.config({
    paths: {
-     "marked": "lib/node_modules/marked/marked.min",
+     "marked": "/usr/share/javascript/marked/marked.min",
    }
  });
 require(['marked'], function (markedSetCustom){
@@ -292,10 +292,26 @@ function addhtmlapp()
                 var NameAndDir=getapp_name(dirname);
                 var dir=NameAndDir
                 realname=dirname.replace(dirname[0],dirname[0].toUpperCase())
-                while(realname.search("-") !== -1)
-                {
-                    realname=realname.replace(realname[realname.indexOf("-")+1],realname[realname.indexOf("-")+1].toUpperCase())
-                    realname=realname.replace("-"," ")
+                // while(realname.search("-") !== -1)
+                // {
+                //     realname=realname.replace(realname[realname.indexOf("-")+1],realname[realname.indexOf("-")+1].toUpperCase())
+                //     realname=realname.replace("-"," ")
+                // }
+                if(realname.search("-") !== -1){
+                    realname=realname.split("-")
+                    if(realname.length == 2){
+                        realname[1] = realname[1].replace(realname[1][0],realname[1][0].toUpperCase())
+                    }
+                    else if(realname.length == 3){
+                        realname[1] = realname[1].replace(realname[1][0],realname[1][0].toUpperCase())
+                        realname[2] = realname[2].replace(realname[2][0],realname[2][0].toUpperCase())
+                    }
+                    else if(realname.length == 4){
+                        realname[1] = realname[1].replace(realname[1][0],realname[1][0].toUpperCase())
+                        realname[2] = realname[2].replace(realname[2][0],realname[2][0].toUpperCase())
+                        realname[3] = realname[3].replace(realname[3][0],realname[3][0].toUpperCase())
+                    }
+                    realname = realname.join(" ")
                 }
             }
             var element=document.getElementById("app");
