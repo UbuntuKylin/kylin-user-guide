@@ -1,6 +1,6 @@
 require.config({
    paths: {
-     "marked": "lib/node_modules/marked/marked.min",
+     "marked": "/usr/share/javascript/marked/marked.min",
    }
  });
 require(['marked'], function (markedSetCustom){
