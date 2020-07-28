@@ -13,7 +13,7 @@ Copyright: 2018, Tianjin KYLIN Information Technology Co., Ltd.
 License: GPL-3+
 
 Files: src/web/js/lib/node_modules/marked/*
-Copyright: /usr/share/kylin-user-guide/web/js/lib/node_modules/marked/LICENSE.md
+Copyright: 2011-2018, Christopher Jeffrey. (MIT License) 
 License: MIT
 
 Files: src/web/js/lib/node_modules/marked/require/*
