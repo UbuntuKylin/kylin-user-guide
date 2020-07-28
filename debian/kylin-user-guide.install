@@ -1,0 +1,6 @@
+#data /usr/share/kylin-user-guide/
+usr/bin/*
+usr/share/icons/*
+src/web /usr/share/kylin-user-guide/
+src/data/kylin-user-guide.desktop /usr/share/applications/
+src/data/kylin-user-guide-daemon.desktop /etc/xdg/autostart/

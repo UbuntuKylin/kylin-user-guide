@@ -1,4 +1,0 @@
-data /usr/share/kylin-user-guide/
-src/web /usr/share/kylin-user-guide/
-debian/kylin-user-guide.desktop /usr/share/applications/
-debian/kylin-user-guide-daemon.desktop /etc/xdg/autostart/
