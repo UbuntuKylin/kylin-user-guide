@@ -33,6 +33,8 @@ Package: kylin-user-guide-common
 Architecture: all
 Depends: ${misc:Depends},
          ${shlibs:Depends},
+Breaks:kylin-user-guide (<< 1.0.0-1+0730.1)
+Replaces:kylin-user-guide (<< 1.0.0-1+0730.1)
 Description: Smanual for UKUI desktop environment (common files)
  Kylin User Guide is a simple and lightweight guide written by Qt5/js/md,
  It has the characteristics of easy maintenance and simple interface
