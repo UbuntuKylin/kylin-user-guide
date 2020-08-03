@@ -2,14 +2,12 @@
 ## Overview
 Record audio, and set audio source, recording file format, etc..
 
-Click Start Menu > All App > Audio Recorder to open this application.
-
-![Fig 1 Audio recorder](image/1.png)
+![Fig 1 Audio Recorder](image/1.png)
 <br>
 
 ## Basic Function
 ### Recording
-Input the file name at the "File" box, and click "Start recording", as shown below.
+Input the file name at the "File" box, and click "Start recording", as shown in Fig 2.
 
 The recording files are saved in "Audio" folder at the user's home directory.
 
@@ -26,7 +24,7 @@ Click the fold menu of Audio settings to set the following items.
 ### Format
 There provides various of recording file formats to be selected.
 
-![Fig 4 File formats](image/4.png)
+![Fig 4 File format](image/4.png)
 
 ### Additional settings
 

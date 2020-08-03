@@ -40,10 +40,10 @@ List the autostart softwares existed in the system already: left shows the name 
  
 ![Fig 6 Autostart-big](image/6.png)
 
-### Default App
+### Default Application
 Set the default app to open the corresponding files.
  
-![Fig 7 Default app-big](image/7.png)
+![Fig 7 Default application-big](image/7.png)
 
 ### Time Dates
 There are two ways to synchronize time:
@@ -88,7 +88,7 @@ There are 3 options to be selected, and only can choose one.
 ![Fig 13 Network agent-big](image/13.png)
 
 ### Monitor
-The interface as shown below.
+The interface as shown in Fig 14.
  
 ![Fig 14 Monitor-big](image/14.png)
 
@@ -98,14 +98,14 @@ The interface as shown below.
 
 - There only exists one primary monitor.
 
-### Power Management
-- The power interface as shown below.
+### Power Manager
+- The power interface as shown in Fig 15.
 
 (Tips: The options depend on the platforms, and the picture only for reference.)
 
 ![Fig 15 Power-big](image/15.png)
 
-- The screensaver interface as shown below.
+- The screensaver interface as shown in Fig 16.
  
 ![Fig 16 Screensaver-big](image/16.png)
 

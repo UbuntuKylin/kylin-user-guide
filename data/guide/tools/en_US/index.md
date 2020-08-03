@@ -1,11 +1,11 @@
 # Tools
 ## Cheese
-Take photos and record videos. Users can add some visual effects. The main interface as shown below.
+Take photos and record videos. Users can add some visual effects. The main interface as shown in Fig 1.
 
 ![Fig 1 Cheese](image/1.png)
 
 ### Basic Function
-- ![](image/icon22.png): The settings of photos, videos and burst.
+- ![](image/icon1.png): The settings of photos, videos and burst.
 
 - "Cheese Menus" > "Preferences" : The detail settings of webcam, image and capture.
 
@@ -16,13 +16,13 @@ Take photos and record videos. Users can add some visual effects. The main inter
 | Shortcut | Function |
 | :------------ | :------------ |
 | F11 |	Fullscreen |
-| Ctrl+Q | Quit |
+| Ctrl + Q | Quit |
 
 <br>
 <br>
 
 ## Mate Calculator
-Provide 4 modes of the calculate to meet the needs of conventional calculation. The main interface as shown below.
+Provide 4 modes of the calculate to meet the needs of conventional calculation. The main interface as shown in Fig 2.
 
 ![Fig 2 Mate Calculator](image/2.png)
 
@@ -45,17 +45,17 @@ Click "Mode" to change the mode of the calculator.
 
 | Shortcut | Function |
 | :------------ | :------------ |
-| Ctrl+C | Copy |
-| Ctrl+V | Paste |
-| Ctrl+Z | Undo |
-| Shift+Ctrl+Z | Redo |
-| Ctrl+Q | Quit |
+| Ctrl + C | Copy |
+| Ctrl + V | Paste |
+| Ctrl + Z | Undo |
+| Shift + Ctrl + Z | Redo |
+| Ctrl + Q | Quit |
 
 <br>
 <br>
 
 ## Screenshot
-It can grab the whole desktop, the current window, and a selected area. The main interface as shown below.
+It can grab the whole desktop, the current window, and a selected area. The main interface as shown in Fig 6.
 
 ![Fig 6 Screenshot](image/6.png)
 
@@ -71,7 +71,7 @@ It can grab the whole desktop, the current window, and a selected area. The main
 <br>
 
 ## Onboard
-Show a soft keyboard on the screen, and users can input by it. The main interface as shown below.
+Show a soft keyboard on the screen, and users can input by it. The main interface as shown in Fig 7.
 
 ![Fig 7 Onboard-big](image/7.png)
 
@@ -80,30 +80,29 @@ Icons and Function:
 
 | Icon | Function | Icon | Function |
 | :------------ | :------------ | :------------ |:------------ |
-|![](image/icon43.png)| Open/Close caps|![](image/icon50.png)|Open caps once
-|![](image/icon51.png)|	Open Alt|![](image/icon45.png)|	Backspace
-|![](image/icon46.png)|	Enter	|![](image/icon53.png)|	Hide onboard
-|![](image/icon47.png)|	Toggle click helpers |![](image/icon54.png)| Move onboard
-|![](image/icon48.png)|	Main keyboard |![](image/icon55.png)| Number block and snippets
-|![](image/icon49.png)|	Sinppets||||
+|![](image/icon2.png)| Open/Close caps|![](image/icon3.png)|Open caps once
+|![](image/icon4.png)| Open Alt |![](image/icon5.png)|Backspace
+|![](image/icon6.png)| Hide onboard |![](image/icon7.png)|Toggle click helpers	
+|![](image/icon8.png)| Move onboard |![](image/icon9.png)|Main keyboard
+|![](image/icon10.png)| Number block and snippets |![](image/icon11.png)|Sinppets
 
 <br>
 
 #### Click Helpers
-Click "![](image/icon47.png)" to toggle click helpers, as shown below.
+Click "![](image/icon7.png)" to toggle click helpers, as shown in Fig 8.
 
 ![Fig 8 Toggle click helpers](image/8.png)
 
 |Icon| Function | Icon | Function |
 | :------------ | :------------ | :------------ |:------------ |
-|![](image/icon57.png)|	Middle click |![](image/icon60.png)| Right click
-|![](image/icon58.png)| Double click |![](image/icon61.png)| Drag click
-|![](image/icon59.png)| Activate hover click||||
+|![](image/icon12.png)|	Middle click |![](image/icon13.png)| Right click
+|![](image/icon14.png)| Double click |![](image/icon15.png)| Drag click
+|![](image/icon16.png)| Activate hover click|||
 
 <br>
 
 #### Preferences
-Click ![](image/icon63-o.png) to set the layout, window, theme, etc. of Onboard.
+Click ![](image/icon17.png) to set the layout, window, theme, etc. of Onboard.
 
 ![Fig 9 Preferences-big](image/9.png)
 
@@ -125,7 +124,7 @@ Click "Select more options" to open the menu. Users can "Remove"/"Add" various o
 
 ![Fig 12 Various options](image/12.png)
 
-The available options as shown below.
+The available options as shown in Fig 13.
 
 ![Fig 13 Available options](image/13.png)
 <br>
@@ -162,24 +161,27 @@ Icon and Function:
 
 | Icon | Function | Icon | Function |
 | :------------ | :------------ | :------------ | :------------ |
-|![](image/icon1.png)| Search for nearby devices |![](image/icon5.png)| Add this device to list
-|![](image/icon2.png)| Pair with device |![](image/icon6.png)| Mark/Unmark as trusted |
-|![](image/icon3.png)| Run the assistant |![](image/icon7.png)|Remove this device from list 
-|![](image/icon4.png)| Send a file |||
+|![](image/icon18.png)| Search for nearby devices |![](image/icon22.png)| Add this device to list
+|![](image/icon19.png)| Pair with device |![](image/icon23.png)| Mark/Unmark as trusted |
+|![](image/icon20.png)| Run the assistant |![](image/icon24.png)|Remove this device from list 
+|![](image/icon21.png)| Send a file |||
 
 <br>
 
 #### Pair  
-Click “![](image/icon2.png)” to pair with the selected device.
+1) Click “![](image/icon18.png)” to search devices.
 
-![Fig 17 Pairing](image/17.png)
+2) Click"![](image/icon19.png)" or right click the selected device, and choose "Pair".
 
-Showing "![](image/icon2.png)" means pair successfully.
+![Fig 17 Pairing confirm](image/17.png)
+
+3) Showing pair icon means pair successfully.
 
 ![Fig 18 Pair successfully](image/18.png)
 
 ### Advanced Function
 - Preferences
+
 Click "Adapter" > "Preferences" to set the name and the visibility.
 
 ![Fig 19 Preferences](image/19.png)
@@ -188,3 +190,19 @@ Click "Adapter" > "Preferences" to set the name and the visibility.
 Click "View" to choose the parts shown on the interface, and the settings of plugins and local services.
 
 ![Fig 20 View options](image/20.png)
+<br>
+<br>
+
+## Atril Document Viewer
+To view and read pdf files. As shown in Fig 21.
+
+![Fig 21 Atril-big](image/21.png)
+
+### Basic Function
+- Click "![](image/icon25.png)" and "![](image/icon26.png)" to page-up and page-down.
+
+- It provides page layout size options, as shown in Fig 22.
+
+![Fig 22 Layout size](image/22.png)
+
+- The "View" on the menu bar can set the layout of the whole interface, and through the "File" can see the pdf's property.

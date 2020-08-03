@@ -2,12 +2,11 @@
 ## Overview
 EOM is an images view tool, and it supports various of picture's formats, as well as enlarge/slideshow/fullscreen, etc.. The main interface as shown in Fig 1.
 
-![Fig 1 Eyes of Mate image viewer](image/1.png)
+![Fig 1 Eyes of Mate Image Viewer-big](image/1.png)
 <br>
 
 ## Basic Function
-
-Icons and Function:
+Icon and Function:
 
 | Icon | Function | Icon | Function |
 | :------------ | :------------ | :------------ | :------------ |

@@ -1,8 +1,8 @@
 # Mate Terminal
 ## Overview
-Mate Terminal provides a graphic interface of charaters system. Click "Start Menu" > "All App" > "Mate Terminal" to open it, and the main interface as shown below.
+Mate Terminal provides a graphic interface of charaters system. Click "Start Menu" > "All App" > "Mate Terminal" to open it, and the main interface as shown in Fig 1.
 
-![Fig 1 Mate terminal-big](image/1.png)
+![Fig 1 Mate Terminal-big](image/1.png)
 <br>
 
 ## Basic Function
@@ -61,10 +61,10 @@ Click "Edit" > "Profile Preferences" and check "Unlimited" in "Scrolling" tab.
 
 | Shortcut | Function |
 | :------------ | :------------ |
-| Ctrl+Alt+T  |  Open a new ternimal window |
-|  Ctrl+Shift+T | Open a new tab in the current terminal window |
-| Ctrl+D  | Close the current window/tab |
-| F11  |  Fullscreen/Quit Fullscreen |
+| Ctrl + Alt + T  |  Open a new ternimal window |
+| Ctrl + Shift + T | Open a new tab in the current terminal window |
+| Ctrl + D  | Close the current window/tab |
+| F11 | Fullscreen/Quit Fullscreen |
 
 More shortcuts can be seen or modified by "Edit" > "Keyboard Shortcuts".
 

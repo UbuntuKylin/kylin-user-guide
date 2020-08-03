@@ -11,8 +11,6 @@ There are three icons: personal folder, "Computer", "Trash" by default. Double c
 
 Right-clicking "Computer" and selecting "Properties", it can show the current system version, kernel version, activation and other related informations, as shown in Figure 2.
 
-(Tips: The picture is only for reference.) 
-
 ![Fig 2 "Computer" > "Properties"-big](image/2.png)
 
 ### Right-click Menu
@@ -38,17 +36,17 @@ The individual components as shown below.
 
 | Component | Decsription |
 | :------------ | :------------ |
-| ![](image/icon4.png)  | Start menu: Open the system menu to find applications and files |
-| ![](image/icon5.png)  | Firefox Web Browser: Provide a convenient and safe way to access the Internet |
-| ![](image/icon6.png)  | File Browser: Browse and manage documents in the system |
+| ![](image/icon1.png)  | Start menu: Open the system menu to find applications and files |
+| ![](image/icon2.png)  | Firefox Web Browser: Provide a convenient and safe way to access the Internet |
+| ![](image/icon3.png)  | File Browser: Browse and manage documents in the system |
 | Window Area | The blank part in the middle of the horizontal bar. Display running programs, opened documents, and allow to close windows, top windows, etc. |
-| ![](image/icon7.png)  | Tray Menu: Include settings for input method, volume, network connection, date and time |
+| ![](image/icon4.png)  | Tray Menu: Include settings for input method, volume, network connection, date and time |
 | Show Desktop | The button is on far right. Minimize all windows and return to the desktop; Click again will restore the windows |
 
 <br>
 
 #### Advanced Function
-Right click the taskbar, as shown below.
+Right click the taskbar, as shown in Fig 4.
  
 ![Fig 4 Right-click menu of the taskbar](image/4.png)
 
@@ -59,7 +57,7 @@ The "Settings" window as shown in Fig 5. And select "Reset Panel" in the right-c
 ### Workspace
 Users can place the current works classification in different workspaces. Uncheck "Hide workspace" in the taskbar settings and the workspace will show up.
 
-There are 2 rows and 2 columns by default. Click to switching, and right click to setting, as shown in Fi6.
+There are 2 rows and 2 columns by default. Click to switching, and right click to setting, as shown in Fig 6.
    
 ![Fig 6 Workspace menu and settings](image/6.png)
 <br>
@@ -109,7 +107,7 @@ Right click Start Menu icon, and the options as shown in Fig 8.
  
 ![Fig 8 Right-click menu of the start menu](image/8.png)
 
-Select "Property" to open the setting window, as shown below.
+Select "Property" to open the setting window, as shown in Fig 9.
  
 ![Fig 9 Property of the start menu](image/9.png)
 
@@ -120,7 +118,7 @@ Select "Property" to open the setting window, as shown below.
 ![Fig 10 Category Menu](image/10.png)
 
 ### Application
-Right click an application in the start menu, and the pop up menu as shown below.
+Right click an application in the start menu, and the pop up menu as shown in Fig 11.
  
 ![Fig 11 Right-click menu of application](image/11.png)
 
@@ -158,7 +156,7 @@ It will pop up a window and users can choose shutdown or reboot as needed.
 The system will shutdown or reboot immediately without poping up window.
 
 ### Timing Shutdown
-Users can set the time and frequency of shutdown, as shown below.
+Users can set the time and frequency of shutdown, as shown in Fig 14.
  
 ![Fig 14 Timing shutdown](image/14.png)
 <br>

@@ -57,6 +57,6 @@ It shows the communication recorders, and click one recorder to open the corresp
 <br>
 
 ## About
-Click "About" in the main interface to see the details of Kylin Ipmsg, as shown below.
+Click "About" in the main interface to see the details of Kylin Ipmsg, as shown in Fig 10.
 
 ![Fig 10 About](image/10.png)

@@ -16,7 +16,7 @@ In order to use biometric certification, four conditions need to be meet:
 
 4) The user's fingerprint has been recorded by this device already.
 
-![Fig 1 Biometric manager-big](image/1.png)
+![Fig 1 Biometric Manager-big](image/1.png)
 
 ## Main Interface
 As shown in Fig 1, there are four biometric feature pages: FingerPrint, FingerVein, Iris, and VoicePrint.

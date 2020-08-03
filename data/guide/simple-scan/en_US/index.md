@@ -2,7 +2,7 @@
 ## Overview
 Simple Scan is a tool for scanning files. The main interface as shown in Fig 1.
 
-![Fig 1 Simple scan](image/1.png)
+![Fig 1 Simple Scan](image/1.png)
 <br>
 
 ## Basic Function
@@ -19,7 +19,7 @@ Click "![](image/icon6.png)" or selecting "Page" > "Crop". There provides multip
 
 ## Advanced Function
 ### Reorder Pages
-Click "Document" > "Reorder Pages" to set the way to arrange scanning files, as shown below.
+Click "Document" > "Reorder Pages" to set the way to arrange scanning files, as shown in Fig 4.
 
 ![Fig 4 Reorder pages](image/4.png)
 
@@ -45,19 +45,19 @@ Please make sure the scanner is connected and opened.
 
 | Shortcut | Function
 | :------------ | :------------ |
-| Ctrl+N | Create a new scanning file |
-| Ctrl+1 | Scan the current page |
-| Ctrl+F | Scan all pages |
+| Ctrl + N | Create a new scanning file |
+| Ctrl + 1 | Scan the current page |
+| Ctrl + F | Scan all pages |
 | Esc | Stop the current mission |
-| Ctrl+S | Save the current scanning file |
-| Shift+Ctrl+S	| Save as |
-| Ctrl+E | Send the current page by email |
-| Ctrl+P | Print the current page |
-| Ctrl+Q | Quit |
+| Ctrl + S | Save the current scanning file |
+| Shift + Ctrl + S | Save as |
+| Ctrl + E | Send the current page by email |
+| Ctrl + P | Print the current page |
+| Ctrl + Q | Quit |
 | [ | Rotate left |
 | ] | Rotate right |
 | < | Move to left |
 | > | Move to right |
-| Ctrl+C | Copy |
+| Ctrl + C | Copy |
 | Delete |Delete |
 
