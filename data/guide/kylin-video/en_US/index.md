@@ -1,6 +1,6 @@
 # Kylin Video
 ## Overview
-Kylin Video is a video playing application based on MPlayer and MPV. The main interface is simple and easy-to-use, as shown in Fig 1.
+Kylin Video is a video playing application based on MPlayer and MPV. The main interface as shown in Fig 1.
 
 ![Fig 1 Kylin Video-big](image/1.png)
 
@@ -8,37 +8,37 @@ The supported formats as shown below.
 
 | Category | Supported Formats |
 | :------------ | :------------ |
-| Video	|(*.avi *.vfw *.divx *.mpg *.mpeg *.m1v *.m2v *.mpv *.dv *.3gp *.mov *.mp4 *.m4v *.mqv *.dat *.vcd *.ogg *.ogm *.ogv *.ogx *.asf *.wmv *.bin *.iso *.vob *.mkv *.nsv *.ram *.flv *.rm *.swf *.ts *.rmvb *.dvr-ms *.m2t *.m2ts *.mts *.rec *.wtv *.f4v *.hdmov *.webm *.vp8 *.bik *.smk *.m4b *.wtv *.part )
-| Audio |(*.mp3 *.ogg *.oga *.wav *.wma *.aac *.ac3 *.dts *.ra *.ape *.flac *.thd *.mka *.m4a *.opus )
-| Subtitle |	(*.srt *.sub *.ssa *.ass *.idx *.txt *.smi *.rt *.utf *.aqt *.vtt )
+| Video	| *.avi *.vfw *.divx *.mpg *.mpeg *.m1v *.m2v *.mpv *.dv *.3gp *.mov *.mp4 *.m4v *.mqv *.dat *.vcd *.ogg *.ogm *.ogv *.ogx *.asf *.wmv *.bin *.iso *.vob *.mkv *.nsv *.ram *.flv *.rm *.swf *.ts *.rmvb *.dvr-ms *.m2t *.m2ts *.mts *.rec *.wtv *.f4v *.hdmov *.webm *.vp8 *.bik *.smk *.m4b *.wtv *.part |
+| Audio | *.mp3 *.ogg *.oga *.wav *.wma *.aac *.ac3 *.dts *.ra *.ape *.flac *.thd *.mka *.m4a *.opus |
+| Subtitle | *.srt *.sub *.ssa *.ass *.idx *.txt *.smi *.rt *.utf *.aqt *.vtt |
 
 <br>
 
 ## Basic Function
-Icons and function:
+Icon and function:
 
 | Icon | Function | Icon | Function |
 | :------------ :| :------------ | :------------ | :------------ |
-|![](image/icon1.png)| Advanced function |![](image/icon3.png)| Play |
-|![](image/icon9.png)| Previous |![](image/icon4.png)| Pause |
-|![](image/icon10.png)| Next |![](image/icon5.png)| Volume |
-|![](image/icon11.png)|	Full screen |![](image/icon6.png)| Playlist |
+|![](image/icon1.png)| Advanced function |![](image/icon2.png)| Play |
+|![](image/icon3.png)| Previous |![](image/icon4.png)| Stop |
+|![](image/icon5.png)| Next |![](image/icon6.png)| Volume |
+|![](image/icon7.png)| Full screen |||
 
 ### Full Screen
-Click the icon ”![](image/icon11.png)” at the bottom right corner or double-click the screen to open full screen mode.
+Click the icon ”![](image/icon7.png)” at the bottom right corner or double-click the screen to open full screen mode.
 
 ### Playlist
-Click the icon “![](image/icon6.png)” at the bottom right corner to view the playlist, add or remove files, as shown in Figure 2.
+Click the icon “![](image/icon8.png)” at the bottom right corner to view the playlist, add or remove files, as shown in Fig 2.
 
 ![Fig 2 Playlist-big](image/2.png)
 
 #### Right-click Menu
-Right click a selected file in the playlist, and the options as shown below.
+Right click a selected file in the playlist, and the options as shown in Fig 3.
 
 ![Fig 3 Right-click menu-big](image/3.png)
 
 #### Add
-Click “Add” in the play list to select files, as shown in Figure 4. Multiple choices by pressing Ctrl at the same time.
+Click “Add” in the play list to select files, as shown in Fig 4. Multiple choices by pressing Ctrl at the same time.
 
 ![Fig 4 Add file-big](image/4.png)
 
@@ -47,7 +47,7 @@ Click “Add” in the play list to select files, as shown in Figure 4. Multiple
 
 ![Fig 5 Empty playlist](image/5.png)
 
-- Way 2: The mouse hovers on a file in the playlist, and then click the appeared icon, as shown in Figure 6.
+- Way 2: The mouse hovers on a file in the playlist, and then click the appeared icon, as shown in Fig 6.
 
 ![Fig 6 Delete a file-big](image/6.png)
 
@@ -61,7 +61,7 @@ Click the icon "![](image/icon1.png)" at the top right corner of the main interf
 ![Fig 7 Preference](image/7.png)
 
 ### General
-Select playback engine: MPlayer or MPV. And accroding to the needs, customize that whether pause when minimized, preview when video is playing. As shown in Figure 7.
+Select playback engine: MPlayer or MPV. And accroding to the needs, customize that whether pause when minimized, preview when video is playing. As shown in Fig 7.
 
 ### Video
 Set output driver and other options, such as postprocessing, video equalizer, rendering, etc.. As shown in Fig 8. 
@@ -74,7 +74,7 @@ According to users needs, it can customize volume (global volume, volume control
 ![Fig 9 Audio-big](image/9.png)
 
 ### Performance
-Customize cache (local files, streams) and decode, as shown in Figure 10.
+Customize cache (local files, streams) and decode, as shown in Fig 10.
 
 ![Fig 10 Performance](image/10.png)
 
@@ -84,8 +84,6 @@ Hardware decoding formats including None, Auto, vdapu、vaapi、vaapi-copy.
 Set autoload subtitles files (*.srt, *.sub, etc.) -- same name as movie, all subs containing movie name, all subs in directory.
 
 Dedault encoding is UTF-8, and users can check autodetect for this language.
-
-As shown below.
 
 ![Fig 11 Subtitles](image/11.png)
 

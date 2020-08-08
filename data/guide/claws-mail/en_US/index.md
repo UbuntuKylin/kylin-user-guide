@@ -1,8 +1,8 @@
 # Claws Mail
 ## Overview
-Claws mail is a network application based on GTK, and it has high speed and configurability. The main interface as shown in Fig 1.
+Claws Mail is a network application based on GTK, and it has high speed and configurability. The main interface as shown in Fig 1.
  
-![Fig 1 Claws mail-big](image/1.png)
+![Fig 1 Claws Mail-big](image/1.png)
 <br>
 
 ## Basic Function
@@ -32,11 +32,10 @@ Claws mail is a network application based on GTK, and it has high speed and conf
 
 | Icon | Function | Icon | Function |
 | :------------ | :------------ | :------------ | :------------ |
-|![](image/icon1.png)| Receive mail from all accounts |![](image/icon6.png)| Send queued message |
-|![](image/icon2.png)| Compose email |![](image/icon7.png)/![](image/icon10.png)| Quote and reply | 
-|![](image/icon3.png)| Reply to all ||![](image/icon8.png)| Forward message |
-|![](image/icon4.png)| Move message to trash | ![](image/icon9.png)| View spam |    
-|![](image/icon5.png)| Go to next unread message|||
+|![](image/icon1.png)| Receive mail from all accounts |![](image/icon2.png)| Compose email 
+|![](image/icon3.png)| Quote and reply |![](image/icon4.png)| Reply to all
+|![](image/icon5.png)| Reply to sender | ![](image/icon6.png)| Forward message | 
+|![](image/icon7.png)| Move message to trash |![](image/icon8.png)| Go to next unread message|
 
 <br>
 
@@ -50,7 +49,7 @@ Clicking Edit > Find in current message and inputting the key words at the popup
 
 * Search folder
 
-Click Edit > Search folder, and the popup provides various of search options, such as From, To, Subject, Body.
+Click "Edit" > "Search folder", and the popup provides various of search options, such as From, To, Subject, Body.
 
 ![Fig 7 Search folder](image/7.png)
 
@@ -60,7 +59,7 @@ If "Extended Search" is checked, users can add search rules by customization.
 
 * Quick search
 
-Click Edit > Quick search, and the interface as shown below.
+Click "Edit" > "Quick search", and the interface as shown in Fig 9.
  
 ![Fig 9 Quick search](image/9.png)
 
@@ -70,11 +69,11 @@ The View on the menu bar provides multiple setting options to users, which can m
 ![Fig 10 View menu](image/10.png)
 
 ### Account Settings
-* Configuration > Preferences for current account : Modify current account preferences.
+* "Configuration" > "Preferences for current account" : Modify current account preferences.
  
 ![Fig 11 Preferences for current account](image/11.png)
 
-* Configuration > Create new account : Add a new account to claws-mail
+* "Configuration" > "Create new account" : Add a new account to claws-mail
 
 ![Fig 12 Create new account](image/12.png)
 
@@ -82,7 +81,7 @@ The View on the menu bar provides multiple setting options to users, which can m
 
 ![Fig 13 Edit accounts](image/13.png)
 
-* Configuration > Preferences : Provide all options here to be set, including mail handing, compose, message view, display, etc..
+* "Configuration" > "Preferences" : Provide all options here to be set, including mail handing, compose, message view, display, etc..
 
 ![Fig 14 Preference](image/14.png)
 <br>

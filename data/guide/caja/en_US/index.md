@@ -1,27 +1,25 @@
 # Caja
 ## Overview
-Caja(files browser) can view files and folders on the system by category, and supports the general opearations for files and folders. The main interface as shown below.
+Caja(files browser) can view files and folders on the system by category, and supports the general opearations for files and folders. The main interface as shown in Fig 1.
 
 ![Fig 1 Caja-big](image/1.png)
 
 ## Basic Points
 ### File Name
-- The maximum length of filename is 255 characters, usually composed by letters, numbers, ".(dot)", "\_(underline)", "-".
+1) The maximum length of filename is 255 characters, usually composed by letters, numbers, ".(dot)", "\_(underline)", "-".
 
-- Filename can't include "/"; Because "/" means root directory or the separator in a path.
+2) Filename can't include "/"; Because "/" means root directory or the separator in a path.
 
 ### Path
-- Quote filename directly when the file is in current directory; And use file in other directory by specifying its directory.
+1) Quote filename directly when the file is in current directory; And use file in other directory by specifying its directory.
 
-- Absolute path is certain while relative path depends on working directory.
+2) Absolute path is certain. Start from root directory, for example: "/home/kylin/test".
 
-- Each directory has file "." means current location and file ".." means previous location.
+3) Relative path depends on working directory. Start from the current directory, for example: "kylin/test".
 
-Absolute path -- Start from root directory, for example: "/home/kylin/test"
+4) Each directory has file "." means current location and file ".." means previous location.
 
-Relative path -- Start from current directory, for example: (locate at /home) "kylin/test"
-
-When locate at /etc, it can be expressed as "../home/kylin/test"
+5) When locate at /etc, it can be expressed as "../home/kylin/test".
 
 ### File Type
 Supported types as shown below:
@@ -161,9 +159,9 @@ Permanently delete:
 Press Ctrl + Z to revoke rename.
 
 ### Format and Eject
-Right click the insert device on the sidebar, and the menu as shown below.
+Right click the insert device on the sidebar, and the menu as shown in Fig 4.
  
-![Fig 4 Mobile device's right click menu-big](image/4.png)
+![Fig 4 Mobile device's right-click menu-big](image/4.png)
 
 * **Eject**: To unmount mobile device. Click ![](image/icon7.png) near the device can also eject the device. 
 
@@ -174,13 +172,13 @@ Right click the insert device on the sidebar, and the menu as shown below.
 ### Browse Network
 Share files in LAN. Take "Music" folder for example:
 
-1) Right click Music and select "Sharing Options", the popup as shown below. Users can set the details.
+1) Right click Music and select "Sharing Options", the popup as shown in Fig 6. Users can set the details.
    
 ![Fig 6 Sharing options](image/6.png)
 
 2) After "Create Share", the folder icon changes to ![](image/icon8.png).
 
-3) Open caja on another system in this LAN, and click "Browse Network" to find the host name of sharing file. The sharing file will be seen after opening. Double click this file, and the popup as shown below.
+3) Open caja on another system in this LAN, and click "Browse Network" to find the host name of sharing file. The sharing file will be seen after opening. Double click this file, and the popup as shown in Fig 7.
  
 ![Fig 7 Link tip-big](image/7.png)
 
@@ -204,13 +202,13 @@ Click "Edit" > "Preferences" to enter the setting interface.
 
 | Shortcut | Function |
 | :------------ | :------------ |
-| Ctrl+C  | Copy |
-| Ctrl+X  | Cut |
-| Ctrl+V  | Paste |
+| Ctrl + C  | Copy |
+| Ctrl + X  | Cut |
+| Ctrl + V  | Paste |
 | Delete  | Delete |
-| Shift+Delete  | Permanently Delete |
-| Ctrl+Z  | Revoke |
-| Ctrl+A  | Select All |
+| Shift + Delete  | Permanently Delete |
+| Ctrl + Z  | Revoke |
+| Ctrl + A  | Select All |
 | F2  | Rename |
 
 <br>

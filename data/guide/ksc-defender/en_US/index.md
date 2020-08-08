@@ -1,10 +1,6 @@
 # Kylin Security Center
 ## Overview
-Kylin Security Center is developed by kylin security team, and it provides 4 functions -- Virus Protection, Account Security, Network Protection, Application Execution Control.
-
-Click "Start Menu" > "All App" > "Kylin Security Center" to open it, or through Kylin Control Center.
-
-The main interface as shown in Fig 1.
+Kylin Security Center is developed by Kylin security team, and it provides 4 functions -- Virus Protection, Account Security, Network Protection, Application Execution Control. The main interface as shown in Fig 1.
 
 ![Fig 1 Kylin Security Center-big](image/1.png)
 <br>

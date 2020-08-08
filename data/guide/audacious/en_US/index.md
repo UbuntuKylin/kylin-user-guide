@@ -1,6 +1,6 @@
 # Audacious
 ## Overview
-Audacious supports various music formats，and provides convenient audio experiences. The interface is simple and intuitive, as shown in Fig 1.
+Audacious supports various music formats，and provides convenient audio experiences. The interface as shown in Fig 1.
 
 ![Fig 1 Audacious-big](image/1.png)
 
@@ -10,52 +10,47 @@ When music is playing, the interface as shown in Fig 2.
 <br>
 
 ## Basic Function
-Functional areas as shown below:
+Icon and function:
 
-![Fig 3 Functional areas introduction-big](image/3.png)
-
-Icons' functions:
-
-| Icon | Description | Icon | Description |
+| Icon | Function | Icon | Function |
 | :------------ | :------------ | :------------ | :------------ |
-|![](image/icon1.png)| Search |![](image/icon8.png)| Document Open |
-|![](image/icon2.png)| Add file |![](image/icon9.png)| Start/Pause |
-|![](image/icon3.png)| Stop |![](image/icon10.png)| Backward |
-|![](image/icon4.png)| Forward |![](image/icon11.png)| Repeat |
-|![](image/icon5.png)| Shuffle |![](image/icon12.png)| Single-repeat |
-|![](image/icon6.png)| Volume |![](image/icon13.png)| Create new-list |
-|![](image/icon7.png)| Progress bar ||||
+|![](image/icon1.png)| Search |![](image/icon7.png)| Document Open |
+|![](image/icon2.png)| Add file |![](image/icon8-1.png) ![](image/icon8-2.png)| Play/Pause |
+|![](image/icon3.png)| Stop |![](image/icon9.png)| Backward |
+|![](image/icon4.png)| Forward |![](image/icon10.png)| Repeat |
+|![](image/icon5.png)| Shuffle |![](image/icon11.png)| Single-repeat |
+|![](image/icon6.png)| Volume |||
 
 <br>
 
 ### Search
-Click "![](image/icon1.png)" to open the search interface, as shown in Fig 4.
+Click "![](image/icon1.png)" to open the search interface, as shown in Fig 3.
 
-![Fig 4 Search-big](image/4.png)
+![Fig 3 Search-big](image/3.png)
 
 Operation steps:
 
-1) Select a folder at the bottom left corner, for example: Desktop, as shown in Fig 5.
+1) Select a folder at the bottom left corner, for example: Desktop, as shown in Fig 4.
 
-![Fig 5 Select a folder](image/5.png)
+![Fig 4 Select a folder](image/4.png)
 
-2) Input the name of the music at the search box, and then click the button of "refresh" “![](image/icon14-o.png)” to show the result, as shown in Fig 6.
+2) Input the name of the music at the search box, and then click the button of "refresh" “![](image/icon12.png)” to show the result, as shown in Fig 5.
 
-![Fig 6 Search music-big](image/6.png)
+![Fig 5 Search music-big](image/5.png)
 
-3) Double click it will add this music file to Now-Playing list.
+3) Double click it will add this music file to list.
 
 ### Add/Open File
 Click "![](image/icon2.png)" to add a file, and the file will add to the current list, waiting to be played.
 
-Click "![](image/icon8.png)" to open a file, which will cover all the contents of the "Now Playing" list, playing immediately. And if there didn't exist "Now Playing" list, it would be created.
+Click "![](image/icon7.png)" to open a file, which will cover all the contents of the "Now Playing" list, playing immediately. And if there didn't exist "Now Playing" list, it would be created.
 
-![Fig 7 Select the file add/open-big](image/7.png)
+![Fig 6 Select the file add/open-big](image/6.png)
 
 ### New Playlist
-Click "![](image/icon13.png)" under the volume button to create a New Playlist.
+Click "![](image/icon2.png)" under the volume button to create a New Playlist.
 
-![Fig 8 Add playlist-big](image/8.png)
+![Fig 7 Add playlist-big](image/7.png)
 <br>
 
 ## Advanced Function
@@ -63,9 +58,9 @@ Users can make more detailed settings for audacious through the options on the m
 
 ### File
 #### Settings
-Click "File" > "Settings" to open the setting page, as shown in Fig 9.
+Click "File" > "Settings" to open the setting page, as shown in Fig 8.
 
-![Fig 9 File - Settings](image/9.png)
+![Fig 8 File - Settings](image/8.png)
 
 - **Appearance**
 
@@ -77,7 +72,7 @@ Show entry counts: Show the number of files in current playlist.
 
 Show close buttons: Show the close button near the name of playlist.
 
-![Fig 10 Playlist tabs](image/10.png)
+![Fig 9 Playlist tabs](image/9.png)
 
 2) Playlist Columns: Customize the audio file's informations which will be displayed on the main interface, through left/right arrow between "Available columns" and "Displayed columns".
 
@@ -85,38 +80,38 @@ Show close buttons: Show the close button near the name of playlist.
 
 - **Audio**
 
-It's some professional settings, including Output plugin, Bit depth, Replay Gain, Adjust Levels, etc., as shown in Fig 11.
+It's some professional settings, including Output plugin, Bit depth, Replay Gain, Adjust Levels, etc., as shown in Fig 10.
 
-![Fig 11 Audio-big](image/11.png)
+![Fig 10 Audio-big](image/10.png)
 
 - **Playlist**
 
-It includes Behavior, Compatibility, Song Display, Advanced four parts, as shown in Fig 12.
+It includes Behavior, Compatibility, Song Display, Advanced four parts, as shown in Fig 11.
 
-![Fig 12 Playlist-big](image/12.png)
+![Fig 11 Playlist-big](image/11.png)
 
 - **Song Info**
 
-It can set the Album Art and Popup Information, as shown in Fig 13.
+It can set the Album Art and Popup Information, as shown in Fig 12.
 
-![Fig 13 Song info-big](image/13.png)
+![Fig 12 Song info-big](image/12.png)
 
 - **Plugins**
 
-It provides some detailed settings, as shown in Fig 14.
+It provides some detailed settings, as shown in Fig 13.
 
-![Fig 14 Plugins-big](image/14.png)
+![Fig 13 Plugins-big](image/13.png)
 
 ### Playback
 #### Jump to Time
-Click "Playback" > "Jump to Time" to go to the specified location, as shown in Fig 15.
+Click "Playback" > "Jump to Time" to go to the specified location, as shown in Fig 14.
 
-![Fig 15 Jump to time](image/15.png)
+![Fig 14 Jump to time](image/14.png)
 
 #### Jump to Song
-Click "Playback" > "Jump to Song" and select a target song in the pop-up window, as shown in Fig 16.
+Click "Playback" > "Jump to Song" and select a target song in the pop-up window, as shown in Fig 15.
 
-![Fig 16 Jump to song](image/16.png)
+![Fig 15 Jump to song](image/15.png)
 
 #### Repeat Clip
 1) Click "Playback" > "Set Repeat Point A" at the beginning of the clip to be played on repeat.
@@ -127,9 +122,9 @@ Click "Playback" > "Jump to Song" and select a target song in the pop-up window,
 
 ### Playlist
 #### Sort/Sort Selected
-Click "Playlist" > "Sort"/"Sort Selected" to sort by certain rules. The rules provided as shown in Fig 17.
+Click "Playlist" > "Sort"/"Sort Selected" to sort by certain rules. The rules provided as shown in Fig 16.
 
-![Fig 17 Sort rules](image/17.png)
+![Fig 16 Sort rules](image/16.png)
 
 #### Remove
 Click "Playlist" > "Remove Duplicates" to remove the duplicates by title, file name or file path.
@@ -137,56 +132,56 @@ Click "Playlist" > "Remove Duplicates" to remove the duplicates by title, file n
 Click "Playlist" > "Remove Unavailable Files" to remove the terms without available file in this playlist.
 
 #### Playlist Manager
-Click "Playlist" > "Playlist Manager" to create new playlists, remove or rename existing playlists, as shown in Fig 18.
+Click "Playlist" > "Playlist Manager" to create new playlists, remove or rename existing playlists, as shown in Fig 17.
 
-![Fig 18 Playlist Manager](image/18.png)
+![Fig 17 Playlist Manager](image/17.png)
 
 ### Output
 #### Equalizer
-Click "Output" > "Equalizer" to customize the values of equalizer, as shown in Fig 19.
+Click "Output" > "Equalizer" to customize the values of equalizer, as shown in Fig 18.
 
-![Fig 19 Equalizer-big](image/19.png)
+![Fig 18 Equalizer-big](image/18.png)
 
 ### View
-Click "View" to select which parts need to show in the main interface, as shown in Fig 20.
+Click "View" to select which parts need to show in the main interface, as shown in Fig 19.
 
-![Fig 20 View-big](image/20.png)
+![Fig 19 View-big](image/19.png)
 <br>
 
 ## Appendix
 ### Shortcut Key
 
-| Shortcut Key | Function |
+| Shortcut | Function |
 | :------------ | :------------ |
-| Ctrl+O | Open files |
-| Shift+Ctrl+O | Add files |
-| Ctrl+Y | Search library |
-| Ctrl+Q | Quit |
-| Ctrl+Enter | Play from the start|
-| Ctrl+, | Pause |
-| Ctrl+. | Stop |
-| Alt+↑ | Previous |
-| Alt+↓ | Next |
-| Ctrl+R | Repeat the list |
-| Ctrl+G | Repeat the single song |
-| Ctrl+S | Random play |
-| Ctrl+N | Don't play next one automatically |
-| Ctrl+M | Stop after this song |
-| Ctrl+I | Song info |
-| Ctrl+K | Jump to time	|
-| Ctrl+J | Jump to song |
-| Ctrl+1 | Set repeat point A |
-| Ctrl+2 | Set repeat point B |
-| Ctrl+3 | Clear repeat points |
-| Shift+Enter | Resume play |
-| Ctrl+T | Create a new playlist |
+| Ctrl + O | Open files |
+| Shift + Ctrl + O | Add files |
+| Ctrl + Y | Search library |
+| Ctrl + Q | Quit |
+| Ctrl + Enter | Play from the start|
+| Ctrl + , | Pause |
+| Ctrl + . | Stop |
+| Alt + ↑ | Previous |
+| Alt + ↓ | Next |
+| Ctrl + R | Repeat the list |
+| Ctrl + G | Repeat the single song |
+| Ctrl + S | Random play |
+| Ctrl + N | Don't play next one automatically |
+| Ctrl + M | Stop after this song |
+| Ctrl + I | Song info |
+| Ctrl + K | Jump to time	|
+| Ctrl + J | Jump to song |
+| Ctrl + 1 | Set repeat point A |
+| Ctrl + 2 | Set repeat point B |
+| Ctrl + 3 | Clear repeat points |
+| Shift + Enter | Resume play |
+| Ctrl + T | Create a new playlist |
 | F2 | Rename the current playlist |
-| Ctrl+W | Remove the current playlist |
-| Ctrl+P | Playlist Manager |
-| Shift+Ctrl++ | Volume up |
-| Ctrl+- | Volume down |
-| Ctrl+E | Open equalizer setting |
-| Shift+Ctrl+M | Show menu bar or not |
-| Shift+Ctrl+I | Show info bar or not |
-| Shift+Ctrl+S | Show status bar or not |
-| Shift+Ctrl+R | Show remaining time or not |
+| Ctrl + W | Remove the current playlist |
+| Ctrl + P | Playlist Manager |
+| Shift + Ctrl + + | Volume up |
+| Ctrl + - | Volume down |
+| Ctrl + E | Open equalizer setting |
+| Shift + Ctrl + M | Show menu bar or not |
+| Shift + Ctrl + I | Show info bar or not |
+| Shift + Ctrl + S | Show status bar or not |
+| Shift + Ctrl + R | Show remaining time or not |

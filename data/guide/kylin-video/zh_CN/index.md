@@ -1,6 +1,6 @@
 # 麒麟影音
 ## 概 述
-麒麟影音是是一款基于MPlayer和MPV的视频播放软件，主界面简约、直观，如图 1所示。
+麒麟影音是是一款基于MPlayer和MPV的视频播放软件，主界面如图 1所示。
 
 ![图 1 麒麟影音-big](image/1.png)
 
@@ -8,27 +8,27 @@
 
 |类目|	支持格式
 | :------------ | :------------ |
-|视频	|(*.avi *.vfw *.divx *.mpg *.mpeg *.m1v *.m2v *.mpv *.dv *.3gp *.mov *.mp4 *.m4v *.mqv *.dat *.vcd *.ogg *.ogm *.ogv *.ogx *.asf *.wmv *.bin *.iso *.vob *.mkv *.nsv *.ram *.flv *.rm *.swf *.ts *.rmvb *.dvr-ms *.m2t *.m2ts *.mts *.rec *.wtv *.f4v *.hdmov *.webm *.vp8 *.bik *.smk *.m4b *.wtv *.part )
-|音频	|(*.mp3 *.ogg *.oga *.wav *.wma *.aac *.ac3 *.dts *.ra *.ape *.flac *.thd *.mka *.m4a *.opus )
-|字幕|	(*.srt *.sub *.ssa *.ass *.idx *.txt *.smi *.rt *.utf *.aqt *.vtt )
+|视频 | *.avi *.vfw *.divx *.mpg *.mpeg *.m1v *.m2v *.mpv *.dv *.3gp *.mov *.mp4 *.m4v *.mqv *.dat *.vcd *.ogg *.ogm *.ogv *.ogx *.asf *.wmv *.bin *.iso *.vob *.mkv *.nsv *.ram *.flv *.rm *.swf *.ts *.rmvb *.dvr-ms *.m2t *.m2ts *.mts *.rec *.wtv *.f4v *.hdmov *.webm *.vp8 *.bik *.smk *.m4b *.wtv *.part |
+|音频 | *.mp3 *.ogg *.oga *.wav *.wma *.aac *.ac3 *.dts *.ra *.ape *.flac *.thd *.mka *.m4a *.opus |
+|字幕 | *.srt *.sub *.ssa *.ass *.idx *.txt *.smi *.rt *.utf *.aqt *.vtt |
 
 <br>
 
 ## 基本功能
 图标及其功能：
 
-|图 标|	图标功能说明	|图 标	|图标功能说明
+| 图标 | 功能说明 | 图标 | 图标功能说明 |
 | :------------ :| :------------ | :------------ | :------------ |
-|![](image/icon1.png)|	高级功能 | ![](image/icon3.png)| 播放按钮 |
-|![](image/icon9.png)| 上一个 |![](image/icon4.png)| 暂停 |
-|![](image/icon10.png)| 下一个 |![](image/icon5.png)| 音量调节 |
-|![](image/icon11.png)|	全屏 |![](image/icon6.png)| 播放列表 |	
+|![](image/icon1.png)| 高级功能 | ![](image/icon2.png)| 播放 |
+|![](image/icon3.png)| 上一个 |![](image/icon4.png)| 停止 |
+|![](image/icon5.png)| 下一个 |![](image/icon6.png)| 音量调节 |
+|![](image/icon7.png)| 全屏 |||	
 
 ### 全 屏
-点击右下角的“![](image/icon11.png)”图标，或双击屏幕，即可开启全屏。
+点击右下角的“![](image/icon7.png)”图标，或双击屏幕，即可开启全屏。
 
 ### 播放列表
-点击右下角的“![](image/icon6.png)”图标，查看播放队列、添加及清除文件，如图 2所示。
+点击右下角的“![](image/icon8.png)”图标，查看播放队列、添加及清除文件，如图 2所示。
 
 ![图 2 播放列表-big](image/2.png)
 

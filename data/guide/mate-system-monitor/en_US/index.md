@@ -42,15 +42,15 @@ Click "Edit" > "Preferences" to set the details of each tab
 
 | Shortcut | Function |
 | :------------ | :------------ |
-|Ctrl+Q| Quit system monitor |
-|Ctrl+S| Stop the selected process |
-|Ctrl+C| Continue the selected process |
-|Ctrl+E| End the selected process |
-|Ctrl+K| Kill the selected process |
-|Ctrl+D| See the dependencies among processes |
-|Ctrl+M| See memory maps of the selected process |
-|Ctrl+F| See the files opened by the selected process |
-|Ctrl+R| Refresh processes |
+|Ctrl + Q| Quit system monitor |
+|Ctrl + S| Stop the selected process |
+|Ctrl + C| Continue the selected process |
+|Ctrl + E| End the selected process |
+|Ctrl + K| Kill the selected process |
+|Ctrl + D| See the dependencies among processes |
+|Ctrl + M| See memory maps of the selected process |
+|Ctrl + F| See the files opened by the selected process |
+|Ctrl + R| Refresh processes |
 
 <br>
 

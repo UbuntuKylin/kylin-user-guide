@@ -1,3 +1,21 @@
+kylin-user-guide (1:1.0.1.0003-5) v100; urgency=medium
+
+  * Add game and atril.
+
+ -- quyanying <quyanying@kylinos.cn>  Mon, 03 Aug 2020 10:46:30 +0800
+
+kylin-user-guide (1:1.0.1.0003-4) v100; urgency=medium
+
+  * remove an useless folder.
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 31 Jul 2020 09:50:30 +0800
+
+kylin-user-guide (1:1.0.1.0003-3) v100; urgency=medium
+
+  * update icons and pics for both Chinese and English version.
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 30 Jul 2020 20:05:11 +0800
+
 kylin-user-guide (1:1.0.1.0003-2) v100; urgency=medium
 
   * modify the contents and pics.

@@ -21,7 +21,7 @@ If it's first time to start Kydroid, users need to wait for paperaring files, as
 ### Multiple Applications Running
 Kydroid supports multiple applications running at the same time.
 
-![Fig 3 Applications Running-big](image/3.png)
+![Fig 3 Applications running-big](image/3.png)
 
 ### Switch
 
@@ -39,6 +39,7 @@ Kydroid supports multiple applications running at the same time.
 - Unstall: Click the application to enter the detail page, and click "Uninstall", as shown in Fig 4.
 
 ![Fig 4 Unstall-big](image/4.png)
+<br>
 
 ## Q&A
 To get a better use experience, we suggest:

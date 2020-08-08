@@ -1,8 +1,8 @@
 # Engrampa Archive Manager
 ## Overview
-Compress and unzip files. Open by Start Menu > Accessories > Engrampa Archive Manager, and the main interface as shown below.
+Compress and unzip files. The main interface as shown in Fig 1.
  
-![Fig 1 Engrampa archive manager](image/1.png)
+![Fig 1 Engrampa Archive Manager](image/1.png)
 <br>
 
 ## Basic Function
@@ -10,7 +10,7 @@ Compress and unzip files. Open by Start Menu > Accessories > Engrampa Archive Ma
 #### Create Directly
 1) Right click the selected files or folders, choosing "Compress".
  
-![Fig 2 Compress by right-click](image/2.png)
+![Fig 2 Compress by right click](image/2.png)
 
 2) Enter the name of archive file, and select the compress format, location.
  
@@ -21,7 +21,7 @@ Compress and unzip files. Open by Start Menu > Accessories > Engrampa Archive Ma
 #### Through Engrampa 
 1) Click "Archive" > "New" at the main interface.
 
-2) Enter the name of archive file and select the location in the pop up window, as shown below.
+2) Enter the name of archive file and select the location in the pop up window, as shown in Fig 4.
  
 ![Fig 4 New-big](image/4.png)
 
@@ -60,7 +60,7 @@ Double click 1.png to see the picture; Double click pics folder to enter it and 
 
 * Way 3: Delete > select "Files" and specify file name > "Delete"
 
-As shown below: All the files named 1.png will be deleted.
+As shown in Fig 7: All the files named 1.png will be deleted.
  
 ![Fig 7 "Delete" to remove specified files](image/7.png)
 
@@ -91,7 +91,7 @@ It will pop up a paste prompt box. Click "Paste" after ensuring.
 #### Unzip through Engrampa
 1) Click "Extract" on the tool bar after openning archive file; Or right click archive file > select "Extract To…".
 
-2) The popup as shown below. After choosing location, click "Extract".
+2) The popup as shown in Fig 10. After choosing location, click "Extract".
  
 ![Fig 10 Extract box-big](image/10.png)
 
@@ -104,7 +104,7 @@ It will pop up a paste prompt box. Click "Paste" after ensuring.
 ### Create Encrypted Archive
 When creating, "Other Options" provides function to set the password for this archive file.
 
-Not all the compress formats supports encryption. Able to encrypted formats: 7z, jar, zip.
+Tips: Not all the compress formats supports encryption.
  
 ![Fig 12 Set password](image/12.png)
 
@@ -122,10 +122,10 @@ All the file with this name in the archive will be extracted; If the file is und
 
 | Shortcut | Function |
 | :------------ | :------------ |
-| Ctrl+C  | Copy |
-| Ctrl+X  | Cut |
-| Ctrl+V  | Paste |
+| Ctrl + C  | Copy |
+| Ctrl + X  | Cut |
+| Ctrl + V  | Paste |
 | Delete  | Delete |
-| Ctrl+A  | Select all |
+| Ctrl + A  | Select all |
 | F2  | Rename |
 

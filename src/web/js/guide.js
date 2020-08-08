@@ -33,46 +33,49 @@ require(['marked'], function (markedSetCustom){
 //  xhr.send();
 //};
 
+var html_list={
+    cheese:"list_h1",
+    mate_calc:"list_h4",
+    goseditmainmenu_53:"list_h7",
+    onboard:"list_h9",
+    mate_search_tool:"list_h13",
+    sharing_desktop:"list_h16",
+    blueman_manager:"list_h21",
+    atril:"list_h25",
+    indicator_china_weather:"list_h27",
+    gnome_tetravex:"list_h1",
+    gnome_mines:"list_h2",
+    iagno:"list_h3",
+};
+
+//手册dbus跳转页面js接口函数
 function qt_jumpApp(appName)
 {
+    //去掉传过来字段两端的空格
     appName = appName.trim()
+    //判断是否是需要跳转标题的字段
     if(appName.search("/") > 0)
     {
+        //处理字段可能开头就是"/"的情况
         if(appName.indexOf("/") == 0){
             appName = appName.slice(1,appName.length)
         }
+        //截取跳转的app手册内容和显示app内容后的标题
         var list = appName.split("/")
         if(list.length == 2){
+             
+            //跳转app手册内容页面
             onclickButton(list[0])
+            
+            //将“-”转换成“_”
+            if(list[1].search("-")>0){
+                list[1] = list[1].replace(/-/g,"_");
+            }
+            
+            //页面的资源都加载完成后跳转需要的标题
             $(document).ready(function(){
-                switch (list[1]){
-                    case "cheese":
-                        document.getElementById("list_h1").click()
-                        break;
-                    case "mate-calc":
-                        document.getElementById("list_h4").click()
-                        break;
-                    case "goseditmainmenu-53":
-                        document.getElementById("list_h7").click()
-                        break;
-                    case "onboard":
-                        document.getElementById("list_h9").click()
-                        break;
-                    case "mate-search-tool":
-                        document.getElementById("list_h13").click()
-                        break;
-                    case "sharing-desktop":
-                        document.getElementById("list_h16").click()
-                        break;
-                    case "blueman-manager":
-                        document.getElementById("list_h21").click()
-                        break;
-                    case "indicator-china-weather":
-                        document.getElementById("list_h25").click()
-                        break;
-                    default:
-                        break;
-                }
+                    var target = html_list[list[1]]
+                    document.getElementById(target).click()
             });
         }    
     }
@@ -81,37 +84,38 @@ function qt_jumpApp(appName)
 }
 
 var date ={
-    audacious:"2020年7月17日",
-    audio_recorder:"2020年7月17日",
-    biometric_manager:"2020年7月17日",
-    box_manager:"2020年7月17日",
-    brasero:"2020年7月17日",
-    caja:"2020年7月17日",
-    claws_mail:"2020年7月17日",
-    engrampa:"2020年7月17日",
-    eom:"2020年7月17日",
-    faq:"2020年7月17日",
-    filezilla:"2020年7月17日",
-    gparted:"2020年7月17日",
-    hot_key:"2020年7月17日",
-    ksc_defender:"2020年7月17日",
-    kybackup:"2020年7月17日",
-    kydroid:"2020年7月17日",
-    kylin_control_center:"2020年7月17日",
-    kylin_ipmsg:"2020年7月17日",
-    kylinOS:"2020年7月17日",
-    kylin_video:"2020年7月17日",
-    kysec_ui_pkexec:"2020年7月17日",
-    mate_system_monitor:"2020年7月17日",
-    mate_terminal:"2020年7月17日",
-    remmina:"2020年7月17日",
-    simple_scan:"2020年7月17日",
-    technical_assistance:"2020年7月17日",
-    tools:"2020年7月17日",
-    ubiquity:"2020年7月17日",
-    kylin_software_center:"2020年7月17日", 
-    ukui:"2020年7月17日",
-    kylin_assistant:"2020年7月17日",
+    audacious:"2020年8月1日",
+    audio_recorder:"2020年8月1日",
+    biometric_manager:"2020年8月1日",
+    box_manager:"2020年8月1日",
+    brasero:"2020年8月1日",
+    caja:"2020年8月1日",
+    claws_mail:"2020年8月1日",
+    engrampa:"2020年8月1日",
+    eom:"2020年8月1日",
+    faq:"2020年8月1日",
+    filezilla:"2020年8月1日",
+    game:"2020年8月1日",
+    gparted:"2020年8月1日",
+    hot_key:"2020年8月1日",
+    ksc_defender:"2020年8月1日",
+    kybackup:"2020年8月1日",
+    kydroid:"2020年8月1日",
+    kylin_control_center:"2020年8月1日",
+    kylin_ipmsg:"2020年8月1日",
+    kylinOS:"2020年8月1日",
+    kylin_video:"2020年8月1日",
+    kysec_ui_pkexec:"2020年8月1日",
+    mate_system_monitor:"2020年8月1日",
+    mate_terminal:"2020年8月1日",
+    remmina:"2020年8月1日",
+    simple_scan:"2020年8月1日",
+    technical_assistance:"2020年8月1日",
+    tools:"2020年8月1日",
+    ubiquity:"2020年8月1日",
+    kylin_software_center:"2020年8月1日", 
+    ukui:"2020年8月1日",
+    kylin_assistant:"2020年8月1日",
 };
 
 function onclickButton(str)

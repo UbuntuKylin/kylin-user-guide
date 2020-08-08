@@ -1,9 +1,8 @@
 # Kylin Burner
-
 ## Overview
-Kylin burner is a tool for burning discs, including data burning and iso burning. It provides users with the ability to burn discs, erase discs, check disc integrity, etc..
+Kylin Burner is a tool for burning discs, including data burning and iso burning. It provides users with the ability to burn discs, erase discs, check disc integrity, etc..
 
-![Fig 1 Kylin-burner-big](image/1.png)
+![Fig 1 Kylin Burner-big](image/1.png)
 <br>
 
 ## Basic Function
@@ -56,8 +55,8 @@ Click "Burn" to start burning process.
 <br>
 
 ## Advanced Function
-### Edit -> Plugins
-Choose and set plugins, as shown in Fig 4.
+### Plugins
+Click "Edit" > "Plugins", as shown in Fig 4.
 
 ![Fig 4 Plugins](image/4.png)
 
@@ -69,21 +68,18 @@ Click "Configure" to setup this plugin, as shown in Fig 6.
 
 ![Fig 6 Configure for plugin](image/6.png)
 
-### Tools -> Blank
-Only readable and writable discs can be erased.
+### Blank
+Click "Tools" > "Blank". Only readable and writable discs can be erased.
 
-### Tools -> Check integrity
-The interface as shown in Fig 7.
+### Check integrity
+Click "Tools" > "Check integrity". The interface as shown in Fig 7.
 
 ![Fig 7 Check integrity](image/7.png)
 
-Click "Check" to start check process, and when check is over, there will show a
+Click "Check" to start check process.
 
-## Q&A
-### Using tips
+## Using Tips
 1) When using burn image, only the file with the suffix of .iso can be selected.
-
-There is a way to make a mirror image: Click Data project and add files; Click "Burn" without a blank DVD inserted.
 
 2) Read-only disc can not be erased.
 
@@ -92,11 +88,9 @@ There is a way to make a mirror image: Click Data project and add files; Click "
 ## Appendix
 ### Shortcut Key
 
-|Function |Shortcut Key
+| Shortcut | Function |
 | :------------ | :------------ | 
-| Open | Ctrl+O|
-| Save | Ctrl+S|
-| Quit | Ctrl+Q	|
-| Contents | F1	|
-
+| Ctrl + O | Open |
+| Ctrl + S | Save |
+| Ctrl + Q | Quit | 
 

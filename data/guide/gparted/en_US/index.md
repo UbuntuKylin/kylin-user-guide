@@ -1,8 +1,8 @@
-# Gparted
+# GParted
 ## Overview
-Gparted provides to view and edit all local storage devices. The main interface as shown in Fig 1.
+GParted provides to view and edit all local storage devices. The main interface as shown in Fig 1.
 
-![Fig 1 Gparted-big](image/1.png)
+![Fig 1 GParted-big](image/1.png)
 <br>
 
 ## Basic Function
@@ -28,12 +28,12 @@ Click "Partition" on the menu bar or right click a partition at list area, as sh
 ![Fig 3 Partition menu-big](image/3.png)
 
 ### New Partition
-Select unallocated space of a device to create a new partition, as shown below. Users can set the size, format, label, etc..
+Select unallocated space of a device to create a new partition, as shown in Fig 4. Users can set the size, format, label, etc..
 
 ![Fig 4 Create a new partition](image/4.png)
 
 ### Resize
-Drag on the colorbar or input size in the "New size" text box, as shown below.
+Drag on the colorbar or input size in the "New size" text box, as shown in Fig 5.
 
 ![Fig 5 Resize the partition](image/5.png)
 
@@ -52,7 +52,7 @@ Label means the name of this partition. For example, rename /dev/sdb1 as "TEST".
 ![Fig 7-b Label](image/7-b.png)
 
 ### Information
-The information interface as shown below.
+The information interface as shown in Fig 8.
 
 ![Fig 8 Information](image/8.png)
 <br>
