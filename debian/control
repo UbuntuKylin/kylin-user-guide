@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Kylin Team <team+kylin@tracker.debian.org>
 Uploaders: handsome_feng <jianfengli@ubuntukylin.com>
 Build-Depends: cmake,
-               debhelper-compat (= 12),
+               debhelper-compat (= 13),
                libqt5gui5,
                pkg-config,
                qttools5-dev-tools,
