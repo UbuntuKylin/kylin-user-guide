@@ -156,10 +156,10 @@ void GuideWidget::initUI()
     widget_layout->addWidget(m_pTitleLabel,0,4,1,10);
     widget_layout->addWidget(backOffButton,0,22,1,4);
     widget_layout->addWidget(search_Line,0,40,1,40);
-    widget_layout->addWidget(menuOffButton,0,90,1,4);
-    widget_layout->addWidget(minOffButton,0,94,1,4);
-    widget_layout->addWidget(maxOffButton,0,98,1,4);
-    widget_layout->addWidget(closeOffButton,0,102,1,4);
+    widget_layout->addWidget(menuOffButton,0,89,1,4);
+    widget_layout->addWidget(minOffButton,0,93,1,4);
+    widget_layout->addWidget(maxOffButton,0,97,1,4);
+    widget_layout->addWidget(closeOffButton,0,101,1,4);
     widget_layout->setColumnStretch(40,6);
     widget_layout->setColumnStretch(6,2);
     widget_layout->setColumnStretch(39,1);
@@ -207,7 +207,7 @@ void GuideWidget::initUI()
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
     QObject::connect(m_pWebView->page(),SIGNAL(linkClicked(QUrl)),this,SLOT(slot_webGoto(QUrl)));
     //    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
-    widget_layout->setContentsMargins(0, 0, 0, 1);
+    widget_layout->setContentsMargins(0, 3, 0, 1);
     widget_layout->setVerticalSpacing(0);
 
     main_layout->addWidget(m_yWidget);
