@@ -3,7 +3,5 @@
 export NO_PKG_MANGLE=1
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
-DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
-arch ?= $(shell arch)
 %:
 	dh $@

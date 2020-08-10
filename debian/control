@@ -4,8 +4,8 @@ Priority: optional
 Maintainer: Kylin Team <team+kylin@tracker.debian.org>
 Uploaders: handsome_feng <jianfengli@ubuntukylin.com>
 Build-Depends: cmake,
-               libqt5gui5,
                debhelper-compat (= 12),
+               libqt5gui5,
                pkg-config,
                qttools5-dev-tools,
                qttools5-dev,
@@ -13,7 +13,7 @@ Build-Depends: cmake,
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Homepage: https://github.com/ubuntukylin/kylin-user-guide
-Vcs-Git: https://github.com/ubuntukylin/kylin-user-guide
+Vcs-Git: https://github.com/ubuntukylin/kylin-user-guide.git
 Vcs-Browser: https://github.com/ubuntukylin/kylin-user-guide
 
 Package: kylin-user-guide
@@ -26,16 +26,16 @@ Depends: ${misc:Depends},
          kylin-user-guide-common,
 Description: Smanual for UKUI desktop environment
  Kylin User Guide is a simple and lightweight guide written by Qt5/js/md,
- It has the characteristics of easy maintenance and simple interface
+ It has the characteristics of easy maintenance and simple interface.
+ .
  A simple and lightweight guide written by Qt5/js/md.
 
 Package: kylin-user-guide-common
 Architecture: all
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-Breaks:kylin-user-guide (<< 1.0.0-1+0730.1)
-Replaces:kylin-user-guide (<< 1.0.0-1+0730.1)
 Description: Smanual for UKUI desktop environment (common files)
  Kylin User Guide is a simple and lightweight guide written by Qt5/js/md,
- It has the characteristics of easy maintenance and simple interface
+ It has the characteristics of easy maintenance and simple interface.
+ .
  A simple and lightweight guide written by Qt5/js/md (common files).
