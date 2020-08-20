@@ -160,26 +160,31 @@ void GuideWidget::initUI()
     backOffButton->setFocusPolicy(Qt::NoFocus);
     backOffButton->setVisible(false);
     backOffButton->hide();
-    qDebug() << backOffButton->objectName()<< "=========="<<backOffButton->parent()->objectName();
+//    qDebug() << backOffButton->objectName()<< "=========="<<backOffButton->parent()->objectName();
 
     QIcon iconMin(tr(":/image/minimize.png"));
     minOffButton->setIcon(iconMin);
     minOffButton->setIconSize(QSize(30,25));
     minOffButton->setFlat(true);
     minOffButton->setFocusPolicy(Qt::NoFocus);
+    minOffButton->setStyleSheet("QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
+                                "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
 
     QIcon iconMax(tr(":/image/fullscreen.png"));
     maxOffButton->setIcon(iconMax);
     maxOffButton->setIconSize(QSize(30,25));
     maxOffButton->setFlat(true);
     maxOffButton->setFocusPolicy(Qt::NoFocus);
+    maxOffButton->setStyleSheet("QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
+                                "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
 
     QIcon iconClose(tr(":/image/close.png"));
     closeOffButton->setIcon(iconClose);
     closeOffButton->setIconSize(QSize(30,25));
     closeOffButton->setFlat(true);
     closeOffButton->setFocusPolicy(Qt::NoFocus);
-//    closeOffButton->setStyleSheet("QPushButton:pressed{background-color:rgb(234,234,234)}");
+    closeOffButton->setStyleSheet("QPushButton:hover{background-color:rgba(244,110,101,1);border-radius:5px;}"\
+                                "QPushButton:pressed{background-color:rgba(215,52,53,1);border-radius:5px;}");
 
     QIcon iconMenu(tr(":/image/open-menu-symbolic.png"));
     menuOffButton->setIcon(iconMenu);

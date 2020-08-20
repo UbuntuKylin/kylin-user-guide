@@ -55,7 +55,7 @@ MainController::MainController()
 
 void MainController::startShowApp()
 {
-    QTimer::singleShot(500, this, SLOT(showGuide()));//消息循环起来后打通js和qt通信在执行跳转
+    QTimer::singleShot(800, this, SLOT(showGuide()));//消息循环起来后打通js和qt通信在执行跳转
 }
 
 void MainController::showGuide(QString appName)
