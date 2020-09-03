@@ -59,7 +59,8 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
     this->setAutoFillBackground(true);
 //    this->setStyleSheet("border-radius:10px");
     QDesktopWidget *desktop = QApplication::desktop();
-    this->move((desktop->width()-this->width())/2,(desktop->height()-this->height())/2);
+    QRect rect = desktop->screenGeometry(0);
+    this->move((rect.bottomRight().x()-this->width())/2,(rect.bottomRight().y()-this->height())/2);
 
     initSettings();
     initUI();
@@ -253,7 +254,7 @@ void GuideWidget::initUI()
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
     QObject::connect(m_pWebView->page(),SIGNAL(linkClicked(QUrl)),this,SLOT(slot_webGoto(QUrl)));
     //    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
-    widget_layout->setContentsMargins(0, 0, 0, 1);
+    widget_layout->setContentsMargins(0, 3, 0, 1);
     widget_layout->setVerticalSpacing(0);
 
     main_layout->addLayout(widget_layout);
