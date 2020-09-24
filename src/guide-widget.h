@@ -96,6 +96,7 @@ public slots:
     Q_INVOKABLE QString js_getIndexMdFileContent(QString);
     Q_INVOKABLE QString js_getIndexMdFileTitle(QString);
     Q_INVOKABLE QStringList js_getIntoFilename();
+    Q_INVOKABLE QString JudgmentSystrm();
 public:
 
 signals:
