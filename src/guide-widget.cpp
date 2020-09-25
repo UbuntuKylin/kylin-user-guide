@@ -50,7 +50,7 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
     this->setAutoFillBackground(true);
     QDesktopWidget *desktop = QApplication::desktop();
-    QRect rect = desktop->screenGeometry(0);
+    QRect rect = desktop->screenGeometry(nullptr);
     this->move((rect.bottomRight().x()-this->width())/2,(rect.bottomRight().y()-this->height())/2);
 
     initSettings();
