@@ -43,23 +43,15 @@
 
 GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 {
-//    setAttribute(Qt::WA_TranslucentBackground);
     this->isTopLevel();
-    //this->resize(850,640);
     this->resize(1000,750);
 
-
-//    this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
     this->setWindowIcon(QIcon::fromTheme("kylin-user-guide"));
-//    this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
-//    QPalette palette;
-//    palette.setBrush(QPalette::Background, QBrush(QPixmap("://picture/backImage-700x540.png")));
-//    this->setPalette(palette);
     this->setAutoFillBackground(true);
-//    this->setStyleSheet("border-radius:10px");
     QDesktopWidget *desktop = QApplication::desktop();
-    this->move((desktop->width()-this->width())/2,(desktop->height()-this->height())/2);
+    QRect rect = desktop->screenGeometry(0);
+    this->move((rect.bottomRight().x()-this->width())/2,(rect.bottomRight().y()-this->height())/2);
 
     initSettings();
     initUI();
@@ -73,7 +65,6 @@ void GuideWidget::paintEvent(QPaintEvent *event)
     painter.setBrush(QBrush(Qt::white));
     painter.setPen(QColor(79,79,79));
     QRect rect = this->rect();
-//    qDebug()<<"====" <<this->rect() << rect.width() << rect.height();
     rect.setWidth(rect.width()-2);
     rect.setHeight(rect.height()-2);
     painter.drawRoundedRect(rect, 10, 10);
@@ -81,12 +72,6 @@ void GuideWidget::paintEvent(QPaintEvent *event)
     QStyleOption opt;
     opt.init(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
-//    //也可用QPainterPath 绘制代替 painter.drawRoundedRect(rect, 15, 15);
-//    {
-//        QPainterPath painterPath;
-//        painterPath.addRoundedRect(rect, 15, 15);
-//        p.drawPath(painterPath);
-//    }
     QWidget::paintEvent(event);
 }
 
@@ -112,7 +97,6 @@ void GuideWidget::initUI()
 {
     m_pWebView = new QWebView;
     m_pWebView->installEventFilter(this);
-//    m_yWidget = new  QWidget(this);
     qDebug() <<"------------"<< m_pWebView->width() << m_pWebView->height();
 
     this->setObjectName("m_yWidget");
@@ -160,26 +144,31 @@ void GuideWidget::initUI()
     backOffButton->setFocusPolicy(Qt::NoFocus);
     backOffButton->setVisible(false);
     backOffButton->hide();
-    qDebug() << backOffButton->objectName()<< "=========="<<backOffButton->parent()->objectName();
+//    qDebug() << backOffButton->objectName()<< "=========="<<backOffButton->parent()->objectName();
 
     QIcon iconMin(tr(":/image/minimize.png"));
     minOffButton->setIcon(iconMin);
     minOffButton->setIconSize(QSize(30,25));
     minOffButton->setFlat(true);
     minOffButton->setFocusPolicy(Qt::NoFocus);
+    minOffButton->setStyleSheet("QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
+                                "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
 
     QIcon iconMax(tr(":/image/fullscreen.png"));
     maxOffButton->setIcon(iconMax);
     maxOffButton->setIconSize(QSize(30,25));
     maxOffButton->setFlat(true);
     maxOffButton->setFocusPolicy(Qt::NoFocus);
+    maxOffButton->setStyleSheet("QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
+                                "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
 
     QIcon iconClose(tr(":/image/close.png"));
     closeOffButton->setIcon(iconClose);
     closeOffButton->setIconSize(QSize(30,25));
     closeOffButton->setFlat(true);
     closeOffButton->setFocusPolicy(Qt::NoFocus);
-//    closeOffButton->setStyleSheet("QPushButton:pressed{background-color:rgb(234,234,234)}");
+    closeOffButton->setStyleSheet("QPushButton:hover{background-color:rgba(244,110,101,1);border-radius:5px;}"\
+                                "QPushButton:pressed{background-color:rgba(215,52,53,1);border-radius:5px;}");
 
     QIcon iconMenu(tr(":/image/open-menu-symbolic.png"));
     menuOffButton->setIcon(iconMenu);
@@ -214,7 +203,6 @@ void GuideWidget::initUI()
     widget_layout->addWidget(m_pWebView,1,0,1,106);
 
     QString name = system_name();
-    //qDebug() << "--------" <<name;
     QLocale localeNew;
     if(localeNew.language()==QLocale::Chinese)
     {
@@ -248,7 +236,7 @@ void GuideWidget::initUI()
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
     QObject::connect(m_pWebView->page(),SIGNAL(linkClicked(QUrl)),this,SLOT(slot_webGoto(QUrl)));
     //    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
-    widget_layout->setContentsMargins(0, 0, 0, 1);
+    widget_layout->setContentsMargins(0, 3, 0, 1);
     widget_layout->setVerticalSpacing(0);
 
     main_layout->addLayout(widget_layout);
@@ -351,7 +339,7 @@ void GuideWidget::slot_onClicked_closeOffButton()
 
 QString GuideWidget::system_name()
 {
-    QFile system (SYSTEM_FILE);
+    QFile system (OS_RELEASE);
     if(!system.exists())
     {
         return "";
@@ -403,6 +391,58 @@ QStringList GuideWidget::getDirAndPng()
         }
     }
     return list;
+}
+
+QString GuideWidget::JudgmentSystrm()
+{
+    QFile system_file (OS_RELEASE);
+    QFile system_file1 (LSB_RELEASE);
+    QString value;
+    if(system_file.exists()){
+        QString SystemName = system_name();
+        if((SystemName == "Debian")||(SystemName == "Ubuntu Kylin")){
+            value = SystemName;
+        }
+        else if(SystemName == "Ubuntu"){
+            if(QFileInfo("/usr/bin/ukui-panel").exists()){
+                value = "Ubuntu Kylin";
+            }else{
+                value = "Ubuntu";
+            }
+        }else{
+            value = "";
+            return value;
+        }
+    }else{
+        if(!system_file1.exists())
+        {
+            value = "";
+            return value;
+        }
+        if (!system_file1.open(QIODevice::ReadOnly))
+        {
+            value = "";
+            return value;
+        }
+        QString str = system_file1.readLine();
+        QString name = str.section("=",-1);
+        name = name.trimmed();
+        if((name == "Debian")||(name == "Ubuntu Kylin")){
+            value = name;
+        }
+        else if(name == "Ubuntu"){
+            if(QFileInfo("/usr/bin/ukui-panel").exists()){
+                value = "Ubuntu Kylin";
+            }else{
+                value = "Ubuntu";
+            }
+        }
+        else{
+            value = "";
+            return value;
+        }
+    }
+    return value;
 }
 
 bool GuideWidget::eventFilter(QObject *watched, QEvent *event)
