@@ -400,10 +400,11 @@ QString GuideWidget::JudgmentSystrm()
     QString value;
     if(system_file.exists()){
         QString SystemName = system_name();
-        if((SystemName == "Debian")||(SystemName == "Ubuntu Kylin")){
-            value = SystemName;
-        }
-        else if(SystemName == "Ubuntu"){
+        if(SystemName.contains("debian",Qt::CaseInsensitive)){
+            value = "Debian";
+        }else if(SystemName.contains("kylin",Qt::CaseInsensitive)){
+            value = "Ubuntu Kylin";
+        }else if(SystemName.contains("ubuntu",Qt::CaseInsensitive)){
             if(QFileInfo("/usr/bin/ukui-panel").exists()){
                 value = "Ubuntu Kylin";
             }else{
@@ -427,17 +428,17 @@ QString GuideWidget::JudgmentSystrm()
         QString str = system_file1.readLine();
         QString name = str.section("=",-1);
         name = name.trimmed();
-        if((name == "Debian")||(name == "Ubuntu Kylin")){
-            value = name;
-        }
-        else if(name == "Ubuntu"){
+        if(name.contains("debian",Qt::CaseInsensitive)){
+            value = "Debian";
+        }else if(name.contains("kylin",Qt::CaseInsensitive)){
+            value = "Ubuntu Kylin";
+        }else if(name.contains("ubuntu",Qt::CaseInsensitive)){
             if(QFileInfo("/usr/bin/ukui-panel").exists()){
                 value = "Ubuntu Kylin";
             }else{
                 value = "Ubuntu";
             }
-        }
-        else{
+        }else{
             value = "";
             return value;
         }
