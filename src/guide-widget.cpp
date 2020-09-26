@@ -401,7 +401,7 @@ QString GuideWidget::JudgmentSystrm()
     if(system_file.exists()){
         QString SystemName = system_name();
         if(SystemName.contains("debian",Qt::CaseInsensitive)){
-            value = "Debain";
+            value = "Debian";
         }else if(SystemName.contains("kylin",Qt::CaseInsensitive)){
             value = "Ubuntu Kylin";
         }else if(SystemName.contains("ubuntu",Qt::CaseInsensitive)){
@@ -429,7 +429,7 @@ QString GuideWidget::JudgmentSystrm()
         QString name = str.section("=",-1);
         name = name.trimmed();
         if(name.contains("debian",Qt::CaseInsensitive)){
-            value = "Debain";
+            value = "Debian";
         }else if(name.contains("kylin",Qt::CaseInsensitive)){
             value = "Ubuntu Kylin";
         }else if(name.contains("ubuntu",Qt::CaseInsensitive)){
