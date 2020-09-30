@@ -267,6 +267,12 @@ function getapp_name(qpp)
 function addhtmlapp()
 {
     var test=window.guideWebkit.js_getIntoFilename();
+    var systemName = window.guideWebkit.JudgmentSystrm();
+    if(systemName != "Ubuntu Kylin"){
+        document.getElementById("support").style.display="none";
+        document.getElementById("sup").style.display="none";
+        document.getElementById("kylinOS").style.display="none";
+    }
     for(i=0;i<test.length;i++)
     {
         var dirname=test[i].slice(0,test[i].indexOf("|"))
