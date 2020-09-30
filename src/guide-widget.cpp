@@ -1,12 +1,10 @@
 /*
- * Copyright (C) 2019 National University of Defense Technology(NUDT) & Kylin Ltd.
+ * Copyright (C) 2020, KylinSoft Co., Ltd.
  *
- * Authors:
- *  xiaoyi wu    wuxiaoyi@kylinos.cn
- *
- * This program is free software; you can redistribute it and/or modify
+ * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; version 3.
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -14,7 +12,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 #include <stdio.h>
@@ -61,7 +59,8 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
     this->setAutoFillBackground(true);
 //    this->setStyleSheet("border-radius:10px");
     QDesktopWidget *desktop = QApplication::desktop();
-    this->move((desktop->width()-this->width())/2,(desktop->height()-this->height())/2);
+    QRect rect = desktop->screenGeometry(0);
+    this->move((rect.bottomRight().x()-this->width())/2,(rect.bottomRight().y()-this->height())/2);
 
     initSettings();
     initUI();
@@ -162,26 +161,31 @@ void GuideWidget::initUI()
     backOffButton->setFocusPolicy(Qt::NoFocus);
     backOffButton->setVisible(false);
     backOffButton->hide();
-    qDebug() << backOffButton->objectName()<< "=========="<<backOffButton->parent()->objectName();
+//    qDebug() << backOffButton->objectName()<< "=========="<<backOffButton->parent()->objectName();
 
     QIcon iconMin(tr(":/image/minimize.png"));
     minOffButton->setIcon(iconMin);
     minOffButton->setIconSize(QSize(30,25));
     minOffButton->setFlat(true);
     minOffButton->setFocusPolicy(Qt::NoFocus);
+    minOffButton->setStyleSheet("QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
+                                "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
 
     QIcon iconMax(tr(":/image/fullscreen.png"));
     maxOffButton->setIcon(iconMax);
     maxOffButton->setIconSize(QSize(30,25));
     maxOffButton->setFlat(true);
     maxOffButton->setFocusPolicy(Qt::NoFocus);
+    maxOffButton->setStyleSheet("QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
+                                "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
 
     QIcon iconClose(tr(":/image/close.png"));
     closeOffButton->setIcon(iconClose);
     closeOffButton->setIconSize(QSize(30,25));
     closeOffButton->setFlat(true);
     closeOffButton->setFocusPolicy(Qt::NoFocus);
-//    closeOffButton->setStyleSheet("QPushButton:pressed{background-color:rgb(234,234,234)}");
+    closeOffButton->setStyleSheet("QPushButton:hover{background-color:rgba(244,110,101,1);border-radius:5px;}"\
+                                "QPushButton:pressed{background-color:rgba(215,52,53,1);border-radius:5px;}");
 
     QIcon iconMenu(tr(":/image/open-menu-symbolic.png"));
     menuOffButton->setIcon(iconMenu);
@@ -250,7 +254,7 @@ void GuideWidget::initUI()
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
     QObject::connect(m_pWebView->page(),SIGNAL(linkClicked(QUrl)),this,SLOT(slot_webGoto(QUrl)));
     //    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
-    widget_layout->setContentsMargins(0, 0, 0, 1);
+    widget_layout->setContentsMargins(0, 3, 0, 1);
     widget_layout->setVerticalSpacing(0);
 
     main_layout->addLayout(widget_layout);
@@ -353,7 +357,7 @@ void GuideWidget::slot_onClicked_closeOffButton()
 
 QString GuideWidget::system_name()
 {
-    QFile system (SYSTEM_FILE);
+    QFile system (OS_RELEASE);
     if(!system.exists())
     {
         return "";
@@ -405,6 +409,59 @@ QStringList GuideWidget::getDirAndPng()
         }
     }
     return list;
+}
+
+QString GuideWidget::JudgmentSystrm()
+{
+    QFile system_file (OS_RELEASE);
+    QFile system_file1 (LSB_RELEASE);
+    QString value;
+    if(system_file.exists()){
+        QString SystemName = system_name();
+        if(SystemName.contains("debian",Qt::CaseInsensitive)){
+            value = "Debain";
+        }else if(SystemName.contains("kylin",Qt::CaseInsensitive)){
+            value = "Ubuntu Kylin";
+        }else if(SystemName.contains("ubuntu",Qt::CaseInsensitive)){
+            if(QFileInfo("/usr/bin/ukui-panel").exists()){
+                value = "Ubuntu Kylin";
+            }else{
+                value = "Ubuntu";
+            }
+        }else{
+            value = "";
+            return value;
+        }
+    }else{
+        if(!system_file1.exists())
+        {
+            value = "";
+            return value;
+        }
+        if (!system_file1.open(QIODevice::ReadOnly))
+        {
+            value = "";
+            return value;
+        }
+        QString str = system_file1.readLine();
+        QString name = str.section("=",-1);
+        name = name.trimmed();
+        if(name.contains("debian",Qt::CaseInsensitive)){
+            value = "Debain";
+        }else if(name.contains("kylin",Qt::CaseInsensitive)){
+            value = "Ubuntu Kylin";
+        }else if(name.contains("ubuntu",Qt::CaseInsensitive)){
+            if(QFileInfo("/usr/bin/ukui-panel").exists()){
+                value = "Ubuntu Kylin";
+            }else{
+                value = "Ubuntu";
+            }
+        }else{
+            value = "";
+            return value;
+        }
+    }
+    return value;
 }
 
 bool GuideWidget::eventFilter(QObject *watched, QEvent *event)

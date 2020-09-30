@@ -1,0 +1,2 @@
+version=4
+https://github.com/ubuntukylin/kylin-user-guide/releases .*/kylin-user-guide_(\d\S+)\.orig\.tar\.gz
