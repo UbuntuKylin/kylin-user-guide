@@ -24,7 +24,7 @@ Depends: ${misc:Depends},
          libjs-requirejs,
          libjs-marked,
          kylin-user-guide-common,
-Description: Smanual for UKUI desktop environment
+Description: Manual for UKUI desktop environment
  Kylin User Guide is a simple and lightweight guide written by Qt5/js/md,
  It has the characteristics of easy maintenance and simple interface.
  .
@@ -34,7 +34,7 @@ Package: kylin-user-guide-common
 Architecture: all
 Depends: ${misc:Depends},
          ${shlibs:Depends},
-Description: Smanual for UKUI desktop environment (common files)
+Description: Manual for UKUI desktop environment (common files)
  Kylin User Guide is a simple and lightweight guide written by Qt5/js/md,
  It has the characteristics of easy maintenance and simple interface.
  .
