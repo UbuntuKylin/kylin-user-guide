@@ -271,7 +271,6 @@ function addhtmlapp()
     if(systemName != "Ubuntu Kylin"){
         document.getElementById("support").style.display="none";
         document.getElementById("sup").style.display="none";
-        document.getElementById("kylinOS").style.display="none";
     }
     for(i=0;i<test.length;i++)
     {
