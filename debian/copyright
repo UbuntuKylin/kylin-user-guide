@@ -8,6 +8,12 @@ License: GPL-3+
 
 Files: data/*
        doc/*
+       data/*
+       man/*
+       debian/*
+       .gitmodules
+       .gitignore
+       README.md
        icon/*
 Copyright: 2020, KylinSoft Co., Ltd.
 License: CC-BY-SA-4.0
