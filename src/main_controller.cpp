@@ -26,6 +26,7 @@
 #include <QtGui>
 #include <QtCore>
 #include <QWidget>
+#include <QTimer>
 #include "main_controller.h"
 #include "ipc/ipc_dbus.h"
 #include "guide-widget.h"
@@ -48,9 +49,7 @@ MainController::MainController()
         ipcDbus->init();
     }
     guideWidget = new GuideWidget;
-    guideWidget->activateWindow();
     startShowApp();
-    guideWidget->show();
 }
 
 void MainController::startShowApp()
@@ -62,7 +61,8 @@ void MainController::showGuide(QString appName)
 {
     if(appName!="")
         guideWidget->jump_app(appName);
-    guideWidget->activateWindow();
+    guideWidget->setWindowFlags(guideWidget->windowFlags()|Qt::BypassWindowManagerHint);
+    QTimer::singleShot(500, this, SLOT(setwindowFlags()));
     guideWidget->show();
 }
 
@@ -75,6 +75,12 @@ void MainController::showGuide()
         gStartShowApp = "";
     }
     guideWidget->activateWindow();
+    guideWidget->show();
+}
+
+void MainController::setwindowFlags()
+{
+    guideWidget->setWindowFlags(guideWidget->windowFlags() &~ Qt::BypassWindowManagerHint);
     guideWidget->show();
 }
 
