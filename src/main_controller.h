@@ -38,5 +38,6 @@ private:
 public slots:
     void showGuide(QString appName);
     void showGuide();
+    void setwindowFlags();
 };
 
