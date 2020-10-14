@@ -190,8 +190,8 @@ void GuideWidget::initUI()
     closeOffButton->setFixedSize(40,30);
     closeOffButton->setFlat(true);
     closeOffButton->setFocusPolicy(Qt::NoFocus);
-    closeOffButton->setStyleSheet("QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
-                                "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
+    closeOffButton->setStyleSheet("QPushButton:hover{background-color:rgb(215,52,53);border-radius:5px;}"\
+                                "QPushButton:pressed{background-color:rgb(244,110,101);border-radius:5px;}");
     closeOffButton->setCursor(QCursor(Qt::ArrowCursor));
 
     QIcon iconMenu(tr(":/image/open-menu-symbolic.png"));
@@ -455,7 +455,7 @@ QString GuideWidget::JudgmentSystrm()
         QString name = str.section("=",-1);
         name = name.trimmed();
         if(name.contains("debian",Qt::CaseInsensitive)){
-            value = "Debain";
+            value = "Debian";
         }else if(name.contains("kylin",Qt::CaseInsensitive)){
             value = "Ubuntu Kylin";
         }else if(name.contains("ubuntu",Qt::CaseInsensitive)){
@@ -612,6 +612,7 @@ void GuideWidget::mousePressEvent(QMouseEvent *event)
         mCanDrag = false;
     if (event->button() == Qt::LeftButton) {
         mouseinwidget = true;
+        this->setCursor(QCursor(Qt::OpenHandCursor));
         dragPos = event->globalPos() - frameGeometry().topLeft();
     }
     event->accept();
