@@ -50,6 +50,12 @@ function qt_jumpApp(appName)
         if(list.length == 2){
             //跳转app手册内容页面
             onclickButton(list[0])
+            
+            //将“-”转换成“_”
+            if(list[1].search("-")>0){
+                list[1] = list[1].replace(/-/g,"_");
+            }
+            
             //页面的资源都加载完成后跳转需要的标题
             $(document).ready(function(){
                 switch (list[1]){
@@ -467,6 +473,11 @@ function onclickA(str)
     {
         document.getElementById("hlist").scrollTop = 0;
     }
+}
+
+function Refresh_the_content_interface()
+{
+    document.getElementById(old_str).click()
 }
 
 function getDocTop(mdFile, mdData) {
