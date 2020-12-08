@@ -24,6 +24,7 @@
 #include <QProgressBar>
 #include <QPen>
 #include <QHBoxLayout>
+#include <QTimer>
 #include <QEvent>
 #include <QMouseEvent>
 #include <QPaintEvent>
@@ -78,6 +79,10 @@ protected:
     enum LocaTion{top,bottom,left,right,left_top,left_bottm,right_top,right_botm,middle};
     LocaTion site_flag;
     int Padding = 6;
+    bool windowsflag = true;
+
+    QRect m_rect;
+
 private:
     QWebView *m_pWebView;
     QString mJumpAppName;

@@ -40,6 +40,7 @@
 #include "guide-widget.h"
 #include "main_controller.h"
 #include "common-tool/comm_func.h"
+#include "xatom-helper.h"
 
 GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 {
@@ -48,19 +49,26 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
     //this->resize(850,640);
     this->resize(1000,750);
 
+    // 添加窗管协议
+    MotifWmHints hints;
+    hints.flags = MWM_HINTS_FUNCTIONS|MWM_HINTS_DECORATIONS;
+    hints.functions = MWM_FUNC_ALL;
+    hints.decorations = MWM_DECOR_BORDER;
+    XAtomHelper::getInstance()->setWindowMotifHint(this->winId(), hints);
 
 //    this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
     this->setWindowIcon(QIcon::fromTheme("kylin-user-guide"));
 //    this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
-//    QPalette palette;
-//    palette.setBrush(QPalette::Background, QBrush(QPixmap("://picture/backImage-700x540.png")));
-//    this->setPalette(palette);
+    QPalette palette;
+    palette.setBrush(QPalette::Background, QBrush(QColor(Qt::white)));
+    this->setPalette(palette);
     this->setAutoFillBackground(true);
 //    this->setStyleSheet("border-radius:10px");
     QDesktopWidget *desktop = QApplication::desktop();
     QRect rect = desktop->screenGeometry(0);
     this->move((rect.bottomRight().x()-this->width())/2,(rect.bottomRight().y()-this->height())/2);
+
 
     initSettings();
     initUI();
@@ -69,19 +77,19 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 
 void GuideWidget::paintEvent(QPaintEvent *event)
 {
-    QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);  // 反锯齿;
-    painter.setBrush(QBrush(Qt::white));
-    painter.setPen(QColor(79,79,79));
-    QRect rect = this->rect();
-//    qDebug()<<"====" <<this->rect() << rect.width() << rect.height();
-    rect.setWidth(rect.width()-2);
-    rect.setHeight(rect.height()-2);
-    painter.drawRoundedRect(rect, 10, 10);
+//    QPainter painter(this);
+//    painter.setRenderHint(QPainter::Antialiasing);  // 反锯齿;
+//    painter.setBrush(QBrush(Qt::white));
+//    painter.setPen(QColor(79,79,79));
+//    QRect rect = this->rect();
+////    qDebug()<<"====" <<this->rect() << rect.width() << rect.height();
+//    rect.setWidth(rect.width()-2);
+//    rect.setHeight(rect.height()-2);
+//    painter.drawRoundedRect(rect, 10, 10);
 
-    QStyleOption opt;
-    opt.init(this);
-    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
+//    QStyleOption opt;
+//    opt.init(this);
+//    style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 //    //也可用QPainterPath 绘制代替 painter.drawRoundedRect(rect, 15, 15);
 //    {
 //        QPainterPath painterPath;
@@ -262,15 +270,15 @@ void GuideWidget::initUI()
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
     QObject::connect(m_pWebView->page(),SIGNAL(linkClicked(QUrl)),this,SLOT(slot_webGoto(QUrl)));
     //    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
-    widget_layout->setContentsMargins(0, 3, 0, 1);
+    widget_layout->setContentsMargins(0, 2, 0, 1);
     widget_layout->setVerticalSpacing(0);
 
     main_layout->addLayout(widget_layout);
 
     //设置窗体透明
-    this->setAttribute(Qt::WA_TranslucentBackground, true);
+//    this->setAttribute(Qt::WA_TranslucentBackground, true);
     //设置无边框
-    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+//    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
 
 //    QGraphicsDropShadowEffect *shadow_effect = new QGraphicsDropShadowEffect(this);
 //    shadow_effect->setBlurRadius(5);
@@ -351,7 +359,18 @@ void GuideWidget::slot_onClicked_maxOffButton()
         QIcon iconRestore(":/image/fullscreen.png");
         m_pWindow->isMaximized() ? m_pWindow->showNormal() : m_pWindow->showMaximized();
         m_pWindow->isMaximized() ? button->setIcon(iconFull) :button->setIcon(iconRestore);
+        if(m_pWindow->isMaximized())
+            windowsflag = false;
+        else
+            windowsflag = true;
     }
+    QTimer* timer = new QTimer();
+    timer->start(10);           //以毫秒为单位
+    connect(timer,&QTimer::timeout,[=]{
+        m_pWebView->page()->mainFrame()->evaluateJavaScript("Refresh_the_content_interface();");
+        timer->stop();
+    });
+
 }
 
 void GuideWidget::slot_onClicked_closeOffButton()
@@ -620,71 +639,80 @@ void GuideWidget::mousePressEvent(QMouseEvent *event)
 
 void GuideWidget::mouseMoveEvent(QMouseEvent *event)
 {
-    QPoint gloPoint = event->globalPos();
-    QRect rect = this->rect();
-    QPoint tl = mapToGlobal(rect.topLeft());
-    QPoint rb = mapToGlobal(rect.bottomRight());
-    if (!mouseinwidget)
-    {
-        set_Cursor(gloPoint);
-    }
-    else
-    {
-        if (site_flag != middle )
-        {
-            QRect rMove(tl, rb);
-            switch (site_flag)
-            {
-                case left_top:
-                    if(rb.x()-gloPoint.x() >= this->minimumWidth())
-                        rMove.setLeft(gloPoint.x());
+//    QPoint gloPoint = event->globalPos();
+//    QRect rect = this->rect();
+//    QPoint tl = mapToGlobal(rect.topLeft());
+//    QPoint rb = mapToGlobal(rect.bottomRight());
+//    if(windowsflag){
+//        if (!mouseinwidget)
+//        {
+//            set_Cursor(gloPoint);
+//        }
+//        else
+//        {
+//            if (site_flag != middle )
+//            {
+//                QRect rMove(tl, rb);
+//                switch (site_flag)
+//                {
+//                    case left_top:
+//                        if(rb.x()-gloPoint.x() >= this->minimumWidth())
+//                            rMove.setLeft(gloPoint.x());
 
-                    if(rb.y()-gloPoint.y() >= this->minimumHeight())
-                        rMove.setTop(gloPoint.y());
-                    break;
-                case right_top:
-                    if(gloPoint.x()-tl.x() >= this->minimumWidth())
-                        rMove.setRight(gloPoint.x());
+//                        if(rb.y()-gloPoint.y() >= this->minimumHeight())
+//                            rMove.setTop(gloPoint.y());
+//                        break;
+//                    case right_top:
+//                        if(gloPoint.x()-tl.x() >= this->minimumWidth())
+//                            rMove.setRight(gloPoint.x());
 
-                    if(rb.y()-gloPoint.y() >= this->minimumHeight())
-                        rMove.setTop(gloPoint.y());
-                    break;
-                case left_bottm:
-                    if(rb.x()-gloPoint.x() >= this->minimumWidth())
-                        rMove.setLeft(gloPoint.x());
+//                        if(rb.y()-gloPoint.y() >= this->minimumHeight())
+//                            rMove.setTop(gloPoint.y());
+//                        break;
+//                    case left_bottm:
+//                        if(rb.x()-gloPoint.x() >= this->minimumWidth())
+//                            rMove.setLeft(gloPoint.x());
 
-                    if(gloPoint.y()-tl.y() >= this->minimumHeight())
-                        rMove.setBottom(gloPoint.y());
-                    break;
-                case right_botm:
-                    if(gloPoint.x()-tl.x() >= this->minimumWidth())
-                        rMove.setRight(gloPoint.x());
+//                        if(gloPoint.y()-tl.y() >= this->minimumHeight())
+//                            rMove.setBottom(gloPoint.y());
+//                        break;
+//                    case right_botm:
+//                        if(gloPoint.x()-tl.x() >= this->minimumWidth())
+//                            rMove.setRight(gloPoint.x());
 
-                    if(gloPoint.y()-tl.y() >= this->minimumHeight())
-                        rMove.setBottom(gloPoint.y());
-                    break;
-                case top:
-                    if(rb.y()-gloPoint.y() >= this->minimumHeight())
-                        rMove.setTop(gloPoint.y());
-                    break;
-                case right:
-                    if(gloPoint.x()-tl.y() >= this->minimumWidth())
-                        rMove.setRight(gloPoint.x());
-                    break;
-                case bottom:
-                    if(gloPoint.y()-tl.y() >= this->minimumHeight())
-                        rMove.setBottom(gloPoint.y());
-                    break;
-                case left:
-                    if(rb.x()-gloPoint.x() >= this->minimumWidth())
-                        rMove.setLeft(gloPoint.x());
-                    break;
-                default:
-                    break;
-            }
-            this->setGeometry(rMove);
-        }
-    }
+//                        if(gloPoint.y()-tl.y() >= this->minimumHeight())
+//                            rMove.setBottom(gloPoint.y());
+//                        break;
+//                    case top:
+//                        if(rb.y()-gloPoint.y() >= this->minimumHeight())
+//                            rMove.setTop(gloPoint.y());
+//                        break;
+//                    case right:
+//                        if(gloPoint.x()-tl.y() >= this->minimumWidth())
+//                            rMove.setRight(gloPoint.x());
+//                        break;
+//                    case bottom:
+//                        if(gloPoint.y()-tl.y() >= this->minimumHeight())
+//                            rMove.setBottom(gloPoint.y());
+//                        break;
+//                    case left:
+//                        if(rb.x()-gloPoint.x() >= this->minimumWidth())
+//                            rMove.setLeft(gloPoint.x());
+//                        break;
+//                    default:
+//                        break;
+//                }
+//                this->setGeometry(rMove);
+//                QTimer* timer = new QTimer();
+//                timer->start(10);           //以毫秒为单位
+//                connect(timer,&QTimer::timeout,[=]{
+//                    m_pWebView->page()->mainFrame()->evaluateJavaScript("Refresh_the_content_interface();");
+//                    timer->stop();
+//                });
+
+//            }
+//        }
+//    }
 
 
     if (event->buttons() & Qt::LeftButton )
@@ -707,8 +735,17 @@ void GuideWidget::mouseDoubleClickEvent(QMouseEvent *event)
             QIcon iconRestore(":/image/fullscreen.png");
             m_yWindow->isMaximized() ? m_yWindow->showNormal() : m_yWindow->showMaximized();
             m_yWindow->isMaximized() ? button1->setIcon(iconFull) :button1->setIcon(iconRestore);
+            if(m_yWindow->isMaximized())
+                windowsflag = false;
+            else
+                windowsflag = true;
         }
-        qDebug() << this->rect();
+        QTimer* timer = new QTimer();
+        timer->start(100);           //以毫秒为单位
+        connect(timer,&QTimer::timeout,[=]{
+            m_pWebView->page()->mainFrame()->evaluateJavaScript("Refresh_the_content_interface();");
+            timer->stop();
+        });
     }
     event->accept();
 }

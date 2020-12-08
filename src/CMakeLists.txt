@@ -9,6 +9,7 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
+set(KF5_MIN_VERSION "5.66.0")
 
 #cmake -D CMAKE_BUILD_TYPE=Debug
 #if (CMAKE_BUILD_TYPE MATCHES Debug)
@@ -34,6 +35,11 @@ find_package(Qt5WebKitWidgets REQUIRED)
 #find_package(Qt5WebEngineWidgets REQUIRED)
 #pkg_search_module(QCef REQUIRED libqcef)
 #include_directories(${QCef_INCLUDE_DIRS})
+#find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+#    WindowSystem
+#)
+
+find_package(Qt5X11Extras REQUIRED)
 
 #https://blog.csdn.net/qq_38410730/article/details/102797448
 #add_custom_command(OUTPUT _update-search-db
@@ -81,7 +87,7 @@ SET(QT_LIBS
     )
 #    Qt5::WebEngineWidgets
 message(${QT_LIBS})
-target_link_libraries(kylin-user-guide ${QT_LIBS} ${LIBS_PRIVATE})
+target_link_libraries(kylin-user-guide ${QT_LIBS} ${LIBS_PRIVATE} Qt5::X11Extras -lX11)
 
 set(pkgLibdir 	/usr/lib/${DEB_BUILD_GNU_CPU})
 set(pkgbindir 	/usr/bin/)
