@@ -24,6 +24,7 @@
 #include <QProgressBar>
 #include <QPen>
 #include <QHBoxLayout>
+#include <QTimer>
 #include <QEvent>
 #include <QMouseEvent>
 #include <QPaintEvent>
@@ -38,6 +39,7 @@
 #include <QSettings>
 #include <QMap>
 #include <QColorDialog>
+#include <QDesktopWidget>
 #include <QHBoxLayout>
 #include <qfontdatabase.h>
 #include <QModelIndex>
@@ -77,11 +79,16 @@ protected:
     bool mCanDrag = false;
     enum LocaTion{top,bottom,left,right,left_top,left_bottm,right_top,right_botm,middle};
     LocaTion site_flag;
-    int Padding = 2;
+    int Padding = 6;
+    bool windowsflag = true;
+
+    QRect m_rect;
+
 private:
     QWebView *m_pWebView;
     QString mJumpAppName;
     QWidget *m_yWidget;
+    QDesktopWidget *desktop;
 private slots:
     void slot_backOffButton();
     void slot_javaScriptFromWinObject();
