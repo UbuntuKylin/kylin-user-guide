@@ -26,9 +26,12 @@
 #include <QtGui>
 #include <QtCore>
 #include <QWidget>
+#include <QTimer>
 #include "main_controller.h"
 #include "ipc/ipc_dbus.h"
 #include "guide-widget.h"
+
+#include "xatom-helper.h"
 
 MainController* MainController::mSelf = 0;
 MainController* MainController::self()
@@ -62,7 +65,20 @@ void MainController::showGuide(QString appName)
 {
     if(appName!="")
         guideWidget->jump_app(appName);
-    guideWidget->activateWindow();
+    flags = guideWidget->windowFlags();
+    guideWidget->setWindowFlags(flags|Qt::WindowStaysOnTopHint);
+
+
+    MotifWmHints hints;
+    hints.flags = MWM_HINTS_FUNCTIONS|MWM_HINTS_DECORATIONS;
+    hints.functions = MWM_FUNC_ALL;
+    hints.decorations = MWM_DECOR_BORDER;
+    XAtomHelper::getInstance()->setWindowMotifHint(guideWidget->winId(), hints);
+    QTimer::singleShot(10, this, SLOT(setwindowFlags()));
+
+    if(guideWidget->isMinimized()){
+        guideWidget->showNormal();
+    }
     guideWidget->show();
 }
 
@@ -75,6 +91,18 @@ void MainController::showGuide()
         gStartShowApp = "";
     }
     guideWidget->activateWindow();
+    guideWidget->show();
+}
+
+void MainController::setwindowFlags()
+{
+    guideWidget->setWindowFlags(flags);
+    MotifWmHints hints;
+    hints.flags = MWM_HINTS_FUNCTIONS|MWM_HINTS_DECORATIONS;
+    hints.functions = MWM_FUNC_ALL;
+    hints.decorations = MWM_DECOR_BORDER;
+    XAtomHelper::getInstance()->setWindowMotifHint(guideWidget->winId(), hints);
+    XAtomHelper::getInstance()->setWindowBorderRadius(guideWidget->winId(), 6, 6, 6, 6);
     guideWidget->show();
 }
 
