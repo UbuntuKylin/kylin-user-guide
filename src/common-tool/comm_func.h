@@ -33,11 +33,13 @@
 
 #define OS_RELEASE "/etc/os-release"
 #define LSB_RELEASE "/etc/lsb-release"
+#define SYSTEM_FILE "/etc/os-release"
 
 #define LOCAL_FILE_PATH "/usr/share/kylin-user-guide/data/guide/"
 #define LOCAL_URL_PATH "file://///usr/share/kylin-user-guide/web/"
 
-#define LOCAL_FILE_PATH_UBUNTUKYLIN "/usr/share/kylin-user-guide/data/guide-ubuntukylin/"
+
+#define LOCAL_FILE_PATH_UBUNTUKYLIN "/usr/share/kylin-user-guide/data/guide/"
 #define LOCAL_URL_PATH_UBUNTUKYLIN "file://///usr/share/kylin-user-guide/web/"
 
 extern QString gLang;

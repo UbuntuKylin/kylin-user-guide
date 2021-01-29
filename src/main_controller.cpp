@@ -63,6 +63,16 @@ void MainController::showGuide(QString appName)
 {
     if(appName!="")
         guideWidget->jump_app(appName);
+
+//    qDebug() << Q_FUNC_INFO  << guideWidget->isMinimized() << guideWidget->size();
+    QList<QScreen *> list = QGuiApplication::screens();
+    if(guideWidget->isMinimized()){
+        if(guideWidget->size() == QSize(list.at(0)->availableGeometry().width(),list.at(0)->availableGeometry().height()))
+            guideWidget->showMaximized();
+        else
+            guideWidget->showNormal();
+    }
+
     flags = guideWidget->windowFlags();
     guideWidget->setWindowFlags(flags|Qt::WindowStaysOnTopHint);
 

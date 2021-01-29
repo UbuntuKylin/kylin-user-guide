@@ -17,36 +17,25 @@
 #pragma once
 
 #include <QWidget>
-#include <QSplitter>
 #include <QPushButton>
 #include <QLabel>
 #include <QLineEdit>
-#include <QProgressBar>
-#include <QPen>
-#include <QHBoxLayout>
+#include <QMenu>
+#include <QAction>
 #include <QTimer>
 #include <QEvent>
 #include <QMouseEvent>
 #include <QPaintEvent>
 #include <QVBoxLayout>
-#include <QTableWidget>
-#include <QListWidget>
-#include <QListWidgetItem>
-#include <QList>
 #include <QStackedWidget>
-#include <QCheckBox>
-#include <QScrollArea>
-#include <QSettings>
-#include <QMap>
-#include <QColorDialog>
+#include <QDesktopWidget>
 #include <QHBoxLayout>
-#include <qfontdatabase.h>
-#include <QModelIndex>
-#include <QStringListModel>
-#include <QFileSystemWatcher>
 #include <QtWebKitWidgets/QWebView>
 #include <QtWebKitWidgets/QWebFrame>
 #include <QtWebKit/QWebSettings>
+#include <QGSettings/QGSettings>
+
+#include "aboutwidget.h"
 //#include <QtWebChannel/QtWebChannel>
 class GuideWidget : public QWidget
 {
@@ -61,7 +50,7 @@ public:
     void set_Cursor(QPoint &event);
     QString system_name();
     QStringList getDirAndPng();
-
+    QString JudgmentSystrm();
     bool eventFilter(QObject *watched, QEvent *event);
 
 protected:
@@ -84,9 +73,15 @@ protected:
     QRect m_rect;
 
 private:
-    QWebView *m_pWebView;
-    QString mJumpAppName;
-    QWidget *m_yWidget;
+    QWebView *m_pWebView = nullptr;
+    QLabel *m_pTitleLabel = nullptr;
+    QString mJumpAppName = nullptr;
+    QWidget *m_yWidget = nullptr;
+    QDesktopWidget *desktop = nullptr;
+    QPushButton *menuOffButton = nullptr;
+    QMenu *m_menu = nullptr;
+    AboutWidget *about_widget = nullptr;
+    QGSettings *settings;
 private slots:
     void slot_backOffButton();
     void slot_javaScriptFromWinObject();
@@ -94,14 +89,17 @@ private slots:
     void slot_onClicked_minOffButton();
     void slot_onClicked_maxOffButton();
     void slot_onClicked_closeOffButton();
+    void slot_onClicked_MenuOffButton();
     void slot_webGoto(QUrl);
+    void slot_MenuActions(QAction *action);
+    void slot_SettingsChange(const QString &key);
 public slots:
     Q_INVOKABLE QString js_getIndexMdFilePath(QString);
     Q_INVOKABLE QString js_getIndexMdFilePathOther(QString);
     Q_INVOKABLE QString js_getIndexMdFileContent(QString);
     Q_INVOKABLE QString js_getIndexMdFileTitle(QString);
     Q_INVOKABLE QStringList js_getIntoFilename();
-    Q_INVOKABLE QString JudgmentSystrm();
+    Q_INVOKABLE bool js_getCpuArchitecture();
 public:
 
 signals:

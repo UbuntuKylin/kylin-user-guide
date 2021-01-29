@@ -163,7 +163,7 @@ function onclickButton(str)
         if(hlist[i].type == "h1")
             hlist_str +=  "<dt>\n" + "<a class='name1' id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
         else if(hlist[i].type == "h2")
-            if(name_text.length >12 )
+            if(name_text.length >= 12)
             {
                 hlist_str +=  "<dt>\n" + "<a class='name2' style='line-height:20px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
             }
@@ -174,13 +174,13 @@ function onclickButton(str)
         else if(hlist[i].type == "h3")
         {
             //console.log(name_text.length);
-            if(name_text.length >12)
+            if(name_text.length >= 12)
             {
-                hlist_str +=  "<dt>\n" + "<a class='name3' style='line-height:20px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+                hlist_str +=  "<dt>\n" + "<a class='name2' style='line-height:20px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
             }
             else
             {
-                hlist_str +=  "<dt>\n" + "<a class='name3' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+                hlist_str +=  "<dt>\n" + "<a class='name2' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
             }
             //console.log(hlist_str);
         }   
@@ -351,19 +351,23 @@ function addhtmlapp()
     }
 }
 
-function goBackMainUI()
+var style_name
+function SwitchStyle(id)
 {
-    //alert(str)
-    //console.log(str)
-    //document.getElementById("mainUI").style.display="inline";
-    //document.getElementById("pageContent").style.display="none";
-    if(navigator.language=="zh-CN")
-    {
-        window.location.href="index.html"
-    }
-    else
-    {
-        window.location.href="index_en_US.html"
+    // for(var i=1;i<2;i++)
+    // {
+    //     if(i==id)
+    //         document.getElementById("css"+i).disabled = false;
+    //     else
+    //         document.getElementById("css"+i).disabled = true;
+    // }
+    var css = document.getElementById("css")
+    if(id == 1){
+        css.setAttribute("href","css/guide-white.css");
+        style_name = 1
+    }else{
+        css.setAttribute("href","css/guide-black.css");
+        style_name = 2
     }
 }
 
@@ -395,14 +399,14 @@ function change_arrows(button_name)
 {
     if(arrows_png[button_name] == 0)
     {
-        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/kylin-user-guide/data/arrows_right.png"+")";
+        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/icons/ukui-icon-theme-default/scalable/actions/pan-end-symbolic.svg"+")";
         document.getElementById(button_name).style.backgroundSize="20px 20px";
         arrows_png[button_name]=1;
         return
     }
     if(arrows_png[button_name] == 1)
     {
-        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/kylin-user-guide/data/arrows_bottom.png"+")";
+        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/icons/ukui-icon-theme-default/scalable/actions/pan-down-symbolic.svg"+")";
         document.getElementById(button_name).style.backgroundSize="20px 20px";
         arrows_png[button_name]=0;
         return
@@ -460,19 +464,24 @@ function onclickA(str)
      //console.log(old_str,str) 
      if(old_str != "")
      {
-        document.getElementById(old_str).style.backgroundColor="rgb(231,231,231)" 
-        document.getElementById(old_str).style.color="black"
+        if(style_name == 1){
+            document.getElementById(old_str).style.backgroundColor="rgb(231,231,231)" 
+            document.getElementById(old_str).style.color="black"
+        }else{
+            document.getElementById(old_str).style.backgroundColor="rgb(29,29,31)" 
+            document.getElementById(old_str).style.color="white"
+        }
      }
      if(str != "")
      {
         document.getElementById(str).style.backgroundColor="#3D6BE5"
         document.getElementById(str).style.color="white"
         old_str = str
-    }
-    if(str == "")
-    {
+     }
+     if(str == "")
+     {
         document.getElementById("hlist").scrollTop = 0;
-    }
+     }
 }
 
 function Refresh_the_content_interface()

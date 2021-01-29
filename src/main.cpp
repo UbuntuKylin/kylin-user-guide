@@ -21,6 +21,9 @@
 #include <QCommandLineParser>
 #include <QDebug>
 #include <QFont>
+#include <QString>
+#include <QTranslator>
+#include <QLibraryInfo>
 #include <signal.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -75,7 +78,7 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
 
-    QCoreApplication::setApplicationName("ubuntukylin user guide");
+    QCoreApplication::setApplicationName("Ubuntukylin user guide");
     QCoreApplication::setApplicationVersion("0.0.0.0001");
     QStringList args = app.arguments();
 
@@ -146,6 +149,26 @@ int main(int argc, char *argv[])
     qApp->setStyleSheet(qss.readAll());
     qss.close();
 #endif
+
+    QString qm_name = QLocale::system().name();
+//        QString locale = "bo_CN";
+    QTranslator translator;
+    if(qm_name == "zh_CN" || qm_name == "es" || qm_name == "fr" || qm_name == "de" || qm_name == "ru" || qm_name == "bo_CN") {//中文 西班牙语 法语 德语 俄语
+//            if(!translator.load("kylin-user-guide_" + qm_name + ".qm",
+//                                ":/translation/"))
+//            if(!translator.load("/home/tang/builder/kylin-user-guide-1.0.2/src/translation/kylin-user-guide_zh_CN.qm"))
+        if(!translator.load("kylin-user-guide_" + qm_name + ".qm",
+                            "/usr/share/kylin-user-guide/translations/"))
+            qDebug() << "Load translation file："<< "kylin-user-guide_" + qm_name + ".qm" << " failed!";
+        else
+            app.installTranslator(&translator);
+    }
+
+    //加载Qt对话框默认的国际化
+    QTranslator qtTranslator;
+    qtTranslator.load("qt_" + qm_name,
+                      QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    app.installTranslator(&qtTranslator);
 
     gStartShowApp = jumpApp;
     MainController *ctrl = MainController::self();
