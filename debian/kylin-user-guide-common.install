@@ -1,1 +1,2 @@
 data /usr/share/kylin-user-guide/
+src/translation/*.qm /usr/share/kylin-user-guide/translations/

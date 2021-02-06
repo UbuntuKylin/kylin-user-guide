@@ -10,5 +10,8 @@
         <file>image/restore.png</file>
         <file>image/return.png</file>
         <file>image/back.png</file>
+        <file>translation/kylin-user-guide_zh_CN.qm</file>
+        <file>translation/kylin-user-guide_en_US.qm</file>
     </qresource>
+    <qresource prefix="/translation"/>
 </RCC>
