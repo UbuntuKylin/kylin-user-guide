@@ -33,6 +33,21 @@ require(['marked'], function (markedSetCustom){
 //  xhr.send();
 //};
 
+var html_list={
+    onboard:"list_h1",
+    atril:"list_h2",
+    indicator_china_weather:"list_h4",
+    kylin_recorder:"list_h5",
+    kylin_usb_creator:"list_h6",
+    kylin_screenshot:"list_h7",
+    kylin_calculator:"list_h8",
+    kylin_camera:"list_h9",
+    kylin_scanner:"list_h10",
+    gnome_tetravex:"list_h1",
+    gnome_mines:"list_h2",
+    iagno:"list_h3",
+};
+
 //手册dbus跳转页面js接口函数
 function qt_jumpApp(appName)
 {
@@ -48,6 +63,7 @@ function qt_jumpApp(appName)
         //截取跳转的app手册内容和显示app内容后的标题
         var list = appName.split("/")
         if(list.length == 2){
+             
             //跳转app手册内容页面
             onclickButton(list[0])
             
@@ -58,25 +74,8 @@ function qt_jumpApp(appName)
             
             //页面的资源都加载完成后跳转需要的标题
             $(document).ready(function(){
-                switch (list[1]){
-                    case "mate-calc":
-                        document.getElementById("list_h10").click()
-                        break;
-                    case "ukui-system-monitor":
-                        document.getElementById("list_h1").click()
-                        break;
-                    case "onboard":
-                        document.getElementById("list_h23").click()
-                        break;
-                    case "cheese":
-                        document.getElementById("list_h6").click()
-                        break;
-                    case "gnome-screenshot":
-                        document.getElementById("list_h16").click()
-                        break; 
-                    default:
-                        break;
-                }
+                    var target = html_list[list[1]]
+                    document.getElementById(target).click()
             });
         }    
     }
@@ -85,36 +84,37 @@ function qt_jumpApp(appName)
 }
 
 var date ={
-    kylinOS:"2020年3月24日",
-    ukui:"2020年3月23日",
-    // kydroid2:"2019年11月13日",
-    ukui_control_center : "2020年3月21日",
-    biometric_manager : "2020年3月18日",
-    hot_key:"2020年3月20日",
-    peony:"2020年3月14日",
-    ubuntu_kylin_software_center:"2020年3月20日", 
-    kylin_video:"2020年3月20日",
-    burner:"2020年3月20日",
-    kylin_assistant:"2020年3月20日",
-    indicator_china_weather:"2020年3月20日",
-    // kylin_ipmsg:"2019年11月13日",
-    // kysec_ui_pkexec:"2019年11月13日",
-    // kybackup:"2019年11月13日",
-    // audacious:"2019年11月13日",
-    eom :"2020年3月20日",
-    // kylin_update_manager:"2019年11月13日",
-    remmina:"22020年3月20日",
-    // vino_preferences:"2019年11月13日",
-    // claws_mail:"2019年11月13日",
-    // system_config_printer:"2019年11月13日",
-    // simple_scan:"2019年11月13日",
-    // mate_system_monitor:"2019年11月13日",
-    // gparted:"2019年11月13日",
-    engrampa:"2020年3月20日",
-    // audio_recorder:"2019年11月13日",
-    mate_terminal:"2020年3月20日",
-    tools:"2020年3月13日",
-    technical_assistance:"2020年3月24日",
+    biometric_manager:"2021年1月28日",
+    box_manager:"2021年1月28日",
+    claws_mail:"2021年1月28日",
+    engrampa:"2021年1月28日",
+    eom:"2021年1月28日",
+    filezilla:"2021年1月28日",
+    game:"2021年1月28日",
+    gparted:"2021年1月28日",
+    hot_key:"2021年1月28日",
+    ksc_defender:"2021年1月28日",
+    kybackup:"2021年1月28日",
+    kylin_assistant:"2021年1月28日",
+    kylin_burner:"2021年1月28日",
+    kylin_ipmsg:"2021年1月28日",
+    kylin_music:"2021年1月28日",
+    kydroid:"2021年1月28日",
+    kylin_log_viewer:"2021年1月28日",
+    kylinOS:"2021年1月28日",
+    kylin_service_support:"2021年1月29日",
+    kylin_store:"2021年1月28日", 
+    kylin_video:"2021年1月28日",
+    mate_terminal:"2021年1月28日",
+    peony:"2021年1月28日",
+    recoll:"2021年1月28日",
+    remmina:"2021年1月28日",
+    technical_assistance:"2021年1月28日",
+    tools:"2021年1月28日",
+    kylin_os_installer:"2021年1月28日",
+    ukui:"2021年1月28日",
+    ukui_control_center:"2021年1月28日",
+    kylin_system_monitor:"2021年1月28日",
 };
 
 function onclickButton(str)
@@ -285,9 +285,9 @@ function addhtmlapp()
         var pngname=test[i].slice(test[i].indexOf("|")+1,test[i].length)
         if(dirname=="software-compatibility"||dirname=="technical-assistance"
            ||dirname=="kylinOS"||dirname=="ukui"||dirname=="ukui-control-center"
-           ||dirname=="biometric-manager"||dirname=="hot-key"
+           ||dirname=="hot-key"
            ||dirname=="hardware-compatibility"
-           ||dirname=="ubiquity"||dirname=="kydroid2")
+           ||dirname=="kylin-os-installer")
         {
             continue
         }
