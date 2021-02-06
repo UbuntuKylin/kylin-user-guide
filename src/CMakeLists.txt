@@ -40,6 +40,7 @@ find_package(Qt5WebKitWidgets REQUIRED)
 #)
 
 find_package(Qt5X11Extras REQUIRED)
+find_package(gsettings-qt COMPONENTS)
 
 #https://blog.csdn.net/qq_38410730/article/details/102797448
 #add_custom_command(OUTPUT _update-search-db
@@ -63,6 +64,7 @@ ${Qt5Widgets_INCLUDE_DIRS}
 ${Qt5WebChannel_INCLUDE_DIRS}
 #${Qt5WebEngineWidgets_INCLUDE_DIRS}//crash
 ${Qt5WebKitWidgets_INCLUDE_DIRS}
+${gsettings-qt_INCLUDE_DIRS}
 )
 
 #message(${HRADERS_QT})
@@ -87,7 +89,7 @@ SET(QT_LIBS
     )
 #    Qt5::WebEngineWidgets
 message(${QT_LIBS})
-target_link_libraries(kylin-user-guide ${QT_LIBS} ${LIBS_PRIVATE} Qt5::X11Extras -lX11)
+target_link_libraries(kylin-user-guide ${QT_LIBS} ${LIBS_PRIVATE} Qt5::X11Extras -lX11 -lgsettings-qt)
 
 set(pkgLibdir 	/usr/lib/${DEB_BUILD_GNU_CPU})
 set(pkgbindir 	/usr/bin/)
@@ -97,3 +99,17 @@ add_subdirectory(daemon)
 ## Installation
 #install(TARGETS kylin-user-guide DESTINATION ${CMAKE_INSTALL_PREFIX}/share/kylin-user-guide)
 install(TARGETS kylin-user-guide DESTINATION ${pkgbindir})
+
+
+#lupdate -recursive . -target-language en_US -ts src/translation/kylin-user-guide_en_US.ts
+file(GLOB TS_FILES "${CMAKE_CURRENT_SOURCE_DIR}/translation/*.ts")
+
+
+# cmake -DUPDATE_TRANSLATIONS=yes
+if (UPDATE_TRANSLATIONS)
+    qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+else()
+    qt5_add_translation(QM_FILES ${TS_FILES})
+endif()
+add_custom_target(translations ALL DEPENDS ${QM_FILES})
+install(FILES ${QM_FILES} DESTINATION "/usr/share/kylin-user-guide/translations/")

@@ -31,11 +31,15 @@
 #include <QComboBox>
 #include <QScrollBar>
 #include <QDesktopServices>
-#include <QDesktopWidget>
 #include <QApplication>
 #include <QToolTip>
 #include <QGraphicsDropShadowEffect>
 #include <QPixmap>
+#include <QScreen>
+#include <QList>
+#include <QSysInfo>
+#include <QX11Info>
+#include <X11/Xlib.h>
 
 #include "guide-widget.h"
 #include "main_controller.h"
@@ -44,10 +48,14 @@
 
 GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 {
-//    setAttribute(Qt::WA_TranslucentBackground);
     this->isTopLevel();
-    //this->resize(850,640);
-    this->resize(1000,750);
+//    this->resize(832,650);
+    this->setMinimumSize(835,650);
+
+    if(QGSettings::isSchemaInstalled("org.ukui.style")){
+        settings = new QGSettings("org.ukui.style");
+        connect(settings,&QGSettings::changed,this,&GuideWidget::slot_SettingsChange);
+    }
 
     // 添加窗管协议
     MotifWmHints hints;
@@ -58,14 +66,19 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
 
 //    this->setWindowIcon(QIcon(":/image/kylin-user-guide_44_56.png"));
     this->setWindowIcon(QIcon::fromTheme("kylin-user-guide"));
-//    this->setWindowTitle(GUIDE_WINDOW_TITLE);
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
+
     QPalette palette;
-    palette.setBrush(QPalette::Background, QBrush(QColor(Qt::white)));
+    if(settings->get("styleName").toString() == "ukui-default"){
+        palette.setBrush(QPalette::Background, QBrush(QColor(Qt::white)));
+        palette.setBrush(QPalette::Text, QBrush(QColor(29,29,31)));
+    }else{
+        palette.setBrush(QPalette::Background, QBrush(QColor(29,29,31)));
+        palette.setBrush(QPalette::Text, QBrush(QColor(Qt::white)));
+    }
     this->setPalette(palette);
     this->setAutoFillBackground(true);
-//    this->setStyleSheet("border-radius:10px");
-    QDesktopWidget *desktop = QApplication::desktop();
+    desktop = QApplication::desktop();
     QRect rect = desktop->screenGeometry(0);
     this->move((rect.bottomRight().x()-this->width())/2,(rect.bottomRight().y()-this->height())/2);
 
@@ -110,6 +123,30 @@ void GuideWidget::resizeEvent(QResizeEvent *e)
     //使用QPainterPath的api生成多边形Region
     setProperty("blurRegion", QRegion(blurPath.toFillPolygon().toPolygon()));
     this->update();
+
+    QTimer* timer = new QTimer();
+    timer->start(10);           //以毫秒为单位
+    connect(timer,&QTimer::timeout,[=]{
+        m_pWebView->page()->mainFrame()->evaluateJavaScript("Refresh_the_content_interface();");
+        timer->stop();
+    });
+
+    qDebug() << e->oldSize() << e->size() << QGuiApplication::screens().at(0)->availableGeometry();
+
+    QPushButton *button1 = this->findChild<QPushButton *>("maxOffButton");
+    QList<QScreen *> list = QGuiApplication::screens();
+    if(e->oldSize() == QSize(list.at(0)->availableGeometry().width(),list.at(0)->availableGeometry().height())){
+
+        button1->setIcon(QIcon::fromTheme("window-maximize-symbolic"));
+        button1->setToolTip(tr("Maximize"));
+        windowsflag = true;
+    }
+    if(e->size() == QSize(list.at(0)->availableGeometry().width(),list.at(0)->availableGeometry().height())){
+
+        button1->setIcon(QIcon::fromTheme("window-restore-symbolic"));
+        button1->setToolTip(tr("Reduction"));
+        windowsflag = false;
+    }
 }
 
 GuideWidget::~GuideWidget()
@@ -119,7 +156,7 @@ GuideWidget::~GuideWidget()
 
 void GuideWidget::initUI()
 {
-    m_pWebView = new QWebView;
+    m_pWebView = new QWebView(this);
     m_pWebView->installEventFilter(this);
 //    m_yWidget = new  QWidget(this);
     qDebug() <<"------------"<< m_pWebView->width() << m_pWebView->height();
@@ -129,18 +166,18 @@ void GuideWidget::initUI()
     QPushButton *minOffButton = new QPushButton(this);
     QPushButton *maxOffButton = new QPushButton(this);
     QPushButton *closeOffButton = new QPushButton(this);
-    QPushButton *menuOffButton = new QPushButton(this);
+    menuOffButton = new QPushButton(this);
     QLabel *m_pIconLabel = new QLabel(this);
     QLabel *m_pTitleLabel = new QLabel(this);
     QLineEdit *search_Line = new QLineEdit(this);
 
     QIcon icon1;
-    icon1.addFile(tr(":/image/icon-search.png"));
+    icon1.addFile(":/image/icon-search.png");
     search_Line->addAction(icon1,QLineEdit::LeadingPosition);
     //search_Line->setFixedSize(320,30);
     search_Line->setMinimumSize(280,30);
     search_Line->setMaximumSize(800,30);
-    search_Line->setPlaceholderText(QString::fromLocal8Bit("搜索"));
+//    search_Line->setPlaceholderText(QString::fromLocal8Bit(tr("Search")));
     search_Line->setAlignment(Qt::AlignVCenter);
     qDebug() << search_Line->alignment();
     search_Line->setStyleSheet("background-color:rgb(234,234,234)");
@@ -152,15 +189,17 @@ void GuideWidget::initUI()
 
     m_pIconLabel->setFixedSize(24,24);
     m_pIconLabel->setScaledContents(true);
-    m_pIconLabel->setPixmap((QPixmap(QString::fromLocal8Bit(":/image/kylin-user-guide_16_24.png"))));
+    m_pIconLabel->setPixmap(QIcon::fromTheme("kylin-user-guide").pixmap(24,24));
 
-//    m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
-    m_pTitleLabel->setFixedHeight(30);
+    m_pTitleLabel->setText(tr("Kylin User Guide"));
+    m_pTitleLabel->setFixedSize(120,30);
+    m_pTitleLabel->setIndent(4);
+//    m_pTitleLabel->setStyleSheet("QLabel{background:red;}");
 
-    QIcon iconReturn(":/image/back.png"); //让QIcon对象指向想要的图标
-    backOffButton->setIcon(iconReturn); //给按钮添加图标
-    backOffButton->setIconSize(QSize(25,25));//重置图标大小
-    backOffButton->setFixedSize(40,30);
+//    QIcon iconReturn(":/image/back.png"); //让QIcon对象指向想要的图标
+    backOffButton->setIcon(QIcon::fromTheme("document-revert-symbolic")); //给按钮添加图标
+    backOffButton->setIconSize(QSize(20,20));//重置图标大小
+    backOffButton->setFixedSize(30,30);
     backOffButton->setStyleSheet(/*"QPushButton{border-image: url(:/image/back.png);border-image-size:25px,25px;border-radius:5px;}"\*/
                                  "QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
                                  "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
@@ -168,66 +207,76 @@ void GuideWidget::initUI()
     backOffButton->setFlat(true);
     backOffButton->setFocusPolicy(Qt::NoFocus);
     backOffButton->setVisible(false);
+    backOffButton->setToolTip(tr("Go back"));
     backOffButton->setCursor(QCursor(Qt::ArrowCursor));
     backOffButton->hide();
-//    qDebug() << backOffButton->objectName()<< "=========="<<backOffButton->parent()->objectName();
+//    if(settings->get("styleName").toString() == "ukui-default"){
+//        QPushButton *button = this->findChild<QPushButton *>("backOffButton");
+//        button->setProperty("setIconHighlightEffectDefaultColor", QColor(Qt::black));
+//        button->setProperty("useIconHighlightEffect", 0x10);
+//    }else{
+//        QPushButton *button = this->findChild<QPushButton *>("backOffButton");
+//        button->setProperty("setIconHighlightEffectDefaultColor", QColor(Qt::white));
+//        button->setProperty("useIconHighlightEffect", 0x10);
+//    }
 
-    QIcon iconMin(tr(":/image/minimize.png"));
-    minOffButton->setIcon(iconMin);
-    minOffButton->setIconSize(QSize(30,25));
-    minOffButton->setFixedSize(40,30);
+    minOffButton->setIcon(QIcon::fromTheme("window-minimize-symbolic"));
+    minOffButton->setFixedSize(30,30);
+    minOffButton->setProperty("isWindowButton", 0x1);
+    minOffButton->setProperty("useIconHighlightEffect", 0x2);
     minOffButton->setFlat(true);
-    minOffButton->setFocusPolicy(Qt::NoFocus);
-    minOffButton->setStyleSheet("QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
-                                "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
+    minOffButton->setToolTip(tr("Minimize"));
     minOffButton->setCursor(QCursor(Qt::ArrowCursor));
 
-    QIcon iconMax(tr(":/image/fullscreen.png"));
-    maxOffButton->setIcon(iconMax);
-    maxOffButton->setIconSize(QSize(30,25));
-    maxOffButton->setFixedSize(40,30);
+    maxOffButton->setIcon(QIcon::fromTheme("window-maximize-symbolic"));
+    maxOffButton->setFixedSize(30,30);
+    maxOffButton->setProperty("isWindowButton", 0x1);
+    maxOffButton->setProperty("useIconHighlightEffect", 0x2);
     maxOffButton->setFlat(true);
-    maxOffButton->setFocusPolicy(Qt::NoFocus);
-    maxOffButton->setStyleSheet("QPushButton:hover{background-color:rgb(107,142,235);border-radius:5px;}"\
-                                "QPushButton:pressed{background-color:rgb(61,107,229);border-radius:5px;}");
+    maxOffButton->setToolTip(tr("Maximize"));
     maxOffButton->setCursor(QCursor(Qt::ArrowCursor));
 
-    QIcon iconClose(tr(":/image/close.png"));
-    closeOffButton->setIcon(iconClose);
-    closeOffButton->setIconSize(QSize(30,25));
-    closeOffButton->setFixedSize(40,30);
+    closeOffButton->setIcon(QIcon::fromTheme("window-close-symbolic"));
+    closeOffButton->setFixedSize(30,30);
+    closeOffButton->setProperty("isWindowButton", 0x2);
+    closeOffButton->setProperty("useIconHighlightEffect", 0x8);
     closeOffButton->setFlat(true);
-    closeOffButton->setFocusPolicy(Qt::NoFocus);
-    closeOffButton->setStyleSheet("QPushButton:hover{background-color:rgb(215,52,53);border-radius:5px;}"\
-                                "QPushButton:pressed{background-color:rgb(244,110,101);border-radius:5px;}");
+    closeOffButton->setToolTip(tr("Close"));
     closeOffButton->setCursor(QCursor(Qt::ArrowCursor));
 
-    QIcon iconMenu(tr(":/image/open-menu-symbolic.png"));
-    menuOffButton->setIcon(iconMenu);
-    menuOffButton->setIconSize(QSize(30,25));
-    menuOffButton->setFixedSize(40,30);
+    menuOffButton->setIcon(QIcon::fromTheme("open-menu-symbolic"));
+    menuOffButton->setFixedSize(30,30);
+    menuOffButton->setProperty("isWindowButton", 0x1);
+    menuOffButton->setProperty("useIconHighlightEffect", 0x2);
     menuOffButton->setFlat(true);
-    menuOffButton->setFocusPolicy(Qt::NoFocus);
-    menuOffButton->setVisible(false);
+    menuOffButton->setToolTip(tr("Menu"));
+    menuOffButton->setCursor(QCursor(Qt::ArrowCursor));
+//    menuOffButton->setVisible(false);
 
+    m_menu = new QMenu(this);
+    m_menu->setMinimumWidth(160);
+    m_menu->addAction(tr("About"));
+    m_menu->addAction(tr("Quit"));
 
     connect(backOffButton,SIGNAL(released()),this,SLOT(slot_backOffButton()));
     connect(closeOffButton,SIGNAL(released()),this,SLOT(slot_onClicked_closeOffButton()));
     connect(minOffButton,SIGNAL(released()),this,SLOT(slot_onClicked_minOffButton()));
     connect(maxOffButton,SIGNAL(released()),this,SLOT(slot_onClicked_maxOffButton()));
-
+    connect(menuOffButton,SIGNAL(released()),this,SLOT(slot_onClicked_MenuOffButton()));
+    connect(m_menu,SIGNAL(triggered(QAction*)),this,SLOT(slot_MenuActions(QAction*)));
 
     QVBoxLayout *main_layout = new QVBoxLayout(this);
     QGridLayout *widget_layout = new QGridLayout(this);
+    widget_layout->setHorizontalSpacing(4);
 
     widget_layout->addWidget(m_pIconLabel,0,1,1,3);
     widget_layout->addWidget(m_pTitleLabel,0,4,1,10);
-    widget_layout->addWidget(backOffButton,0,22,1,4);
+    widget_layout->addWidget(backOffButton,0,21,1,4);
     widget_layout->addWidget(search_Line,0,40,1,40);
-    widget_layout->addWidget(menuOffButton,0,89,1,4);
-    widget_layout->addWidget(minOffButton,0,93,1,4);
-    widget_layout->addWidget(maxOffButton,0,97,1,4);
-    widget_layout->addWidget(closeOffButton,0,101,1,4);
+    widget_layout->addWidget(menuOffButton,0,90,1,4);
+    widget_layout->addWidget(minOffButton,0,94,1,4);
+    widget_layout->addWidget(maxOffButton,0,98,1,4);
+    widget_layout->addWidget(closeOffButton,0,102,1,4);
     widget_layout->setColumnStretch(40,6);
     widget_layout->setColumnStretch(6,2);
     widget_layout->setColumnStretch(39,1);
@@ -235,20 +284,16 @@ void GuideWidget::initUI()
 
     widget_layout->addWidget(m_pWebView,1,0,1,106);
 
-    QString name = system_name();
-    //qDebug() << "--------" <<name;
+//    QString name = system_name();
     QLocale localeNew;
     if(localeNew.language()==QLocale::Chinese)
     {
-        m_pTitleLabel->setText(GUIDE_WINDOW_TITLE);
         m_pWebView->load(QUrl(QString(LOCAL_URL_PATH_UBUNTUKYLIN)+"index-ubuntukylin.html"));
     }
     else
     {
-        m_pTitleLabel->setText("Kylin User Guide");
         m_pWebView->load(QUrl(QString(LOCAL_URL_PATH_UBUNTUKYLIN)+"index-ubuntukylin_en_US.html"));
     }
-//    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
     //m_pWebView->load(QUrl(QString(LOCAL_URL_PATH)+"index.html"));
     m_pWebView->setStyleSheet("border-radius:10px");
     m_pWebView->page()->setLinkDelegationPolicy(QWebPage::DelegateExternalLinks);//外链
@@ -264,14 +309,14 @@ void GuideWidget::initUI()
     m_pWebView->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
     m_pWebView->settings()->setAttribute(QWebSettings::AutoLoadImages,true);
     m_pWebView->settings()->setAttribute(QWebSettings::PluginsEnabled, true);
-    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
+//    m_pWebView->setContextMenuPolicy(Qt::NoContextMenu);
 
     QObject::connect(m_pWebView,SIGNAL(loadFinished(bool)),this,SLOT(slot_loadFinished(bool)));
     QObject::connect(m_pWebView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(slot_javaScriptFromWinObject()));
     QObject::connect(m_pWebView->page(),SIGNAL(linkClicked(QUrl)),this,SLOT(slot_webGoto(QUrl)));
     //    m_pWebView->load(QUrl("https://www.w3school.com.cn/html5/html_5_video.asp"));
-    widget_layout->setContentsMargins(0, 2, 0, 1);
-    widget_layout->setVerticalSpacing(0);
+    widget_layout->setContentsMargins(0, 0, 0, 0);
+    widget_layout->setVerticalSpacing(4);
 
     main_layout->addLayout(widget_layout);
 
@@ -287,14 +332,18 @@ void GuideWidget::initUI()
 //    this->setGraphicsEffect(shadow_effect);
 
 //    main_layout->setMargin(2);
-    main_layout->setContentsMargins(2,2,2,15);
+    main_layout->setContentsMargins(2,4,4,10);
 
-    this->setLayout(widget_layout);
     this->setLayout(main_layout);
 
     this->setMouseTracking(true);
-//    this->m_yWidget->setMouseTracking(true);
-    qDebug() << this->frameGeometry().width() << this->frameGeometry().height();
+
+    about_widget = new AboutWidget(this);
+    about_widget->setAppIcon("kylin-user-guide");
+    about_widget->setAppName(tr("Kylin User Guide"));
+    about_widget->setAppVersion(qApp->applicationVersion());
+    about_widget->setAppDescription(tr("<p>Kylin User Guide one-stop help for the use of this machine software\n\n</p>"));
+    about_widget->setAppDescription(tr("<p>Service & Support : <br/>&nbsp;&nbsp;&nbsp;<a style='color: black;' href='mailto://support@kylinos.cn'>support@kylinos.cn</a></p>"));
 }
 
 void GuideWidget::slot_webGoto(QUrl url)
@@ -302,6 +351,54 @@ void GuideWidget::slot_webGoto(QUrl url)
     qDebug() << Q_FUNC_INFO << url;
     if(url.toString().contains("http"))
         QDesktopServices::openUrl(url);
+}
+
+void GuideWidget::slot_MenuActions(QAction *action)
+{
+    if(action->text() == tr("About")){
+        about_widget->exec();
+    }else if(action->text() == tr("Quit")){
+        slot_onClicked_closeOffButton();
+    }else{
+
+    }
+}
+
+void GuideWidget::slot_SettingsChange(const QString &key)
+{
+    qDebug() << Q_FUNC_INFO << key << settings->get("styleName").toString();
+    if(key == "styleName"){
+        QPalette palette;
+        if(settings->get("styleName").toString() == "ukui-black" || settings->get("styleName").toString() == "ukui-dark"){
+            palette.setBrush(QPalette::Background, QBrush(QColor(29,29,31)));
+            palette.setBrush(QPalette::Text, QBrush(QColor(Qt::white)));
+            this->setPalette(palette);
+
+            QPushButton *button = this->findChild<QPushButton *>("backOffButton");
+            button->setProperty("setIconHighlightEffectDefaultColor", QColor(Qt::white));
+            button->setProperty("useIconHighlightEffect", 0x10);
+
+            m_pWebView->page()->mainFrame()->evaluateJavaScript("SwitchStyle(2);");
+        }else{
+            palette.setBrush(QPalette::Background, QBrush(QColor(Qt::white)));
+            palette.setBrush(QPalette::Text, QBrush(QColor(29,29,31)));
+            this->setPalette(palette);
+
+            QPushButton *button = this->findChild<QPushButton *>("backOffButton");
+            button->setProperty("setIconHighlightEffectDefaultColor", QColor(Qt::black));
+            button->setProperty("useIconHighlightEffect", 0x10);
+
+            m_pWebView->page()->mainFrame()->evaluateJavaScript("SwitchStyle(1);");
+        }
+    }
+}
+
+bool GuideWidget::js_getCpuArchitecture()
+{
+    if (QSysInfo::currentCpuArchitecture() == "mips" || QSysInfo::currentCpuArchitecture() == "mips64")
+        return true;
+    else
+        return false;
 }
 
 void GuideWidget::jump_app(QString appName)
@@ -321,16 +418,7 @@ void GuideWidget::slot_javaScriptFromWinObject()
 void GuideWidget::slot_backOffButton()
 {
     qDebug() << Q_FUNC_INFO;
-//    emit sig_backOff2js();
-//    QString name = system_name();
-//    if(name == "kylin")
-//    {
-//        m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
-//    }
-//    else if (name == "Ubuntu Kylin") {
     m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI_ubuntu();");
-//    }
-    //m_pWebView->page()->mainFrame()->evaluateJavaScript("goBackMainUI();");
     QPushButton *button = this->findChild<QPushButton *>("backOffButton");
     button->hide();
 }
@@ -338,6 +426,20 @@ void GuideWidget::slot_backOffButton()
 void GuideWidget::slot_loadFinished(bool f)
 {
     qDebug() << Q_FUNC_INFO << f ;
+    QTimer::singleShot(10,this,[=]{
+        QPalette palette;
+        if(settings->get("styleName").toString() == "ukui-black"  || settings->get("styleName").toString() == "ukui-dark"){
+            palette.setBrush(QPalette::Background, QBrush(QColor(29,29,31)));
+            palette.setBrush(QPalette::Text, QBrush(QColor(Qt::white)));
+            this->setPalette(palette);
+            m_pWebView->page()->mainFrame()->evaluateJavaScript("SwitchStyle(2);");
+        }else{
+            palette.setBrush(QPalette::Background, QBrush(QColor(Qt::white)));
+            palette.setBrush(QPalette::Text, QBrush(QColor(29,29,31)));
+            this->setPalette(palette);
+            m_pWebView->page()->mainFrame()->evaluateJavaScript("SwitchStyle(1);");
+        }
+    });
 }
 
 void GuideWidget::slot_onClicked_minOffButton()
@@ -355,22 +457,14 @@ void GuideWidget::slot_onClicked_maxOffButton()
     if(m_pWindow->isTopLevel())
     {
         QPushButton *button = this->findChild<QPushButton *>("maxOffButton");
-        QIcon iconFull(":/image/restore.png");
-        QIcon iconRestore(":/image/fullscreen.png");
         m_pWindow->isMaximized() ? m_pWindow->showNormal() : m_pWindow->showMaximized();
-        m_pWindow->isMaximized() ? button->setIcon(iconFull) :button->setIcon(iconRestore);
+        m_pWindow->isMaximized() ? button->setIcon(QIcon::fromTheme("window-restore-symbolic")) :button->setIcon(QIcon::fromTheme("window-maximize-symbolic"));
+        m_pWindow->isMaximized() ? button->setToolTip(tr("Reduction")) : button->setToolTip(tr("Maximize"));
         if(m_pWindow->isMaximized())
             windowsflag = false;
         else
             windowsflag = true;
     }
-    QTimer* timer = new QTimer();
-    timer->start(10);           //以毫秒为单位
-    connect(timer,&QTimer::timeout,[=]{
-        m_pWebView->page()->mainFrame()->evaluateJavaScript("Refresh_the_content_interface();");
-        timer->stop();
-    });
-
 }
 
 void GuideWidget::slot_onClicked_closeOffButton()
@@ -382,9 +476,15 @@ void GuideWidget::slot_onClicked_closeOffButton()
     }
 }
 
+void GuideWidget::slot_onClicked_MenuOffButton()
+{
+    m_menu->move(menuOffButton->geometry().left()+this->geometry().left(),menuOffButton->geometry().top()+this->geometry().top()+30);
+    m_menu->exec();
+}
+
 QString GuideWidget::system_name()
 {
-    QFile system (OS_RELEASE);
+    QFile system (SYSTEM_FILE);
     if(!system.exists())
     {
         return "";
@@ -569,6 +669,24 @@ QString GuideWidget::js_getIndexMdFileTitle(QString IndexMdFilePath)
     return title.trimmed();
 }
 
+QStringList GuideWidget::js_getBigPngSize(QString filePath)
+{
+    QStringList stringlist;
+    qDebug() << Q_FUNC_INFO << filePath<<"0-size:";
+    QFile file (filePath);
+    if(file.exists())
+    {
+        QImage image(filePath);
+        stringlist.append(QString::number(image.width()));
+        stringlist.append(QString::number(image.height()));
+        qDebug() << Q_FUNC_INFO << filePath<<"1-size:"<<stringlist;
+        return stringlist;
+    };
+
+    stringlist.append(QString::number(0));
+    stringlist.append(QString::number(0));
+    return stringlist;
+}
 
 void GuideWidget::initSettings()
 {
@@ -714,11 +832,58 @@ void GuideWidget::mouseMoveEvent(QMouseEvent *event)
 //        }
 //    }
 
+    if(mCanDrag && mouseinwidget){
+        qreal  dpiRatio = qApp->devicePixelRatio();
+        if (QX11Info::isPlatformX11()) {
+            Display *display = QX11Info::display();
+            Atom netMoveResize = XInternAtom(display, "_NET_WM_MOVERESIZE", False);
+            XEvent xEvent;
+            const auto pos = QCursor::pos();
 
-    if (event->buttons() & Qt::LeftButton )
-    {
-        if(mouseinwidget&&mCanDrag)
-            move(event->globalPos() - dragPos);
+            memset(&xEvent, 0, sizeof(XEvent));
+            xEvent.xclient.type = ClientMessage;
+            xEvent.xclient.message_type = netMoveResize;
+            xEvent.xclient.display = display;
+            xEvent.xclient.window = this->winId();
+            xEvent.xclient.format = 32;
+            xEvent.xclient.data.l[0] = pos.x() * dpiRatio;
+            xEvent.xclient.data.l[1] = pos.y() * dpiRatio;
+            xEvent.xclient.data.l[2] = 8;
+            xEvent.xclient.data.l[3] = Button1;
+            xEvent.xclient.data.l[4] = 0;
+
+            XUngrabPointer(display, CurrentTime);
+            XSendEvent(display, QX11Info::appRootWindow(QX11Info::appScreen()),
+                       False, SubstructureNotifyMask | SubstructureRedirectMask,
+                       &xEvent);
+            //XFlush(display);
+
+            XEvent xevent;
+            memset(&xevent, 0, sizeof(XEvent));
+
+            xevent.type = ButtonRelease;
+            xevent.xbutton.button = Button1;
+            xevent.xbutton.window = this->winId();
+            xevent.xbutton.x = event->pos().x() * dpiRatio;
+            xevent.xbutton.y = event->pos().y() * dpiRatio;
+            xevent.xbutton.x_root = pos.x() * dpiRatio;
+            xevent.xbutton.y_root = pos.y() * dpiRatio;
+            xevent.xbutton.display = display;
+
+            XSendEvent(display, this->effectiveWinId(), False, ButtonReleaseMask, &xevent);
+            XFlush(display);
+
+            if (event->source() == Qt::MouseEventSynthesizedByQt) {
+                if (!this->mouseGrabber()) {
+                    this->grabMouse();
+                    this->releaseMouse();
+                }
+            }
+
+            mouseinwidget = false;
+        } else {
+            this->move((QCursor::pos() - dragPos) * dpiRatio);
+        }
     }
     event->accept();
 }
@@ -731,21 +896,14 @@ void GuideWidget::mouseDoubleClickEvent(QMouseEvent *event)
         if(m_yWindow->isTopLevel())
         {
             QPushButton *button1 = this->findChild<QPushButton *>("maxOffButton");
-            QIcon iconFull(":/image/restore.png");
-            QIcon iconRestore(":/image/fullscreen.png");
             m_yWindow->isMaximized() ? m_yWindow->showNormal() : m_yWindow->showMaximized();
-            m_yWindow->isMaximized() ? button1->setIcon(iconFull) :button1->setIcon(iconRestore);
+            m_yWindow->isMaximized() ? button1->setIcon(QIcon::fromTheme("window-restore-symbolic")) :button1->setIcon(QIcon::fromTheme("window-maximize-symbolic"));
+            m_yWindow->isMaximized() ? button1->setToolTip(tr("Reduction")) : button1->setToolTip(tr("Maximize"));
             if(m_yWindow->isMaximized())
                 windowsflag = false;
             else
                 windowsflag = true;
         }
-        QTimer* timer = new QTimer();
-        timer->start(100);           //以毫秒为单位
-        connect(timer,&QTimer::timeout,[=]{
-            m_pWebView->page()->mainFrame()->evaluateJavaScript("Refresh_the_content_interface();");
-            timer->stop();
-        });
     }
     event->accept();
 }
@@ -755,6 +913,7 @@ void GuideWidget::mouseReleaseEvent(QMouseEvent *event)
     if (event->button() == Qt::LeftButton)
     {
         mouseinwidget = false;
+        this->setCursor(Qt::ArrowCursor);
     }
     event->accept();
 }
