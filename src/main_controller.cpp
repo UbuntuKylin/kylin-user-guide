@@ -51,9 +51,7 @@ MainController::MainController()
         ipcDbus->init();
     }
     guideWidget = new GuideWidget;
-    guideWidget->activateWindow();
     startShowApp();
-    guideWidget->show();
 }
 
 void MainController::startShowApp()
@@ -65,9 +63,18 @@ void MainController::showGuide(QString appName)
 {
     if(appName!="")
         guideWidget->jump_app(appName);
+
+//    qDebug() << Q_FUNC_INFO  << guideWidget->isMinimized() << guideWidget->size();
+    QList<QScreen *> list = QGuiApplication::screens();
+    if(guideWidget->isMinimized()){
+        if(guideWidget->size() == QSize(list.at(0)->availableGeometry().width(),list.at(0)->availableGeometry().height()))
+            guideWidget->showMaximized();
+        else
+            guideWidget->showNormal();
+    }
+
     flags = guideWidget->windowFlags();
     guideWidget->setWindowFlags(flags|Qt::WindowStaysOnTopHint);
-
 
     MotifWmHints hints;
     hints.flags = MWM_HINTS_FUNCTIONS|MWM_HINTS_DECORATIONS;
@@ -75,10 +82,6 @@ void MainController::showGuide(QString appName)
     hints.decorations = MWM_DECOR_BORDER;
     XAtomHelper::getInstance()->setWindowMotifHint(guideWidget->winId(), hints);
     QTimer::singleShot(10, this, SLOT(setwindowFlags()));
-
-    if(guideWidget->isMinimized()){
-        guideWidget->showNormal();
-    }
     guideWidget->show();
 }
 

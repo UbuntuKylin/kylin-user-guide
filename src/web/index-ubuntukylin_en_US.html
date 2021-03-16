@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 
 <head>
-<link rel="stylesheet" type="text/css" href="css/guide.css" >
+<link rel="stylesheet" type="text/css" href="css/guide-white.css" id="css" >
+<!-- <link rel="stylesheet" type="text/css" href="css/guide-black.css" id="css2" > -->
 
 <script src="/usr/share/javascript/marked/marked.min.js"></script>
 <script src="/usr/share/javascript/jquery/jquery.min.js"></script>
@@ -14,23 +15,33 @@
 <div id="mainUI">
 <div class="container"><div class="wrap"><h2 ><button id="button1" onclick="onclickarrows('system');change_arrows('button1')"></button>  System</h2></div><div class="line"></div></div>
 <div id="system" class="system-div">
-    <div id="ukui" onclick="onclickButton('ukui')" class="system-app">
-        <img src="file:////usr/share/kylin-user-guide/data/guide-ubuntukylin/ukui/ukui.png"  alt="ukui" />
+    <div id="kylinOS" onclick="onclickButton('kylinOS')" class="system-app">
+        <img src="file:////usr/share/kylin-user-guide/data/guide/kylinOS/kylinOS.png"  alt="kylinOS" />
         <br>
-        <span>Ukui</span>
+        <span>KylinOS</span>
+    </div>
+    <div id="kylin-os-installer" onclick="onclickButton('kylin-os-installer')" class="system-app">
+        <img src="file:////usr/share/kylin-user-guide/data/guide/kylin-os-installer/kylin-os-installer.png"  alt="ubiquity" />
+        <br>
+        <span>System Install</span>
+    </div>
+    <div id="ukui" onclick="onclickButton('ukui')" class="system-app">
+        <img src="file:////usr/share/kylin-user-guide/data/guide/ukui/ukui.png"  alt="ukui" />
+        <br>
+        <span>UKUI</span>
     </div>
 	<div id="ukui-control-center"" onclick="onclickButton('ukui-control-center')" class="system-app">
-        <img src="file:////usr/share/kylin-user-guide/data/guide-ubuntukylin/ukui-control-center/ukui-control-center.png"  alt="ukui-control-center" />
+        <img src="file:////usr/share/kylin-user-guide/data/guide/ukui-control-center/ukui-control-center.png"  alt="ukui-control-center" />
         <br>
         <span style="line-height:10px">Ukui Control Center</span>
     </div>
     <div id="biometric-manager" onclick="onclickButton('biometric-manager')" class="system-app">
-        <img src="file:////usr/share/kylin-user-guide/data/guide-ubuntukylin/biometric-manager/biometric-manager.png"  alt="biometric-manager" />
+        <img src="file:////usr/share/kylin-user-guide/data/guide/biometric-manager/biometric-manager.png"  alt="biometric-manager" />
         <br>
         <span style="line-height:10px">Biometric Manager</span>
     </div>
     <div id="hot-key" onclick="onclickButton('hot-key')" class="system-app">
-        <img src="file:////usr/share/kylin-user-guide/data/guide-ubuntukylin/hot-key/hot-key.png"  alt="hot-key" />
+        <img src="file:////usr/share/kylin-user-guide/data/guide/hot-key/hot-key.png"  alt="hot-key" />
         <br>
         <span>Hot Key</span>
     </div>
@@ -55,7 +66,7 @@
 <div class="container" id="sup"><div class="wrap"><h2 ><button id="button3"   onclick="onclickarrows('support');change_arrows('button3')"></button>  Support</h2></div><div class="line"></div></div>
 <div id="support" class="support-div">
     <div id="user" onclick="onclickButton('technical-assistance')"  class="system-app" style='margin-bottom: 0px'>
-        <img src="file:////usr/share/kylin-user-guide/data/guide-ubuntukylin/technical-assistance/technical-assistance.png"  alt="technical-assistance" />
+        <img src="file:////usr/share/kylin-user-guide/data/guide/technical-assistance/technical-assistance.png"  alt="technical-assistance" />
         <br>
         <span style="line-height:10px">Technical Assistance</span>
     </div>

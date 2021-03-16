@@ -11,7 +11,8 @@ Build-Depends: cmake,
                qttools5-dev,
                libqt5webkit5-dev,
                libqt5x11extras5-dev,
-               libkf5windowsystem-dev
+               libkf5windowsystem-dev,
+               libgsettings-qt-dev
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Homepage: https://github.com/ubuntukylin/kylin-user-guide
