@@ -36,6 +36,7 @@ void AboutWidget::initUI()
         palette.setBrush(QPalette::Background, QBrush(QColor(29,29,31)));
         palette.setBrush(QPalette::Text, QBrush(QColor(Qt::white)));
     }
+    this->setPalette(palette);
 
     title_icon = new QLabel(this);
     title_icon->setGeometry(8,8,24,24);
@@ -72,22 +73,19 @@ void AboutWidget::initUI()
     app_version->setAlignment(Qt::AlignCenter);
     app_version->setFont(font);
 
-    palette.setColor(QPalette::WindowText,QColor(89,89,89));
-    app_version->setPalette(palette);
+//    palette.setColor(QPalette::WindowText,QColor(89,89,89));
+//    app_version->setPalette(palette);
 
-    app_description = new QTextBrowser();
-    app_description->setOpenLinks(true);
-    app_description->setOpenExternalLinks(true);
-    app_description->setReadOnly(true);
-    app_description->setContextMenuPolicy (Qt::NoContextMenu);
-    app_description->setStyleSheet("QTextBrowser{border:none;color:#595959;}");
+    app_description = new QLabel(this);
+    app_description->setGeometry(32,260,356,100);
+    app_description->setAlignment(Qt::AlignTop);
+    app_description->setWordWrap(true);
 
-    QScrollArea *scrollarea = new QScrollArea(this);
-    scrollarea->setWidgetResizable(true);
-    scrollarea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    scrollarea->setWidget(app_description);
-    scrollarea->setGeometry(32,260,356,260);
-    scrollarea->setStyleSheet("QScrollArea{border:none;}");
+    app_support = new QLabel(this);
+    app_support->setGeometry(32,360,356,30);
+    app_support->setAlignment(Qt::AlignLeft);
+    app_support->setOpenExternalLinks(true);
+    app_support->setText(tr("Service & Support : <a style='color: black;' href='mailto://support@kylinos.cn'>support@kylinos.cn</a>"));
 }
 
 void AboutWidget::setAppIcon(const QString &text)
@@ -129,7 +127,7 @@ void AboutWidget::setAppVersion(const QString &text)
 
 void AboutWidget::setAppDescription(const QString &text)
 {
-    app_description->append(text);
+    app_description->setText(text);
 }
 
 void AboutWidget::gsettingsChange(const QString &key)
