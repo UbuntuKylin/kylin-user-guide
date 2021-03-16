@@ -31,13 +31,15 @@
 #define KYLIN_USER_GUIDE_GUI_SERVICE "com.kylinUserGuideGUI.hotel"
 #define KYLIN_USER_GUIDE_GUI_INTERFACE "com.guide.hotel"
 
+#define SYSTEM_FILE "/etc/os-release"
 #define OS_RELEASE "/etc/os-release"
 #define LSB_RELEASE "/etc/lsb-release"
 
 #define LOCAL_FILE_PATH "/usr/share/kylin-user-guide/data/guide/"
 #define LOCAL_URL_PATH "file://///usr/share/kylin-user-guide/web/"
 
-#define LOCAL_FILE_PATH_UBUNTUKYLIN "/usr/share/kylin-user-guide/data/guide-ubuntukylin/"
+
+#define LOCAL_FILE_PATH_UBUNTUKYLIN "/usr/share/kylin-user-guide/data/guide/"
 #define LOCAL_URL_PATH_UBUNTUKYLIN "file://///usr/share/kylin-user-guide/web/"
 
 extern QString gLang;

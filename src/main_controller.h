@@ -20,6 +20,9 @@
 #include <QTimer>
 #include <QSettings>
 #include <QWidget>
+#include <QList>
+#include <QGuiApplication>
+#include <QSize>
 #include "guide-widget.h"
 #include "ipc/ipc_dbus.h"
 
