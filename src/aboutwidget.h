@@ -46,8 +46,8 @@ private:
     QLabel *app_icon = nullptr;
     QLabel *app_name = nullptr;
     QLabel *app_version = nullptr;
-    QTextBrowser *app_description = nullptr;
-
+    QLabel *app_description = nullptr;
+    QLabel *app_support = nullptr;
 };
 
 #endif // ABOUTWIDGET_H
