@@ -342,8 +342,8 @@ void GuideWidget::initUI()
     about_widget->setAppIcon("kylin-user-guide");
     about_widget->setAppName(tr("Kylin User Guide"));
     about_widget->setAppVersion(qApp->applicationVersion());
-    about_widget->setAppDescription(tr("<p>Kylin User Guide one-stop help for the use of this machine software\n\n</p>"));
-    about_widget->setAppDescription(tr("<p>Service & Support : <br/>&nbsp;&nbsp;&nbsp;<a style='color: black;' href='mailto://support@kylinos.cn'>support@kylinos.cn</a></p>"));
+    about_widget->setAppDescription(tr("Kylin User Guide one-stop help for the use of this machine software"));
+//    about_widget->setAppDescription(tr("<p>Service & Support : <br/>&nbsp;&nbsp;&nbsp;<a style='color: black;' href='mailto://support@kylinos.cn'>support@kylinos.cn</a></p>"));
 }
 
 void GuideWidget::slot_webGoto(QUrl url)
@@ -625,7 +625,15 @@ QString GuideWidget::js_getIndexMdFilePath(QString appName)
 //    }
     //QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
     QPushButton *button = this->findChild<QPushButton *>("backOffButton");
-    qDebug() << button;
+    if(settings->get("styleName").toString() != "ukui-default"){
+        QPushButton *button = this->findChild<QPushButton *>("backOffButton");
+        button->setProperty("setIconHighlightEffectDefaultColor", QColor(Qt::white));
+        button->setProperty("useIconHighlightEffect", 0x10);
+    }else{
+        QPushButton *button = this->findChild<QPushButton *>("backOffButton");
+        button->setProperty("setIconHighlightEffectDefaultColor", QColor(Qt::black));
+        button->setProperty("useIconHighlightEffect", 0x10);
+    }
     button->show();
     return IndexMdFilePath;
 }

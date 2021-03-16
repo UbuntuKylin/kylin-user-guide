@@ -1,5 +1,385 @@
-kylin-user-guide (1.0.0-1) unstable; urgency=medium
+kylin-user-guide (1.0.2-47) v101; urgency=medium
 
-  * Initial release. (Closes: 968175)
+  * 合并(1.0.2-46~rc1)修改
 
- -- handsome_feng <jianfengli@ubuntukylin.com>  Tue, 17 Mar 2020 14:03:12 +0800
+ -- tang guang <tangguang@kylinos.cn>  Tue, 16 Mar 2021 14:50:04 +0800
+
+kylin-user-guide (1.0.2-46) v101; urgency=medium
+
+  * 新增对help URL支持，不再依赖yelp跳转
+
+ -- wuxiaoyi <wuxiaoyi@kylinos.cn>  Tue, 16 Mar 2021 14:14:41 +0800
+
+kylin-user-guide (1.0.2-46~rc1) v101; urgency=medium
+
+  * 修改软件版本号获取逻辑
+
+ -- tang guang <tangguang@kylinos.cn>  Mon, 15 Mar 2021 16:14:19 +0800
+
+kylin-user-guide (1.0.2-45~rc1) v101; urgency=medium
+
+  * 解决用户手册-关于-字体没有反白处理(bug#41553)
+  * 解决用户手册关于页面邮箱格式错位(bug#41367)
+
+ -- tang guang <tangguang@kylinos.cn>  Tue, 09 Mar 2021 19:32:48 +0800
+
+kylin-user-guide (1.0.2-44~rc2) v101; urgency=medium
+
+  * 增加快捷键，补充桌面环境里两个快捷键
+  * 更新关于里的“服务与支持团队” 
+
+ -- quyanying <quyanying@kylinos.cn>  Mon, 08 Mar 2021 11:52:11 +0800
+
+kylin-user-guide (1.0.2-44~rc1) v101; urgency=medium
+
+  * 解决bug#37520、bug#37524、bug#40464
+
+ -- tang guang <tangguang@kylinos.cn>  Wed, 03 Mar 2021 14:46:18 +0800
+
+kylin-user-guide (1.0.2-43~rc2) v101; urgency=medium
+
+  * 更新桌面环境、小工具的部分截图和图标
+
+ -- quyanying <quyanying@kylinos.cn>  Mon, 22 Feb 2021 17:02:40 +0800
+
+kylin-user-guide (1.0.2-43~rc1) v101; urgency=medium
+
+  * 更新系统安装的图2\4\6
+  * 更新小工具里麒麟录音部分，和计算器截图 
+
+ -- quyanying <quyanying@kylinos.cn>  Sat, 06 Feb 2021 11:30:28 +0800
+
+kylin-user-guide (1.0.2-42) v101; urgency=medium
+
+  * （bug #38121） 【用户手册】用户手册全屏后部分图片显示过大，影响阅读体验
+
+ -- wuxiaoyi <wuxiaoyi@kylinos.cn>  Fri, 05 Feb 2021 18:30:04 +0800
+
+kylin-user-guide (1.0.2-41) v101; urgency=medium 38121 【用户手册】用户手册全屏后部分图片显示过大，影响阅读体验
+
+  * 深色主题，关于窗口的关闭按钮不显示以及返回按钮看不清(bug#37864)
+
+ -- tang guang <tangguang@kylinos.cn>  Wed, 03 Feb 2021 14:02:50 +0800
+
+kylin-user-guide (1.0.2-40) v101; urgency=medium
+
+  * 添加关于界面的连接跳转
+
+ -- tang guang <tangguang@kylinos.cn>  Wed, 03 Feb 2021 11:27:43 +0800
+
+kylin-user-guide (1.0.2-39) v101; urgency=medium
+
+  * 同时监听任务栏和控制面板的主题切换
+  * 修改部分css样式
+
+ -- tang guang <tangguang@kylinos.cn>  Tue, 02 Feb 2021 19:59:40 +0800
+
+kylin-user-guide (1.0.2-38) v101; urgency=medium
+
+  * 修改版本号
+  * 调整英文下技术支持板块布局(bug#37520)
+
+ -- tang guang <tangguang@kylinos.cn>  Tue, 02 Feb 2021 09:57:03 +0800
+
+kylin-user-guide (1.0.2-37) v101; urgency=medium
+
+  * 添加ul标签在深色模式下的样式
+
+ -- tang guang <tangguang@kylinos.cn>  Mon, 01 Feb 2021 20:43:19 +0800
+
+kylin-user-guide (1.0.2-36~rc1) v101; urgency=medium
+
+  * 去掉小工具里的服务与支持
+  * 英文版更新首页上技术支持的内容
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 29 Jan 2021 10:54:14 +0800
+
+kylin-user-guide (1.0.2-35) v101; urgency=medium
+
+  * 添加服务与支持时间
+
+ -- tang guang <tangguang@kylinos.cn>  Fri, 29 Jan 2021 09:53:45 +0800
+
+kylin-user-guide (1.0.2-34~rc3) v101; urgency=medium
+
+  * 更新代码中软件商店的路径为kylin-store
+  * “常见问题”不显示具体问题到左侧目录
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 28 Jan 2021 10:25:07 +0800
+
+kylin-user-guide (1.0.2-34~rc2) v101; urgency=medium
+
+  * 更新英文版截图，补充小工具内容
+  * 更新中文版部分截图 
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 28 Jan 2021 09:08:36 +0800
+
+kylin-user-guide (1.0.2-34~rc1) v101; urgency=medium
+
+  * 用户手册支持主题切换 
+
+ -- tang guang <tangguang@kylinos.cn>  Tue, 26 Jan 2021 10:31:06 +0800
+
+kylin-user-guide (1.0.2-33~rc1) v101; urgency=medium
+
+  * 修复用户手册应用栏显示为空
+  * 主界面耳朵箭头图标显示异常
+
+ -- tang guang <tangguang@kylinos.cn>  Fri, 22 Jan 2021 15:58:52 +0800
+
+kylin-user-guide (1.0.2-32~rc2) v101; urgency=medium
+
+  * 添加common依赖关系 
+
+ -- tang guang <tangguang@kylinos.cn>  Thu, 21 Jan 2021 19:39:58 +0800
+
+kylin-user-guide (1.0.2-32~rc1) v101; urgency=medium
+
+  * 去掉recoll
+  * 纠正一些图片需要加-big参数
+  * 更新麒麟天气 
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 21 Jan 2021 14:58:11 +0800
+
+kylin-user-guide (1.0.2-31) v101; urgency=medium
+
+  * 修改返回按键的图标
+
+ -- tang guang <tangguang@kylinos.cn>  Wed, 20 Jan 2021 16:05:19 +0800
+
+kylin-user-guide (1.0.2-31~rc5) v101; urgency=medium
+
+  * 添加缺失的应用时间，修改eom的md文档
+
+ -- tang guang <tangguang@kylinos.cn>  Mon, 18 Jan 2021 20:46:12 +0800
+
+kylin-user-guide (1.0.2-31~rc4) v101; urgency=medium
+
+  * 删除部分应用中文文档和应用图标
+
+ -- tang guang <tangguang@kylinos.cn>  Mon, 18 Jan 2021 15:05:07 +0800
+
+kylin-user-guide (1.0.2-31~rc2) v101; urgency=medium
+
+  * 界面显示问题 (bug#33429)
+  * 建议优化 (bug#33416)
+
+ -- tang guang <tangguang@kylinos.cn>  Mon, 18 Jan 2021 11:36:00 +0800
+
+kylin-user-guide (1.0.2-30~rc5) v101; urgency=medium
+
+  * 再次更新 
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 15 Jan 2021 09:51:18 +0800
+
+kylin-user-guide (1.0.2-30~rc4) v101; urgency=medium
+
+  * 更新内容与系统相符
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 14 Jan 2021 16:40:09 +0800
+
+kylin-user-guide (1.0.2-30~rc2) v101; urgency=medium
+
+  * 修改帮助文档的来源
+
+ -- tang guang <tangguang@kylinos.cn>  Tue, 12 Jan 2021 17:23:49 +0800
+
+kylin-user-guide (1.0.2-29) v101; urgency=medium
+
+  * 解决用户手册最小化时，跳转界面异常
+
+ -- tang guang <tangguang@kylinos.cn>  Tue, 12 Jan 2021 09:20:03 +0800
+
+kylin-user-guide (1.0.2-28) v101; urgency=medium
+
+  * 解决界面未汉化问题
+
+ -- tang guang <tangguang@kylinos.cn>  Mon, 11 Jan 2021 19:17:12 +0800
+
+kylin-user-guide (1.0.2-27) v101; urgency=medium
+
+  * 添加菜单关于和退出
+  * 新增关于界面
+  * 替换部分应用图标
+
+ -- tang guang <tangguang@kylinos.cn>  Thu, 07 Jan 2021 19:52:05 +0800
+
+kylin-user-guide (1.0.2-26) v101; urgency=medium
+
+  * 修改内容目录标题大小一致
+  * 修改主界面的标题字体
+  * 修改回退按钮和主界面板块隐藏图标使用主题图标
+
+ -- tang guang <tangguang@kylinos.cn>  Wed, 06 Jan 2021 18:54:01 +0800
+
+kylin-user-guide (1.0.2-25) v101; urgency=medium
+
+  * 修改主窗口大小，适应低分辨率笔记本
+  * 添加翻译文件
+  * 添加标题栏按钮tooltip
+
+ -- tang guang <tangguang@kylinos.cn>  Fri, 25 Dec 2020 20:23:03 +0800
+
+kylin-user-guide (1.0.2-24) v101; urgency=medium
+
+  * 修改标题栏的规范，与其他应用一致
+
+ -- tang guang <tangguang@kylinos.cn>  Wed, 23 Dec 2020 19:34:19 +0800
+
+kylin-user-guide (1.0.2-23) v101; urgency=medium
+
+  * 修复产品提出的bug，28438\28436\28428\28426\28408\28400
+
+ -- quyanying <quyanying@kylinos.cn>  Wed, 23 Dec 2020 16:39:36 +0800
+
+kylin-user-guide (1.0.2-22) v101; urgency=medium
+
+  * “安卓兼容” -> “麒麟移动应用环境”
+  * “生物识别” -> “生物特征管理工具”
+  * 修改图片查看器的首选项截图，u盘启动器截图
+  * 麒麟移动应用环境在龙芯上不显示 -- by tangguang
+
+ -- quyanying <quyanying@kylinos.cn>  Wed, 23 Dec 2020 10:41:22 +0800
+
+kylin-user-guide (1.0.2-21) v101; urgency=medium
+
+  * 使用x11的窗口拖动方式
+  * 解决最大化->最小化到任务栏，再点击任务栏恢复为窗口大小而不是全屏
+  * 用户手册最大化后概率性无法还原
+  * 解决通过dbus拉起手册会出现标题栏问题
+
+ -- tang guang <tangguang@kylinos.cn>  Tue, 08 Dec 2020 14:06:44 +0800
+
+kylin-user-guide (1.0.2-20) v101; urgency=medium
+
+  * 解决在某边框位置拖动窗口大小，可以边改变大小边移动
+  * 解决打开用户手册，鼠标放在右上角关闭按钮右侧，无法横向放大或缩小
+  * 使用窗管圆角特性
+
+ -- tang guang <tangguang@kylinos.cn>  Mon, 07 Dec 2020 09:31:01 +0800
+
+kylin-user-guide (1.0.2-19) v101; urgency=medium
+
+  * 增加麒麟摄像头，麒麟扫描，安卓兼容
+  * 修改侧边栏小插件截图，u盘启动器截图，黑白棋截图，终端编码设置截图 
+
+ -- quyanying <quyanying@kylinos.cn>  Tue, 01 Dec 2020 07:37:51 +0800
+
+kylin-user-guide (1.0.2-18) v101; urgency=medium
+
+  * 增加麒麟日志管理，修改小工具里的录音截图 
+
+ -- quyanying <quyanying@kylinos.cn>  Tue, 17 Nov 2020 14:32:52 +0800
+
+kylin-user-guide (1.0.2-17) v101; urgency=medium
+
+  * 代码没同步更新修改,解决最大化后定位的内容与最大化前的不同 (bug#23872)
+
+ -- tang guang <tangguang@kylinos.cn>  Wed, 11 Nov 2020 15:08:08 +0800
+
+kylin-user-guide (1.0.2-16) v101; urgency=medium
+
+  * 删除音乐播放器，小工具里的茄子
+  * 增加安全中心的模式切换和基线扫描部分 
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 06 Nov 2020 09:34:02 +0800
+
+kylin-user-guide (1.0.2-15) v101; urgency=medium
+
+  * 更新修改,解决最大化后定位的内容与最大化前的不同 (bug#23872)
+
+ -- tang guang <tangguang@kylinos.cn>  Fri, 06 Nov 2020 09:11:47 +0800
+
+kylin-user-guide (1.0.2-14) v101; urgency=medium
+
+  * 解决最大化后定位的内容与最大化前的不同 (bug#23872)
+  * 解决已经将用户手册最小化在任务栏，再次在应用界面打开，用户手册闪现 (bug#23510)
+
+ -- tang guang <tangguang@kylinos.cn>  Fri, 06 Nov 2020 08:58:50 +0800
+
+kylin-user-guide (1.0.2-13) v101; urgency=medium
+
+  * 删除麒麟安全管理工具
+
+ -- quyanying <quyanying@kylinos.cn>  Tue, 03 Nov 2020 16:48:54 +0800
+
+kylin-user-guide (1.0.2-12) v101; urgency=medium
+
+  * 补全英文内容 
+
+ -- quyanying <quyanying@kylinos.cn>  Tue, 20 Oct 2020 15:45:02 +0800
+
+kylin-user-guide (1.0.2-11) v101; urgency=medium
+
+  * 重新添加关闭按钮颜色
+
+ -- tang guang <tangguang@kylinos.cn>  Fri, 16 Oct 2020 17:32:26 +0800
+
+kylin-user-guide (1.0.2-10) v101; urgency=medium
+
+  * 增加安全软件，麒麟传书
+  * 修改黑白棋截图，麒麟助手“本机信息”，屏幕键盘首选项
+  * 删除旧的应用，替换为新的应用
+  * 小工具板块重新调整
+  * 单独列出蓝牙和文本内容搜索工具
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 9 Oct 2020 16:34:03 +0800
+
+kylin-user-guide (1.0.2-9) v101; urgency=medium
+
+  * New bugfix release:
+    - The mouse is placed on the right side of the close button and the window cannot be resized (bug#19580)
+    - The user manual pops up, and the manual interface flashes for a moment (bug#20713)
+    - Open the user manual in the start menu, the interface will flash after the window pops up (bug#20619)
+
+ -- tangguang <tangguang@kylinos.cn>  Thu, 08 Oct 2020 14:55:11 +0800
+
+kylin-user-guide (1.0.2-8) v101; urgency=medium
+
+  * update biometric-manager.
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 18 Sep 2020 15:45:53 +0800
+
+kylin-user-guide (1.0.2-7) v101; urgency=medium
+
+  * update for v10.1-0915. 
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 18 Sep 2020 13:55:48 +0800
+
+kylin-user-guide (1.0.2-6) v101; urgency=medium
+
+  * Solve the problem that the window is already open,the call is not on top
+
+ -- tangguang <tangguang@kylinos.cn>  Tue, 15 Sep 2020 15:18:30 +0800
+
+kylin-user-guide (1.0.2-5) v101; urgency=medium
+
+  * Adjust the color of the close button
+
+ -- tangguang <tangguang@kylinos.cn>  Wed, 09 Sep 2020 16:06:31 +0800
+
+kylin-user-guide (1.0.2-4) v101; urgency=medium
+
+  * update the contents for v10.1
+
+ -- quyanying <quyanying@kylinos.cn>  Tue, 08 Sep 2020 15:36:47 +0800
+
+kylin-user-guide (1.0.2-3) v101; urgency=medium
+
+  * Solve that the user manual will appear in the middle of the dual screen
+
+ -- tangguang <tangguang@kylinos.cn>  Thu, 03 Sep 2020 16:19:18 +0800
+
+kylin-user-guide (1.0.2-2) v101; urgency=medium
+
+  * Solve the problem that the close button has no special effect 
+
+ -- tangguang <tangguang@kylinos.cn>  Thu, 20 Aug 2020 17:09:16 +0800
+
+kylin-user-guide (1.0.2-1) v101; urgency=medium
+
+  * use the lasteat code
+  * update the contents.
+
+ -- quyanying <quyanying@kylinos.cn>  Wed, 05 Aug 2020 16:02:38 +0800
+
