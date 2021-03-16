@@ -116,7 +116,6 @@ int main(int argc, char *argv[])
 //    QString jumpApp = cmdinParser.value("-A");//拿不到值
     QString jumpApp = "";
     if(bJumpApp)
-    {
         jumpApp = args.at(2);
     qDebug()<<"args"<<args<< "  jumpApp =" << jumpApp <<"       bJumpApp=" << bJumpApp;
 
