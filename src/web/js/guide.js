@@ -33,6 +33,21 @@ require(['marked'], function (markedSetCustom){
 //  xhr.send();
 //};
 
+var html_list={
+    onboard:"list_h1",
+    atril:"list_h2",
+    indicator_china_weather:"list_h4",
+    kylin_recorder:"list_h5",
+    kylin_usb_creator:"list_h6",
+    kylin_screenshot:"list_h7",
+    kylin_calculator:"list_h8",
+    kylin_camera:"list_h9",
+    kylin_scanner:"list_h10",
+    gnome_tetravex:"list_h1",
+    gnome_mines:"list_h2",
+    iagno:"list_h3",
+};
+
 //手册dbus跳转页面js接口函数
 function qt_jumpApp(appName)
 {
@@ -48,29 +63,19 @@ function qt_jumpApp(appName)
         //截取跳转的app手册内容和显示app内容后的标题
         var list = appName.split("/")
         if(list.length == 2){
+             
             //跳转app手册内容页面
             onclickButton(list[0])
+            
+            //将“-”转换成“_”
+            if(list[1].search("-")>0){
+                list[1] = list[1].replace(/-/g,"_");
+            }
+            
             //页面的资源都加载完成后跳转需要的标题
             $(document).ready(function(){
-                switch (list[1]){
-                    case "mate-calc":
-                        document.getElementById("list_h10").click()
-                        break;
-                    case "ukui-system-monitor":
-                        document.getElementById("list_h1").click()
-                        break;
-                    case "onboard":
-                        document.getElementById("list_h23").click()
-                        break;
-                    case "cheese":
-                        document.getElementById("list_h6").click()
-                        break;
-                    case "gnome-screenshot":
-                        document.getElementById("list_h16").click()
-                        break; 
-                    default:
-                        break;
-                }
+                    var target = html_list[list[1]]
+                    document.getElementById(target).click()
             });
         }    
     }
@@ -79,36 +84,37 @@ function qt_jumpApp(appName)
 }
 
 var date ={
-    kylinOS:"2020年3月24日",
-    ukui:"2020年3月23日",
-    // kydroid2:"2019年11月13日",
-    ukui_control_center : "2020年3月21日",
-    biometric_manager : "2020年3月18日",
-    hot_key:"2020年3月20日",
-    peony:"2020年3月14日",
-    ubuntu_kylin_software_center:"2020年3月20日", 
-    kylin_video:"2020年3月20日",
-    burner:"2020年3月20日",
-    kylin_assistant:"2020年3月20日",
-    indicator_china_weather:"2020年3月20日",
-    // kylin_ipmsg:"2019年11月13日",
-    // kysec_ui_pkexec:"2019年11月13日",
-    // kybackup:"2019年11月13日",
-    // audacious:"2019年11月13日",
-    eom :"2020年3月20日",
-    // kylin_update_manager:"2019年11月13日",
-    remmina:"22020年3月20日",
-    // vino_preferences:"2019年11月13日",
-    // claws_mail:"2019年11月13日",
-    // system_config_printer:"2019年11月13日",
-    // simple_scan:"2019年11月13日",
-    // mate_system_monitor:"2019年11月13日",
-    // gparted:"2019年11月13日",
-    engrampa:"2020年3月20日",
-    // audio_recorder:"2019年11月13日",
-    mate_terminal:"2020年3月20日",
-    tools:"2020年3月13日",
-    technical_assistance:"2020年3月24日",
+    biometric_manager:"2021年1月28日",
+    box_manager:"2021年1月28日",
+    claws_mail:"2021年1月28日",
+    engrampa:"2021年1月28日",
+    eom:"2021年1月28日",
+    filezilla:"2021年1月28日",
+    game:"2021年1月28日",
+    gparted:"2021年1月28日",
+    hot_key:"2021年1月28日",
+    ksc_defender:"2021年1月28日",
+    kybackup:"2021年1月28日",
+    kylin_assistant:"2021年1月28日",
+    kylin_burner:"2021年1月28日",
+    kylin_ipmsg:"2021年1月28日",
+    kylin_music:"2021年1月28日",
+    kydroid:"2021年1月28日",
+    kylin_log_viewer:"2021年1月28日",
+    kylinOS:"2021年1月28日",
+    kylin_service_support:"2021年1月29日",
+    kylin_store:"2021年1月28日", 
+    kylin_video:"2021年1月28日",
+    mate_terminal:"2021年1月28日",
+    peony:"2021年1月28日",
+    recoll:"2021年1月28日",
+    remmina:"2021年1月28日",
+    technical_assistance:"2021年1月28日",
+    tools:"2021年1月28日",
+    kylin_os_installer:"2021年1月28日",
+    ukui:"2021年1月28日",
+    ukui_control_center:"2021年1月28日",
+    kylin_system_monitor:"2021年1月28日",
 };
 
 function onclickButton(str)
@@ -157,7 +163,7 @@ function onclickButton(str)
         if(hlist[i].type == "h1")
             hlist_str +=  "<dt>\n" + "<a class='name1' id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
         else if(hlist[i].type == "h2")
-            if(name_text.length >12 )
+            if(name_text.length >= 11)
             {
                 hlist_str +=  "<dt>\n" + "<a class='name2' style='line-height:20px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
             }
@@ -168,13 +174,13 @@ function onclickButton(str)
         else if(hlist[i].type == "h3")
         {
             //console.log(name_text.length);
-            if(name_text.length >12)
+            if(name_text.length >= 11)
             {
-                hlist_str +=  "<dt>\n" + "<a class='name3' style='line-height:20px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+                hlist_str +=  "<dt>\n" + "<a class='name2' style='line-height:20px;' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
             }
             else
             {
-                hlist_str +=  "<dt>\n" + "<a class='name3' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
+                hlist_str +=  "<dt>\n" + "<a class='name2' onclick=onclickA('list_"+hlist[i].id+"')"+" id=" + "list_"+hlist[i].id + " href=\'#" +hlist[i].id + "\'>" + name_text + "</a> \n</dt>" ;
             }
             //console.log(hlist_str);
         }   
@@ -279,9 +285,9 @@ function addhtmlapp()
         var pngname=test[i].slice(test[i].indexOf("|")+1,test[i].length)
         if(dirname=="software-compatibility"||dirname=="technical-assistance"
            ||dirname=="kylinOS"||dirname=="ukui"||dirname=="ukui-control-center"
-           ||dirname=="biometric-manager"||dirname=="hot-key"
+           ||dirname=="hot-key"
            ||dirname=="hardware-compatibility"
-           ||dirname=="ubiquity"||dirname=="kydroid2")
+           ||dirname=="kylin-os-installer")
         {
             continue
         }
@@ -345,19 +351,23 @@ function addhtmlapp()
     }
 }
 
-function goBackMainUI()
+var style_name
+function SwitchStyle(id)
 {
-    //alert(str)
-    //console.log(str)
-    //document.getElementById("mainUI").style.display="inline";
-    //document.getElementById("pageContent").style.display="none";
-    if(navigator.language=="zh-CN")
-    {
-        window.location.href="index.html"
-    }
-    else
-    {
-        window.location.href="index_en_US.html"
+    // for(var i=1;i<2;i++)
+    // {
+    //     if(i==id)
+    //         document.getElementById("css"+i).disabled = false;
+    //     else
+    //         document.getElementById("css"+i).disabled = true;
+    // }
+    var css = document.getElementById("css")
+    if(id == 1){
+        css.setAttribute("href","css/guide-white.css");
+        style_name = 1
+    }else{
+        css.setAttribute("href","css/guide-black.css");
+        style_name = 2
     }
 }
 
@@ -379,7 +389,12 @@ var arrows_div={
     support:0,
 }
 
-var  arrows_png={
+var arrows_big_png={
+    width:0,
+    height:0,
+}
+
+var arrows_png={
     button1:0,
     button2:0,
     button3:0,
@@ -389,14 +404,14 @@ function change_arrows(button_name)
 {
     if(arrows_png[button_name] == 0)
     {
-        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/kylin-user-guide/data/arrows_right.png"+")";
+        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/icons/ukui-icon-theme-default/scalable/actions/pan-end-symbolic.svg"+")";
         document.getElementById(button_name).style.backgroundSize="20px 20px";
         arrows_png[button_name]=1;
         return
     }
     if(arrows_png[button_name] == 1)
     {
-        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/kylin-user-guide/data/arrows_bottom.png"+")";
+        document.getElementById(button_name).style.backgroundImage="url("+"/usr/share/icons/ukui-icon-theme-default/scalable/actions/pan-down-symbolic.svg"+")";
         document.getElementById(button_name).style.backgroundSize="20px 20px";
         arrows_png[button_name]=0;
         return
@@ -454,19 +469,29 @@ function onclickA(str)
      //console.log(old_str,str) 
      if(old_str != "")
      {
-        document.getElementById(old_str).style.backgroundColor="rgb(231,231,231)" 
-        document.getElementById(old_str).style.color="black"
+        if(style_name == 1){
+            document.getElementById(old_str).style.backgroundColor="rgb(231,231,231)" 
+            document.getElementById(old_str).style.color="black"
+        }else{
+            document.getElementById(old_str).style.backgroundColor="rgb(29,29,31)" 
+            document.getElementById(old_str).style.color="white"
+        }
      }
      if(str != "")
      {
         document.getElementById(str).style.backgroundColor="#3D6BE5"
         document.getElementById(str).style.color="white"
         old_str = str
-    }
-    if(str == "")
-    {
+     }
+     if(str == "")
+     {
         document.getElementById("hlist").scrollTop = 0;
-    }
+     }
+}
+
+function Refresh_the_content_interface()
+{
+    document.getElementById(old_str).click()
 }
 
 function getDocTop(mdFile, mdData) {
@@ -523,7 +548,11 @@ function getDocTop(mdFile, mdData) {
                 text1=text.slice(0,text.lastIndexOf("-big"))
 //路径需要用双引号，单引号无法解析相对路径
 //                return `<h5 style="text-align: center;"><img  style="height:98%;width:98%;" src="${hrefX2}" data-src="${href}" alt="${text}" /><br>${text1}</h5>`;
-                return '<h5 style="text-align: center;font-family: Noto Sans SC; font-size: 12px;color=#333333;"><img  style="height:98%;width:98%;" src=\"' + hrefX2 + '\" data-src=\"' + href + '\" alt='+ text +'/><br>' + text1 + '</h5>';
+                var size = window.guideWebkit.js_getBigPngSize(path+hrefX2);
+                if(size[0]!=0&&size[1]!=0)
+                return '<h5 style="text-align: center;font-family: Noto Sans SC; font-size: 12px;color=#333333;"><img  style="height:98%;width:98%;max-width:'+size[0] + 'px;max-height:'+size[1] +'px;" src=\"' + hrefX2 + '\"" data-src=\"' + href + '\" alt='+ text +'/><br>' + text1 + '</h5>';
+                else
+                return '<h5 style="text-align: center;font-family: Noto Sans SC; font-size: 12px;color=#333333;"><img  style="height:98%;width:98%;" src=\"' + hrefX2 + '\"" data-src=\"' + href + '\" alt='+ text +'/><br>' + text1 + '</h5>';
             }
         }
     };
