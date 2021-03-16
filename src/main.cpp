@@ -24,6 +24,9 @@
 #include <QString>
 #include <QTranslator>
 #include <QLibraryInfo>
+#include <QProcess>
+#include <QByteArray>
+
 #include <signal.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -34,7 +37,7 @@
 
 
 #define BUFF_SIZE 128
-#define APP_VERSION "1.0.2"
+#define CHANGELOG_PATH "/usr/share/doc/kylin-user-guide/changelog.Debian.gz"
 
 QString gLang = "zh_CN";
 QString gStartShowApp = "";
@@ -72,6 +75,15 @@ static void crashHandler(int sig)
     exit(128 + sig);
 }
 
+QString getAppVersion(){
+    QProcess process;
+    process.start(QString("dpkg-parsechangelog -l %1 --show-field Version").arg(CHANGELOG_PATH));
+    process.waitForFinished();
+    QByteArray result = process.readAllStandardOutput();
+    result = result.left(result.length()-1);
+    return result;
+}
+
 int main(int argc, char *argv[])
 {
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
@@ -81,8 +93,8 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
 
-    QCoreApplication::setApplicationName("ubuntukylin user guide");
-    QCoreApplication::setApplicationVersion(APP_VERSION);
+    QCoreApplication::setApplicationName("Kylin User Guide");
+    QCoreApplication::setApplicationVersion(getAppVersion());
     QStringList args = app.arguments();
 
     QCommandLineOption jumpAppOption(QStringList()<< "A" << "appName","指定打开应用程序版本手册","");
@@ -103,9 +115,27 @@ int main(int argc, char *argv[])
     bool bJumpApp = cmdinParser.isSet(jumpAppOption);
 //    QString jumpApp = cmdinParser.value("-A");//拿不到值
     QString jumpApp = "";
-    if(bJumpApp)
+    if(argc>=2&&bJumpApp)
+    {
         jumpApp = args.at(2);
-    qDebug()<<"args"<<args<< "  jumpApp =" << jumpApp <<"       bJumpApp=" << bJumpApp;
+//        if(1==jumpApp.split(":"))//dbus调用没有带:
+        if(2==jumpApp.split(":").length())//标准帮助URL help:xxx,部分开源app调用模式，新app可以统一用help:标准方式
+        {
+            jumpApp = jumpApp.split(":").at(1);
+        }
+        //games
+        QStringList gamesList,toolsList;
+        gamesList << "iagno" << "gnome-mines" << "gnome-tetravex";
+        toolsList << "onboard" << "atril" << "indicator-china-weather"<< "kylin-recorder" << "kylin-usb-creator" << "kylin-screenshot"\
+                  << "kylin-calculator" << "kylin-camera" << "kylin-scanner";
+        if(gamesList.contains(jumpApp))
+            jumpApp = "games/"+jumpApp;
+        if(toolsList.contains(jumpApp))
+            jumpApp = "tools/"+jumpApp;
+//        QMessageBox::information(NULL, "Title", jumpApp,
+//                                 QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+    }
+//    qDebug()<<"args"<<args<< "  jumpApp =" << jumpApp <<"       bJumpApp=" << bJumpApp;
 
     if(signal(SIGCHLD,SIG_IGN)==SIG_ERR)//忽略子进程已经停止或退出
     {
@@ -159,9 +189,9 @@ int main(int argc, char *argv[])
     if(qm_name == "zh_CN" || qm_name == "es" || qm_name == "fr" || qm_name == "de" || qm_name == "ru" || qm_name == "bo_CN") {//中文 西班牙语 法语 德语 俄语
 //            if(!translator.load("kylin-user-guide_" + qm_name + ".qm",
 //                                ":/translation/"))
-        if(!translator.load("/home/tang/builder/kylin-user-guide-1.0.2/src/translation/kylin-user-guide_zh_CN.qm"))
-//        if(!translator.load("kylin-user-guide_" + qm_name + ".qm",
-//                            "/usr/share/kylin-user-guide/translations/"))
+//        if(!translator.load("/home/tang/builder/kylin-user-guide-1.0.2/src/translation/kylin-user-guide_zh_CN.qm"))
+        if(!translator.load("kylin-user-guide_" + qm_name + ".qm",
+                            "/usr/share/kylin-user-guide/translations/"))
             qDebug() << "Load translation file："<< "kylin-user-guide_" + qm_name + ".qm" << " failed!";
         else
             app.installTranslator(&translator);

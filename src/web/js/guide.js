@@ -84,37 +84,37 @@ function qt_jumpApp(appName)
 }
 
 var date ={
-    biometric_manager:"2021年1月28日",
-    box_manager:"2021年1月28日",
-    claws_mail:"2021年1月28日",
-    engrampa:"2021年1月28日",
-    eom:"2021年1月28日",
-    filezilla:"2021年1月28日",
-    game:"2021年1月28日",
-    gparted:"2021年1月28日",
-    hot_key:"2021年1月28日",
-    ksc_defender:"2021年1月28日",
-    kybackup:"2021年1月28日",
-    kylin_assistant:"2021年1月28日",
-    kylin_burner:"2021年1月28日",
-    kylin_ipmsg:"2021年1月28日",
-    kylin_music:"2021年1月28日",
-    kydroid:"2021年1月28日",
-    kylin_log_viewer:"2021年1月28日",
-    kylinOS:"2021年1月28日",
+    biometric_manager:"2021年2月22日",
+    box_manager:"2021年2月22日",
+    claws_mail:"2021年2月22日",
+    engrampa:"2021年2月22日",
+    eom:"2021年2月22日",
+    filezilla:"2021年2月22日",
+    game:"2021年2月22日",
+    gparted:"2021年2月22日",
+    hot_key:"2021年2月22日",
+    ksc_defender:"2021年2月22日",
+    kybackup:"2021年2月22日",
+    kylin_assistant:"2021年2月22日",
+    kylin_burner:"2021年2月22日",
+    kylin_ipmsg:"2021年2月22日",
+    kylin_music:"2021年2月22日",
+    kydroid:"2021年2月22日",
+    kylin_log_viewer:"2021年2月22日",
+    kylinOS:"2021年2月22日",
     kylin_service_support:"2021年1月29日",
-    kylin_store:"2021年1月28日", 
-    kylin_video:"2021年1月28日",
-    mate_terminal:"2021年1月28日",
-    peony:"2021年1月28日",
-    recoll:"2021年1月28日",
-    remmina:"2021年1月28日",
-    technical_assistance:"2021年1月28日",
-    tools:"2021年1月28日",
-    kylin_os_installer:"2021年1月28日",
-    ukui:"2021年1月28日",
-    ukui_control_center:"2021年1月28日",
-    kylin_system_monitor:"2021年1月28日",
+    kylin_store:"2021年2月22日", 
+    kylin_video:"2021年2月22日",
+    mate_terminal:"2021年2月22日",
+    peony:"2021年2月22日",
+    recoll:"2021年2月22日",
+    remmina:"2021年2月22日",
+    technical_assistance:"2021年2月22日",
+    tools:"2021年2月22日",
+    kylin_os_installer:"2021年2月22日",
+    ukui:"2021年2月22日",
+    ukui_control_center:"2021年2月22日",
+    kylin_system_monitor:"2021年2月22日",
 };
 
 function onclickButton(str)
@@ -279,6 +279,9 @@ function addhtmlapp()
         document.getElementById("sup").style.display="none";
         document.getElementById("kylinOS").style.display="none";
     }
+    // if(window.guideWebkit.js_getCpuArchitecture()){
+    //     document.getElementById("kydroid").style.display="none";
+    // }
     for(i=0;i<test.length;i++)
     {
         var dirname=test[i].slice(0,test[i].indexOf("|"))

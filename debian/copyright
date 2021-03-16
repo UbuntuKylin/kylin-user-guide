@@ -6,7 +6,8 @@ Files: *
 Copyright: 2020, KylinSoft Co., Ltd.
 License: GPL-3+
 
-Files: data/*
+Files: CMakeLists.txt
+       src/*
        doc/*
        data/*
        man/*
