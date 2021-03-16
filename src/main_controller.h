@@ -19,6 +19,10 @@
 #include <QObject>
 #include <QTimer>
 #include <QSettings>
+#include <QWidget>
+#include <QList>
+#include <QGuiApplication>
+#include <QSize>
 #include "guide-widget.h"
 #include "ipc/ipc_dbus.h"
 
@@ -35,6 +39,7 @@ private:
     static MainController *mSelf;
     GuideWidget *guideWidget;
     IpcDbus *ipcDbus;
+    Qt::WindowFlags flags;
 public slots:
     void showGuide(QString appName);
     void showGuide();
