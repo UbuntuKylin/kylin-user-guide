@@ -1,3 +1,10 @@
+kylin-user-guide (1.0.2-49) v101; urgency=medium
+
+  * 解决关于界面邮箱地址深色模式未反白(bug#42999)
+  * 当前主题下点击左侧侧边栏n个选项，切换主题后，被点击选项会记住切换之前的主题(bug#42884)
+
+ -- tang guang <tangguang@kylinos.cn>  Wed, 17 Mar 2021 17:27:31 +0800
+
 kylin-user-guide (1.0.2-48) v101; urgency=medium
 
   * 同步github的修改记录
