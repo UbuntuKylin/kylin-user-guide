@@ -187,8 +187,8 @@ int main(int argc, char *argv[])
 //        QString locale = "bo_CN";
     QTranslator translator;
     if(qm_name == "zh_CN" || qm_name == "es" || qm_name == "fr" || qm_name == "de" || qm_name == "ru" || qm_name == "bo_CN") {//中文 西班牙语 法语 德语 俄语
-//            if(!translator.load("kylin-user-guide_" + qm_name + ".qm",
-//                                ":/translation/"))
+//        if(!translator.load("kylin-user-guide_" + qm_name + ".qm",
+//                            ":/translation/"))
 //        if(!translator.load("/home/tang/builder/kylin-user-guide-1.0.2/src/translation/kylin-user-guide_zh_CN.qm"))
         if(!translator.load("kylin-user-guide_" + qm_name + ".qm",
                             "/usr/share/kylin-user-guide/translations/"))

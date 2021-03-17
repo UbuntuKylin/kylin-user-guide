@@ -1,4 +1,4 @@
-*,body,div{margin:0;padding:0}
+*,body,div{margin:0;padding:0;background-color:white;}
 
 ::-webkit-scrollbar
 {
@@ -78,6 +78,7 @@ div.system-app img {
     width: 56px;
     height: 56px;
     margin-top: 21px;
+    background:rgba(244,244,244,1);
     /*margin-bottom: 10px;*/
 }
 
@@ -85,6 +86,7 @@ div.system-app span {
     font-size: 14px;
     font-weight: normal;
     color: black;
+    background:rgba(244,244,244,1);
     font-family: Noto Sans CJK SC;
 }
 
@@ -135,7 +137,6 @@ div.line
     border: 1px solid rgb(230, 230, 230);
     position: relative;
     left: 5%;
-    z-index: -1;
     bottom: 16px;
 }
 
@@ -156,6 +157,7 @@ div.hlist-div dl
     font-weight:400;
     font-family:Noto Sans CJK SC;
     color: #000000;
+    background:rgb(231,231,231);
     line-height:32px;
 }
 
@@ -164,6 +166,7 @@ div.hlist-div dt
     margin-top: 4px;
     margin-left: 2px;
     margin-right: 4px;
+    background:rgb(231,231,231);
 }
 
 div.hlist-div a

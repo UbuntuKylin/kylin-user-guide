@@ -1,4 +1,4 @@
-*,body,div{margin:0;padding:0}
+*,body,div{margin:0;padding:0;background-color:rgb(29,29,31);}
 
 ::-webkit-scrollbar
 {
@@ -79,6 +79,7 @@ div.system-app img {
     width: 56px;
     height: 56px;
     margin-top: 21px;
+    background:rgba(39,40,42,1);
     /*margin-bottom: 10px;*/
 }
 
@@ -86,6 +87,7 @@ div.system-app span {
     font-size: 14px;
     font-weight: normal;
     color: white;
+    background:rgba(39,40,42,1);
     font-family: Noto Sans CJK SC;
 }
 
@@ -136,7 +138,6 @@ div.line
     border: 1px solid rgb(255, 255, 255);
     position: relative;
     left: 5%;
-    z-index: -1;
     bottom: 16px;
 }
 

@@ -69,12 +69,12 @@ GuideWidget::GuideWidget(QWidget *parent) :QWidget(parent)
     //去掉窗口管理器后设置边框不生效了，所以下面通过背景图标提供边框,并且支持最小化。
 
     QPalette palette;
-    if(settings->get("styleName").toString() == "ukui-default"){
-        palette.setBrush(QPalette::Background, QBrush(QColor(Qt::white)));
-        palette.setBrush(QPalette::Text, QBrush(QColor(29,29,31)));
-    }else{
+    if(settings->get("styleName").toString() == "ukui-black"|| settings->get("styleName").toString() == "ukui-dark"){
         palette.setBrush(QPalette::Background, QBrush(QColor(29,29,31)));
         palette.setBrush(QPalette::Text, QBrush(QColor(Qt::white)));
+    }else{
+        palette.setBrush(QPalette::Background, QBrush(QColor(Qt::white)));
+        palette.setBrush(QPalette::Text, QBrush(QColor(29,29,31)));
     }
     this->setPalette(palette);
     this->setAutoFillBackground(true);
@@ -343,7 +343,6 @@ void GuideWidget::initUI()
     about_widget->setAppName(tr("Kylin User Guide"));
     about_widget->setAppVersion(qApp->applicationVersion());
     about_widget->setAppDescription(tr("Kylin User Guide one-stop help for the use of this machine software"));
-//    about_widget->setAppDescription(tr("<p>Service & Support : <br/>&nbsp;&nbsp;&nbsp;<a style='color: black;' href='mailto://support@kylinos.cn'>support@kylinos.cn</a></p>"));
 }
 
 void GuideWidget::slot_webGoto(QUrl url)
@@ -625,7 +624,7 @@ QString GuideWidget::js_getIndexMdFilePath(QString appName)
 //    }
     //QString IndexMdFilePath = LOCAL_FILE_PATH + appName + "/" +  gLang + "/index.md";
     QPushButton *button = this->findChild<QPushButton *>("backOffButton");
-    if(settings->get("styleName").toString() != "ukui-default"){
+    if(settings->get("styleName").toString() == "ukui-black"|| settings->get("styleName").toString() == "ukui-dark"){
         QPushButton *button = this->findChild<QPushButton *>("backOffButton");
         button->setProperty("setIconHighlightEffectDefaultColor", QColor(Qt::white));
         button->setProperty("useIconHighlightEffect", 0x10);

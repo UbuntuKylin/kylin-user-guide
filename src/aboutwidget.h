@@ -12,6 +12,7 @@
 #include <QScrollArea>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QPainterPath>
 #include <QTextBrowser>
 #include <QGSettings/QGSettings>
 #include <QDebug>
