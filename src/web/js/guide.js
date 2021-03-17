@@ -368,10 +368,27 @@ function SwitchStyle(id)
     if(id == 1){
         css.setAttribute("href","css/guide-white.css");
         style_name = 1
+	clearAllDtAttr()
     }else{
         css.setAttribute("href","css/guide-black.css");
         style_name = 2
+	clearAllDtAttr()
     }
+}
+
+function clearAllDtAttr()
+{
+        var dt_list = document.getElementsByTagName("dt")
+        if(dt_list.length > 0){
+		for(let i = 0 ;i < dt_list.length; i++ ){
+			let elem = dt_list[i].children
+			if(elem[0].hasAttribute("style")){
+		                elem[0].removeAttribute("style")
+				Refresh_the_content_interface()
+			}
+			
+		}
+	}
 }
 
 function goBackMainUI_ubuntu()
@@ -493,8 +510,10 @@ function onclickA(str)
 }
 
 function Refresh_the_content_interface()
-{
-    document.getElementById(old_str).click()
+{   
+    if(old_str != ""){
+    	document.getElementById(old_str).click()
+    }
 }
 
 function getDocTop(mdFile, mdData) {

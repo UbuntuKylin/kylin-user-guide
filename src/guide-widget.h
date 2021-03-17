@@ -28,6 +28,7 @@
 #include <QPaintEvent>
 #include <QVBoxLayout>
 #include <QStackedWidget>
+#include <QPainterPath>
 #include <QDesktopWidget>
 #include <QHBoxLayout>
 #include <QtWebKitWidgets/QWebView>

@@ -28,16 +28,6 @@ AboutWidget::~AboutWidget()
 
 void AboutWidget::initUI()
 {
-    QPalette palette;
-    if(settings->get("styleName").toString() == "ukui-default"){
-        palette.setBrush(QPalette::Background, QBrush(QColor(Qt::white)));
-        palette.setBrush(QPalette::Text, QBrush(QColor(29,29,31)));
-    }else{
-        palette.setBrush(QPalette::Background, QBrush(QColor(29,29,31)));
-        palette.setBrush(QPalette::Text, QBrush(QColor(Qt::white)));
-    }
-    this->setPalette(palette);
-
     title_icon = new QLabel(this);
     title_icon->setGeometry(8,8,24,24);
 
@@ -85,7 +75,19 @@ void AboutWidget::initUI()
     app_support->setGeometry(32,360,356,30);
     app_support->setAlignment(Qt::AlignLeft);
     app_support->setOpenExternalLinks(true);
-    app_support->setText(tr("Service & Support : <a style='color: black;' href='mailto://support@kylinos.cn'>support@kylinos.cn</a>"));
+
+    QPalette palette;
+    if(settings->get("styleName").toString() == "ukui-black"|| settings->get("styleName").toString() == "ukui-dark"){
+        palette.setBrush(QPalette::Background, QBrush(QColor(29,29,31)));
+        palette.setBrush(QPalette::Text, QBrush(QColor(Qt::white)));
+        app_support->setText(tr("Service & Support : <a style='color: white;' href='mailto://support@kylinos.cn'>support@kylinos.cn</a>"));
+    }else{
+        palette.setBrush(QPalette::Background, QBrush(QColor(Qt::white)));
+        palette.setBrush(QPalette::Text, QBrush(QColor(29,29,31)));
+        app_support->setText(tr("Service & Support : <a style='color: black;' href='mailto://support@kylinos.cn'>support@kylinos.cn</a>"));
+    }
+    this->setPalette(palette);
+
 }
 
 void AboutWidget::setAppIcon(const QString &text)
@@ -132,18 +134,19 @@ void AboutWidget::setAppDescription(const QString &text)
 
 void AboutWidget::gsettingsChange(const QString &key)
 {
+    QPalette palette;
     if(key == "styleName"){
-        QPalette palette;
         if(settings->get("styleName").toString() == "ukui-black"|| settings->get("styleName").toString() == "ukui-dark"){
             palette.setBrush(QPalette::Background, QBrush(QColor(29,29,31)));
             palette.setBrush(QPalette::Text, QBrush(QColor(Qt::white)));
-            this->setPalette(palette);
+            app_support->setText(tr("Service & Support : <a style='color: white;' href='mailto://support@kylinos.cn'>support@kylinos.cn</a>"));
         }else{
             palette.setBrush(QPalette::Background, QBrush(QColor(Qt::white)));
             palette.setBrush(QPalette::Text, QBrush(QColor(29,29,31)));
-            this->setPalette(palette);
+            app_support->setText(tr("Service & Support : <a style='color: black;' href='mailto://support@kylinos.cn'>support@kylinos.cn</a>"));
         }
     }
+    this->setPalette(palette);
 }
 
 void AboutWidget::closeEvent(QCloseEvent *event)
