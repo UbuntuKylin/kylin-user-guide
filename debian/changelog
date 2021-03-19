@@ -1,3 +1,9 @@
+kylin-user-guide (1.0.2-50) v101; urgency=medium
+
+  * 替换主页游戏图标(bug#33264)
+
+ -- tang guang <tangguang@kylinos.cn>  Fri, 19 Mar 2021 10:03:55 +0800
+
 kylin-user-guide (1.0.2-49) v101; urgency=medium
 
   * 解决关于界面邮箱地址深色模式未反白(bug#42999)
