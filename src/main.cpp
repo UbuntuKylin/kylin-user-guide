@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
         toolsList << "onboard" << "atril" << "indicator-china-weather"<< "kylin-recorder" << "kylin-usb-creator" << "kylin-screenshot"\
                   << "kylin-calculator" << "kylin-camera" << "kylin-scanner";
         if(gamesList.contains(jumpApp))
-            jumpApp = "games/"+jumpApp;
+            jumpApp = "game/"+jumpApp;
         if(toolsList.contains(jumpApp))
             jumpApp = "tools/"+jumpApp;
 //        QMessageBox::information(NULL, "Title", jumpApp,
