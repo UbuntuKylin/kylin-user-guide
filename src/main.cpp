@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
     bool bJumpApp = cmdinParser.isSet(jumpAppOption);
 //    QString jumpApp = cmdinParser.value("-A");//拿不到值
     QString jumpApp = "";
-    if(argc>=2&&bJumpApp)
+    if(argc>2&&bJumpApp)
     {
         jumpApp = args.at(2);
 //        if(1==jumpApp.split(":"))//dbus调用没有带:
