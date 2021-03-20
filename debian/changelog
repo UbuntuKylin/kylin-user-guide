@@ -1,3 +1,15 @@
+kylin-user-guide (1.0.2-53) v101; urgency=medium
+
+  * 解决游戏类应用跳转手册失败
+
+ -- tang guang <tangguang@kylinos.cn>  Sat, 20 Mar 2021 10:45:43 +0800
+
+kylin-user-guide (1.0.2-52) v101; urgency=medium
+
+  * 更新麒麟计算器中英文截图(bug#43456 43310)
+
+ -- caoliang <caoliang@kylinos.cn>  Fri, 19 Mar 2021 17:43:50 +0800
+
 kylin-user-guide (1.0.2-51) v101; urgency=medium
 
   * 解决菜单点击用户手册，打开失败
