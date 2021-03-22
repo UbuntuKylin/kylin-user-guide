@@ -14,8 +14,12 @@ According to the reminder at bootup, select to boot from installation device.
 
 The system supports "Try without Installation" mode.
 
+Tips: HW990 only supports direct installation mode currently.
+
 ### Installation
 Double click the installation icon on the desktop.
+
+Tips: HW990 will directly enter the installation program.
 
 1) Select language.
 
