@@ -1,3 +1,10 @@
+kylin-user-guide (1.0.2-54) v101; urgency=medium
+
+  * 去掉claws-mail
+  * 系统安装增加两条tips，说明HW990目前仅支持直接安装模式。 
+
+ -- quyanying <quyanying@kylinos.cn>  Mon, 22 Mar 2021 11:41:14 +0800
+
 kylin-user-guide (1.0.2-53) v101; urgency=medium
 
   * 解决游戏类应用跳转手册失败
