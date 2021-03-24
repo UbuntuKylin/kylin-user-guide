@@ -97,7 +97,7 @@ Kylin Recorder provides a simple audio recording function, as shown in Fig 10.
 
 Click recording icon to enter recording interface.
 
-Drag the sound slider to adjust the volume. Click ![](image/icon21.png) to pause/continue during recording. Click ![](image/icon20.png) to finish recording.
+Click ![](image/icon21.png) to pause/continue during recording. Click ![](image/icon20.png) to finish recording.
 
 ![Fig 11 Recording-big](image/11.png)
 
