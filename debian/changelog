@@ -1,3 +1,9 @@
+kylin-user-guide (1.0.2-57) v101; urgency=medium
+
+  * 更新小工具-麒麟录音的图13
+
+ -- quyanying <quyanying@kylinos.cn>  Wed, 24 Mar 2021 11:39:19 +0800
+
 kylin-user-guide (1.0.2-56) v101; urgency=medium
 
   * 添加ukui-clock、ukui-notebook跳转参数
