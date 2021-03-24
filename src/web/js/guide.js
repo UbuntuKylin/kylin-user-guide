@@ -43,6 +43,8 @@ var html_list={
     kylin_calculator:"list_h8",
     kylin_camera:"list_h9",
     kylin_scanner:"list_h10",
+    ukui_notebook:"list_h12",
+    ukui_clock:"list_h13",
     gnome_tetravex:"list_h1",
     gnome_mines:"list_h2",
     iagno:"list_h3",
