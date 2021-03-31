@@ -110,6 +110,7 @@ var date ={
     peony:"2021年3月22日",
     recoll:"2021年3月22日",
     remmina:"2021年3月22日",
+    evolution:"2021年3月22日",
     technical_assistance:"2021年3月22日",
     tools:"2021年3月22日",
     kylin_os_installer:"2021年3月22日",

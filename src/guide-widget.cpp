@@ -355,7 +355,8 @@ void GuideWidget::slot_webGoto(QUrl url)
 void GuideWidget::slot_MenuActions(QAction *action)
 {
     if(action->text() == tr("About")){
-        about_widget->exec();
+        about_widget->setModal(true);
+        about_widget->show();
     }else if(action->text() == tr("Quit")){
         slot_onClicked_closeOffButton();
     }else{
