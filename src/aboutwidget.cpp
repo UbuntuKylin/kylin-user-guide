@@ -4,7 +4,7 @@
 AboutWidget::AboutWidget(QWidget *parent):
     QDialog(parent)
 {
-    this->setFixedSize(420,560);
+    this->setFixedSize(420,360);
 
     if(QGSettings::isSchemaInstalled("org.ukui.style")){
         settings = new QGSettings("org.ukui.style");
@@ -42,9 +42,10 @@ void AboutWidget::initUI()
     close_btn->setFlat(true);
     close_btn->setFocusPolicy(Qt::NoFocus);
     close_btn->setToolTip(tr("Close"));
-    close_btn->setCursor(QCursor(Qt::ArrowCursor));
+    close_btn->setCheckable(false);
+//    close_btn->setCursor(QCursor(Qt::ArrowCursor));
     close_btn->setGeometry(386,4,30,30);
-    connect(close_btn,&QPushButton::released,this,&AboutWidget::close);
+    connect(close_btn,&QPushButton::clicked,this,&AboutWidget::close);
 
     app_icon = new QLabel(this);
     app_icon->setGeometry(162,72,96,96);
@@ -67,13 +68,13 @@ void AboutWidget::initUI()
 //    app_version->setPalette(palette);
 
     app_description = new QLabel(this);
-    app_description->setGeometry(32,260,356,100);
-    app_description->setAlignment(Qt::AlignTop);
+    app_description->setGeometry(32,260,356,30);
+    app_description->setAlignment(Qt::AlignTop|Qt::AlignHCenter);
     app_description->setWordWrap(true);
 
     app_support = new QLabel(this);
-    app_support->setGeometry(32,360,356,30);
-    app_support->setAlignment(Qt::AlignLeft);
+    app_support->setGeometry(32,300,356,30);
+    app_support->setAlignment(Qt::AlignHCenter);
     app_support->setOpenExternalLinks(true);
 
     QPalette palette;
@@ -149,8 +150,8 @@ void AboutWidget::gsettingsChange(const QString &key)
     this->setPalette(palette);
 }
 
-void AboutWidget::closeEvent(QCloseEvent *event)
-{
-    Q_UNUSED(event);
-    qDebug() << Q_FUNC_INFO;
-}
+//void AboutWidget::closeEvent(QCloseEvent *event)
+//{
+//    Q_UNUSED(event);
+//    qDebug() << Q_FUNC_INFO;
+//}

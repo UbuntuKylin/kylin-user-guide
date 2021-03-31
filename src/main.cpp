@@ -91,6 +91,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
 
+    qputenv("QT_QPA_PLATFORMTHEME", "ukui");
     QApplication app(argc, argv);
 
     QCoreApplication::setApplicationName("Kylin User Guide");

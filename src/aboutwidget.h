@@ -33,7 +33,7 @@ public slots:
     void gsettingsChange(const QString& key);
 
 protected:
-    void closeEvent(QCloseEvent *event);
+//    void closeEvent(QCloseEvent *event);
 
 private:
     QGSettings *settings = nullptr;

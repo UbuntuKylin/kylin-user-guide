@@ -45,6 +45,11 @@ div.hlist-div::-webkit-scrollbar-track
     font-family:Noto Sans CJK SC;
 }
 
+a
+{
+    color:white;
+}
+
 div.hlist-div
 {
     float:left;/*目录框的位置*/

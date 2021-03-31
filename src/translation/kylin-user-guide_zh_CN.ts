@@ -12,13 +12,13 @@
         <location filename="../aboutwidget.cpp" line="83"/>
         <location filename="../aboutwidget.cpp" line="142"/>
         <source>Service &amp; Support : &lt;a style=&apos;color: white;&apos; href=&apos;mailto://support@kylinos.cn&apos;&gt;support@kylinos.cn&lt;/a&gt;</source>
-        <translation>&lt;p&gt;服务与支持 : &lt;a style=&apos;color: white;&apos; href=&apos;mailto://support@kylinos.cn&apos;&gt;support@kylinos.cn&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;服务与支持团队 : &lt;a style=&apos;color: white;&apos; href=&apos;mailto://support@kylinos.cn&apos;&gt;support@kylinos.cn&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../aboutwidget.cpp" line="87"/>
         <location filename="../aboutwidget.cpp" line="146"/>
         <source>Service &amp; Support : &lt;a style=&apos;color: black;&apos; href=&apos;mailto://support@kylinos.cn&apos;&gt;support@kylinos.cn&lt;/a&gt;</source>
-        <translation>&lt;p&gt;服务与支持 : &lt;a style=&apos;color: black;&apos; href=&apos;mailto://support@kylinos.cn&apos;&gt;support@kylinos.cn&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;服务与支持团队 : &lt;a style=&apos;color: black;&apos; href=&apos;mailto://support@kylinos.cn&apos;&gt;support@kylinos.cn&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../aboutwidget.cpp" line="126"/>

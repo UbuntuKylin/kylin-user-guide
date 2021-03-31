@@ -1,3 +1,21 @@
+kylin-user-guide (1.0.2-60) v101; urgency=medium
+
+  * 解决bug#46080、bug#43850
+
+ -- guang tang <tangguang@kylinos.cn>  Wed, 31 Mar 2021 18:49:11 +0800
+
+kylin-user-guide (1.0.2-59) v101; urgency=medium
+
+  * 解决bug#45782、bug#45666、bug#44245
+
+ -- guang tang <tangguang@kylinos.cn>  Tue, 30 Mar 2021 16:19:28 +0800
+
+kylin-user-guide (1.0.2-58) v101; urgency=medium
+
+  * 添加evolution邮件客户端文档时间
+
+ -- guang tang <tangguang@kylinos.cn>  Sat, 27 Mar 2021 14:44:37 +0800
+
 kylin-user-guide (1.0.2-57) v101; urgency=medium
 
   * 更新小工具-麒麟录音的图13
