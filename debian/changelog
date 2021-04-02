@@ -1,3 +1,9 @@
+kylin-user-guide (1.0.2-61) v101; urgency=medium
+
+  * 解决切换为英文系统后，用户手册（Kylin User Guide）的显示不完全(bug#46418)
+
+ -- guang tang <tangguang@kylinos.cn>  Fri, 02 Apr 2021 11:25:49 +0800
+
 kylin-user-guide (1.0.2-60) v101; urgency=medium
 
   * 解决bug#46080、bug#43850
