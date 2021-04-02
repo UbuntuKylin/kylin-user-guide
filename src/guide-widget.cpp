@@ -168,7 +168,7 @@ void GuideWidget::initUI()
     QPushButton *closeOffButton = new QPushButton(this);
     menuOffButton = new QPushButton(this);
     QLabel *m_pIconLabel = new QLabel(this);
-    QLabel *m_pTitleLabel = new QLabel(this);
+    m_pTitleLabel = new QLabel(this);
     QLineEdit *search_Line = new QLineEdit(this);
 
     QIcon icon1;
@@ -192,7 +192,7 @@ void GuideWidget::initUI()
     m_pIconLabel->setPixmap(QIcon::fromTheme("kylin-user-guide").pixmap(24,24));
 
     m_pTitleLabel->setText(tr("Kylin User Guide"));
-    m_pTitleLabel->setFixedSize(120,30);
+    m_pTitleLabel->resize(120,30);
     m_pTitleLabel->setIndent(4);
 //    m_pTitleLabel->setStyleSheet("QLabel{background:red;}");
 
@@ -390,6 +390,14 @@ void GuideWidget::slot_SettingsChange(const QString &key)
 
             m_pWebView->page()->mainFrame()->evaluateJavaScript("SwitchStyle(1);");
         }
+    }
+    if("systemFont" == key || "systemFontSize" == key ){
+        QFont font = this->font();
+        for (auto widget: qApp->allWidgets()) {
+            qDebug() << Q_FUNC_INFO;
+            widget->setFont(font);
+        }
+        m_pTitleLabel->adjustSize();
     }
 }
 
