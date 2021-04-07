@@ -20,9 +20,7 @@ Right-click on the desktop blank and a menu appears as shown in Fig 3.
 <br>
 
 ## Taskbar
-Taskbar is located at the bottom and includes the Start Menu, File Manager, Firefox Web Browser, and Tray Menu.
-
-![Fig 4 Taskbar-big](image/4.png)
+Taskbar is located at the bottom and includes the Start Menu, File Manager, Tray Menu, etc..
 
 The individual components as shown below.
 
@@ -31,8 +29,10 @@ The individual components as shown below.
 | ![](image/icon1.png) | Start menu: Open the system menu to find applications |
 | ![](image/icon2.png) | Taskview: Work in different workspaces |
 | ![](image/icon3.png) | File manager: Browse and manage documents in the system |
-| ![](image/icon4.png)  | Firefox Web Browser: Provide a convenient and safe way to access the Internet |
-| ![](image/icon5.png)  | WPS Office |
+| ![](image/icon4.png)  | Kylin store: Software center |
+| ![](image/icon5.png)  | QAX browser: Provide a convenient and safe way to access the Internet |
+| ![](image/icon6.png)  | WPS Office |
+| ![](image/icon7.png)  | Ukui search:  Search files, applications, etc. |
 | Window Area | The blank part in the middle of the horizontal bar. Display running programs, opened documents, and allow to close windows, etc. |
 | Tray Menu | Include settings for input method, volume, network connection, etc. |
 | Show Desktop | The button is on far right. Minimize all windows and return to the desktop; Click again will restore the windows |
@@ -40,37 +40,51 @@ The individual components as shown below.
 <br>
 
 ### Workspace
-Click "![](image/icon2.png)" and the interface as shown in Fig 5.
+Click "![](image/icon2.png)" and the interface as shown in Fig 4.
 
-![Fig 5 Workspace-big](image/5.png)
+![Fig 4 Workspace-big](image/4.png)
 
 ### Preview Window
-Move the mouse to the application's icon on the taskbar, and it will show a preview of the opened windows, as shown in Fig 6.
+Move the mouse to the application's icon on the taskbar, and it will show a preview of the opened windows, as shown in Fig 5.
 
-![Fig 6 Preview window-big](image/6.png)
+![Fig 5 Preview window-big](image/5.png)
 
 Right click the icon to close all the window of this application.
 
-![Fig 7 Right click to close](image/7.png)
-
 ### Sidebar
-Click the sidebar icon on the tray menu and the popup as shown in Fig 8.
+Click the sidebar icon on the tray menu and the popup as shown in Fig 6.
 
-![Fig 8 Sidebar-big](image/8.png)
+![Fig 6 Sidebar-big](image/6.png)
 
 #### Notification Center
 It will show the lastest news. Click "Clean up" to empty the list.
 
-![Fig 9 Notification center](image/9.png)
+![Fig 7 Notification center](image/7.png)
 
 #### Clipboard
 It will store the lastest copy or cut contents.
 
-![Fig 10 Clipboard](image/10.png)
+![Fig 8 Clipboard](image/8.png)
 
-The second tab is plugins -- clock, notebook, and feedback.
+The second tab is plugins -- clock, kylin memo, and kylin service support.
 
-![Fig 11 Plugins](image/11.png)
+![Fig 9 Plugins](image/9.png)
+
+1) Clock
+
+It provides countdown, alarm clock, and stopwatch. Switch the functions through the top three icons.
+
+![Fig 10 Add alarm clock](image/10.png)
+
+2) Kylin Memo
+
+To write down information at any time.
+
+![Fig 11 Kylin memo](image/11.png)
+
+3) Kylin Service Support
+
+Please go to the main interface to see the details.
 
 ### Input Method
 Here are some options can be selected. Right click the input icon, as shown in Fig 12.
@@ -144,15 +158,15 @@ Click fullscreen icon on the upper right corner to open the full screen mode.
 #### Other Functions
 1) User Informations
 
-Click "![](image/icon7.png)" to see the user informations.
+Click "![](image/icon8.png)" to see the user informations.
 
 2) Computer
 
-Click "![](image/icon8.png)" to enter the computer path in file manager.
+Click "![](image/icon9.png)" to enter the computer path in file manager.
 
 3) Settings
 
-Click "![](image/icon9.png)" to open the control center.
+Click "![](image/icon10.png)" to open the control center.
 
 ### Power Menu
 Click "Power" button, and the options as shown in Fig 19.
@@ -174,7 +188,7 @@ When you want to select another user to log in uing the computer, you can select
 ![Fig 21 Shutdown right-click  menu](image/21.png)
 
 ### Application
-Input keywords in the search box, and the result will show up automatically. As shown in Fig 22
+Input keywords in the search box, and the result will show up automatically. As shown in Fig 22.
 
 ![Fig 22 Search application](image/22.png)
 
@@ -200,10 +214,12 @@ Right click an application in the start menu, and the pop up menu as shown in Fi
 
 | Shortcut | Function |
 | :------------ | :------------ |
-| F5  | Refresh desktop |
+| F1  | Open the user guide |
 | Alt + Tab  | Switch window |
 | Win  | Open the start menu |
 | Ctrl + Alt + L  | Lock screen |
-| Ctrl + Alt + Delete  | Log out |
+| Ctrl + Alt + Delete  | Open the shutdown management interface |
 | Ctrl + Alt + F1~6  | Switch to terminal interface |
 | Ctrl + Alt + F7  | Switch to graphic interface |
+| Alt + F9 | Minimization window |
+| Alt + F10 | Switch maximize state / Resume |
