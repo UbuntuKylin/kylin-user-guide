@@ -45,32 +45,30 @@ To view and read pdf files.
 
 - It provides page layout size options.
 
-![Fig 5 Layout size](image/5.png)
-
 - The "View" on the menu bar can set the layout of the whole interface, and through the "File" can see the pdf's property.
 
-![Fig 6 Property](image/6.png)
+![Fig 5 Property](image/5.png)
 <br>
 <br>
 
 ## Display Switch
-Press "Win + P" to select display mode, as shown in Fig 7.
+Press "Win + P" to select display mode, as shown in Fig 6.
 
-![Fig 7 Display switch](image/7.png)
+![Fig 6 Display switch](image/6.png)
 
-- **Computer**
+- **First Screen**
 
 Only show all operations on the computer's screen.
 
-- **Clone**
+- **Clone Screen**
 
 Show simultaneously both on the computer's screen and the projector.
 
-- **Extend**
+- **Extend Screen**
 
 Use computer to do other operations without  interrupting projector display.
 
-- **Output**
+- **Vice Screen**
 
 Only show all operations on the projector.
 
@@ -78,70 +76,70 @@ Only show all operations on the projector.
 <br>
 
 ## Indicator China Weather
-Indicator China Weather can get weather and living index informations, as shown in Fig 8.
+Indicator China Weather can get weather and living index informations, as shown in Fig 7.
 
-![Fig 8 Indicator china weather-big](image/8.png)
+![Fig 7 Indicator china weather-big](image/7.png)
 
 Inputting city name in the searchbox, and it will show all the cities which are matching the keywords.
 
 Click ![](image/icon22.png) and select "Add City" to see the collection list.
 
-![Fig 9 Collection](image/9.png)
+![Fig 8 Collection](image/8.png)
 <br>
 <br>
 
 ## Kylin Recorder
-Kylin Recorder provides a simple audio recording function, as shown in Fig 10.
+Kylin Recorder provides a simple audio recording function, as shown in Fig 9.
 
-![Fig 10 Kylin recorder-big](image/10.png)
+![Fig 9 Kylin recorder-big](image/9.png)
 
 Click recording icon to enter recording interface.
 
-Click ![](image/icon21.png) to pause/continue during recording. Click ![](image/icon20.png) to finish recording.
+Drag the sound slider to adjust the volume. Click ![](image/icon21.png) to pause/continue during recording. Click ![](image/icon20.png) to finish recording.
 
-![Fig 11 Recording-big](image/11.png)
+![Fig 10 Recording-big](image/10.png)
 
 And the recording files will show on the right side automatically.
 
-The settings interface as shown in Fig 12.
+The settings interface as shown in Fig 11.
 
-![Fig 12 Settings](image/12.png)
+![Fig 11 Settings](image/11.png)
 <br>
 <br>
 
-## Kylin Usb Creator
-Kylin Usb Creator is used to make system boot U disks, as shown in Fig 13.
+## Kylin USB Creator
+Kylin USB Creator is used to make system boot U disks, as shown in Fig 12.
 
-![Fig 13 Kylin usb creator-big](image/13.png)
+![Fig 12 Kylin usb creator-big](image/12.png)
 
-Select the iso file and U disk, and click "Start". It will ask for authentication, as shown in Fig 14.
+Select the iso file and U disk, and click "Start". It will ask for authentication, as shown in Fig 13.
 
-![Fig 14 Authentication](image/14.png)
+![Fig 13 Authentication](image/13.png)
 
 Tips after finishing.
 
-![Fig 15 Finish-big](image/15.png)
+![Fig 14 Finish-big](image/14.png)
 <br>
 <br>
 
 ## Kylin Screenshot
 Kylin Screenshot can capture any area on the current desktop and support to edit it simply. 
 
-![Fig 16 Kylin screenshot-big](image/16.png)
+![Fig 15 Kylin screenshot-big](image/15.png)
 
 On the tools menu, here are: square, circle, straight line, arrow, pencil tool, mark, text, area blur.
 
 After opening it, right click the icon on the tray menu and select "Open Launcher". Set the delay time and click "Take new screenshot".
 
-![Fig 17 Delayed screenshot-big](image/17.png)
+![Fig 16 Delayed screenshot-big](image/16.png)
 
 <br>
 <br>
 
 ## Kylin Calculator
-Provide the function to meet the needs of conventional calculation, as shown in Fig 18.
+Provide the function to meet the needs of conventional calculation, as shown in Fig 17.
 
-![Fig 18 Kylin calculator](image/18.png)
+![Fig 17 Kylin calculator](image/17.png)
 
 Users can switch the mode by ![](image/icon22.png) at the top right corner.
 
@@ -159,14 +157,14 @@ Kylin Camera is a photo software with friendly interface and easy to use, which 
 
 Open the setting interface can select delay photography, mirror image, etc..
 
-![Fig 19 Kylin camera-big](image/19.png)
+![Fig 18 Kylin camera-big](image/18.png)
 <br>
 <br>
 
 ## Kylin Scanner
 Kylin Scanner is a user-friendly scanning software developed with Qt5. It provides scanning, beauty, rectify and text OCR functions.
 
-![Fig 20 Kylin scanner-big](image/20.png)
+![Fig 19 Kylin scanner-big](image/19.png)
 
 1) When kylin scanner is opened, it will search and connect the device, and get the default parameters (color mode, resolution, paper size, etc.). The larger the resolution, the slower the scanning speed.
 
@@ -179,17 +177,3 @@ Kylin Scanner is a user-friendly scanning software developed with Qt5. It provid
 5) Rectify -- Correct the image which is not in the center. And the image which is almost close to the center will not be corrected (the angle error is within 5°).
 
 6) Text OCR -- Recognize the text of the scanned image, and save it as a text document.
-
-<br>
-<br>
-
-## Plugins
-### Notebook
-To write down information at any time.
-
-![Fig 21 Notebook](image/21.png)
-
-### Clock
-It provides countdown, alarm clock, and stopwatch. Switch the functions through the top three icons.
-
-![Fig 22 Add alarm clock](image/22.png)

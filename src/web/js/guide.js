@@ -114,6 +114,7 @@ var date ={
     technical_assistance:"2021年3月22日",
     tools:"2021年3月22日",
     kylin_os_installer:"2021年3月22日",
+    kylin_installer:"2021年3月22日",
     ukui:"2021年3月22日",
     ukui_control_center:"2021年3月22日",
     kylin_system_monitor:"2021年3月22日",

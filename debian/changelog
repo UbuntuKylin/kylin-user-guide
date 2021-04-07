@@ -1,3 +1,15 @@
+kylin-user-guide (1.0.2-63) v101; urgency=medium
+
+  * 添加麒麟安装器更新日期
+
+ -- guang tang <tangguang@kylinos.cn>  Wed, 07 Apr 2021 10:51:49 +0800
+
+kylin-user-guide (1.0.2-62) v101; urgency=medium
+
+  * 把侧边栏的小插件内容移动到桌面环境里的侧边栏部分
+
+ -- quyanying <quyanying@kylinos.cn>  Tue, 06 Apr 2021 16:22:39 +0800
+
 kylin-user-guide (1.0.2-61) v101; urgency=medium
 
   * 解决切换为英文系统后，用户手册（Kylin User Guide）的显示不完全(bug#46418)
