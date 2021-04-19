@@ -553,13 +553,19 @@ QString GuideWidget::JudgmentSystrm()
     QString value;
     if(system_file.exists()){
         QString SystemName = system_name();
-        if(SystemName.contains("debian",Qt::CaseInsensitive)){
+        qDebug() << Q_FUNC_INFO << SystemName << __LINE__;
+        if(SystemName.contains("debian",Qt::CaseInsensitive) == 0){
             value = "Debain";
-        }else if(SystemName.contains("kylin",Qt::CaseInsensitive)){
+        }else if(SystemName.compare("ubuntu kylin",Qt::CaseInsensitive) == 0){
             value = "Ubuntu Kylin";
-        }else if(SystemName.contains("ubuntu",Qt::CaseInsensitive)){
+        }else if(SystemName.compare("kylin",Qt::CaseInsensitive) == 0){
+            value = "Kylin";
+        }else if(SystemName.compare("ubuntu",Qt::CaseInsensitive) == 0){
             if(QFileInfo("/usr/bin/ukui-panel").exists()){
-                value = "Ubuntu Kylin";
+                if(QFileInfo("/usr/bin/ukui-about").exists())
+                    value = "Kylin";
+                else
+                    value = "Ubuntu Kylin";
             }else{
                 value = "Ubuntu";
             }
@@ -581,13 +587,18 @@ QString GuideWidget::JudgmentSystrm()
         QString str = system_file1.readLine();
         QString name = str.section("=",-1);
         name = name.trimmed();
-        if(name.contains("debian",Qt::CaseInsensitive)){
+        qDebug() << Q_FUNC_INFO << name.compare("debian",Qt::CaseInsensitive) << __LINE__;
+        if(name.compare("debian",Qt::CaseInsensitive) == 0){
             value = "Debian";
-        }else if(name.contains("kylin",Qt::CaseInsensitive)){
-            value = "Ubuntu Kylin";
-        }else if(name.contains("ubuntu",Qt::CaseInsensitive)){
+        }else if(name.compare("kylin",Qt::CaseInsensitive) == 0){
+            value = "Kylin";
+        }else if(name.compare("ubuntu",Qt::CaseInsensitive) == 0){
+            qDebug() << __LINE__;
             if(QFileInfo("/usr/bin/ukui-panel").exists()){
-                value = "Ubuntu Kylin";
+                if(QFileInfo("/usr/bin/ukui-about").exists())
+                    value = "Kylin";
+                else
+                    value = "Ubuntu Kylin";
             }else{
                 value = "Ubuntu";
             }
