@@ -27,6 +27,8 @@
 #include <QProcess>
 #include <QByteArray>
 
+#include <ukui-log4qt.h>
+
 #include <signal.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -86,6 +88,8 @@ QString getAppVersion(){
 
 int main(int argc, char *argv[])
 {
+    initUkuiLog4qt("kylin-user-guide");
+
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
@@ -190,7 +194,6 @@ int main(int argc, char *argv[])
     if(qm_name == "zh_CN" || qm_name == "es" || qm_name == "fr" || qm_name == "de" || qm_name == "ru" || qm_name == "bo_CN") {//中文 西班牙语 法语 德语 俄语
 //        if(!translator.load("kylin-user-guide_" + qm_name + ".qm",
 //                            ":/translation/"))
-//        if(!translator.load("/home/tang/builder/kylin-user-guide-1.0.2/src/translation/kylin-user-guide_zh_CN.qm"))
         if(!translator.load("kylin-user-guide_" + qm_name + ".qm",
                             "/usr/share/kylin-user-guide/translations/"))
             qDebug() << "Load translation file："<< "kylin-user-guide_" + qm_name + ".qm" << " failed!";

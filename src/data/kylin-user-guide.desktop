@@ -1,9 +1,9 @@
 [Desktop Entry]
-Name=Kylin User Guide
+Name=Manual
 Name[zh_CN]=用户手册
-GenericName=kylin user guide
+GenericName=Manual
 GenericName[zh_CN]=用户手册
-Comment=kylin user guide
+Comment=Manua;
 Comment[zh_CN]=麒麟用户手册
 Keywords=guide;
 Exec=/usr/bin/kylin-user-guide -A %u
@@ -11,7 +11,7 @@ Icon=kylin-user-guide
 Terminal=false
 Type=Application
 NoDisplay=false
-StartupNotify=false
+StartupNotify=true
 Categories=UKUI;Qt;Documentation;Utility;
 MimeType=x-scheme-handler/ghelp;x-scheme-handler/help;x-scheme-handler/info;x-scheme-handler/man;
 

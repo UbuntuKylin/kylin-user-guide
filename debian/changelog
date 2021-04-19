@@ -1,3 +1,17 @@
+kylin-user-guide (1.0.2-69) v101; urgency=medium
+
+  * Fixed: bug#49297
+
+ -- guang tang <tangguang@kylinos.cn>  Mon, 19 Apr 2021 18:51:55 +0800
+
+kylin-user-guide (1.0.2-68) v101; urgency=medium
+
+  Feat:
+    * 引入日志框架
+    * 修改名称为Manual
+
+ -- guang tang <tangguang@kylinos.cn>  Mon, 19 Apr 2021 17:14:26 +0800
+
 kylin-user-guide (1.0.2-67) v101; urgency=medium
 
   * Fixed: bug#48142

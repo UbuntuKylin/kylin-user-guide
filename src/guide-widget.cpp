@@ -191,7 +191,7 @@ void GuideWidget::initUI()
     m_pIconLabel->setScaledContents(true);
     m_pIconLabel->setPixmap(QIcon::fromTheme("kylin-user-guide").pixmap(24,24));
 
-    m_pTitleLabel->setText(tr("Kylin User Guide"));
+    m_pTitleLabel->setText(tr("Manual"));
     m_pTitleLabel->resize(120,30);
     m_pTitleLabel->setIndent(4);
 //    m_pTitleLabel->setStyleSheet("QLabel{background:red;}");
@@ -340,9 +340,9 @@ void GuideWidget::initUI()
 
     about_widget = new AboutWidget(this);
     about_widget->setAppIcon("kylin-user-guide");
-    about_widget->setAppName(tr("Kylin User Guide"));
+    about_widget->setAppName(tr("Manual"));
     about_widget->setAppVersion(qApp->applicationVersion());
-    about_widget->setAppDescription(tr("Kylin User Guide one-stop help for the use of this machine software"));
+    about_widget->setAppDescription(tr("Manual one-stop help for the use of this machine software"));
 }
 
 void GuideWidget::slot_webGoto(QUrl url)

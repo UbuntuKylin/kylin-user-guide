@@ -89,7 +89,7 @@ SET(QT_LIBS
     )
 #    Qt5::WebEngineWidgets
 message(${QT_LIBS})
-target_link_libraries(kylin-user-guide ${QT_LIBS} ${LIBS_PRIVATE} Qt5::X11Extras -lX11 -lgsettings-qt)
+target_link_libraries(kylin-user-guide ${QT_LIBS} ${LIBS_PRIVATE} Qt5::X11Extras -lX11 -lgsettings-qt -lukui-log4qt)
 
 set(pkgLibdir 	/usr/lib/${DEB_BUILD_GNU_CPU})
 set(pkgbindir 	/usr/bin/)
