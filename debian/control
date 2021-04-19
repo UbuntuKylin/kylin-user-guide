@@ -12,7 +12,8 @@ Build-Depends: cmake,
                libqt5webkit5-dev,
                libqt5x11extras5-dev,
                libkf5windowsystem-dev,
-               libgsettings-qt-dev
+               libgsettings-qt-dev,
+               libukui-log4qt-dev
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Homepage: https://github.com/ubuntukylin/kylin-user-guide
@@ -26,6 +27,7 @@ Depends: ${misc:Depends},
          libjs-jquery (>=3.3),
          libjs-requirejs,
          libjs-marked,
+         libukui-log4qt-dev,
          kylin-user-guide-common,
 Description: Smanual for UKUI desktop environment
  Kylin User Guide is a simple and lightweight guide written by Qt5/js/md,
