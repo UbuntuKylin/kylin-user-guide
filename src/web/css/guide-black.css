@@ -104,7 +104,7 @@ div.system-app:hover
 div.system-app:active
 {
     border-radius: 4px;
-    background:  rgb(228, 243, 255);
+    background:rgba(39,40,42,1);
     color: white;
 }
 

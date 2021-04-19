@@ -1,3 +1,23 @@
+kylin-user-guide (1.0.2-67) v101; urgency=medium
+
+  * Fixed: bug#48142
+
+ -- guang tang <tangguang@kylinos.cn>  Mon, 19 Apr 2021 14:10:51 +0800
+
+kylin-user-guide (1.0.2-66) v101; urgency=medium
+
+  * 合并原来的改动
+  * 更新归档管理器 
+  * 更新代码中软件商店的名称为software_store
+
+ -- quyanying <quyanying@kylinos.cn>  Fri, 16 Apr 2021 16:05:36 +0800
+
+kylin-user-guide (1.0.2-65) v101; urgency=medium
+
+  * 添加麒麟看图更新日期
+
+ -- zoujunnan <zoujunnan@kylinos.cn>  Thu, 15 Apr 2021 13:43:59 +0800
+
 kylin-user-guide (1.0.2-64) v101; urgency=medium
 
   * 更新桌面环境中，无线网络的图片
