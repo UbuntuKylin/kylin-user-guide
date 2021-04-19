@@ -25,9 +25,7 @@ Compress and unzip files. The main interface as shown in Fig 1.
 
 The default format is "tar.gz". Users can change it in the "File Format" fold box or "All Supported Files" combobox.
 
-3) After clicking "Create", users can add contents to the archive file through the icon on the tool bar, or dragging files to the window directly. 
-
-The archive file won't be generated without any file added.
+3) Clicking "Create". The archive file won't be generated without any file added.
 
 ### View Archive
 * Way 1: Right click archive file > "Open With Engrampa Archive Manager"
@@ -65,13 +63,6 @@ As shown in Fig 5: All the files named 1.png will be deleted.
 #### Rename
 Right click file > "Rename"
 
-#### Copy, Cut, Paste
-Right click file > "Copy"/"Cut" > go to the destination in archive file and right click > "Paste"
-
-It will pop up a paste prompt box. Click "Paste" after ensuring.
- 
-![Fig 7 Paste prompt](image/7.png)
-
 ### Extract Archive
 #### Unzip directly
 1) Right click archive file.
@@ -81,13 +72,13 @@ It will pop up a paste prompt box. Click "Paste" after ensuring.
 #### Unzip through Engrampa
 1) Click "Extract" on the tool bar after openning archive file; Or right click archive file > select "uncompress to specific path…".
 
-2) The popup as shown in Fig 8. After choosing location, click "Extract".
+2) The popup as shown in Fig 7. After choosing location, click "Extract".
  
-![Fig 8 Extract box-big](image/8.png)
+![Fig 7 Extract box-big](image/7.png)
 
 3) If it's an encrypted archive, password will be required.
  
-![Fig 9 Password required](image/9.png)
+![Fig 8 Password required](image/8.png)
 <br>
 
 ## Advanced Function
@@ -96,12 +87,12 @@ When creating, "Other Options" provides function to set the password for this ar
 
 Tips: Not all the compress formats supports encryption.
  
-![Fig 10 Set password](image/10.png)
+![Fig 9 Set password](image/9.png)
 
 ### Extract Specified Files
 Users can specify files to be extracted at the bottom of the extract window.
  
-![Fig 11 Extract specified files](image/11.png)
+![Fig 10 Extract specified files](image/10.png)
 
 All the file with this name in the archive will be extracted; If the file is under the sub directory, the extracted file will include this directory also. 
 
@@ -112,9 +103,6 @@ All the file with this name in the archive will be extracted; If the file is und
 
 | Shortcut | Function |
 | :------------ | :------------ |
-| Ctrl + C  | Copy |
-| Ctrl + X  | Cut |
-| Ctrl + V  | Paste |
 | Delete  | Delete |
 | Ctrl + A  | Select all |
 | F2  | Rename |

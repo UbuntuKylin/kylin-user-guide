@@ -117,8 +117,6 @@ We created this Statement to help you understand:
 
 Ⅶ How to Contact KylinSoft
 
-<br>
-
 ### Ⅰ How KylinSoft Collects Your Personal Data
 #### 1.Collects Your Personal Data
 KylinSoft collects your personal data mainly to improve its services to better satisfy customer needs.
