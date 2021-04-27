@@ -75,10 +75,10 @@ Only show all operations on the projector.
 <br>
 <br>
 
-## Indicator China Weather
-Indicator China Weather can get weather and living index informations, as shown in Fig 7.
+## Weather
+Weather can get weather and living index informations, as shown in Fig 7.
 
-![Fig 7 Indicator china weather-big](image/7.png)
+![Fig 7 Weather-big](image/7.png)
 
 Inputting city name in the searchbox, and it will show all the cities which are matching the keywords.
 
@@ -88,14 +88,14 @@ Click ![](image/icon22.png) and select "Add City" to see the collection list.
 <br>
 <br>
 
-## Kylin Recorder
-Kylin Recorder provides a simple audio recording function, as shown in Fig 9.
+## Recorder
+Recorder provides a simple audio recording function, as shown in Fig 9.
 
-![Fig 9 Kylin recorder-big](image/9.png)
+![Fig 9 Recorder-big](image/9.png)
 
 Click recording icon to enter recording interface.
 
-Drag the sound slider to adjust the volume. Click ![](image/icon21.png) to pause/continue during recording. Click ![](image/icon20.png) to finish recording.
+Click ![](image/icon21.png) to pause/continue during recording. Click ![](image/icon20.png) to finish recording.
 
 ![Fig 10 Recording-big](image/10.png)
 
@@ -107,10 +107,10 @@ The settings interface as shown in Fig 11.
 <br>
 <br>
 
-## Kylin USB Creator
-Kylin USB Creator is used to make system boot U disks, as shown in Fig 12.
+## USB Boot Maker
+USB Boot Maker is used to make system boot U disks, as shown in Fig 12.
 
-![Fig 12 Kylin usb creator-big](image/12.png)
+![Fig 12 Usb boot maker-big](image/12.png)
 
 Select the iso file and U disk, and click "Start". It will ask for authentication, as shown in Fig 13.
 
@@ -122,32 +122,32 @@ Tips after finishing.
 <br>
 <br>
 
-## Kylin Screenshot
-Kylin Screenshot can capture any area on the current desktop and support to edit it simply. 
+## Screenshot
+Screenshot can capture any area on the current desktop and support to edit it simply. 
 
-![Fig 15 Kylin screenshot-big](image/15.png)
+![Fig 15 Screenshot-big](image/15.png)
 
 On the tools menu, here are: square, circle, straight line, arrow, pencil tool, mark, text, area blur.
 
-After opening it, right click the icon on the tray menu and select "Open Launcher". Set the delay time and click "Take new screenshot".
+After opening it, right click the icon on the tray menu and select "Open Screenshot Option". Set the delay time and click "Take new screenshot".
 
 ![Fig 16 Delayed screenshot-big](image/16.png)
 
 <br>
 <br>
 
-## Kylin Calculator
+## Calculator
 Provide the function to meet the needs of conventional calculation, as shown in Fig 17.
 
-![Fig 17 Kylin calculator](image/17.png)
+![Fig 17 Calculator](image/17.png)
 
 Users can switch the mode by ![](image/icon22.png) at the top right corner.
 
 <br>
 <br>
 
-## Kylin Camera
-Kylin Camera is a photo software with friendly interface and easy to use, which is based on QT.
+## Camera
+Camera is a photo software with friendly interface and easy to use, which is based on QT.
 
 - Take a photo: Click the button to get the current photo of the camera, and it will be saved to local and displayed to the album.
 
@@ -157,16 +157,16 @@ Kylin Camera is a photo software with friendly interface and easy to use, which 
 
 Open the setting interface can select delay photography, mirror image, etc..
 
-![Fig 18 Kylin camera-big](image/18.png)
+![Fig 18 Camera-big](image/18.png)
 <br>
 <br>
 
-## Kylin Scanner
-Kylin Scanner is a user-friendly scanning software developed with Qt5. It provides scanning, beauty, rectify and text OCR functions.
+## Scanner
+Scanner is a user-friendly scanning software developed with Qt5. It provides scanning, beauty, rectify and text OCR functions.
 
-![Fig 19 Kylin scanner-big](image/19.png)
+![Fig 19 Scanner-big](image/19.png)
 
-1) When kylin scanner is opened, it will search and connect the device, and get the default parameters (color mode, resolution, paper size, etc.). The larger the resolution, the slower the scanning speed.
+1) When scanner is opened, it will search and connect the device, and get the default parameters (color mode, resolution, paper size, etc.). The larger the resolution, the slower the scanning speed.
 
 2) Click the "Scan" button in the upper right corner to scan.
 

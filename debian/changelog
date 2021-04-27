@@ -1,3 +1,16 @@
+kylin-user-guide (1.0.2-71) v101; urgency=medium
+
+  * 去掉图像查看器（eom）
+
+ -- quyanying <quyanying@kylinos.cn>  Mon, 26 Apr 2021 13:54:22 +0800
+
+kylin-user-guide (1.0.2-70) v101; urgency=medium
+
+  * Fixed: bug#46545(sp1)
+  * Fixed: bug#46964(990)、49715(9A0)
+
+ -- quyanying <quyanying@kylinos.cn>  Thu, 22 Apr 2021 17:01:39 +0800
+
 kylin-user-guide (1.0.2-69) v101; urgency=medium
 
   * Fixed: bug#49297
